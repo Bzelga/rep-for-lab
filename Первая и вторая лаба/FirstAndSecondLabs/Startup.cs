@@ -3,11 +3,20 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using Microsoft.Extensions.Configuration;
 
 namespace FirstAndSecondLabs
 {
     public class Startup
     {
+        public IConfiguration AppConfiguration { get; set; }
+
+        public Startup()
+        {
+            var builder = new ConfigurationBuilder().AddIniFile("StringAndNumber.ini");
+            AppConfiguration = builder.Build();
+        }
+
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddSingleton<ITimeSender, TimeService>();
@@ -16,9 +25,11 @@ namespace FirstAndSecondLabs
             services.AddSingleton<ICounter2, CounterVisitorServace>();
             services.AddTransient<ICounter3, RandomNumberServace>();
             services.AddTransient<IString1, SecondPageStringServace>();
+
+            services.Configure<SomeStringAndNumber>(AppConfiguration);
         }
 
-        public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
+        public void Configure(IApplicationBuilder app)
         {
             app.Map("/first", FirstTestMethod);
             app.Map("/second", SecondTestMethod);

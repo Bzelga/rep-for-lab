@@ -9,16 +9,53 @@ html, body {
   background: linear-gradient(0deg, rgb(248, 200, 255) 0%, rgb(255, 255, 255) 26%, rgb(255, 255, 255) 100%);
 }
 header{
+	display: flex;
+}
+header p{
 	font-size:10px;
 	color: #ccc;
 }
+
+ul {
+	list-style: none;
+	margin: 0 auto;
+	font-size: 15px;
+}
+a {
+  text-decoration: none;
+  font-family: 'Lora', serif;
+  transition: .5s linear;
+}
+i {
+  margin-right: 10px;
+}
+nav {
+  display: block;
+  width: 660px;
+  margin: 0 auto 30px;
+}
+
+.one ul {
+  padding: 1em 0;
+  background: #FFF;
+}
+.one a {
+  padding: 1em;
+  background: #FFF;
+  color: #695753;
+}
+.one a:hover {background: #b375c9;}
+.one li {
+  display: inline;
+}
+
 .content{
 	position:absolute;
 	width:100%;
 	top:50%;
 	text-align:center;
 	font-size:50px;
-	line-height: 50px;
+	line-height: 55px;
 	
 	background: linear-gradient(to right, red, orange, yellow, green, cyan, blue, violet);
   background-size: 400% 400%;
