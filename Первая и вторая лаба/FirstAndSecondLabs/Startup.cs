@@ -9,12 +9,11 @@ namespace FirstAndSecondLabs
 {
     public class Startup
     {
-        public IConfiguration AppConfiguration { get; set; }
+        private readonly IConfiguration _appConfiguration;
 
-        public Startup()
+        public Startup(IConfiguration appConfiguration)
         {
-            var builder = new ConfigurationBuilder().AddIniFile("StringAndNumber.ini");
-            AppConfiguration = builder.Build();
+            _appConfiguration = appConfiguration;
         }
 
         public void ConfigureServices(IServiceCollection services)
@@ -26,7 +25,7 @@ namespace FirstAndSecondLabs
             services.AddTransient<ICounter3, RandomNumberServace>();
             services.AddTransient<IString1, SecondPageStringServace>();
 
-            services.Configure<SomeStringAndNumber>(AppConfiguration);
+            services.Configure<SomeStringAndNumber>(_appConfiguration);
         }
 
         public void Configure(IApplicationBuilder app)
@@ -45,6 +44,10 @@ namespace FirstAndSecondLabs
             app.UseMiddleware<TimeMiddleware>();
             app.UseMiddleware<CounterMiddleware>();
             app.UseMiddleware<StringMiddleware>();
+            app.Use(async (context, next) =>
+            {
+                await context.Response.WriteAsync("200");
+            });
         }
 
         private static void SecondTestMethod(IApplicationBuilder app)
@@ -52,6 +55,10 @@ namespace FirstAndSecondLabs
             app.UseMiddleware<RandomNumberMiddleware>();
             app.UseMiddleware<String1Middleware>();
             app.UseMiddleware<VisitorMiddleware>();
+            app.Use(async (context, next) =>
+            {
+                await context.Response.WriteAsync("200");
+            });
         }
     }
 }

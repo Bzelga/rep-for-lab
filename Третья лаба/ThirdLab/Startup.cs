@@ -14,10 +14,14 @@ namespace ThirdLab
 
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
-            app.UseExceptionHandler("/error");
-            app.Map("/error", ShowError);
+            app.UseExceptionHandler(configure => configure.Run(async (context) =>
+            {
+                context.Response.ContentType = "text/html;charset=utf-8";
+                await context.Response.WriteAsync($"Не удалось сконвертировать строку в число");
+            }));
+
             app.Map("/makeError", MakeError);
-            //app.UseStatusCodePagesWithRedirects("/{0}.html");
+            app.UseStatusCodePagesWithRedirects("/{0}.html");
 
             app.UseDefaultFiles();
             app.UseStaticFiles();
@@ -29,15 +33,6 @@ namespace ThirdLab
             {
                 context.Response.ContentType = "text/html;charset=utf-8";
                 await context.Response.WriteAsync($"{Convert.ToDouble("f")}");
-            });
-        }
-
-        private static void ShowError(IApplicationBuilder app)
-        {
-            app.Run(async (context) =>
-            {
-                context.Response.ContentType = "text/html;charset=utf-8";
-                await context.Response.WriteAsync($"Не удалось сконвертировать строку в число");
             });
         }
     }
