@@ -3,7 +3,6 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using System;
 
 namespace SecondLabs
 {
@@ -28,12 +27,6 @@ namespace SecondLabs
                     await context.Response.WriteAsync($"Критическая ошибка");
                 }));
             }
-
-            app.Run(async (context) =>
-            {
-                context.Response.ContentType = "text/html;charset=utf-8";
-                await context.Response.WriteAsync($"{Convert.ToDouble("f")}");
-            });
 
             app.UseDefaultFiles();
             app.UseStaticFiles();
