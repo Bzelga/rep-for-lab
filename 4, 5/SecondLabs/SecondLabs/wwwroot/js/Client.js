@@ -4,6 +4,10 @@
 
 hubConnection.start();
 
+function getRandomInRange(min, max) {
+    return Math.floor(Math.random() * (max - min + 1)) + min;
+}
+
 document.getElementById("sendBtn").addEventListener("click", function (e) {
     let count = document.getElementById("count").value;
     let from = document.getElementById("from").value;
@@ -11,9 +15,14 @@ document.getElementById("sendBtn").addEventListener("click", function (e) {
 
     const subject = new signalR.Subject();
     hubConnection.send("Send", subject);
+    var iteration = 0;
+
     const intervalHandle = setInterval(() => {
-        subject.next({ "Quantity": parseInt(count), "FromNumber": parseInt(from), "ToNumber": parseInt(to) },);
-        clearInterval(intervalHandle);
-        subject.complete();
-    }, 500);
+        iteration++;
+        subject.next(getRandomInRange(Number(from), Number(to)));
+        if (iteration == count) {
+            clearInterval(intervalHandle);
+            subject.complete();
+        }
+    }, 10);
 });
