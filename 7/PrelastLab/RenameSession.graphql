@@ -1,0 +1,7 @@
+mutation ChangePrice($gameID: ID!, $price: Float!){
+  changeGamePriceById(input: {gameID:$gameID, price: $price}){
+    allGameWithDevGerne{
+      ...SessionInfo
+    }
+  }
+}

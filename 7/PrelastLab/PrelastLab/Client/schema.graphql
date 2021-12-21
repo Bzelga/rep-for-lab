@@ -1,0 +1,272 @@
+﻿schema {
+  query: Query
+  mutation: Mutation
+}
+
+type Query {
+  allGameOnly("Returns the first _n_ elements from the list." first: Int "Returns the elements in the list that come after the specified cursor." after: String "Returns the last _n_ elements from the list." last: Int "Returns the elements in the list that come before the specified cursor." before: String where: GamesFilterInput order: [GamesSortInput!]): AllGameOnlyConnection
+  allGameWithDevGerne("Returns the first _n_ elements from the list." first: Int "Returns the elements in the list that come after the specified cursor." after: String "Returns the last _n_ elements from the list." last: Int "Returns the elements in the list that come before the specified cursor." before: String where: GamesFilterInput order: [GamesSortInput!]): AllGameWithDevGerneConnection
+  allGenreOnly("Returns the first _n_ elements from the list." first: Int "Returns the elements in the list that come after the specified cursor." after: String "Returns the last _n_ elements from the list." last: Int "Returns the elements in the list that come before the specified cursor." before: String where: GenreFilterInput order: [GenreSortInput!]): AllGenreOnlyConnection
+  allGenreWithGame("Returns the first _n_ elements from the list." first: Int "Returns the elements in the list that come after the specified cursor." after: String "Returns the last _n_ elements from the list." last: Int "Returns the elements in the list that come before the specified cursor." before: String where: GenreFilterInput order: [GenreSortInput!]): AllGenreWithGameConnection
+  allDeveloperOnly("Returns the first _n_ elements from the list." first: Int "Returns the elements in the list that come after the specified cursor." after: String "Returns the last _n_ elements from the list." last: Int "Returns the elements in the list that come before the specified cursor." before: String where: DevelopersFilterInput order: [DevelopersSortInput!]): AllDeveloperOnlyConnection
+  allDeveloperWithGame("Returns the first _n_ elements from the list." first: Int "Returns the elements in the list that come after the specified cursor." after: String "Returns the last _n_ elements from the list." last: Int "Returns the elements in the list that come before the specified cursor." before: String where: DevelopersFilterInput order: [DevelopersSortInput!]): AllDeveloperWithGameConnection
+}
+
+type Mutation {
+  createGenre(gerneName: String): Genre
+  createDeveloper(nameDev: String countryDev: String): Developers
+  createGameWithDeveloperGenreId(name: String price: Float! idDev: Int! idGenre: Int!): Games
+  createGameWithDeveloperGenre(name: String price: Float! gerneName: String nameDev: String countryDev: String): Games
+  changeGamePriceById(id: Int! newPrice: Float!): Games
+  deleteGameById(id: Int!): String
+}
+
+input GamesFilterInput {
+  and: [GamesFilterInput!]
+  or: [GamesFilterInput!]
+  gamesId: ComparableInt32OperationFilterInput
+  name: StringOperationFilterInput
+  price: ComparableDoubleOperationFilterInput
+  developerId: ComparableInt32OperationFilterInput
+  developer: DevelopersFilterInput
+  genreId: ComparableInt32OperationFilterInput
+  genre: GenreFilterInput
+}
+
+input GamesSortInput {
+  gamesId: SortEnumType
+  name: SortEnumType
+  price: SortEnumType
+  developerId: SortEnumType
+  developer: DevelopersSortInput
+  genreId: SortEnumType
+  genre: GenreSortInput
+}
+
+input GenreFilterInput {
+  and: [GenreFilterInput!]
+  or: [GenreFilterInput!]
+  genreId: ComparableInt32OperationFilterInput
+  name: StringOperationFilterInput
+  games: ListFilterInputTypeOfGamesFilterInput
+}
+
+input GenreSortInput {
+  genreId: SortEnumType
+  name: SortEnumType
+}
+
+input DevelopersFilterInput {
+  and: [DevelopersFilterInput!]
+  or: [DevelopersFilterInput!]
+  developerId: ComparableInt32OperationFilterInput
+  name: StringOperationFilterInput
+  country: StringOperationFilterInput
+  games: ListFilterInputTypeOfGamesFilterInput
+}
+
+input DevelopersSortInput {
+  developerId: SortEnumType
+  name: SortEnumType
+  country: SortEnumType
+}
+
+"A connection to a list of items."
+type AllGameOnlyConnection {
+  "Information to aid in pagination."
+  pageInfo: PageInfo!
+  "A list of edges."
+  edges: [AllGameOnlyEdge!]
+  "A flattened list of the nodes."
+  nodes: [Games]
+}
+
+"A connection to a list of items."
+type AllGameWithDevGerneConnection {
+  "Information to aid in pagination."
+  pageInfo: PageInfo!
+  "A list of edges."
+  edges: [AllGameWithDevGerneEdge!]
+  "A flattened list of the nodes."
+  nodes: [Games]
+}
+
+"A connection to a list of items."
+type AllGenreOnlyConnection {
+  "Information to aid in pagination."
+  pageInfo: PageInfo!
+  "A list of edges."
+  edges: [AllGenreOnlyEdge!]
+  "A flattened list of the nodes."
+  nodes: [Genre]
+}
+
+"A connection to a list of items."
+type AllGenreWithGameConnection {
+  "Information to aid in pagination."
+  pageInfo: PageInfo!
+  "A list of edges."
+  edges: [AllGenreWithGameEdge!]
+  "A flattened list of the nodes."
+  nodes: [Genre]
+}
+
+"A connection to a list of items."
+type AllDeveloperOnlyConnection {
+  "Information to aid in pagination."
+  pageInfo: PageInfo!
+  "A list of edges."
+  edges: [AllDeveloperOnlyEdge!]
+  "A flattened list of the nodes."
+  nodes: [Developers]
+}
+
+"A connection to a list of items."
+type AllDeveloperWithGameConnection {
+  "Information to aid in pagination."
+  pageInfo: PageInfo!
+  "A list of edges."
+  edges: [AllDeveloperWithGameEdge!]
+  "A flattened list of the nodes."
+  nodes: [Developers]
+}
+
+input ComparableInt32OperationFilterInput {
+  eq: Int
+  neq: Int
+  in: [Int!]
+  nin: [Int!]
+  gt: Int
+  ngt: Int
+  gte: Int
+  ngte: Int
+  lt: Int
+  nlt: Int
+  lte: Int
+  nlte: Int
+}
+
+input StringOperationFilterInput {
+  and: [StringOperationFilterInput!]
+  or: [StringOperationFilterInput!]
+  eq: String
+  neq: String
+  contains: String
+  ncontains: String
+  in: [String]
+  nin: [String]
+  startsWith: String
+  nstartsWith: String
+  endsWith: String
+  nendsWith: String
+}
+
+input ComparableDoubleOperationFilterInput {
+  eq: Float
+  neq: Float
+  in: [Float!]
+  nin: [Float!]
+  gt: Float
+  ngt: Float
+  gte: Float
+  ngte: Float
+  lt: Float
+  nlt: Float
+  lte: Float
+  nlte: Float
+}
+
+enum SortEnumType {
+  ASC
+  DESC
+}
+
+input ListFilterInputTypeOfGamesFilterInput {
+  all: GamesFilterInput
+  none: GamesFilterInput
+  some: GamesFilterInput
+  any: Boolean
+}
+
+"Information about pagination in a connection."
+type PageInfo {
+  "Indicates whether more edges exist following the set defined by the clients arguments."
+  hasNextPage: Boolean!
+  "Indicates whether more edges exist prior the set defined by the clients arguments."
+  hasPreviousPage: Boolean!
+  "When paginating backwards, the cursor to continue."
+  startCursor: String
+  "When paginating forwards, the cursor to continue."
+  endCursor: String
+}
+
+type Games {
+  gamesId: Int!
+  name: String
+  price: Float!
+  developerId: Int!
+  developer: Developers
+  genreId: Int!
+  genre: Genre
+}
+
+"An edge in a connection."
+type AllGameOnlyEdge {
+  "A cursor for use in pagination."
+  cursor: String!
+  "The item at the end of the edge."
+  node: Games
+}
+
+"An edge in a connection."
+type AllGameWithDevGerneEdge {
+  "A cursor for use in pagination."
+  cursor: String!
+  "The item at the end of the edge."
+  node: Games
+}
+
+type Genre {
+  genreId: Int!
+  name: String
+  games: [Games]
+}
+
+"An edge in a connection."
+type AllGenreOnlyEdge {
+  "A cursor for use in pagination."
+  cursor: String!
+  "The item at the end of the edge."
+  node: Genre
+}
+
+"An edge in a connection."
+type AllGenreWithGameEdge {
+  "A cursor for use in pagination."
+  cursor: String!
+  "The item at the end of the edge."
+  node: Genre
+}
+
+type Developers {
+  developerId: Int!
+  name: String
+  country: String
+  games: [Games]
+}
+
+"An edge in a connection."
+type AllDeveloperOnlyEdge {
+  "A cursor for use in pagination."
+  cursor: String!
+  "The item at the end of the edge."
+  node: Developers
+}
+
+"An edge in a connection."
+type AllDeveloperWithGameEdge {
+  "A cursor for use in pagination."
+  cursor: String!
+  "The item at the end of the edge."
+  node: Developers
+}

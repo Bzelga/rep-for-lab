@@ -1,0 +1,6 @@
+﻿mutation CreateGenre($genreName: String!){
+  createGenre(gerneName: $genreName)
+  {
+    name
+  }
+}

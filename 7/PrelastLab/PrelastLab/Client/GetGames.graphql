@@ -1,0 +1,21 @@
+query GetGames{
+  allGameWithDevGerne
+  {
+    nodes{
+      ...GamesInfo
+    }
+  }
+}
+
+fragment GamesInfo on Games {
+  gamesId
+  name
+  price
+  genre{
+    name
+  }
+  developer{
+    name
+    country
+  }
+}

@@ -1,0 +1,6 @@
+﻿mutation ChangePrice($gameId: Int!, $price: Float!){
+  changeGamePriceById(id: $gameId, newPrice:$price){
+    name
+    price
+  }
+}
