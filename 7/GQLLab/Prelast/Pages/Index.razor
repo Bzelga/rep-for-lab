@@ -1,0 +1,185 @@
+﻿@page "/"
+@inject ConferenceClient ConferenceClient;
+@implements IDisposable
+@inject ILogger<Index> logger;
+
+<h1>Игры</h1>
+<div>
+    <div>Поиск по названию</div>
+    <input @bind-value="@filtr" />
+    <button @onclick="OnSearch">Поиск</button>
+</div>
+
+@if (games.Count == 0)
+{
+    <p><em>Loading...</em></p>
+}
+else
+{
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Название игры</th>                
+                <th>Цена</th>                
+                <th>Жанр</th>                
+                <th>Название студии</th>    
+                <th>Страна студии</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var game in games)
+            {
+                <tr>
+                    <td><button @onclick="() => OnChangePriceGame(game)"><span class="oi oi-pencil mr-2" aria-hidden="true"></span></button> @game.Name</td>                   
+                    <td>@game.Price</td>                   
+                    <td>@game.Genre.Name</td>                   
+                    <td>@game.Developer.Name</td>
+                    <td>@game.Developer.Country <button @onclick="() => OnDeleteGame(game)">X</button></td>
+                </tr>
+            }
+        </tbody>
+    </table>
+
+    @if (selectedGame is not null)
+    {
+        <br />
+        <p>Edit Session Title:</p>
+        <input @bind-value="@price" />
+        <button @onclick="OnChangePrice">Save</button>
+    }
+
+    @if(!create)
+    {
+        <br />
+        <button @onclick="OnAddGame">Добавить игру</button>
+    }
+    else
+    {
+        <input @bind-value="@name" />
+        <input @bind-value="@price" />
+        <select onchange=@ChangeGenre>
+        @foreach (var genr in genres)
+        {
+            <option value=@genr.GenreId>@genr.Name</option>
+        }
+        </select>
+        <select onchange=@ChangeDevel>
+        @foreach (var dev in developers)
+        {
+            <option value=@dev.DeveloperId>@dev.Name</option>
+        }
+        </select>
+        <button @onclick="OnCreateGame">Save</button>
+
+    }
+}
+
+@code {
+    private IReadOnlyList<IGamesInfo> games = Array.Empty<IGamesInfo>();
+    private IReadOnlyList<IGenreInfo> genres = Array.Empty<IGenreInfo>();
+    private IReadOnlyList<IDevelopersInfo> developers = Array.Empty<IDevelopersInfo>();
+
+    private IDisposable storeSessionGames;
+    private IDisposable storeSessionGenre;
+    private IDisposable storeSessionDev;
+
+    private IGamesInfo selectedGame;
+    private int selectedGenreId = 1;
+    private int selectedDevId = 1;
+
+    private string name;
+    private double price;
+    private string filtr = "";
+    private bool create = false;
+
+    protected override async Task OnInitializedAsync()
+    {
+        var result = await ConferenceClient.GetGames.ExecuteAsync();
+        games = result.Data!.AllGameWithDevGerne!.Nodes;
+
+        storeSessionGenre =
+            ConferenceClient
+            .GetGenre
+            .Watch(ExecutionStrategy.CacheFirst)
+            .Where(t => !t.Errors.Any())
+            .Select(t => t.Data!.AllGenreOnly!.Nodes)
+            .Subscribe(result =>
+            {
+                genres = result;
+                StateHasChanged();
+            });
+
+        storeSessionDev =
+            ConferenceClient
+            .GetDevel
+            .Watch(ExecutionStrategy.CacheFirst)
+            .Where(t => !t.Errors.Any())
+            .Select(t => t.Data!.AllDeveloperOnly!.Nodes)
+            .Subscribe(result =>
+            {
+                developers = result;
+                StateHasChanged();
+            });
+    }
+
+    private void OnChangePriceGame(IGamesInfo game)
+    {
+        selectedGame = game;
+        price = game.Price;
+        StateHasChanged();
+    }
+
+    private void OnAddGame()
+    {
+        create = true;
+    }
+
+    private async void OnDeleteGame(IGamesInfo game)
+    {
+        await ConferenceClient.DelGame.ExecuteAsync(game.GamesId );
+        StateHasChanged();
+    }
+
+    private async Task OnChangePrice()
+    {
+        await ConferenceClient.ChangePrice.ExecuteAsync(selectedGame.GamesId, price);
+        selectedGame = null;
+        price = 0;
+        StateHasChanged();
+    }
+
+    private void ChangeGenre(ChangeEventArgs e)
+    {
+        selectedGenreId = Convert.ToInt32(e.Value);
+    }
+
+    private void ChangeDevel(ChangeEventArgs e)
+    {
+        selectedDevId = (int)e.Value;
+    }
+
+    private async Task OnCreateGame()
+    {
+        await ConferenceClient.CreateGame.ExecuteAsync(name, price, selectedGenreId, selectedDevId);
+        selectedGenreId = 0;
+        selectedDevId = 0;
+        price = 0;
+        create = false;
+        StateHasChanged();
+    }
+
+    private async void OnSearch()
+    {
+        var result = await ConferenceClient.GetGamesWithFiltr.ExecuteAsync(filtr);
+        games = result.Data!.AllGameWithDevGerne!.Nodes;
+        StateHasChanged();
+    }
+
+    public void Dispose()
+    {
+        storeSessionGames?.Dispose();
+        storeSessionGenre?.Dispose();
+        storeSessionDev?.Dispose();
+    }
+}
+

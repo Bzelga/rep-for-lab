@@ -1,0 +1,12 @@
+﻿query GetGenre{
+  allGenreOnly{
+    nodes{
+      ...GenreInfo
+    }
+  }
+}
+
+fragment GenreInfo on Genre {
+    genreId
+    name
+}

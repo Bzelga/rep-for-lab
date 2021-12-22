@@ -1,0 +1,13 @@
+﻿query GetDevel{
+  allDeveloperOnly{
+    nodes{
+      ...DevelopersInfo
+    }
+  }
+}
+
+fragment DevelopersInfo on Developers {
+    developerId
+    name
+    country
+}

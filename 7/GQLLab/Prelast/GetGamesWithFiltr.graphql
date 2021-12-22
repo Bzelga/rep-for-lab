@@ -1,0 +1,11 @@
+query GetGamesWithFiltr($search: String){
+  allGameWithDevGerne(
+    where:{
+      name:{startsWith:$search}
+    }
+    order: {price:ASC}){
+    nodes{
+      ...GamesInfo
+    }
+  }
+}
