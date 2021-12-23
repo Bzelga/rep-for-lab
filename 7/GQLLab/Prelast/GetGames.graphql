@@ -1,8 +1,11 @@
-query GetGames{
-  allGameWithDevGerne
-  {
+query GetGames($countItem:Int!){
+  allGameWithDevGerne(first: $countItem){
     nodes{
       ...GamesInfo
+    }
+    pageInfo{
+      hasNextPage
+      endCursor
     }
   }
 }

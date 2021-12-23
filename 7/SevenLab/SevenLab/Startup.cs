@@ -29,8 +29,10 @@ namespace SevenLab
                 .AddGraphQLServer()
                 .AddQueryType<Query>()
                 .AddMutationType<Mutation>()
+                .AddSubscriptionType<Subscription>()
                 .AddFiltering()
-                .AddSorting();
+                .AddSorting()
+                .AddProjections();
 
             services.AddScoped<DeveloperRepository, DeveloperRepository>();
             services.AddScoped<GameRepository, GameRepository>();

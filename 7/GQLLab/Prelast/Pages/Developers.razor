@@ -9,12 +9,27 @@
     <button @onclick="OnSearch">Поиск</button>
 </div>
 
+<div>
+    <div>Количество элементов на странице</div>
+    <input type="number" @bind-value="@itemInPage" />
+    <button @onclick="OnChangeCountItem">Изменить</button>
+</div>
+
 @if (developers.Count == 0)
 {
     <p><em>Loading...</em></p>
 }
 else
 {
+    @if(numberPage > 1)
+    {
+        <button @onclick="OnPrevPage">Предыдущая страница</button>
+    }
+    @if(hasNextPage)
+    {
+        <button @onclick="OnNextPage">Следующая страница</button>
+    }
+
     <table class="table">
         <thead>
             <tr>
@@ -62,20 +77,44 @@ else
 
     private IDevelopersInfo selectedDev;
 
+    private IDisposable storeSessionDev;
+
     private string name;
     private string country;
     private string filtr = "";
     private bool create = false;
+    private int itemInPage = 15;
+    private string coursor = null;
+    private bool hasNextPage;
+    private int numberPage = 1;
 
     protected override async Task OnInitializedAsync()
     {
-        var result = await ConferenceClient.GetDevel.ExecuteAsync();
-        developers = result.Data!.AllDeveloper!.Nodes;
+        //var result = await ConferenceClient.GetDevelWithPaging.ExecuteAsync(itemInPage);
+        //developers = result.Data!.AllDeveloper!.Nodes;
+        //coursor = result.Data!.AllDeveloper!.PageInfo.EndCursor;
+        //hasNextPage = result.Data!.AllDeveloper!.PageInfo.HasNextPage;
+        //StateHasChanged();
+
+        storeSessionDev =
+            ConferenceClient
+            .GetDevelWithPaging
+            .Watch(itemInPage, ExecutionStrategy.CacheFirst)
+            .Where(t => !t.Errors.Any())
+            .Select(t => t.Data!.AllDeveloper!)
+            .Subscribe(result =>
+            {
+                developers = result.Nodes;
+                coursor = result.PageInfo.EndCursor;
+                hasNextPage = result.PageInfo.HasNextPage;
+                StateHasChanged();
+            });
     }
 
     private async void OnDeleteDev(IDevelopersInfo dev)
     {
-        await ConferenceClient.DelDevel.ExecuteAsync(dev.DeveloperId);
+        var res = await ConferenceClient.DelDevel.ExecuteAsync(dev.DeveloperId);
+        developers = res.Data!.DeleteDevById!;
         StateHasChanged();
     }
 
@@ -88,7 +127,8 @@ else
 
     private async Task OnChangeName()
     {
-        await ConferenceClient.ChangeNameDev.ExecuteAsync(selectedDev.DeveloperId, name);
+        var res = await ConferenceClient.ChangeNameDev.ExecuteAsync(selectedDev.DeveloperId, name);
+        developers = res.Data!.ChangeDevNameById!;
         selectedDev = null;
         name = null;
         StateHasChanged();
@@ -101,7 +141,8 @@ else
 
     private async Task OnCreateDev()
     {
-        await ConferenceClient.CreateDev.ExecuteAsync(name, country);
+        var res = await ConferenceClient.CreateDev.ExecuteAsync(name, country);
+        developers = res.Data!.CreateDeveloper!;
         name = null;
         country = null;
         create = false;
@@ -113,5 +154,34 @@ else
         var result = await ConferenceClient.GetDevelWithFiltr.ExecuteAsync(filtr);
         developers = result.Data!.AllDeveloper!.Nodes;
         StateHasChanged();
+    }
+
+    private async void OnPrevPage()
+    {
+        var result = await ConferenceClient.GetDevelPrevPage.ExecuteAsync(itemInPage, coursor);
+        developers = result.Data!.AllDeveloper!.Nodes;
+        coursor = result.Data!.AllDeveloper!.PageInfo.EndCursor;
+        hasNextPage = result.Data!.AllDeveloper!.PageInfo.HasNextPage;
+        numberPage--;
+        StateHasChanged();
+    }
+
+    private async void OnNextPage()
+    {
+        var result = await ConferenceClient.GetDevelNextPage.ExecuteAsync(itemInPage, coursor);
+        developers = result.Data!.AllDeveloper!.Nodes;
+        coursor = result.Data!.AllDeveloper!.PageInfo.EndCursor;
+        hasNextPage = result.Data!.AllDeveloper!.PageInfo.HasNextPage;
+        numberPage++;
+        StateHasChanged();
+    }
+
+    private async void OnChangeCountItem()
+    {
+        var result = await ConferenceClient.GetDevelWithPaging.ExecuteAsync(itemInPage);
+        developers = result.Data!.AllDeveloper!.Nodes;
+        coursor = result.Data!.AllDeveloper!.PageInfo.EndCursor;
+        hasNextPage = result.Data!.AllDeveloper!.PageInfo.HasNextPage;
+        numberPage = 1;
     }
 }

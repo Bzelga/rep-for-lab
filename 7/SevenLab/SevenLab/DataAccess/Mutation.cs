@@ -1,12 +1,13 @@
 ﻿using HotChocolate;
 using HotChocolate.Subscriptions;
+using System.Collections.Generic;
 using System.Threading.Tasks;
 
 namespace SevenLab
 {
     public class Mutation
     {
-        public async Task<Genre> CreateGenre([Service] GenreRepository genreRepository,
+        public async Task<List<Genre>> CreateGenre([Service] GenreRepository genreRepository,
             [Service] ITopicEventSender eventSender, string gerneName)
         {
             var newGenre = new Genre
@@ -17,10 +18,10 @@ namespace SevenLab
 
             await eventSender.SendAsync("GenreCreated", createdGenre);
 
-            return createdGenre;
+            return genreRepository.GetGenres();
         }
 
-        public async Task<Developers> CreateDeveloper([Service] DeveloperRepository devRepository,
+        public async Task<List<Developers>> CreateDeveloper([Service] DeveloperRepository devRepository,
             [Service] ITopicEventSender eventSender, string nameDev, string countryDev)
         {
             var newDeveloper = new Developers
@@ -32,11 +33,11 @@ namespace SevenLab
 
             await eventSender.SendAsync("DeveloperCreated", createdDev);
 
-            return createdDev;
+            return devRepository.GetDevelopers();
         }
 
-        public async Task<Games> CreateGameWithDeveloperGenreId([Service] GameRepository gameRepository,
-           string name, double price, int idDev, int idGenre)
+        public async Task<List<Games>> CreateGameWithDeveloperGenreId([Service] GameRepository gameRepository,
+            [Service] ITopicEventSender eventSender, string name, double price, int idDev, int idGenre)
         {
             Games newGame = new Games
             {
@@ -47,49 +48,57 @@ namespace SevenLab
             };
 
             var createdGame = await gameRepository.CreateGame(newGame);
-            return createdGame;
+
+            await eventSender.SendAsync("GameCreated", createdGame);
+            return gameRepository.GetGameWithGerneDeveloper();
         }
 
-        public async Task<Games> ChangeGamePriceById([Service] GameRepository gameRepository,
-            int id, double newPrice)
+        public async Task<List<Games>> ChangeGamePriceById([Service] GameRepository gameRepository,
+            [Service] ITopicEventSender eventSender, int id, double newPrice)
         {
             var changedGame = await gameRepository.ChangeGamePriceById(id, newPrice);
-            return changedGame;
+            await eventSender.SendAsync("ChangeGame", changedGame);
+            return gameRepository.GetGameWithGerneDeveloper();
         }
 
-        public async Task<string> DeleteGameById([Service] GameRepository gameRepository,
-           int id)
+        public async Task<List<Games>> DeleteGameById([Service] GameRepository gameRepository, 
+            [Service] ITopicEventSender eventSender, int id)
         {
             var resultDeleteGame = await gameRepository.DeleteGameById(id);
-            return resultDeleteGame;
+            await eventSender.SendAsync("DeleteGame", resultDeleteGame);
+            return gameRepository.GetGameWithGerneDeveloper();
         }
 
-        public async Task<Genre> ChangeGenreNameById([Service] GenreRepository genreRepository,
-            int id, string newName)
+        public async Task<List<Genre>> ChangeGenreNameById([Service] GenreRepository genreRepository,
+           [Service] ITopicEventSender eventSender, int id, string newName)
         {
-            var changedGame = await genreRepository.ChangeGenreNameById(id, newName);
-            return changedGame;
+            var changedGerne = await genreRepository.ChangeGenreNameById(id, newName);
+            await eventSender.SendAsync("ChangeGenre", changedGerne);
+            return genreRepository.GetGenres();
         }
 
-        public async Task<string> DeleteGenreById([Service] GenreRepository genreRepository,
-           int id)
+        public async Task<List<Genre>> DeleteGenreById([Service] GenreRepository genreRepository,
+           [Service] ITopicEventSender eventSender, int id)
         {
-            var resultDeleteGame = await genreRepository.DeleteGenreById(id);
-            return resultDeleteGame;
+            var resultDeleteGenre = await genreRepository.DeleteGenreById(id);
+            await eventSender.SendAsync("DeleteGenre", resultDeleteGenre);
+            return genreRepository.GetGenres();
         }
 
-        public async Task<Developers> ChangeDevNameById([Service] DeveloperRepository developerRepository,
-            int id, string newName)
+        public async Task<List<Developers>> ChangeDevNameById([Service] DeveloperRepository devRepository,
+           [Service] ITopicEventSender eventSender,  int id, string newName)
         {
-            var changedGame = await developerRepository.ChangeDevNameById(id, newName);
-            return changedGame;
+            var changeddev = await devRepository.ChangeDevNameById(id, newName);
+            await eventSender.SendAsync("ChangeDev", changeddev);
+            return devRepository.GetDevelopers();
         }
 
-        public async Task<string> DeleteDevById([Service] DeveloperRepository developerRepository,
-           int id)
+        public async Task<List<Developers>> DeleteDevById([Service] DeveloperRepository devRepository,
+           [Service] ITopicEventSender eventSender, int id)
         {
-            var resultDeleteGame = await developerRepository.DeleteDevById(id);
-            return resultDeleteGame;
+            var resultDeleteDev = await devRepository.DeleteDevById(id);
+            await eventSender.SendAsync("DeleteDev", resultDeleteDev);
+            return devRepository.GetDevelopers();
         }
     }
 }

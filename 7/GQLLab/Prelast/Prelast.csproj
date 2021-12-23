@@ -5,6 +5,45 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <GraphQL Remove="GetDevelNextPage.graphql" />
+    <GraphQL Remove="GetDevelPrevPage.graphql" />
+    <GraphQL Remove="GetDevelWithPaging.graphql" />
+    <GraphQL Remove="GetGenreNextPage.graphql" />
+    <GraphQL Remove="GetGenrePrevPage.graphql" />
+    <GraphQL Remove="GetGenreWithPaging.graphql" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Remove="GetDevelNextPage.graphql" />
+    <None Remove="GetDevelPrevPage.graphql" />
+    <None Remove="GetDevelWithPaging.graphql" />
+    <None Remove="GetGenreNextPage.graphql" />
+    <None Remove="GetGenrePrevPage.graphql" />
+    <None Remove="GetGenreWithPaging.graphql" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <AdditionalFiles Include="GetDevelWithPaging.graphql">
+      <GraphQL>true</GraphQL>
+    </AdditionalFiles>
+    <AdditionalFiles Include="GetDevelPrevPage.graphql">
+      <GraphQL>true</GraphQL>
+    </AdditionalFiles>
+    <AdditionalFiles Include="GetDevelNextPage.graphql">
+      <GraphQL>true</GraphQL>
+    </AdditionalFiles>
+    <AdditionalFiles Include="GetGenreWithPaging.graphql">
+      <GraphQL>true</GraphQL>
+    </AdditionalFiles>
+    <AdditionalFiles Include="GetGenreNextPage.graphql">
+      <GraphQL>true</GraphQL>
+    </AdditionalFiles>
+    <AdditionalFiles Include="GetGenrePrevPage.graphql">
+      <GraphQL>true</GraphQL>
+    </AdditionalFiles>
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly" Version="6.0.1" />
     <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly.DevServer" Version="6.0.1" PrivateAssets="all" />
     <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="6.0.0" />

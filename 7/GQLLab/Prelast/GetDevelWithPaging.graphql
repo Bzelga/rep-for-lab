@@ -1,0 +1,11 @@
+﻿query GetDevelWithPaging($countItem:Int!){
+  allDeveloper(first:$countItem){
+    nodes{
+      ...DevelopersInfo
+    }
+    pageInfo{
+      hasNextPage
+      endCursor
+    }
+  }
+}

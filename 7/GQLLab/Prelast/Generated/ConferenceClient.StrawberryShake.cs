@@ -15,6 +15,12 @@ namespace Microsoft.Extensions.DependencyInjection
                 return new ClientServiceProvider(global::Microsoft.Extensions.DependencyInjection.ServiceCollectionContainerBuilderExtensions.BuildServiceProvider(serviceCollection));
             });
             global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton(services, sp => new global::Prelast.GraphQL.State.ConferenceClientStoreAccessor(global::Microsoft.Extensions.DependencyInjection.ServiceProviderServiceExtensions.GetRequiredService<global::StrawberryShake.IOperationStore>(global::Microsoft.Extensions.DependencyInjection.ServiceProviderServiceExtensions.GetRequiredService<ClientServiceProvider>(sp)), global::Microsoft.Extensions.DependencyInjection.ServiceProviderServiceExtensions.GetRequiredService<global::StrawberryShake.IEntityStore>(global::Microsoft.Extensions.DependencyInjection.ServiceProviderServiceExtensions.GetRequiredService<ClientServiceProvider>(sp)), global::Microsoft.Extensions.DependencyInjection.ServiceProviderServiceExtensions.GetRequiredService<global::StrawberryShake.IEntityIdSerializer>(global::Microsoft.Extensions.DependencyInjection.ServiceProviderServiceExtensions.GetRequiredService<ClientServiceProvider>(sp)), global::Microsoft.Extensions.DependencyInjection.ServiceProviderServiceExtensions.GetRequiredService<global::System.Collections.Generic.IEnumerable<global::StrawberryShake.IOperationRequestFactory>>(global::Microsoft.Extensions.DependencyInjection.ServiceProviderServiceExtensions.GetRequiredService<ClientServiceProvider>(sp)), global::Microsoft.Extensions.DependencyInjection.ServiceProviderServiceExtensions.GetRequiredService<global::System.Collections.Generic.IEnumerable<global::StrawberryShake.IOperationResultDataFactory>>(global::Microsoft.Extensions.DependencyInjection.ServiceProviderServiceExtensions.GetRequiredService<ClientServiceProvider>(sp))));
+            global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton(services, sp => global::Microsoft.Extensions.DependencyInjection.ServiceProviderServiceExtensions.GetRequiredService<global::Prelast.GraphQL.GetDevelWithPagingQuery>(global::Microsoft.Extensions.DependencyInjection.ServiceProviderServiceExtensions.GetRequiredService<ClientServiceProvider>(sp)));
+            global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton(services, sp => global::Microsoft.Extensions.DependencyInjection.ServiceProviderServiceExtensions.GetRequiredService<global::Prelast.GraphQL.GetDevelPrevPageQuery>(global::Microsoft.Extensions.DependencyInjection.ServiceProviderServiceExtensions.GetRequiredService<ClientServiceProvider>(sp)));
+            global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton(services, sp => global::Microsoft.Extensions.DependencyInjection.ServiceProviderServiceExtensions.GetRequiredService<global::Prelast.GraphQL.GetDevelNextPageQuery>(global::Microsoft.Extensions.DependencyInjection.ServiceProviderServiceExtensions.GetRequiredService<ClientServiceProvider>(sp)));
+            global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton(services, sp => global::Microsoft.Extensions.DependencyInjection.ServiceProviderServiceExtensions.GetRequiredService<global::Prelast.GraphQL.GetGenreWithPagingQuery>(global::Microsoft.Extensions.DependencyInjection.ServiceProviderServiceExtensions.GetRequiredService<ClientServiceProvider>(sp)));
+            global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton(services, sp => global::Microsoft.Extensions.DependencyInjection.ServiceProviderServiceExtensions.GetRequiredService<global::Prelast.GraphQL.GetGenreNextPageQuery>(global::Microsoft.Extensions.DependencyInjection.ServiceProviderServiceExtensions.GetRequiredService<ClientServiceProvider>(sp)));
+            global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton(services, sp => global::Microsoft.Extensions.DependencyInjection.ServiceProviderServiceExtensions.GetRequiredService<global::Prelast.GraphQL.GetGenrePrevPageQuery>(global::Microsoft.Extensions.DependencyInjection.ServiceProviderServiceExtensions.GetRequiredService<ClientServiceProvider>(sp)));
             global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton(services, sp => global::Microsoft.Extensions.DependencyInjection.ServiceProviderServiceExtensions.GetRequiredService<global::Prelast.GraphQL.ChangeNameDevMutation>(global::Microsoft.Extensions.DependencyInjection.ServiceProviderServiceExtensions.GetRequiredService<ClientServiceProvider>(sp)));
             global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton(services, sp => global::Microsoft.Extensions.DependencyInjection.ServiceProviderServiceExtensions.GetRequiredService<global::Prelast.GraphQL.ChangeNameGenreMutation>(global::Microsoft.Extensions.DependencyInjection.ServiceProviderServiceExtensions.GetRequiredService<ClientServiceProvider>(sp)));
             global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton(services, sp => global::Microsoft.Extensions.DependencyInjection.ServiceProviderServiceExtensions.GetRequiredService<global::Prelast.GraphQL.ChangePriceMutation>(global::Microsoft.Extensions.DependencyInjection.ServiceProviderServiceExtensions.GetRequiredService<ClientServiceProvider>(sp)));
@@ -27,6 +33,8 @@ namespace Microsoft.Extensions.DependencyInjection
             global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton(services, sp => global::Microsoft.Extensions.DependencyInjection.ServiceProviderServiceExtensions.GetRequiredService<global::Prelast.GraphQL.GetDevelQuery>(global::Microsoft.Extensions.DependencyInjection.ServiceProviderServiceExtensions.GetRequiredService<ClientServiceProvider>(sp)));
             global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton(services, sp => global::Microsoft.Extensions.DependencyInjection.ServiceProviderServiceExtensions.GetRequiredService<global::Prelast.GraphQL.GetDevelWithFiltrQuery>(global::Microsoft.Extensions.DependencyInjection.ServiceProviderServiceExtensions.GetRequiredService<ClientServiceProvider>(sp)));
             global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton(services, sp => global::Microsoft.Extensions.DependencyInjection.ServiceProviderServiceExtensions.GetRequiredService<global::Prelast.GraphQL.GetGamesQuery>(global::Microsoft.Extensions.DependencyInjection.ServiceProviderServiceExtensions.GetRequiredService<ClientServiceProvider>(sp)));
+            global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton(services, sp => global::Microsoft.Extensions.DependencyInjection.ServiceProviderServiceExtensions.GetRequiredService<global::Prelast.GraphQL.GetGamesNextPageQuery>(global::Microsoft.Extensions.DependencyInjection.ServiceProviderServiceExtensions.GetRequiredService<ClientServiceProvider>(sp)));
+            global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton(services, sp => global::Microsoft.Extensions.DependencyInjection.ServiceProviderServiceExtensions.GetRequiredService<global::Prelast.GraphQL.GetGamesPrevPageQuery>(global::Microsoft.Extensions.DependencyInjection.ServiceProviderServiceExtensions.GetRequiredService<ClientServiceProvider>(sp)));
             global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton(services, sp => global::Microsoft.Extensions.DependencyInjection.ServiceProviderServiceExtensions.GetRequiredService<global::Prelast.GraphQL.GetGamesWithFiltrQuery>(global::Microsoft.Extensions.DependencyInjection.ServiceProviderServiceExtensions.GetRequiredService<ClientServiceProvider>(sp)));
             global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton(services, sp => global::Microsoft.Extensions.DependencyInjection.ServiceProviderServiceExtensions.GetRequiredService<global::Prelast.GraphQL.GetGenreQuery>(global::Microsoft.Extensions.DependencyInjection.ServiceProviderServiceExtensions.GetRequiredService<ClientServiceProvider>(sp)));
             global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton(services, sp => global::Microsoft.Extensions.DependencyInjection.ServiceProviderServiceExtensions.GetRequiredService<global::Prelast.GraphQL.GetGenreWithFiltrQuery>(global::Microsoft.Extensions.DependencyInjection.ServiceProviderServiceExtensions.GetRequiredService<ClientServiceProvider>(sp)));
@@ -61,6 +69,48 @@ namespace Microsoft.Extensions.DependencyInjection
             global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<global::StrawberryShake.Serialization.ISerializer, global::StrawberryShake.Serialization.TimeSpanSerializer>(services);
             global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<global::StrawberryShake.Serialization.ISerializer, global::StrawberryShake.Serialization.JsonSerializer>(services);
             global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<global::StrawberryShake.Serialization.ISerializerResolver>(services, sp => new global::StrawberryShake.Serialization.SerializerResolver(global::System.Linq.Enumerable.Concat(global::Microsoft.Extensions.DependencyInjection.ServiceProviderServiceExtensions.GetRequiredService<global::System.Collections.Generic.IEnumerable<global::StrawberryShake.Serialization.ISerializer>>(parentServices), global::Microsoft.Extensions.DependencyInjection.ServiceProviderServiceExtensions.GetRequiredService<global::System.Collections.Generic.IEnumerable<global::StrawberryShake.Serialization.ISerializer>>(sp))));
+            global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<global::StrawberryShake.IOperationResultDataFactory<global::Prelast.GraphQL.IGetDevelWithPagingResult>, global::Prelast.GraphQL.State.GetDevelWithPagingResultFactory>(services);
+            global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<global::StrawberryShake.IOperationResultDataFactory>(services, sp => global::Microsoft.Extensions.DependencyInjection.ServiceProviderServiceExtensions.GetRequiredService<global::StrawberryShake.IOperationResultDataFactory<global::Prelast.GraphQL.IGetDevelWithPagingResult>>(sp));
+            global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<global::StrawberryShake.IOperationRequestFactory>(services, sp => global::Microsoft.Extensions.DependencyInjection.ServiceProviderServiceExtensions.GetRequiredService<global::Prelast.GraphQL.IGetDevelWithPagingQuery>(sp));
+            global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<global::StrawberryShake.IOperationResultBuilder<global::System.Text.Json.JsonDocument, global::Prelast.GraphQL.IGetDevelWithPagingResult>, global::Prelast.GraphQL.State.GetDevelWithPagingBuilder>(services);
+            global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<global::StrawberryShake.IOperationExecutor<global::Prelast.GraphQL.IGetDevelWithPagingResult>>(services, sp => new global::StrawberryShake.OperationExecutor<global::System.Text.Json.JsonDocument, global::Prelast.GraphQL.IGetDevelWithPagingResult>(global::Microsoft.Extensions.DependencyInjection.ServiceProviderServiceExtensions.GetRequiredService<global::StrawberryShake.Transport.Http.IHttpConnection>(sp), () => global::Microsoft.Extensions.DependencyInjection.ServiceProviderServiceExtensions.GetRequiredService<global::StrawberryShake.IOperationResultBuilder<global::System.Text.Json.JsonDocument, global::Prelast.GraphQL.IGetDevelWithPagingResult>>(sp), global::Microsoft.Extensions.DependencyInjection.ServiceProviderServiceExtensions.GetRequiredService<global::StrawberryShake.IOperationStore>(sp), strategy));
+            global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<global::Prelast.GraphQL.GetDevelWithPagingQuery>(services);
+            global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<global::Prelast.GraphQL.IGetDevelWithPagingQuery>(services, sp => global::Microsoft.Extensions.DependencyInjection.ServiceProviderServiceExtensions.GetRequiredService<global::Prelast.GraphQL.GetDevelWithPagingQuery>(sp));
+            global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<global::StrawberryShake.IOperationResultDataFactory<global::Prelast.GraphQL.IGetDevelPrevPageResult>, global::Prelast.GraphQL.State.GetDevelPrevPageResultFactory>(services);
+            global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<global::StrawberryShake.IOperationResultDataFactory>(services, sp => global::Microsoft.Extensions.DependencyInjection.ServiceProviderServiceExtensions.GetRequiredService<global::StrawberryShake.IOperationResultDataFactory<global::Prelast.GraphQL.IGetDevelPrevPageResult>>(sp));
+            global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<global::StrawberryShake.IOperationRequestFactory>(services, sp => global::Microsoft.Extensions.DependencyInjection.ServiceProviderServiceExtensions.GetRequiredService<global::Prelast.GraphQL.IGetDevelPrevPageQuery>(sp));
+            global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<global::StrawberryShake.IOperationResultBuilder<global::System.Text.Json.JsonDocument, global::Prelast.GraphQL.IGetDevelPrevPageResult>, global::Prelast.GraphQL.State.GetDevelPrevPageBuilder>(services);
+            global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<global::StrawberryShake.IOperationExecutor<global::Prelast.GraphQL.IGetDevelPrevPageResult>>(services, sp => new global::StrawberryShake.OperationExecutor<global::System.Text.Json.JsonDocument, global::Prelast.GraphQL.IGetDevelPrevPageResult>(global::Microsoft.Extensions.DependencyInjection.ServiceProviderServiceExtensions.GetRequiredService<global::StrawberryShake.Transport.Http.IHttpConnection>(sp), () => global::Microsoft.Extensions.DependencyInjection.ServiceProviderServiceExtensions.GetRequiredService<global::StrawberryShake.IOperationResultBuilder<global::System.Text.Json.JsonDocument, global::Prelast.GraphQL.IGetDevelPrevPageResult>>(sp), global::Microsoft.Extensions.DependencyInjection.ServiceProviderServiceExtensions.GetRequiredService<global::StrawberryShake.IOperationStore>(sp), strategy));
+            global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<global::Prelast.GraphQL.GetDevelPrevPageQuery>(services);
+            global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<global::Prelast.GraphQL.IGetDevelPrevPageQuery>(services, sp => global::Microsoft.Extensions.DependencyInjection.ServiceProviderServiceExtensions.GetRequiredService<global::Prelast.GraphQL.GetDevelPrevPageQuery>(sp));
+            global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<global::StrawberryShake.IOperationResultDataFactory<global::Prelast.GraphQL.IGetDevelNextPageResult>, global::Prelast.GraphQL.State.GetDevelNextPageResultFactory>(services);
+            global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<global::StrawberryShake.IOperationResultDataFactory>(services, sp => global::Microsoft.Extensions.DependencyInjection.ServiceProviderServiceExtensions.GetRequiredService<global::StrawberryShake.IOperationResultDataFactory<global::Prelast.GraphQL.IGetDevelNextPageResult>>(sp));
+            global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<global::StrawberryShake.IOperationRequestFactory>(services, sp => global::Microsoft.Extensions.DependencyInjection.ServiceProviderServiceExtensions.GetRequiredService<global::Prelast.GraphQL.IGetDevelNextPageQuery>(sp));
+            global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<global::StrawberryShake.IOperationResultBuilder<global::System.Text.Json.JsonDocument, global::Prelast.GraphQL.IGetDevelNextPageResult>, global::Prelast.GraphQL.State.GetDevelNextPageBuilder>(services);
+            global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<global::StrawberryShake.IOperationExecutor<global::Prelast.GraphQL.IGetDevelNextPageResult>>(services, sp => new global::StrawberryShake.OperationExecutor<global::System.Text.Json.JsonDocument, global::Prelast.GraphQL.IGetDevelNextPageResult>(global::Microsoft.Extensions.DependencyInjection.ServiceProviderServiceExtensions.GetRequiredService<global::StrawberryShake.Transport.Http.IHttpConnection>(sp), () => global::Microsoft.Extensions.DependencyInjection.ServiceProviderServiceExtensions.GetRequiredService<global::StrawberryShake.IOperationResultBuilder<global::System.Text.Json.JsonDocument, global::Prelast.GraphQL.IGetDevelNextPageResult>>(sp), global::Microsoft.Extensions.DependencyInjection.ServiceProviderServiceExtensions.GetRequiredService<global::StrawberryShake.IOperationStore>(sp), strategy));
+            global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<global::Prelast.GraphQL.GetDevelNextPageQuery>(services);
+            global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<global::Prelast.GraphQL.IGetDevelNextPageQuery>(services, sp => global::Microsoft.Extensions.DependencyInjection.ServiceProviderServiceExtensions.GetRequiredService<global::Prelast.GraphQL.GetDevelNextPageQuery>(sp));
+            global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<global::StrawberryShake.IOperationResultDataFactory<global::Prelast.GraphQL.IGetGenreWithPagingResult>, global::Prelast.GraphQL.State.GetGenreWithPagingResultFactory>(services);
+            global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<global::StrawberryShake.IOperationResultDataFactory>(services, sp => global::Microsoft.Extensions.DependencyInjection.ServiceProviderServiceExtensions.GetRequiredService<global::StrawberryShake.IOperationResultDataFactory<global::Prelast.GraphQL.IGetGenreWithPagingResult>>(sp));
+            global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<global::StrawberryShake.IOperationRequestFactory>(services, sp => global::Microsoft.Extensions.DependencyInjection.ServiceProviderServiceExtensions.GetRequiredService<global::Prelast.GraphQL.IGetGenreWithPagingQuery>(sp));
+            global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<global::StrawberryShake.IOperationResultBuilder<global::System.Text.Json.JsonDocument, global::Prelast.GraphQL.IGetGenreWithPagingResult>, global::Prelast.GraphQL.State.GetGenreWithPagingBuilder>(services);
+            global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<global::StrawberryShake.IOperationExecutor<global::Prelast.GraphQL.IGetGenreWithPagingResult>>(services, sp => new global::StrawberryShake.OperationExecutor<global::System.Text.Json.JsonDocument, global::Prelast.GraphQL.IGetGenreWithPagingResult>(global::Microsoft.Extensions.DependencyInjection.ServiceProviderServiceExtensions.GetRequiredService<global::StrawberryShake.Transport.Http.IHttpConnection>(sp), () => global::Microsoft.Extensions.DependencyInjection.ServiceProviderServiceExtensions.GetRequiredService<global::StrawberryShake.IOperationResultBuilder<global::System.Text.Json.JsonDocument, global::Prelast.GraphQL.IGetGenreWithPagingResult>>(sp), global::Microsoft.Extensions.DependencyInjection.ServiceProviderServiceExtensions.GetRequiredService<global::StrawberryShake.IOperationStore>(sp), strategy));
+            global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<global::Prelast.GraphQL.GetGenreWithPagingQuery>(services);
+            global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<global::Prelast.GraphQL.IGetGenreWithPagingQuery>(services, sp => global::Microsoft.Extensions.DependencyInjection.ServiceProviderServiceExtensions.GetRequiredService<global::Prelast.GraphQL.GetGenreWithPagingQuery>(sp));
+            global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<global::StrawberryShake.IOperationResultDataFactory<global::Prelast.GraphQL.IGetGenreNextPageResult>, global::Prelast.GraphQL.State.GetGenreNextPageResultFactory>(services);
+            global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<global::StrawberryShake.IOperationResultDataFactory>(services, sp => global::Microsoft.Extensions.DependencyInjection.ServiceProviderServiceExtensions.GetRequiredService<global::StrawberryShake.IOperationResultDataFactory<global::Prelast.GraphQL.IGetGenreNextPageResult>>(sp));
+            global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<global::StrawberryShake.IOperationRequestFactory>(services, sp => global::Microsoft.Extensions.DependencyInjection.ServiceProviderServiceExtensions.GetRequiredService<global::Prelast.GraphQL.IGetGenreNextPageQuery>(sp));
+            global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<global::StrawberryShake.IOperationResultBuilder<global::System.Text.Json.JsonDocument, global::Prelast.GraphQL.IGetGenreNextPageResult>, global::Prelast.GraphQL.State.GetGenreNextPageBuilder>(services);
+            global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<global::StrawberryShake.IOperationExecutor<global::Prelast.GraphQL.IGetGenreNextPageResult>>(services, sp => new global::StrawberryShake.OperationExecutor<global::System.Text.Json.JsonDocument, global::Prelast.GraphQL.IGetGenreNextPageResult>(global::Microsoft.Extensions.DependencyInjection.ServiceProviderServiceExtensions.GetRequiredService<global::StrawberryShake.Transport.Http.IHttpConnection>(sp), () => global::Microsoft.Extensions.DependencyInjection.ServiceProviderServiceExtensions.GetRequiredService<global::StrawberryShake.IOperationResultBuilder<global::System.Text.Json.JsonDocument, global::Prelast.GraphQL.IGetGenreNextPageResult>>(sp), global::Microsoft.Extensions.DependencyInjection.ServiceProviderServiceExtensions.GetRequiredService<global::StrawberryShake.IOperationStore>(sp), strategy));
+            global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<global::Prelast.GraphQL.GetGenreNextPageQuery>(services);
+            global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<global::Prelast.GraphQL.IGetGenreNextPageQuery>(services, sp => global::Microsoft.Extensions.DependencyInjection.ServiceProviderServiceExtensions.GetRequiredService<global::Prelast.GraphQL.GetGenreNextPageQuery>(sp));
+            global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<global::StrawberryShake.IOperationResultDataFactory<global::Prelast.GraphQL.IGetGenrePrevPageResult>, global::Prelast.GraphQL.State.GetGenrePrevPageResultFactory>(services);
+            global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<global::StrawberryShake.IOperationResultDataFactory>(services, sp => global::Microsoft.Extensions.DependencyInjection.ServiceProviderServiceExtensions.GetRequiredService<global::StrawberryShake.IOperationResultDataFactory<global::Prelast.GraphQL.IGetGenrePrevPageResult>>(sp));
+            global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<global::StrawberryShake.IOperationRequestFactory>(services, sp => global::Microsoft.Extensions.DependencyInjection.ServiceProviderServiceExtensions.GetRequiredService<global::Prelast.GraphQL.IGetGenrePrevPageQuery>(sp));
+            global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<global::StrawberryShake.IOperationResultBuilder<global::System.Text.Json.JsonDocument, global::Prelast.GraphQL.IGetGenrePrevPageResult>, global::Prelast.GraphQL.State.GetGenrePrevPageBuilder>(services);
+            global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<global::StrawberryShake.IOperationExecutor<global::Prelast.GraphQL.IGetGenrePrevPageResult>>(services, sp => new global::StrawberryShake.OperationExecutor<global::System.Text.Json.JsonDocument, global::Prelast.GraphQL.IGetGenrePrevPageResult>(global::Microsoft.Extensions.DependencyInjection.ServiceProviderServiceExtensions.GetRequiredService<global::StrawberryShake.Transport.Http.IHttpConnection>(sp), () => global::Microsoft.Extensions.DependencyInjection.ServiceProviderServiceExtensions.GetRequiredService<global::StrawberryShake.IOperationResultBuilder<global::System.Text.Json.JsonDocument, global::Prelast.GraphQL.IGetGenrePrevPageResult>>(sp), global::Microsoft.Extensions.DependencyInjection.ServiceProviderServiceExtensions.GetRequiredService<global::StrawberryShake.IOperationStore>(sp), strategy));
+            global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<global::Prelast.GraphQL.GetGenrePrevPageQuery>(services);
+            global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<global::Prelast.GraphQL.IGetGenrePrevPageQuery>(services, sp => global::Microsoft.Extensions.DependencyInjection.ServiceProviderServiceExtensions.GetRequiredService<global::Prelast.GraphQL.GetGenrePrevPageQuery>(sp));
             global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<global::StrawberryShake.IOperationResultDataFactory<global::Prelast.GraphQL.IChangeNameDevResult>, global::Prelast.GraphQL.State.ChangeNameDevResultFactory>(services);
             global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<global::StrawberryShake.IOperationResultDataFactory>(services, sp => global::Microsoft.Extensions.DependencyInjection.ServiceProviderServiceExtensions.GetRequiredService<global::StrawberryShake.IOperationResultDataFactory<global::Prelast.GraphQL.IChangeNameDevResult>>(sp));
             global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<global::StrawberryShake.IOperationRequestFactory>(services, sp => global::Microsoft.Extensions.DependencyInjection.ServiceProviderServiceExtensions.GetRequiredService<global::Prelast.GraphQL.IChangeNameDevMutation>(sp));
@@ -145,6 +195,20 @@ namespace Microsoft.Extensions.DependencyInjection
             global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<global::StrawberryShake.IOperationExecutor<global::Prelast.GraphQL.IGetGamesResult>>(services, sp => new global::StrawberryShake.OperationExecutor<global::System.Text.Json.JsonDocument, global::Prelast.GraphQL.IGetGamesResult>(global::Microsoft.Extensions.DependencyInjection.ServiceProviderServiceExtensions.GetRequiredService<global::StrawberryShake.Transport.Http.IHttpConnection>(sp), () => global::Microsoft.Extensions.DependencyInjection.ServiceProviderServiceExtensions.GetRequiredService<global::StrawberryShake.IOperationResultBuilder<global::System.Text.Json.JsonDocument, global::Prelast.GraphQL.IGetGamesResult>>(sp), global::Microsoft.Extensions.DependencyInjection.ServiceProviderServiceExtensions.GetRequiredService<global::StrawberryShake.IOperationStore>(sp), strategy));
             global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<global::Prelast.GraphQL.GetGamesQuery>(services);
             global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<global::Prelast.GraphQL.IGetGamesQuery>(services, sp => global::Microsoft.Extensions.DependencyInjection.ServiceProviderServiceExtensions.GetRequiredService<global::Prelast.GraphQL.GetGamesQuery>(sp));
+            global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<global::StrawberryShake.IOperationResultDataFactory<global::Prelast.GraphQL.IGetGamesNextPageResult>, global::Prelast.GraphQL.State.GetGamesNextPageResultFactory>(services);
+            global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<global::StrawberryShake.IOperationResultDataFactory>(services, sp => global::Microsoft.Extensions.DependencyInjection.ServiceProviderServiceExtensions.GetRequiredService<global::StrawberryShake.IOperationResultDataFactory<global::Prelast.GraphQL.IGetGamesNextPageResult>>(sp));
+            global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<global::StrawberryShake.IOperationRequestFactory>(services, sp => global::Microsoft.Extensions.DependencyInjection.ServiceProviderServiceExtensions.GetRequiredService<global::Prelast.GraphQL.IGetGamesNextPageQuery>(sp));
+            global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<global::StrawberryShake.IOperationResultBuilder<global::System.Text.Json.JsonDocument, global::Prelast.GraphQL.IGetGamesNextPageResult>, global::Prelast.GraphQL.State.GetGamesNextPageBuilder>(services);
+            global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<global::StrawberryShake.IOperationExecutor<global::Prelast.GraphQL.IGetGamesNextPageResult>>(services, sp => new global::StrawberryShake.OperationExecutor<global::System.Text.Json.JsonDocument, global::Prelast.GraphQL.IGetGamesNextPageResult>(global::Microsoft.Extensions.DependencyInjection.ServiceProviderServiceExtensions.GetRequiredService<global::StrawberryShake.Transport.Http.IHttpConnection>(sp), () => global::Microsoft.Extensions.DependencyInjection.ServiceProviderServiceExtensions.GetRequiredService<global::StrawberryShake.IOperationResultBuilder<global::System.Text.Json.JsonDocument, global::Prelast.GraphQL.IGetGamesNextPageResult>>(sp), global::Microsoft.Extensions.DependencyInjection.ServiceProviderServiceExtensions.GetRequiredService<global::StrawberryShake.IOperationStore>(sp), strategy));
+            global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<global::Prelast.GraphQL.GetGamesNextPageQuery>(services);
+            global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<global::Prelast.GraphQL.IGetGamesNextPageQuery>(services, sp => global::Microsoft.Extensions.DependencyInjection.ServiceProviderServiceExtensions.GetRequiredService<global::Prelast.GraphQL.GetGamesNextPageQuery>(sp));
+            global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<global::StrawberryShake.IOperationResultDataFactory<global::Prelast.GraphQL.IGetGamesPrevPageResult>, global::Prelast.GraphQL.State.GetGamesPrevPageResultFactory>(services);
+            global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<global::StrawberryShake.IOperationResultDataFactory>(services, sp => global::Microsoft.Extensions.DependencyInjection.ServiceProviderServiceExtensions.GetRequiredService<global::StrawberryShake.IOperationResultDataFactory<global::Prelast.GraphQL.IGetGamesPrevPageResult>>(sp));
+            global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<global::StrawberryShake.IOperationRequestFactory>(services, sp => global::Microsoft.Extensions.DependencyInjection.ServiceProviderServiceExtensions.GetRequiredService<global::Prelast.GraphQL.IGetGamesPrevPageQuery>(sp));
+            global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<global::StrawberryShake.IOperationResultBuilder<global::System.Text.Json.JsonDocument, global::Prelast.GraphQL.IGetGamesPrevPageResult>, global::Prelast.GraphQL.State.GetGamesPrevPageBuilder>(services);
+            global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<global::StrawberryShake.IOperationExecutor<global::Prelast.GraphQL.IGetGamesPrevPageResult>>(services, sp => new global::StrawberryShake.OperationExecutor<global::System.Text.Json.JsonDocument, global::Prelast.GraphQL.IGetGamesPrevPageResult>(global::Microsoft.Extensions.DependencyInjection.ServiceProviderServiceExtensions.GetRequiredService<global::StrawberryShake.Transport.Http.IHttpConnection>(sp), () => global::Microsoft.Extensions.DependencyInjection.ServiceProviderServiceExtensions.GetRequiredService<global::StrawberryShake.IOperationResultBuilder<global::System.Text.Json.JsonDocument, global::Prelast.GraphQL.IGetGamesPrevPageResult>>(sp), global::Microsoft.Extensions.DependencyInjection.ServiceProviderServiceExtensions.GetRequiredService<global::StrawberryShake.IOperationStore>(sp), strategy));
+            global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<global::Prelast.GraphQL.GetGamesPrevPageQuery>(services);
+            global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<global::Prelast.GraphQL.IGetGamesPrevPageQuery>(services, sp => global::Microsoft.Extensions.DependencyInjection.ServiceProviderServiceExtensions.GetRequiredService<global::Prelast.GraphQL.GetGamesPrevPageQuery>(sp));
             global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<global::StrawberryShake.IOperationResultDataFactory<global::Prelast.GraphQL.IGetGamesWithFiltrResult>, global::Prelast.GraphQL.State.GetGamesWithFiltrResultFactory>(services);
             global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<global::StrawberryShake.IOperationResultDataFactory>(services, sp => global::Microsoft.Extensions.DependencyInjection.ServiceProviderServiceExtensions.GetRequiredService<global::StrawberryShake.IOperationResultDataFactory<global::Prelast.GraphQL.IGetGamesWithFiltrResult>>(sp));
             global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<global::StrawberryShake.IOperationRequestFactory>(services, sp => global::Microsoft.Extensions.DependencyInjection.ServiceProviderServiceExtensions.GetRequiredService<global::Prelast.GraphQL.IGetGamesWithFiltrQuery>(sp));
@@ -199,14 +263,2228 @@ namespace Microsoft.Extensions.DependencyInjection
 namespace Prelast.GraphQL
 {
     [global::System.CodeDom.Compiler.GeneratedCode("StrawberryShake", "12.4.1.0")]
+    public partial class GetDevelWithPagingResult : global::System.IEquatable<GetDevelWithPagingResult>, IGetDevelWithPagingResult
+    {
+        public GetDevelWithPagingResult(global::Prelast.GraphQL.IGetDevelWithPaging_AllDeveloper? allDeveloper)
+        {
+            AllDeveloper = allDeveloper;
+        }
+
+        public global::Prelast.GraphQL.IGetDevelWithPaging_AllDeveloper? AllDeveloper { get; }
+
+        public virtual global::System.Boolean Equals(GetDevelWithPagingResult? other)
+        {
+            if (ReferenceEquals(null, other))
+            {
+                return false;
+            }
+
+            if (ReferenceEquals(this, other))
+            {
+                return true;
+            }
+
+            if (other.GetType() != GetType())
+            {
+                return false;
+            }
+
+            return (((AllDeveloper is null && other.AllDeveloper is null) || AllDeveloper != null && AllDeveloper.Equals(other.AllDeveloper)));
+        }
+
+        public override global::System.Boolean Equals(global::System.Object? obj)
+        {
+            if (ReferenceEquals(null, obj))
+            {
+                return false;
+            }
+
+            if (ReferenceEquals(this, obj))
+            {
+                return true;
+            }
+
+            if (obj.GetType() != GetType())
+            {
+                return false;
+            }
+
+            return Equals((GetDevelWithPagingResult)obj);
+        }
+
+        public override global::System.Int32 GetHashCode()
+        {
+            unchecked
+            {
+                int hash = 5;
+                if (AllDeveloper != null)
+                {
+                    hash ^= 397 * AllDeveloper.GetHashCode();
+                }
+
+                return hash;
+            }
+        }
+    }
+
+    /// <summary>
+    /// A connection to a list of items.
+    /// </summary>
+    [global::System.CodeDom.Compiler.GeneratedCode("StrawberryShake", "12.4.1.0")]
+    public partial class GetDevelWithPaging_AllDeveloper_AllDeveloperConnection : global::System.IEquatable<GetDevelWithPaging_AllDeveloper_AllDeveloperConnection>, IGetDevelWithPaging_AllDeveloper_AllDeveloperConnection
+    {
+        public GetDevelWithPaging_AllDeveloper_AllDeveloperConnection(global::System.Collections.Generic.IReadOnlyList<global::Prelast.GraphQL.IGetDevelWithPaging_AllDeveloper_Nodes?>? nodes, global::Prelast.GraphQL.IGetDevelWithPaging_AllDeveloper_PageInfo pageInfo)
+        {
+            Nodes = nodes;
+            PageInfo = pageInfo;
+        }
+
+        /// <summary>
+        /// A flattened list of the nodes.
+        /// </summary>
+        public global::System.Collections.Generic.IReadOnlyList<global::Prelast.GraphQL.IGetDevelWithPaging_AllDeveloper_Nodes?>? Nodes { get; }
+
+        /// <summary>
+        /// Information to aid in pagination.
+        /// </summary>
+        public global::Prelast.GraphQL.IGetDevelWithPaging_AllDeveloper_PageInfo PageInfo { get; }
+
+        public virtual global::System.Boolean Equals(GetDevelWithPaging_AllDeveloper_AllDeveloperConnection? other)
+        {
+            if (ReferenceEquals(null, other))
+            {
+                return false;
+            }
+
+            if (ReferenceEquals(this, other))
+            {
+                return true;
+            }
+
+            if (other.GetType() != GetType())
+            {
+                return false;
+            }
+
+            return (global::StrawberryShake.Helper.ComparisonHelper.SequenceEqual(Nodes, other.Nodes)) && PageInfo.Equals(other.PageInfo);
+        }
+
+        public override global::System.Boolean Equals(global::System.Object? obj)
+        {
+            if (ReferenceEquals(null, obj))
+            {
+                return false;
+            }
+
+            if (ReferenceEquals(this, obj))
+            {
+                return true;
+            }
+
+            if (obj.GetType() != GetType())
+            {
+                return false;
+            }
+
+            return Equals((GetDevelWithPaging_AllDeveloper_AllDeveloperConnection)obj);
+        }
+
+        public override global::System.Int32 GetHashCode()
+        {
+            unchecked
+            {
+                int hash = 5;
+                if (Nodes != null)
+                {
+                    foreach (var Nodes_elm in Nodes)
+                    {
+                        if (Nodes_elm != null)
+                        {
+                            hash ^= 397 * Nodes_elm.GetHashCode();
+                        }
+                    }
+                }
+
+                hash ^= 397 * PageInfo.GetHashCode();
+                return hash;
+            }
+        }
+    }
+
+    [global::System.CodeDom.Compiler.GeneratedCode("StrawberryShake", "12.4.1.0")]
+    public partial class GetDevelWithPaging_AllDeveloper_Nodes_Developers : global::System.IEquatable<GetDevelWithPaging_AllDeveloper_Nodes_Developers>, IGetDevelWithPaging_AllDeveloper_Nodes_Developers
+    {
+        public GetDevelWithPaging_AllDeveloper_Nodes_Developers(global::System.Int32 developerId, global::System.String? name, global::System.String? country)
+        {
+            DeveloperId = developerId;
+            Name = name;
+            Country = country;
+        }
+
+        public global::System.Int32 DeveloperId { get; }
+
+        public global::System.String? Name { get; }
+
+        public global::System.String? Country { get; }
+
+        public virtual global::System.Boolean Equals(GetDevelWithPaging_AllDeveloper_Nodes_Developers? other)
+        {
+            if (ReferenceEquals(null, other))
+            {
+                return false;
+            }
+
+            if (ReferenceEquals(this, other))
+            {
+                return true;
+            }
+
+            if (other.GetType() != GetType())
+            {
+                return false;
+            }
+
+            return (DeveloperId == other.DeveloperId) && ((Name is null && other.Name is null) || Name != null && Name.Equals(other.Name)) && ((Country is null && other.Country is null) || Country != null && Country.Equals(other.Country));
+        }
+
+        public override global::System.Boolean Equals(global::System.Object? obj)
+        {
+            if (ReferenceEquals(null, obj))
+            {
+                return false;
+            }
+
+            if (ReferenceEquals(this, obj))
+            {
+                return true;
+            }
+
+            if (obj.GetType() != GetType())
+            {
+                return false;
+            }
+
+            return Equals((GetDevelWithPaging_AllDeveloper_Nodes_Developers)obj);
+        }
+
+        public override global::System.Int32 GetHashCode()
+        {
+            unchecked
+            {
+                int hash = 5;
+                hash ^= 397 * DeveloperId.GetHashCode();
+                if (Name != null)
+                {
+                    hash ^= 397 * Name.GetHashCode();
+                }
+
+                if (Country != null)
+                {
+                    hash ^= 397 * Country.GetHashCode();
+                }
+
+                return hash;
+            }
+        }
+    }
+
+    /// <summary>
+    /// Information about pagination in a connection.
+    /// </summary>
+    [global::System.CodeDom.Compiler.GeneratedCode("StrawberryShake", "12.4.1.0")]
+    public partial class GetDevelWithPaging_AllDeveloper_PageInfo_PageInfo : global::System.IEquatable<GetDevelWithPaging_AllDeveloper_PageInfo_PageInfo>, IGetDevelWithPaging_AllDeveloper_PageInfo_PageInfo
+    {
+        public GetDevelWithPaging_AllDeveloper_PageInfo_PageInfo(global::System.Boolean hasNextPage, global::System.String? endCursor)
+        {
+            HasNextPage = hasNextPage;
+            EndCursor = endCursor;
+        }
+
+        /// <summary>
+        /// Indicates whether more edges exist following the set defined by the clients arguments.
+        /// </summary>
+        public global::System.Boolean HasNextPage { get; }
+
+        /// <summary>
+        /// When paginating forwards, the cursor to continue.
+        /// </summary>
+        public global::System.String? EndCursor { get; }
+
+        public virtual global::System.Boolean Equals(GetDevelWithPaging_AllDeveloper_PageInfo_PageInfo? other)
+        {
+            if (ReferenceEquals(null, other))
+            {
+                return false;
+            }
+
+            if (ReferenceEquals(this, other))
+            {
+                return true;
+            }
+
+            if (other.GetType() != GetType())
+            {
+                return false;
+            }
+
+            return (HasNextPage == other.HasNextPage) && ((EndCursor is null && other.EndCursor is null) || EndCursor != null && EndCursor.Equals(other.EndCursor));
+        }
+
+        public override global::System.Boolean Equals(global::System.Object? obj)
+        {
+            if (ReferenceEquals(null, obj))
+            {
+                return false;
+            }
+
+            if (ReferenceEquals(this, obj))
+            {
+                return true;
+            }
+
+            if (obj.GetType() != GetType())
+            {
+                return false;
+            }
+
+            return Equals((GetDevelWithPaging_AllDeveloper_PageInfo_PageInfo)obj);
+        }
+
+        public override global::System.Int32 GetHashCode()
+        {
+            unchecked
+            {
+                int hash = 5;
+                hash ^= 397 * HasNextPage.GetHashCode();
+                if (EndCursor != null)
+                {
+                    hash ^= 397 * EndCursor.GetHashCode();
+                }
+
+                return hash;
+            }
+        }
+    }
+
+    [global::System.CodeDom.Compiler.GeneratedCode("StrawberryShake", "12.4.1.0")]
+    public interface IGetDevelWithPagingResult
+    {
+        public global::Prelast.GraphQL.IGetDevelWithPaging_AllDeveloper? AllDeveloper { get; }
+    }
+
+    /// <summary>
+    /// A connection to a list of items.
+    /// </summary>
+    [global::System.CodeDom.Compiler.GeneratedCode("StrawberryShake", "12.4.1.0")]
+    public interface IGetDevelWithPaging_AllDeveloper
+    {
+        /// <summary>
+        /// A flattened list of the nodes.
+        /// </summary>
+        public global::System.Collections.Generic.IReadOnlyList<global::Prelast.GraphQL.IGetDevelWithPaging_AllDeveloper_Nodes?>? Nodes { get; }
+
+        /// <summary>
+        /// Information to aid in pagination.
+        /// </summary>
+        public global::Prelast.GraphQL.IGetDevelWithPaging_AllDeveloper_PageInfo PageInfo { get; }
+    }
+
+    /// <summary>
+    /// A connection to a list of items.
+    /// </summary>
+    [global::System.CodeDom.Compiler.GeneratedCode("StrawberryShake", "12.4.1.0")]
+    public interface IGetDevelWithPaging_AllDeveloper_AllDeveloperConnection : IGetDevelWithPaging_AllDeveloper
+    {
+    }
+
+    [global::System.CodeDom.Compiler.GeneratedCode("StrawberryShake", "12.4.1.0")]
+    public interface IDevelopersInfo
+    {
+        public global::System.Int32 DeveloperId { get; }
+
+        public global::System.String? Name { get; }
+
+        public global::System.String? Country { get; }
+    }
+
+    [global::System.CodeDom.Compiler.GeneratedCode("StrawberryShake", "12.4.1.0")]
+    public interface IGetDevelWithPaging_AllDeveloper_Nodes : IDevelopersInfo
+    {
+    }
+
+    [global::System.CodeDom.Compiler.GeneratedCode("StrawberryShake", "12.4.1.0")]
+    public interface IGetDevelWithPaging_AllDeveloper_Nodes_Developers : IGetDevelWithPaging_AllDeveloper_Nodes
+    {
+    }
+
+    /// <summary>
+    /// Information about pagination in a connection.
+    /// </summary>
+    [global::System.CodeDom.Compiler.GeneratedCode("StrawberryShake", "12.4.1.0")]
+    public interface IGetDevelWithPaging_AllDeveloper_PageInfo
+    {
+        /// <summary>
+        /// Indicates whether more edges exist following the set defined by the clients arguments.
+        /// </summary>
+        public global::System.Boolean HasNextPage { get; }
+
+        /// <summary>
+        /// When paginating forwards, the cursor to continue.
+        /// </summary>
+        public global::System.String? EndCursor { get; }
+    }
+
+    /// <summary>
+    /// Information about pagination in a connection.
+    /// </summary>
+    [global::System.CodeDom.Compiler.GeneratedCode("StrawberryShake", "12.4.1.0")]
+    public interface IGetDevelWithPaging_AllDeveloper_PageInfo_PageInfo : IGetDevelWithPaging_AllDeveloper_PageInfo
+    {
+    }
+
+    [global::System.CodeDom.Compiler.GeneratedCode("StrawberryShake", "12.4.1.0")]
+    public partial class GetDevelPrevPageResult : global::System.IEquatable<GetDevelPrevPageResult>, IGetDevelPrevPageResult
+    {
+        public GetDevelPrevPageResult(global::Prelast.GraphQL.IGetDevelPrevPage_AllDeveloper? allDeveloper)
+        {
+            AllDeveloper = allDeveloper;
+        }
+
+        public global::Prelast.GraphQL.IGetDevelPrevPage_AllDeveloper? AllDeveloper { get; }
+
+        public virtual global::System.Boolean Equals(GetDevelPrevPageResult? other)
+        {
+            if (ReferenceEquals(null, other))
+            {
+                return false;
+            }
+
+            if (ReferenceEquals(this, other))
+            {
+                return true;
+            }
+
+            if (other.GetType() != GetType())
+            {
+                return false;
+            }
+
+            return (((AllDeveloper is null && other.AllDeveloper is null) || AllDeveloper != null && AllDeveloper.Equals(other.AllDeveloper)));
+        }
+
+        public override global::System.Boolean Equals(global::System.Object? obj)
+        {
+            if (ReferenceEquals(null, obj))
+            {
+                return false;
+            }
+
+            if (ReferenceEquals(this, obj))
+            {
+                return true;
+            }
+
+            if (obj.GetType() != GetType())
+            {
+                return false;
+            }
+
+            return Equals((GetDevelPrevPageResult)obj);
+        }
+
+        public override global::System.Int32 GetHashCode()
+        {
+            unchecked
+            {
+                int hash = 5;
+                if (AllDeveloper != null)
+                {
+                    hash ^= 397 * AllDeveloper.GetHashCode();
+                }
+
+                return hash;
+            }
+        }
+    }
+
+    /// <summary>
+    /// A connection to a list of items.
+    /// </summary>
+    [global::System.CodeDom.Compiler.GeneratedCode("StrawberryShake", "12.4.1.0")]
+    public partial class GetDevelPrevPage_AllDeveloper_AllDeveloperConnection : global::System.IEquatable<GetDevelPrevPage_AllDeveloper_AllDeveloperConnection>, IGetDevelPrevPage_AllDeveloper_AllDeveloperConnection
+    {
+        public GetDevelPrevPage_AllDeveloper_AllDeveloperConnection(global::System.Collections.Generic.IReadOnlyList<global::Prelast.GraphQL.IGetDevelPrevPage_AllDeveloper_Nodes?>? nodes, global::Prelast.GraphQL.IGetDevelPrevPage_AllDeveloper_PageInfo pageInfo)
+        {
+            Nodes = nodes;
+            PageInfo = pageInfo;
+        }
+
+        /// <summary>
+        /// A flattened list of the nodes.
+        /// </summary>
+        public global::System.Collections.Generic.IReadOnlyList<global::Prelast.GraphQL.IGetDevelPrevPage_AllDeveloper_Nodes?>? Nodes { get; }
+
+        /// <summary>
+        /// Information to aid in pagination.
+        /// </summary>
+        public global::Prelast.GraphQL.IGetDevelPrevPage_AllDeveloper_PageInfo PageInfo { get; }
+
+        public virtual global::System.Boolean Equals(GetDevelPrevPage_AllDeveloper_AllDeveloperConnection? other)
+        {
+            if (ReferenceEquals(null, other))
+            {
+                return false;
+            }
+
+            if (ReferenceEquals(this, other))
+            {
+                return true;
+            }
+
+            if (other.GetType() != GetType())
+            {
+                return false;
+            }
+
+            return (global::StrawberryShake.Helper.ComparisonHelper.SequenceEqual(Nodes, other.Nodes)) && PageInfo.Equals(other.PageInfo);
+        }
+
+        public override global::System.Boolean Equals(global::System.Object? obj)
+        {
+            if (ReferenceEquals(null, obj))
+            {
+                return false;
+            }
+
+            if (ReferenceEquals(this, obj))
+            {
+                return true;
+            }
+
+            if (obj.GetType() != GetType())
+            {
+                return false;
+            }
+
+            return Equals((GetDevelPrevPage_AllDeveloper_AllDeveloperConnection)obj);
+        }
+
+        public override global::System.Int32 GetHashCode()
+        {
+            unchecked
+            {
+                int hash = 5;
+                if (Nodes != null)
+                {
+                    foreach (var Nodes_elm in Nodes)
+                    {
+                        if (Nodes_elm != null)
+                        {
+                            hash ^= 397 * Nodes_elm.GetHashCode();
+                        }
+                    }
+                }
+
+                hash ^= 397 * PageInfo.GetHashCode();
+                return hash;
+            }
+        }
+    }
+
+    [global::System.CodeDom.Compiler.GeneratedCode("StrawberryShake", "12.4.1.0")]
+    public partial class GetDevelPrevPage_AllDeveloper_Nodes_Developers : global::System.IEquatable<GetDevelPrevPage_AllDeveloper_Nodes_Developers>, IGetDevelPrevPage_AllDeveloper_Nodes_Developers
+    {
+        public GetDevelPrevPage_AllDeveloper_Nodes_Developers(global::System.Int32 developerId, global::System.String? name, global::System.String? country)
+        {
+            DeveloperId = developerId;
+            Name = name;
+            Country = country;
+        }
+
+        public global::System.Int32 DeveloperId { get; }
+
+        public global::System.String? Name { get; }
+
+        public global::System.String? Country { get; }
+
+        public virtual global::System.Boolean Equals(GetDevelPrevPage_AllDeveloper_Nodes_Developers? other)
+        {
+            if (ReferenceEquals(null, other))
+            {
+                return false;
+            }
+
+            if (ReferenceEquals(this, other))
+            {
+                return true;
+            }
+
+            if (other.GetType() != GetType())
+            {
+                return false;
+            }
+
+            return (DeveloperId == other.DeveloperId) && ((Name is null && other.Name is null) || Name != null && Name.Equals(other.Name)) && ((Country is null && other.Country is null) || Country != null && Country.Equals(other.Country));
+        }
+
+        public override global::System.Boolean Equals(global::System.Object? obj)
+        {
+            if (ReferenceEquals(null, obj))
+            {
+                return false;
+            }
+
+            if (ReferenceEquals(this, obj))
+            {
+                return true;
+            }
+
+            if (obj.GetType() != GetType())
+            {
+                return false;
+            }
+
+            return Equals((GetDevelPrevPage_AllDeveloper_Nodes_Developers)obj);
+        }
+
+        public override global::System.Int32 GetHashCode()
+        {
+            unchecked
+            {
+                int hash = 5;
+                hash ^= 397 * DeveloperId.GetHashCode();
+                if (Name != null)
+                {
+                    hash ^= 397 * Name.GetHashCode();
+                }
+
+                if (Country != null)
+                {
+                    hash ^= 397 * Country.GetHashCode();
+                }
+
+                return hash;
+            }
+        }
+    }
+
+    /// <summary>
+    /// Information about pagination in a connection.
+    /// </summary>
+    [global::System.CodeDom.Compiler.GeneratedCode("StrawberryShake", "12.4.1.0")]
+    public partial class GetDevelPrevPage_AllDeveloper_PageInfo_PageInfo : global::System.IEquatable<GetDevelPrevPage_AllDeveloper_PageInfo_PageInfo>, IGetDevelPrevPage_AllDeveloper_PageInfo_PageInfo
+    {
+        public GetDevelPrevPage_AllDeveloper_PageInfo_PageInfo(global::System.Boolean hasNextPage, global::System.String? endCursor)
+        {
+            HasNextPage = hasNextPage;
+            EndCursor = endCursor;
+        }
+
+        /// <summary>
+        /// Indicates whether more edges exist following the set defined by the clients arguments.
+        /// </summary>
+        public global::System.Boolean HasNextPage { get; }
+
+        /// <summary>
+        /// When paginating forwards, the cursor to continue.
+        /// </summary>
+        public global::System.String? EndCursor { get; }
+
+        public virtual global::System.Boolean Equals(GetDevelPrevPage_AllDeveloper_PageInfo_PageInfo? other)
+        {
+            if (ReferenceEquals(null, other))
+            {
+                return false;
+            }
+
+            if (ReferenceEquals(this, other))
+            {
+                return true;
+            }
+
+            if (other.GetType() != GetType())
+            {
+                return false;
+            }
+
+            return (HasNextPage == other.HasNextPage) && ((EndCursor is null && other.EndCursor is null) || EndCursor != null && EndCursor.Equals(other.EndCursor));
+        }
+
+        public override global::System.Boolean Equals(global::System.Object? obj)
+        {
+            if (ReferenceEquals(null, obj))
+            {
+                return false;
+            }
+
+            if (ReferenceEquals(this, obj))
+            {
+                return true;
+            }
+
+            if (obj.GetType() != GetType())
+            {
+                return false;
+            }
+
+            return Equals((GetDevelPrevPage_AllDeveloper_PageInfo_PageInfo)obj);
+        }
+
+        public override global::System.Int32 GetHashCode()
+        {
+            unchecked
+            {
+                int hash = 5;
+                hash ^= 397 * HasNextPage.GetHashCode();
+                if (EndCursor != null)
+                {
+                    hash ^= 397 * EndCursor.GetHashCode();
+                }
+
+                return hash;
+            }
+        }
+    }
+
+    [global::System.CodeDom.Compiler.GeneratedCode("StrawberryShake", "12.4.1.0")]
+    public interface IGetDevelPrevPageResult
+    {
+        public global::Prelast.GraphQL.IGetDevelPrevPage_AllDeveloper? AllDeveloper { get; }
+    }
+
+    /// <summary>
+    /// A connection to a list of items.
+    /// </summary>
+    [global::System.CodeDom.Compiler.GeneratedCode("StrawberryShake", "12.4.1.0")]
+    public interface IGetDevelPrevPage_AllDeveloper
+    {
+        /// <summary>
+        /// A flattened list of the nodes.
+        /// </summary>
+        public global::System.Collections.Generic.IReadOnlyList<global::Prelast.GraphQL.IGetDevelPrevPage_AllDeveloper_Nodes?>? Nodes { get; }
+
+        /// <summary>
+        /// Information to aid in pagination.
+        /// </summary>
+        public global::Prelast.GraphQL.IGetDevelPrevPage_AllDeveloper_PageInfo PageInfo { get; }
+    }
+
+    /// <summary>
+    /// A connection to a list of items.
+    /// </summary>
+    [global::System.CodeDom.Compiler.GeneratedCode("StrawberryShake", "12.4.1.0")]
+    public interface IGetDevelPrevPage_AllDeveloper_AllDeveloperConnection : IGetDevelPrevPage_AllDeveloper
+    {
+    }
+
+    [global::System.CodeDom.Compiler.GeneratedCode("StrawberryShake", "12.4.1.0")]
+    public interface IGetDevelPrevPage_AllDeveloper_Nodes : IDevelopersInfo
+    {
+    }
+
+    [global::System.CodeDom.Compiler.GeneratedCode("StrawberryShake", "12.4.1.0")]
+    public interface IGetDevelPrevPage_AllDeveloper_Nodes_Developers : IGetDevelPrevPage_AllDeveloper_Nodes
+    {
+    }
+
+    /// <summary>
+    /// Information about pagination in a connection.
+    /// </summary>
+    [global::System.CodeDom.Compiler.GeneratedCode("StrawberryShake", "12.4.1.0")]
+    public interface IGetDevelPrevPage_AllDeveloper_PageInfo
+    {
+        /// <summary>
+        /// Indicates whether more edges exist following the set defined by the clients arguments.
+        /// </summary>
+        public global::System.Boolean HasNextPage { get; }
+
+        /// <summary>
+        /// When paginating forwards, the cursor to continue.
+        /// </summary>
+        public global::System.String? EndCursor { get; }
+    }
+
+    /// <summary>
+    /// Information about pagination in a connection.
+    /// </summary>
+    [global::System.CodeDom.Compiler.GeneratedCode("StrawberryShake", "12.4.1.0")]
+    public interface IGetDevelPrevPage_AllDeveloper_PageInfo_PageInfo : IGetDevelPrevPage_AllDeveloper_PageInfo
+    {
+    }
+
+    [global::System.CodeDom.Compiler.GeneratedCode("StrawberryShake", "12.4.1.0")]
+    public partial class GetDevelNextPageResult : global::System.IEquatable<GetDevelNextPageResult>, IGetDevelNextPageResult
+    {
+        public GetDevelNextPageResult(global::Prelast.GraphQL.IGetDevelNextPage_AllDeveloper? allDeveloper)
+        {
+            AllDeveloper = allDeveloper;
+        }
+
+        public global::Prelast.GraphQL.IGetDevelNextPage_AllDeveloper? AllDeveloper { get; }
+
+        public virtual global::System.Boolean Equals(GetDevelNextPageResult? other)
+        {
+            if (ReferenceEquals(null, other))
+            {
+                return false;
+            }
+
+            if (ReferenceEquals(this, other))
+            {
+                return true;
+            }
+
+            if (other.GetType() != GetType())
+            {
+                return false;
+            }
+
+            return (((AllDeveloper is null && other.AllDeveloper is null) || AllDeveloper != null && AllDeveloper.Equals(other.AllDeveloper)));
+        }
+
+        public override global::System.Boolean Equals(global::System.Object? obj)
+        {
+            if (ReferenceEquals(null, obj))
+            {
+                return false;
+            }
+
+            if (ReferenceEquals(this, obj))
+            {
+                return true;
+            }
+
+            if (obj.GetType() != GetType())
+            {
+                return false;
+            }
+
+            return Equals((GetDevelNextPageResult)obj);
+        }
+
+        public override global::System.Int32 GetHashCode()
+        {
+            unchecked
+            {
+                int hash = 5;
+                if (AllDeveloper != null)
+                {
+                    hash ^= 397 * AllDeveloper.GetHashCode();
+                }
+
+                return hash;
+            }
+        }
+    }
+
+    /// <summary>
+    /// A connection to a list of items.
+    /// </summary>
+    [global::System.CodeDom.Compiler.GeneratedCode("StrawberryShake", "12.4.1.0")]
+    public partial class GetDevelNextPage_AllDeveloper_AllDeveloperConnection : global::System.IEquatable<GetDevelNextPage_AllDeveloper_AllDeveloperConnection>, IGetDevelNextPage_AllDeveloper_AllDeveloperConnection
+    {
+        public GetDevelNextPage_AllDeveloper_AllDeveloperConnection(global::System.Collections.Generic.IReadOnlyList<global::Prelast.GraphQL.IGetDevelNextPage_AllDeveloper_Nodes?>? nodes, global::Prelast.GraphQL.IGetDevelNextPage_AllDeveloper_PageInfo pageInfo)
+        {
+            Nodes = nodes;
+            PageInfo = pageInfo;
+        }
+
+        /// <summary>
+        /// A flattened list of the nodes.
+        /// </summary>
+        public global::System.Collections.Generic.IReadOnlyList<global::Prelast.GraphQL.IGetDevelNextPage_AllDeveloper_Nodes?>? Nodes { get; }
+
+        /// <summary>
+        /// Information to aid in pagination.
+        /// </summary>
+        public global::Prelast.GraphQL.IGetDevelNextPage_AllDeveloper_PageInfo PageInfo { get; }
+
+        public virtual global::System.Boolean Equals(GetDevelNextPage_AllDeveloper_AllDeveloperConnection? other)
+        {
+            if (ReferenceEquals(null, other))
+            {
+                return false;
+            }
+
+            if (ReferenceEquals(this, other))
+            {
+                return true;
+            }
+
+            if (other.GetType() != GetType())
+            {
+                return false;
+            }
+
+            return (global::StrawberryShake.Helper.ComparisonHelper.SequenceEqual(Nodes, other.Nodes)) && PageInfo.Equals(other.PageInfo);
+        }
+
+        public override global::System.Boolean Equals(global::System.Object? obj)
+        {
+            if (ReferenceEquals(null, obj))
+            {
+                return false;
+            }
+
+            if (ReferenceEquals(this, obj))
+            {
+                return true;
+            }
+
+            if (obj.GetType() != GetType())
+            {
+                return false;
+            }
+
+            return Equals((GetDevelNextPage_AllDeveloper_AllDeveloperConnection)obj);
+        }
+
+        public override global::System.Int32 GetHashCode()
+        {
+            unchecked
+            {
+                int hash = 5;
+                if (Nodes != null)
+                {
+                    foreach (var Nodes_elm in Nodes)
+                    {
+                        if (Nodes_elm != null)
+                        {
+                            hash ^= 397 * Nodes_elm.GetHashCode();
+                        }
+                    }
+                }
+
+                hash ^= 397 * PageInfo.GetHashCode();
+                return hash;
+            }
+        }
+    }
+
+    [global::System.CodeDom.Compiler.GeneratedCode("StrawberryShake", "12.4.1.0")]
+    public partial class GetDevelNextPage_AllDeveloper_Nodes_Developers : global::System.IEquatable<GetDevelNextPage_AllDeveloper_Nodes_Developers>, IGetDevelNextPage_AllDeveloper_Nodes_Developers
+    {
+        public GetDevelNextPage_AllDeveloper_Nodes_Developers(global::System.Int32 developerId, global::System.String? name, global::System.String? country)
+        {
+            DeveloperId = developerId;
+            Name = name;
+            Country = country;
+        }
+
+        public global::System.Int32 DeveloperId { get; }
+
+        public global::System.String? Name { get; }
+
+        public global::System.String? Country { get; }
+
+        public virtual global::System.Boolean Equals(GetDevelNextPage_AllDeveloper_Nodes_Developers? other)
+        {
+            if (ReferenceEquals(null, other))
+            {
+                return false;
+            }
+
+            if (ReferenceEquals(this, other))
+            {
+                return true;
+            }
+
+            if (other.GetType() != GetType())
+            {
+                return false;
+            }
+
+            return (DeveloperId == other.DeveloperId) && ((Name is null && other.Name is null) || Name != null && Name.Equals(other.Name)) && ((Country is null && other.Country is null) || Country != null && Country.Equals(other.Country));
+        }
+
+        public override global::System.Boolean Equals(global::System.Object? obj)
+        {
+            if (ReferenceEquals(null, obj))
+            {
+                return false;
+            }
+
+            if (ReferenceEquals(this, obj))
+            {
+                return true;
+            }
+
+            if (obj.GetType() != GetType())
+            {
+                return false;
+            }
+
+            return Equals((GetDevelNextPage_AllDeveloper_Nodes_Developers)obj);
+        }
+
+        public override global::System.Int32 GetHashCode()
+        {
+            unchecked
+            {
+                int hash = 5;
+                hash ^= 397 * DeveloperId.GetHashCode();
+                if (Name != null)
+                {
+                    hash ^= 397 * Name.GetHashCode();
+                }
+
+                if (Country != null)
+                {
+                    hash ^= 397 * Country.GetHashCode();
+                }
+
+                return hash;
+            }
+        }
+    }
+
+    /// <summary>
+    /// Information about pagination in a connection.
+    /// </summary>
+    [global::System.CodeDom.Compiler.GeneratedCode("StrawberryShake", "12.4.1.0")]
+    public partial class GetDevelNextPage_AllDeveloper_PageInfo_PageInfo : global::System.IEquatable<GetDevelNextPage_AllDeveloper_PageInfo_PageInfo>, IGetDevelNextPage_AllDeveloper_PageInfo_PageInfo
+    {
+        public GetDevelNextPage_AllDeveloper_PageInfo_PageInfo(global::System.Boolean hasNextPage, global::System.String? endCursor)
+        {
+            HasNextPage = hasNextPage;
+            EndCursor = endCursor;
+        }
+
+        /// <summary>
+        /// Indicates whether more edges exist following the set defined by the clients arguments.
+        /// </summary>
+        public global::System.Boolean HasNextPage { get; }
+
+        /// <summary>
+        /// When paginating forwards, the cursor to continue.
+        /// </summary>
+        public global::System.String? EndCursor { get; }
+
+        public virtual global::System.Boolean Equals(GetDevelNextPage_AllDeveloper_PageInfo_PageInfo? other)
+        {
+            if (ReferenceEquals(null, other))
+            {
+                return false;
+            }
+
+            if (ReferenceEquals(this, other))
+            {
+                return true;
+            }
+
+            if (other.GetType() != GetType())
+            {
+                return false;
+            }
+
+            return (HasNextPage == other.HasNextPage) && ((EndCursor is null && other.EndCursor is null) || EndCursor != null && EndCursor.Equals(other.EndCursor));
+        }
+
+        public override global::System.Boolean Equals(global::System.Object? obj)
+        {
+            if (ReferenceEquals(null, obj))
+            {
+                return false;
+            }
+
+            if (ReferenceEquals(this, obj))
+            {
+                return true;
+            }
+
+            if (obj.GetType() != GetType())
+            {
+                return false;
+            }
+
+            return Equals((GetDevelNextPage_AllDeveloper_PageInfo_PageInfo)obj);
+        }
+
+        public override global::System.Int32 GetHashCode()
+        {
+            unchecked
+            {
+                int hash = 5;
+                hash ^= 397 * HasNextPage.GetHashCode();
+                if (EndCursor != null)
+                {
+                    hash ^= 397 * EndCursor.GetHashCode();
+                }
+
+                return hash;
+            }
+        }
+    }
+
+    [global::System.CodeDom.Compiler.GeneratedCode("StrawberryShake", "12.4.1.0")]
+    public interface IGetDevelNextPageResult
+    {
+        public global::Prelast.GraphQL.IGetDevelNextPage_AllDeveloper? AllDeveloper { get; }
+    }
+
+    /// <summary>
+    /// A connection to a list of items.
+    /// </summary>
+    [global::System.CodeDom.Compiler.GeneratedCode("StrawberryShake", "12.4.1.0")]
+    public interface IGetDevelNextPage_AllDeveloper
+    {
+        /// <summary>
+        /// A flattened list of the nodes.
+        /// </summary>
+        public global::System.Collections.Generic.IReadOnlyList<global::Prelast.GraphQL.IGetDevelNextPage_AllDeveloper_Nodes?>? Nodes { get; }
+
+        /// <summary>
+        /// Information to aid in pagination.
+        /// </summary>
+        public global::Prelast.GraphQL.IGetDevelNextPage_AllDeveloper_PageInfo PageInfo { get; }
+    }
+
+    /// <summary>
+    /// A connection to a list of items.
+    /// </summary>
+    [global::System.CodeDom.Compiler.GeneratedCode("StrawberryShake", "12.4.1.0")]
+    public interface IGetDevelNextPage_AllDeveloper_AllDeveloperConnection : IGetDevelNextPage_AllDeveloper
+    {
+    }
+
+    [global::System.CodeDom.Compiler.GeneratedCode("StrawberryShake", "12.4.1.0")]
+    public interface IGetDevelNextPage_AllDeveloper_Nodes : IDevelopersInfo
+    {
+    }
+
+    [global::System.CodeDom.Compiler.GeneratedCode("StrawberryShake", "12.4.1.0")]
+    public interface IGetDevelNextPage_AllDeveloper_Nodes_Developers : IGetDevelNextPage_AllDeveloper_Nodes
+    {
+    }
+
+    /// <summary>
+    /// Information about pagination in a connection.
+    /// </summary>
+    [global::System.CodeDom.Compiler.GeneratedCode("StrawberryShake", "12.4.1.0")]
+    public interface IGetDevelNextPage_AllDeveloper_PageInfo
+    {
+        /// <summary>
+        /// Indicates whether more edges exist following the set defined by the clients arguments.
+        /// </summary>
+        public global::System.Boolean HasNextPage { get; }
+
+        /// <summary>
+        /// When paginating forwards, the cursor to continue.
+        /// </summary>
+        public global::System.String? EndCursor { get; }
+    }
+
+    /// <summary>
+    /// Information about pagination in a connection.
+    /// </summary>
+    [global::System.CodeDom.Compiler.GeneratedCode("StrawberryShake", "12.4.1.0")]
+    public interface IGetDevelNextPage_AllDeveloper_PageInfo_PageInfo : IGetDevelNextPage_AllDeveloper_PageInfo
+    {
+    }
+
+    [global::System.CodeDom.Compiler.GeneratedCode("StrawberryShake", "12.4.1.0")]
+    public partial class GetGenreWithPagingResult : global::System.IEquatable<GetGenreWithPagingResult>, IGetGenreWithPagingResult
+    {
+        public GetGenreWithPagingResult(global::Prelast.GraphQL.IGetGenreWithPaging_AllGenre? allGenre)
+        {
+            AllGenre = allGenre;
+        }
+
+        public global::Prelast.GraphQL.IGetGenreWithPaging_AllGenre? AllGenre { get; }
+
+        public virtual global::System.Boolean Equals(GetGenreWithPagingResult? other)
+        {
+            if (ReferenceEquals(null, other))
+            {
+                return false;
+            }
+
+            if (ReferenceEquals(this, other))
+            {
+                return true;
+            }
+
+            if (other.GetType() != GetType())
+            {
+                return false;
+            }
+
+            return (((AllGenre is null && other.AllGenre is null) || AllGenre != null && AllGenre.Equals(other.AllGenre)));
+        }
+
+        public override global::System.Boolean Equals(global::System.Object? obj)
+        {
+            if (ReferenceEquals(null, obj))
+            {
+                return false;
+            }
+
+            if (ReferenceEquals(this, obj))
+            {
+                return true;
+            }
+
+            if (obj.GetType() != GetType())
+            {
+                return false;
+            }
+
+            return Equals((GetGenreWithPagingResult)obj);
+        }
+
+        public override global::System.Int32 GetHashCode()
+        {
+            unchecked
+            {
+                int hash = 5;
+                if (AllGenre != null)
+                {
+                    hash ^= 397 * AllGenre.GetHashCode();
+                }
+
+                return hash;
+            }
+        }
+    }
+
+    /// <summary>
+    /// A connection to a list of items.
+    /// </summary>
+    [global::System.CodeDom.Compiler.GeneratedCode("StrawberryShake", "12.4.1.0")]
+    public partial class GetGenreWithPaging_AllGenre_AllGenreConnection : global::System.IEquatable<GetGenreWithPaging_AllGenre_AllGenreConnection>, IGetGenreWithPaging_AllGenre_AllGenreConnection
+    {
+        public GetGenreWithPaging_AllGenre_AllGenreConnection(global::System.Collections.Generic.IReadOnlyList<global::Prelast.GraphQL.IGetGenreWithPaging_AllGenre_Nodes?>? nodes, global::Prelast.GraphQL.IGetGenreWithPaging_AllGenre_PageInfo pageInfo)
+        {
+            Nodes = nodes;
+            PageInfo = pageInfo;
+        }
+
+        /// <summary>
+        /// A flattened list of the nodes.
+        /// </summary>
+        public global::System.Collections.Generic.IReadOnlyList<global::Prelast.GraphQL.IGetGenreWithPaging_AllGenre_Nodes?>? Nodes { get; }
+
+        /// <summary>
+        /// Information to aid in pagination.
+        /// </summary>
+        public global::Prelast.GraphQL.IGetGenreWithPaging_AllGenre_PageInfo PageInfo { get; }
+
+        public virtual global::System.Boolean Equals(GetGenreWithPaging_AllGenre_AllGenreConnection? other)
+        {
+            if (ReferenceEquals(null, other))
+            {
+                return false;
+            }
+
+            if (ReferenceEquals(this, other))
+            {
+                return true;
+            }
+
+            if (other.GetType() != GetType())
+            {
+                return false;
+            }
+
+            return (global::StrawberryShake.Helper.ComparisonHelper.SequenceEqual(Nodes, other.Nodes)) && PageInfo.Equals(other.PageInfo);
+        }
+
+        public override global::System.Boolean Equals(global::System.Object? obj)
+        {
+            if (ReferenceEquals(null, obj))
+            {
+                return false;
+            }
+
+            if (ReferenceEquals(this, obj))
+            {
+                return true;
+            }
+
+            if (obj.GetType() != GetType())
+            {
+                return false;
+            }
+
+            return Equals((GetGenreWithPaging_AllGenre_AllGenreConnection)obj);
+        }
+
+        public override global::System.Int32 GetHashCode()
+        {
+            unchecked
+            {
+                int hash = 5;
+                if (Nodes != null)
+                {
+                    foreach (var Nodes_elm in Nodes)
+                    {
+                        if (Nodes_elm != null)
+                        {
+                            hash ^= 397 * Nodes_elm.GetHashCode();
+                        }
+                    }
+                }
+
+                hash ^= 397 * PageInfo.GetHashCode();
+                return hash;
+            }
+        }
+    }
+
+    [global::System.CodeDom.Compiler.GeneratedCode("StrawberryShake", "12.4.1.0")]
+    public partial class GetGenreWithPaging_AllGenre_Nodes_Genre : global::System.IEquatable<GetGenreWithPaging_AllGenre_Nodes_Genre>, IGetGenreWithPaging_AllGenre_Nodes_Genre
+    {
+        public GetGenreWithPaging_AllGenre_Nodes_Genre(global::System.Int32 genreId, global::System.String? name)
+        {
+            GenreId = genreId;
+            Name = name;
+        }
+
+        public global::System.Int32 GenreId { get; }
+
+        public global::System.String? Name { get; }
+
+        public virtual global::System.Boolean Equals(GetGenreWithPaging_AllGenre_Nodes_Genre? other)
+        {
+            if (ReferenceEquals(null, other))
+            {
+                return false;
+            }
+
+            if (ReferenceEquals(this, other))
+            {
+                return true;
+            }
+
+            if (other.GetType() != GetType())
+            {
+                return false;
+            }
+
+            return (GenreId == other.GenreId) && ((Name is null && other.Name is null) || Name != null && Name.Equals(other.Name));
+        }
+
+        public override global::System.Boolean Equals(global::System.Object? obj)
+        {
+            if (ReferenceEquals(null, obj))
+            {
+                return false;
+            }
+
+            if (ReferenceEquals(this, obj))
+            {
+                return true;
+            }
+
+            if (obj.GetType() != GetType())
+            {
+                return false;
+            }
+
+            return Equals((GetGenreWithPaging_AllGenre_Nodes_Genre)obj);
+        }
+
+        public override global::System.Int32 GetHashCode()
+        {
+            unchecked
+            {
+                int hash = 5;
+                hash ^= 397 * GenreId.GetHashCode();
+                if (Name != null)
+                {
+                    hash ^= 397 * Name.GetHashCode();
+                }
+
+                return hash;
+            }
+        }
+    }
+
+    /// <summary>
+    /// Information about pagination in a connection.
+    /// </summary>
+    [global::System.CodeDom.Compiler.GeneratedCode("StrawberryShake", "12.4.1.0")]
+    public partial class GetGenreWithPaging_AllGenre_PageInfo_PageInfo : global::System.IEquatable<GetGenreWithPaging_AllGenre_PageInfo_PageInfo>, IGetGenreWithPaging_AllGenre_PageInfo_PageInfo
+    {
+        public GetGenreWithPaging_AllGenre_PageInfo_PageInfo(global::System.Boolean hasNextPage, global::System.String? endCursor)
+        {
+            HasNextPage = hasNextPage;
+            EndCursor = endCursor;
+        }
+
+        /// <summary>
+        /// Indicates whether more edges exist following the set defined by the clients arguments.
+        /// </summary>
+        public global::System.Boolean HasNextPage { get; }
+
+        /// <summary>
+        /// When paginating forwards, the cursor to continue.
+        /// </summary>
+        public global::System.String? EndCursor { get; }
+
+        public virtual global::System.Boolean Equals(GetGenreWithPaging_AllGenre_PageInfo_PageInfo? other)
+        {
+            if (ReferenceEquals(null, other))
+            {
+                return false;
+            }
+
+            if (ReferenceEquals(this, other))
+            {
+                return true;
+            }
+
+            if (other.GetType() != GetType())
+            {
+                return false;
+            }
+
+            return (HasNextPage == other.HasNextPage) && ((EndCursor is null && other.EndCursor is null) || EndCursor != null && EndCursor.Equals(other.EndCursor));
+        }
+
+        public override global::System.Boolean Equals(global::System.Object? obj)
+        {
+            if (ReferenceEquals(null, obj))
+            {
+                return false;
+            }
+
+            if (ReferenceEquals(this, obj))
+            {
+                return true;
+            }
+
+            if (obj.GetType() != GetType())
+            {
+                return false;
+            }
+
+            return Equals((GetGenreWithPaging_AllGenre_PageInfo_PageInfo)obj);
+        }
+
+        public override global::System.Int32 GetHashCode()
+        {
+            unchecked
+            {
+                int hash = 5;
+                hash ^= 397 * HasNextPage.GetHashCode();
+                if (EndCursor != null)
+                {
+                    hash ^= 397 * EndCursor.GetHashCode();
+                }
+
+                return hash;
+            }
+        }
+    }
+
+    [global::System.CodeDom.Compiler.GeneratedCode("StrawberryShake", "12.4.1.0")]
+    public interface IGetGenreWithPagingResult
+    {
+        public global::Prelast.GraphQL.IGetGenreWithPaging_AllGenre? AllGenre { get; }
+    }
+
+    /// <summary>
+    /// A connection to a list of items.
+    /// </summary>
+    [global::System.CodeDom.Compiler.GeneratedCode("StrawberryShake", "12.4.1.0")]
+    public interface IGetGenreWithPaging_AllGenre
+    {
+        /// <summary>
+        /// A flattened list of the nodes.
+        /// </summary>
+        public global::System.Collections.Generic.IReadOnlyList<global::Prelast.GraphQL.IGetGenreWithPaging_AllGenre_Nodes?>? Nodes { get; }
+
+        /// <summary>
+        /// Information to aid in pagination.
+        /// </summary>
+        public global::Prelast.GraphQL.IGetGenreWithPaging_AllGenre_PageInfo PageInfo { get; }
+    }
+
+    /// <summary>
+    /// A connection to a list of items.
+    /// </summary>
+    [global::System.CodeDom.Compiler.GeneratedCode("StrawberryShake", "12.4.1.0")]
+    public interface IGetGenreWithPaging_AllGenre_AllGenreConnection : IGetGenreWithPaging_AllGenre
+    {
+    }
+
+    [global::System.CodeDom.Compiler.GeneratedCode("StrawberryShake", "12.4.1.0")]
+    public interface IGenreInfo
+    {
+        public global::System.Int32 GenreId { get; }
+
+        public global::System.String? Name { get; }
+    }
+
+    [global::System.CodeDom.Compiler.GeneratedCode("StrawberryShake", "12.4.1.0")]
+    public interface IGetGenreWithPaging_AllGenre_Nodes : IGenreInfo
+    {
+    }
+
+    [global::System.CodeDom.Compiler.GeneratedCode("StrawberryShake", "12.4.1.0")]
+    public interface IGetGenreWithPaging_AllGenre_Nodes_Genre : IGetGenreWithPaging_AllGenre_Nodes
+    {
+    }
+
+    /// <summary>
+    /// Information about pagination in a connection.
+    /// </summary>
+    [global::System.CodeDom.Compiler.GeneratedCode("StrawberryShake", "12.4.1.0")]
+    public interface IGetGenreWithPaging_AllGenre_PageInfo
+    {
+        /// <summary>
+        /// Indicates whether more edges exist following the set defined by the clients arguments.
+        /// </summary>
+        public global::System.Boolean HasNextPage { get; }
+
+        /// <summary>
+        /// When paginating forwards, the cursor to continue.
+        /// </summary>
+        public global::System.String? EndCursor { get; }
+    }
+
+    /// <summary>
+    /// Information about pagination in a connection.
+    /// </summary>
+    [global::System.CodeDom.Compiler.GeneratedCode("StrawberryShake", "12.4.1.0")]
+    public interface IGetGenreWithPaging_AllGenre_PageInfo_PageInfo : IGetGenreWithPaging_AllGenre_PageInfo
+    {
+    }
+
+    [global::System.CodeDom.Compiler.GeneratedCode("StrawberryShake", "12.4.1.0")]
+    public partial class GetGenreNextPageResult : global::System.IEquatable<GetGenreNextPageResult>, IGetGenreNextPageResult
+    {
+        public GetGenreNextPageResult(global::Prelast.GraphQL.IGetGenreNextPage_AllGenre? allGenre)
+        {
+            AllGenre = allGenre;
+        }
+
+        public global::Prelast.GraphQL.IGetGenreNextPage_AllGenre? AllGenre { get; }
+
+        public virtual global::System.Boolean Equals(GetGenreNextPageResult? other)
+        {
+            if (ReferenceEquals(null, other))
+            {
+                return false;
+            }
+
+            if (ReferenceEquals(this, other))
+            {
+                return true;
+            }
+
+            if (other.GetType() != GetType())
+            {
+                return false;
+            }
+
+            return (((AllGenre is null && other.AllGenre is null) || AllGenre != null && AllGenre.Equals(other.AllGenre)));
+        }
+
+        public override global::System.Boolean Equals(global::System.Object? obj)
+        {
+            if (ReferenceEquals(null, obj))
+            {
+                return false;
+            }
+
+            if (ReferenceEquals(this, obj))
+            {
+                return true;
+            }
+
+            if (obj.GetType() != GetType())
+            {
+                return false;
+            }
+
+            return Equals((GetGenreNextPageResult)obj);
+        }
+
+        public override global::System.Int32 GetHashCode()
+        {
+            unchecked
+            {
+                int hash = 5;
+                if (AllGenre != null)
+                {
+                    hash ^= 397 * AllGenre.GetHashCode();
+                }
+
+                return hash;
+            }
+        }
+    }
+
+    /// <summary>
+    /// A connection to a list of items.
+    /// </summary>
+    [global::System.CodeDom.Compiler.GeneratedCode("StrawberryShake", "12.4.1.0")]
+    public partial class GetGenreNextPage_AllGenre_AllGenreConnection : global::System.IEquatable<GetGenreNextPage_AllGenre_AllGenreConnection>, IGetGenreNextPage_AllGenre_AllGenreConnection
+    {
+        public GetGenreNextPage_AllGenre_AllGenreConnection(global::System.Collections.Generic.IReadOnlyList<global::Prelast.GraphQL.IGetGenreNextPage_AllGenre_Nodes?>? nodes, global::Prelast.GraphQL.IGetGenreNextPage_AllGenre_PageInfo pageInfo)
+        {
+            Nodes = nodes;
+            PageInfo = pageInfo;
+        }
+
+        /// <summary>
+        /// A flattened list of the nodes.
+        /// </summary>
+        public global::System.Collections.Generic.IReadOnlyList<global::Prelast.GraphQL.IGetGenreNextPage_AllGenre_Nodes?>? Nodes { get; }
+
+        /// <summary>
+        /// Information to aid in pagination.
+        /// </summary>
+        public global::Prelast.GraphQL.IGetGenreNextPage_AllGenre_PageInfo PageInfo { get; }
+
+        public virtual global::System.Boolean Equals(GetGenreNextPage_AllGenre_AllGenreConnection? other)
+        {
+            if (ReferenceEquals(null, other))
+            {
+                return false;
+            }
+
+            if (ReferenceEquals(this, other))
+            {
+                return true;
+            }
+
+            if (other.GetType() != GetType())
+            {
+                return false;
+            }
+
+            return (global::StrawberryShake.Helper.ComparisonHelper.SequenceEqual(Nodes, other.Nodes)) && PageInfo.Equals(other.PageInfo);
+        }
+
+        public override global::System.Boolean Equals(global::System.Object? obj)
+        {
+            if (ReferenceEquals(null, obj))
+            {
+                return false;
+            }
+
+            if (ReferenceEquals(this, obj))
+            {
+                return true;
+            }
+
+            if (obj.GetType() != GetType())
+            {
+                return false;
+            }
+
+            return Equals((GetGenreNextPage_AllGenre_AllGenreConnection)obj);
+        }
+
+        public override global::System.Int32 GetHashCode()
+        {
+            unchecked
+            {
+                int hash = 5;
+                if (Nodes != null)
+                {
+                    foreach (var Nodes_elm in Nodes)
+                    {
+                        if (Nodes_elm != null)
+                        {
+                            hash ^= 397 * Nodes_elm.GetHashCode();
+                        }
+                    }
+                }
+
+                hash ^= 397 * PageInfo.GetHashCode();
+                return hash;
+            }
+        }
+    }
+
+    [global::System.CodeDom.Compiler.GeneratedCode("StrawberryShake", "12.4.1.0")]
+    public partial class GetGenreNextPage_AllGenre_Nodes_Genre : global::System.IEquatable<GetGenreNextPage_AllGenre_Nodes_Genre>, IGetGenreNextPage_AllGenre_Nodes_Genre
+    {
+        public GetGenreNextPage_AllGenre_Nodes_Genre(global::System.Int32 genreId, global::System.String? name)
+        {
+            GenreId = genreId;
+            Name = name;
+        }
+
+        public global::System.Int32 GenreId { get; }
+
+        public global::System.String? Name { get; }
+
+        public virtual global::System.Boolean Equals(GetGenreNextPage_AllGenre_Nodes_Genre? other)
+        {
+            if (ReferenceEquals(null, other))
+            {
+                return false;
+            }
+
+            if (ReferenceEquals(this, other))
+            {
+                return true;
+            }
+
+            if (other.GetType() != GetType())
+            {
+                return false;
+            }
+
+            return (GenreId == other.GenreId) && ((Name is null && other.Name is null) || Name != null && Name.Equals(other.Name));
+        }
+
+        public override global::System.Boolean Equals(global::System.Object? obj)
+        {
+            if (ReferenceEquals(null, obj))
+            {
+                return false;
+            }
+
+            if (ReferenceEquals(this, obj))
+            {
+                return true;
+            }
+
+            if (obj.GetType() != GetType())
+            {
+                return false;
+            }
+
+            return Equals((GetGenreNextPage_AllGenre_Nodes_Genre)obj);
+        }
+
+        public override global::System.Int32 GetHashCode()
+        {
+            unchecked
+            {
+                int hash = 5;
+                hash ^= 397 * GenreId.GetHashCode();
+                if (Name != null)
+                {
+                    hash ^= 397 * Name.GetHashCode();
+                }
+
+                return hash;
+            }
+        }
+    }
+
+    /// <summary>
+    /// Information about pagination in a connection.
+    /// </summary>
+    [global::System.CodeDom.Compiler.GeneratedCode("StrawberryShake", "12.4.1.0")]
+    public partial class GetGenreNextPage_AllGenre_PageInfo_PageInfo : global::System.IEquatable<GetGenreNextPage_AllGenre_PageInfo_PageInfo>, IGetGenreNextPage_AllGenre_PageInfo_PageInfo
+    {
+        public GetGenreNextPage_AllGenre_PageInfo_PageInfo(global::System.Boolean hasNextPage, global::System.String? endCursor)
+        {
+            HasNextPage = hasNextPage;
+            EndCursor = endCursor;
+        }
+
+        /// <summary>
+        /// Indicates whether more edges exist following the set defined by the clients arguments.
+        /// </summary>
+        public global::System.Boolean HasNextPage { get; }
+
+        /// <summary>
+        /// When paginating forwards, the cursor to continue.
+        /// </summary>
+        public global::System.String? EndCursor { get; }
+
+        public virtual global::System.Boolean Equals(GetGenreNextPage_AllGenre_PageInfo_PageInfo? other)
+        {
+            if (ReferenceEquals(null, other))
+            {
+                return false;
+            }
+
+            if (ReferenceEquals(this, other))
+            {
+                return true;
+            }
+
+            if (other.GetType() != GetType())
+            {
+                return false;
+            }
+
+            return (HasNextPage == other.HasNextPage) && ((EndCursor is null && other.EndCursor is null) || EndCursor != null && EndCursor.Equals(other.EndCursor));
+        }
+
+        public override global::System.Boolean Equals(global::System.Object? obj)
+        {
+            if (ReferenceEquals(null, obj))
+            {
+                return false;
+            }
+
+            if (ReferenceEquals(this, obj))
+            {
+                return true;
+            }
+
+            if (obj.GetType() != GetType())
+            {
+                return false;
+            }
+
+            return Equals((GetGenreNextPage_AllGenre_PageInfo_PageInfo)obj);
+        }
+
+        public override global::System.Int32 GetHashCode()
+        {
+            unchecked
+            {
+                int hash = 5;
+                hash ^= 397 * HasNextPage.GetHashCode();
+                if (EndCursor != null)
+                {
+                    hash ^= 397 * EndCursor.GetHashCode();
+                }
+
+                return hash;
+            }
+        }
+    }
+
+    [global::System.CodeDom.Compiler.GeneratedCode("StrawberryShake", "12.4.1.0")]
+    public interface IGetGenreNextPageResult
+    {
+        public global::Prelast.GraphQL.IGetGenreNextPage_AllGenre? AllGenre { get; }
+    }
+
+    /// <summary>
+    /// A connection to a list of items.
+    /// </summary>
+    [global::System.CodeDom.Compiler.GeneratedCode("StrawberryShake", "12.4.1.0")]
+    public interface IGetGenreNextPage_AllGenre
+    {
+        /// <summary>
+        /// A flattened list of the nodes.
+        /// </summary>
+        public global::System.Collections.Generic.IReadOnlyList<global::Prelast.GraphQL.IGetGenreNextPage_AllGenre_Nodes?>? Nodes { get; }
+
+        /// <summary>
+        /// Information to aid in pagination.
+        /// </summary>
+        public global::Prelast.GraphQL.IGetGenreNextPage_AllGenre_PageInfo PageInfo { get; }
+    }
+
+    /// <summary>
+    /// A connection to a list of items.
+    /// </summary>
+    [global::System.CodeDom.Compiler.GeneratedCode("StrawberryShake", "12.4.1.0")]
+    public interface IGetGenreNextPage_AllGenre_AllGenreConnection : IGetGenreNextPage_AllGenre
+    {
+    }
+
+    [global::System.CodeDom.Compiler.GeneratedCode("StrawberryShake", "12.4.1.0")]
+    public interface IGetGenreNextPage_AllGenre_Nodes : IGenreInfo
+    {
+    }
+
+    [global::System.CodeDom.Compiler.GeneratedCode("StrawberryShake", "12.4.1.0")]
+    public interface IGetGenreNextPage_AllGenre_Nodes_Genre : IGetGenreNextPage_AllGenre_Nodes
+    {
+    }
+
+    /// <summary>
+    /// Information about pagination in a connection.
+    /// </summary>
+    [global::System.CodeDom.Compiler.GeneratedCode("StrawberryShake", "12.4.1.0")]
+    public interface IGetGenreNextPage_AllGenre_PageInfo
+    {
+        /// <summary>
+        /// Indicates whether more edges exist following the set defined by the clients arguments.
+        /// </summary>
+        public global::System.Boolean HasNextPage { get; }
+
+        /// <summary>
+        /// When paginating forwards, the cursor to continue.
+        /// </summary>
+        public global::System.String? EndCursor { get; }
+    }
+
+    /// <summary>
+    /// Information about pagination in a connection.
+    /// </summary>
+    [global::System.CodeDom.Compiler.GeneratedCode("StrawberryShake", "12.4.1.0")]
+    public interface IGetGenreNextPage_AllGenre_PageInfo_PageInfo : IGetGenreNextPage_AllGenre_PageInfo
+    {
+    }
+
+    [global::System.CodeDom.Compiler.GeneratedCode("StrawberryShake", "12.4.1.0")]
+    public partial class GetGenrePrevPageResult : global::System.IEquatable<GetGenrePrevPageResult>, IGetGenrePrevPageResult
+    {
+        public GetGenrePrevPageResult(global::Prelast.GraphQL.IGetGenrePrevPage_AllGenre? allGenre)
+        {
+            AllGenre = allGenre;
+        }
+
+        public global::Prelast.GraphQL.IGetGenrePrevPage_AllGenre? AllGenre { get; }
+
+        public virtual global::System.Boolean Equals(GetGenrePrevPageResult? other)
+        {
+            if (ReferenceEquals(null, other))
+            {
+                return false;
+            }
+
+            if (ReferenceEquals(this, other))
+            {
+                return true;
+            }
+
+            if (other.GetType() != GetType())
+            {
+                return false;
+            }
+
+            return (((AllGenre is null && other.AllGenre is null) || AllGenre != null && AllGenre.Equals(other.AllGenre)));
+        }
+
+        public override global::System.Boolean Equals(global::System.Object? obj)
+        {
+            if (ReferenceEquals(null, obj))
+            {
+                return false;
+            }
+
+            if (ReferenceEquals(this, obj))
+            {
+                return true;
+            }
+
+            if (obj.GetType() != GetType())
+            {
+                return false;
+            }
+
+            return Equals((GetGenrePrevPageResult)obj);
+        }
+
+        public override global::System.Int32 GetHashCode()
+        {
+            unchecked
+            {
+                int hash = 5;
+                if (AllGenre != null)
+                {
+                    hash ^= 397 * AllGenre.GetHashCode();
+                }
+
+                return hash;
+            }
+        }
+    }
+
+    /// <summary>
+    /// A connection to a list of items.
+    /// </summary>
+    [global::System.CodeDom.Compiler.GeneratedCode("StrawberryShake", "12.4.1.0")]
+    public partial class GetGenrePrevPage_AllGenre_AllGenreConnection : global::System.IEquatable<GetGenrePrevPage_AllGenre_AllGenreConnection>, IGetGenrePrevPage_AllGenre_AllGenreConnection
+    {
+        public GetGenrePrevPage_AllGenre_AllGenreConnection(global::System.Collections.Generic.IReadOnlyList<global::Prelast.GraphQL.IGetGenrePrevPage_AllGenre_Nodes?>? nodes, global::Prelast.GraphQL.IGetGenrePrevPage_AllGenre_PageInfo pageInfo)
+        {
+            Nodes = nodes;
+            PageInfo = pageInfo;
+        }
+
+        /// <summary>
+        /// A flattened list of the nodes.
+        /// </summary>
+        public global::System.Collections.Generic.IReadOnlyList<global::Prelast.GraphQL.IGetGenrePrevPage_AllGenre_Nodes?>? Nodes { get; }
+
+        /// <summary>
+        /// Information to aid in pagination.
+        /// </summary>
+        public global::Prelast.GraphQL.IGetGenrePrevPage_AllGenre_PageInfo PageInfo { get; }
+
+        public virtual global::System.Boolean Equals(GetGenrePrevPage_AllGenre_AllGenreConnection? other)
+        {
+            if (ReferenceEquals(null, other))
+            {
+                return false;
+            }
+
+            if (ReferenceEquals(this, other))
+            {
+                return true;
+            }
+
+            if (other.GetType() != GetType())
+            {
+                return false;
+            }
+
+            return (global::StrawberryShake.Helper.ComparisonHelper.SequenceEqual(Nodes, other.Nodes)) && PageInfo.Equals(other.PageInfo);
+        }
+
+        public override global::System.Boolean Equals(global::System.Object? obj)
+        {
+            if (ReferenceEquals(null, obj))
+            {
+                return false;
+            }
+
+            if (ReferenceEquals(this, obj))
+            {
+                return true;
+            }
+
+            if (obj.GetType() != GetType())
+            {
+                return false;
+            }
+
+            return Equals((GetGenrePrevPage_AllGenre_AllGenreConnection)obj);
+        }
+
+        public override global::System.Int32 GetHashCode()
+        {
+            unchecked
+            {
+                int hash = 5;
+                if (Nodes != null)
+                {
+                    foreach (var Nodes_elm in Nodes)
+                    {
+                        if (Nodes_elm != null)
+                        {
+                            hash ^= 397 * Nodes_elm.GetHashCode();
+                        }
+                    }
+                }
+
+                hash ^= 397 * PageInfo.GetHashCode();
+                return hash;
+            }
+        }
+    }
+
+    [global::System.CodeDom.Compiler.GeneratedCode("StrawberryShake", "12.4.1.0")]
+    public partial class GetGenrePrevPage_AllGenre_Nodes_Genre : global::System.IEquatable<GetGenrePrevPage_AllGenre_Nodes_Genre>, IGetGenrePrevPage_AllGenre_Nodes_Genre
+    {
+        public GetGenrePrevPage_AllGenre_Nodes_Genre(global::System.Int32 genreId, global::System.String? name)
+        {
+            GenreId = genreId;
+            Name = name;
+        }
+
+        public global::System.Int32 GenreId { get; }
+
+        public global::System.String? Name { get; }
+
+        public virtual global::System.Boolean Equals(GetGenrePrevPage_AllGenre_Nodes_Genre? other)
+        {
+            if (ReferenceEquals(null, other))
+            {
+                return false;
+            }
+
+            if (ReferenceEquals(this, other))
+            {
+                return true;
+            }
+
+            if (other.GetType() != GetType())
+            {
+                return false;
+            }
+
+            return (GenreId == other.GenreId) && ((Name is null && other.Name is null) || Name != null && Name.Equals(other.Name));
+        }
+
+        public override global::System.Boolean Equals(global::System.Object? obj)
+        {
+            if (ReferenceEquals(null, obj))
+            {
+                return false;
+            }
+
+            if (ReferenceEquals(this, obj))
+            {
+                return true;
+            }
+
+            if (obj.GetType() != GetType())
+            {
+                return false;
+            }
+
+            return Equals((GetGenrePrevPage_AllGenre_Nodes_Genre)obj);
+        }
+
+        public override global::System.Int32 GetHashCode()
+        {
+            unchecked
+            {
+                int hash = 5;
+                hash ^= 397 * GenreId.GetHashCode();
+                if (Name != null)
+                {
+                    hash ^= 397 * Name.GetHashCode();
+                }
+
+                return hash;
+            }
+        }
+    }
+
+    /// <summary>
+    /// Information about pagination in a connection.
+    /// </summary>
+    [global::System.CodeDom.Compiler.GeneratedCode("StrawberryShake", "12.4.1.0")]
+    public partial class GetGenrePrevPage_AllGenre_PageInfo_PageInfo : global::System.IEquatable<GetGenrePrevPage_AllGenre_PageInfo_PageInfo>, IGetGenrePrevPage_AllGenre_PageInfo_PageInfo
+    {
+        public GetGenrePrevPage_AllGenre_PageInfo_PageInfo(global::System.Boolean hasNextPage, global::System.String? endCursor)
+        {
+            HasNextPage = hasNextPage;
+            EndCursor = endCursor;
+        }
+
+        /// <summary>
+        /// Indicates whether more edges exist following the set defined by the clients arguments.
+        /// </summary>
+        public global::System.Boolean HasNextPage { get; }
+
+        /// <summary>
+        /// When paginating forwards, the cursor to continue.
+        /// </summary>
+        public global::System.String? EndCursor { get; }
+
+        public virtual global::System.Boolean Equals(GetGenrePrevPage_AllGenre_PageInfo_PageInfo? other)
+        {
+            if (ReferenceEquals(null, other))
+            {
+                return false;
+            }
+
+            if (ReferenceEquals(this, other))
+            {
+                return true;
+            }
+
+            if (other.GetType() != GetType())
+            {
+                return false;
+            }
+
+            return (HasNextPage == other.HasNextPage) && ((EndCursor is null && other.EndCursor is null) || EndCursor != null && EndCursor.Equals(other.EndCursor));
+        }
+
+        public override global::System.Boolean Equals(global::System.Object? obj)
+        {
+            if (ReferenceEquals(null, obj))
+            {
+                return false;
+            }
+
+            if (ReferenceEquals(this, obj))
+            {
+                return true;
+            }
+
+            if (obj.GetType() != GetType())
+            {
+                return false;
+            }
+
+            return Equals((GetGenrePrevPage_AllGenre_PageInfo_PageInfo)obj);
+        }
+
+        public override global::System.Int32 GetHashCode()
+        {
+            unchecked
+            {
+                int hash = 5;
+                hash ^= 397 * HasNextPage.GetHashCode();
+                if (EndCursor != null)
+                {
+                    hash ^= 397 * EndCursor.GetHashCode();
+                }
+
+                return hash;
+            }
+        }
+    }
+
+    [global::System.CodeDom.Compiler.GeneratedCode("StrawberryShake", "12.4.1.0")]
+    public interface IGetGenrePrevPageResult
+    {
+        public global::Prelast.GraphQL.IGetGenrePrevPage_AllGenre? AllGenre { get; }
+    }
+
+    /// <summary>
+    /// A connection to a list of items.
+    /// </summary>
+    [global::System.CodeDom.Compiler.GeneratedCode("StrawberryShake", "12.4.1.0")]
+    public interface IGetGenrePrevPage_AllGenre
+    {
+        /// <summary>
+        /// A flattened list of the nodes.
+        /// </summary>
+        public global::System.Collections.Generic.IReadOnlyList<global::Prelast.GraphQL.IGetGenrePrevPage_AllGenre_Nodes?>? Nodes { get; }
+
+        /// <summary>
+        /// Information to aid in pagination.
+        /// </summary>
+        public global::Prelast.GraphQL.IGetGenrePrevPage_AllGenre_PageInfo PageInfo { get; }
+    }
+
+    /// <summary>
+    /// A connection to a list of items.
+    /// </summary>
+    [global::System.CodeDom.Compiler.GeneratedCode("StrawberryShake", "12.4.1.0")]
+    public interface IGetGenrePrevPage_AllGenre_AllGenreConnection : IGetGenrePrevPage_AllGenre
+    {
+    }
+
+    [global::System.CodeDom.Compiler.GeneratedCode("StrawberryShake", "12.4.1.0")]
+    public interface IGetGenrePrevPage_AllGenre_Nodes : IGenreInfo
+    {
+    }
+
+    [global::System.CodeDom.Compiler.GeneratedCode("StrawberryShake", "12.4.1.0")]
+    public interface IGetGenrePrevPage_AllGenre_Nodes_Genre : IGetGenrePrevPage_AllGenre_Nodes
+    {
+    }
+
+    /// <summary>
+    /// Information about pagination in a connection.
+    /// </summary>
+    [global::System.CodeDom.Compiler.GeneratedCode("StrawberryShake", "12.4.1.0")]
+    public interface IGetGenrePrevPage_AllGenre_PageInfo
+    {
+        /// <summary>
+        /// Indicates whether more edges exist following the set defined by the clients arguments.
+        /// </summary>
+        public global::System.Boolean HasNextPage { get; }
+
+        /// <summary>
+        /// When paginating forwards, the cursor to continue.
+        /// </summary>
+        public global::System.String? EndCursor { get; }
+    }
+
+    /// <summary>
+    /// Information about pagination in a connection.
+    /// </summary>
+    [global::System.CodeDom.Compiler.GeneratedCode("StrawberryShake", "12.4.1.0")]
+    public interface IGetGenrePrevPage_AllGenre_PageInfo_PageInfo : IGetGenrePrevPage_AllGenre_PageInfo
+    {
+    }
+
+    [global::System.CodeDom.Compiler.GeneratedCode("StrawberryShake", "12.4.1.0")]
     public partial class ChangeNameDevResult : global::System.IEquatable<ChangeNameDevResult>, IChangeNameDevResult
     {
-        public ChangeNameDevResult(global::Prelast.GraphQL.IChangeNameDev_ChangeDevNameById? changeDevNameById)
+        public ChangeNameDevResult(global::System.Collections.Generic.IReadOnlyList<global::Prelast.GraphQL.IChangeNameDev_ChangeDevNameById?>? changeDevNameById)
         {
             ChangeDevNameById = changeDevNameById;
         }
 
-        public global::Prelast.GraphQL.IChangeNameDev_ChangeDevNameById? ChangeDevNameById { get; }
+        public global::System.Collections.Generic.IReadOnlyList<global::Prelast.GraphQL.IChangeNameDev_ChangeDevNameById?>? ChangeDevNameById { get; }
 
         public virtual global::System.Boolean Equals(ChangeNameDevResult? other)
         {
@@ -225,7 +2503,7 @@ namespace Prelast.GraphQL
                 return false;
             }
 
-            return (((ChangeDevNameById is null && other.ChangeDevNameById is null) || ChangeDevNameById != null && ChangeDevNameById.Equals(other.ChangeDevNameById)));
+            return (global::StrawberryShake.Helper.ComparisonHelper.SequenceEqual(ChangeDevNameById, other.ChangeDevNameById));
         }
 
         public override global::System.Boolean Equals(global::System.Object? obj)
@@ -255,7 +2533,13 @@ namespace Prelast.GraphQL
                 int hash = 5;
                 if (ChangeDevNameById != null)
                 {
-                    hash ^= 397 * ChangeDevNameById.GetHashCode();
+                    foreach (var ChangeDevNameById_elm in ChangeDevNameById)
+                    {
+                        if (ChangeDevNameById_elm != null)
+                        {
+                            hash ^= 397 * ChangeDevNameById_elm.GetHashCode();
+                        }
+                    }
                 }
 
                 return hash;
@@ -343,17 +2627,7 @@ namespace Prelast.GraphQL
     [global::System.CodeDom.Compiler.GeneratedCode("StrawberryShake", "12.4.1.0")]
     public interface IChangeNameDevResult
     {
-        public global::Prelast.GraphQL.IChangeNameDev_ChangeDevNameById? ChangeDevNameById { get; }
-    }
-
-    [global::System.CodeDom.Compiler.GeneratedCode("StrawberryShake", "12.4.1.0")]
-    public interface IDevelopersInfo
-    {
-        public global::System.Int32 DeveloperId { get; }
-
-        public global::System.String? Name { get; }
-
-        public global::System.String? Country { get; }
+        public global::System.Collections.Generic.IReadOnlyList<global::Prelast.GraphQL.IChangeNameDev_ChangeDevNameById?>? ChangeDevNameById { get; }
     }
 
     [global::System.CodeDom.Compiler.GeneratedCode("StrawberryShake", "12.4.1.0")]
@@ -369,12 +2643,12 @@ namespace Prelast.GraphQL
     [global::System.CodeDom.Compiler.GeneratedCode("StrawberryShake", "12.4.1.0")]
     public partial class ChangeNameGenreResult : global::System.IEquatable<ChangeNameGenreResult>, IChangeNameGenreResult
     {
-        public ChangeNameGenreResult(global::Prelast.GraphQL.IChangeNameGenre_ChangeGenreNameById? changeGenreNameById)
+        public ChangeNameGenreResult(global::System.Collections.Generic.IReadOnlyList<global::Prelast.GraphQL.IChangeNameGenre_ChangeGenreNameById?>? changeGenreNameById)
         {
             ChangeGenreNameById = changeGenreNameById;
         }
 
-        public global::Prelast.GraphQL.IChangeNameGenre_ChangeGenreNameById? ChangeGenreNameById { get; }
+        public global::System.Collections.Generic.IReadOnlyList<global::Prelast.GraphQL.IChangeNameGenre_ChangeGenreNameById?>? ChangeGenreNameById { get; }
 
         public virtual global::System.Boolean Equals(ChangeNameGenreResult? other)
         {
@@ -393,7 +2667,7 @@ namespace Prelast.GraphQL
                 return false;
             }
 
-            return (((ChangeGenreNameById is null && other.ChangeGenreNameById is null) || ChangeGenreNameById != null && ChangeGenreNameById.Equals(other.ChangeGenreNameById)));
+            return (global::StrawberryShake.Helper.ComparisonHelper.SequenceEqual(ChangeGenreNameById, other.ChangeGenreNameById));
         }
 
         public override global::System.Boolean Equals(global::System.Object? obj)
@@ -423,7 +2697,13 @@ namespace Prelast.GraphQL
                 int hash = 5;
                 if (ChangeGenreNameById != null)
                 {
-                    hash ^= 397 * ChangeGenreNameById.GetHashCode();
+                    foreach (var ChangeGenreNameById_elm in ChangeGenreNameById)
+                    {
+                        if (ChangeGenreNameById_elm != null)
+                        {
+                            hash ^= 397 * ChangeGenreNameById_elm.GetHashCode();
+                        }
+                    }
                 }
 
                 return hash;
@@ -503,15 +2783,7 @@ namespace Prelast.GraphQL
     [global::System.CodeDom.Compiler.GeneratedCode("StrawberryShake", "12.4.1.0")]
     public interface IChangeNameGenreResult
     {
-        public global::Prelast.GraphQL.IChangeNameGenre_ChangeGenreNameById? ChangeGenreNameById { get; }
-    }
-
-    [global::System.CodeDom.Compiler.GeneratedCode("StrawberryShake", "12.4.1.0")]
-    public interface IGenreInfo
-    {
-        public global::System.Int32 GenreId { get; }
-
-        public global::System.String? Name { get; }
+        public global::System.Collections.Generic.IReadOnlyList<global::Prelast.GraphQL.IChangeNameGenre_ChangeGenreNameById?>? ChangeGenreNameById { get; }
     }
 
     [global::System.CodeDom.Compiler.GeneratedCode("StrawberryShake", "12.4.1.0")]
@@ -527,12 +2799,12 @@ namespace Prelast.GraphQL
     [global::System.CodeDom.Compiler.GeneratedCode("StrawberryShake", "12.4.1.0")]
     public partial class ChangePriceResult : global::System.IEquatable<ChangePriceResult>, IChangePriceResult
     {
-        public ChangePriceResult(global::Prelast.GraphQL.IChangePrice_ChangeGamePriceById? changeGamePriceById)
+        public ChangePriceResult(global::System.Collections.Generic.IReadOnlyList<global::Prelast.GraphQL.IChangePrice_ChangeGamePriceById?>? changeGamePriceById)
         {
             ChangeGamePriceById = changeGamePriceById;
         }
 
-        public global::Prelast.GraphQL.IChangePrice_ChangeGamePriceById? ChangeGamePriceById { get; }
+        public global::System.Collections.Generic.IReadOnlyList<global::Prelast.GraphQL.IChangePrice_ChangeGamePriceById?>? ChangeGamePriceById { get; }
 
         public virtual global::System.Boolean Equals(ChangePriceResult? other)
         {
@@ -551,7 +2823,7 @@ namespace Prelast.GraphQL
                 return false;
             }
 
-            return (((ChangeGamePriceById is null && other.ChangeGamePriceById is null) || ChangeGamePriceById != null && ChangeGamePriceById.Equals(other.ChangeGamePriceById)));
+            return (global::StrawberryShake.Helper.ComparisonHelper.SequenceEqual(ChangeGamePriceById, other.ChangeGamePriceById));
         }
 
         public override global::System.Boolean Equals(global::System.Object? obj)
@@ -581,7 +2853,13 @@ namespace Prelast.GraphQL
                 int hash = 5;
                 if (ChangeGamePriceById != null)
                 {
-                    hash ^= 397 * ChangeGamePriceById.GetHashCode();
+                    foreach (var ChangeGamePriceById_elm in ChangeGamePriceById)
+                    {
+                        if (ChangeGamePriceById_elm != null)
+                        {
+                            hash ^= 397 * ChangeGamePriceById_elm.GetHashCode();
+                        }
+                    }
                 }
 
                 return hash;
@@ -819,7 +3097,7 @@ namespace Prelast.GraphQL
     [global::System.CodeDom.Compiler.GeneratedCode("StrawberryShake", "12.4.1.0")]
     public interface IChangePriceResult
     {
-        public global::Prelast.GraphQL.IChangePrice_ChangeGamePriceById? ChangeGamePriceById { get; }
+        public global::System.Collections.Generic.IReadOnlyList<global::Prelast.GraphQL.IChangePrice_ChangeGamePriceById?>? ChangeGamePriceById { get; }
     }
 
     [global::System.CodeDom.Compiler.GeneratedCode("StrawberryShake", "12.4.1.0")]
@@ -873,12 +3151,12 @@ namespace Prelast.GraphQL
     [global::System.CodeDom.Compiler.GeneratedCode("StrawberryShake", "12.4.1.0")]
     public partial class CreateDevResult : global::System.IEquatable<CreateDevResult>, ICreateDevResult
     {
-        public CreateDevResult(global::Prelast.GraphQL.ICreateDev_CreateDeveloper? createDeveloper)
+        public CreateDevResult(global::System.Collections.Generic.IReadOnlyList<global::Prelast.GraphQL.ICreateDev_CreateDeveloper?>? createDeveloper)
         {
             CreateDeveloper = createDeveloper;
         }
 
-        public global::Prelast.GraphQL.ICreateDev_CreateDeveloper? CreateDeveloper { get; }
+        public global::System.Collections.Generic.IReadOnlyList<global::Prelast.GraphQL.ICreateDev_CreateDeveloper?>? CreateDeveloper { get; }
 
         public virtual global::System.Boolean Equals(CreateDevResult? other)
         {
@@ -897,7 +3175,7 @@ namespace Prelast.GraphQL
                 return false;
             }
 
-            return (((CreateDeveloper is null && other.CreateDeveloper is null) || CreateDeveloper != null && CreateDeveloper.Equals(other.CreateDeveloper)));
+            return (global::StrawberryShake.Helper.ComparisonHelper.SequenceEqual(CreateDeveloper, other.CreateDeveloper));
         }
 
         public override global::System.Boolean Equals(global::System.Object? obj)
@@ -927,7 +3205,13 @@ namespace Prelast.GraphQL
                 int hash = 5;
                 if (CreateDeveloper != null)
                 {
-                    hash ^= 397 * CreateDeveloper.GetHashCode();
+                    foreach (var CreateDeveloper_elm in CreateDeveloper)
+                    {
+                        if (CreateDeveloper_elm != null)
+                        {
+                            hash ^= 397 * CreateDeveloper_elm.GetHashCode();
+                        }
+                    }
                 }
 
                 return hash;
@@ -1015,7 +3299,7 @@ namespace Prelast.GraphQL
     [global::System.CodeDom.Compiler.GeneratedCode("StrawberryShake", "12.4.1.0")]
     public interface ICreateDevResult
     {
-        public global::Prelast.GraphQL.ICreateDev_CreateDeveloper? CreateDeveloper { get; }
+        public global::System.Collections.Generic.IReadOnlyList<global::Prelast.GraphQL.ICreateDev_CreateDeveloper?>? CreateDeveloper { get; }
     }
 
     [global::System.CodeDom.Compiler.GeneratedCode("StrawberryShake", "12.4.1.0")]
@@ -1031,12 +3315,12 @@ namespace Prelast.GraphQL
     [global::System.CodeDom.Compiler.GeneratedCode("StrawberryShake", "12.4.1.0")]
     public partial class CreateGameResult : global::System.IEquatable<CreateGameResult>, ICreateGameResult
     {
-        public CreateGameResult(global::Prelast.GraphQL.ICreateGame_CreateGameWithDeveloperGenreId? createGameWithDeveloperGenreId)
+        public CreateGameResult(global::System.Collections.Generic.IReadOnlyList<global::Prelast.GraphQL.ICreateGame_CreateGameWithDeveloperGenreId?>? createGameWithDeveloperGenreId)
         {
             CreateGameWithDeveloperGenreId = createGameWithDeveloperGenreId;
         }
 
-        public global::Prelast.GraphQL.ICreateGame_CreateGameWithDeveloperGenreId? CreateGameWithDeveloperGenreId { get; }
+        public global::System.Collections.Generic.IReadOnlyList<global::Prelast.GraphQL.ICreateGame_CreateGameWithDeveloperGenreId?>? CreateGameWithDeveloperGenreId { get; }
 
         public virtual global::System.Boolean Equals(CreateGameResult? other)
         {
@@ -1055,7 +3339,7 @@ namespace Prelast.GraphQL
                 return false;
             }
 
-            return (((CreateGameWithDeveloperGenreId is null && other.CreateGameWithDeveloperGenreId is null) || CreateGameWithDeveloperGenreId != null && CreateGameWithDeveloperGenreId.Equals(other.CreateGameWithDeveloperGenreId)));
+            return (global::StrawberryShake.Helper.ComparisonHelper.SequenceEqual(CreateGameWithDeveloperGenreId, other.CreateGameWithDeveloperGenreId));
         }
 
         public override global::System.Boolean Equals(global::System.Object? obj)
@@ -1085,7 +3369,13 @@ namespace Prelast.GraphQL
                 int hash = 5;
                 if (CreateGameWithDeveloperGenreId != null)
                 {
-                    hash ^= 397 * CreateGameWithDeveloperGenreId.GetHashCode();
+                    foreach (var CreateGameWithDeveloperGenreId_elm in CreateGameWithDeveloperGenreId)
+                    {
+                        if (CreateGameWithDeveloperGenreId_elm != null)
+                        {
+                            hash ^= 397 * CreateGameWithDeveloperGenreId_elm.GetHashCode();
+                        }
+                    }
                 }
 
                 return hash;
@@ -1323,7 +3613,7 @@ namespace Prelast.GraphQL
     [global::System.CodeDom.Compiler.GeneratedCode("StrawberryShake", "12.4.1.0")]
     public interface ICreateGameResult
     {
-        public global::Prelast.GraphQL.ICreateGame_CreateGameWithDeveloperGenreId? CreateGameWithDeveloperGenreId { get; }
+        public global::System.Collections.Generic.IReadOnlyList<global::Prelast.GraphQL.ICreateGame_CreateGameWithDeveloperGenreId?>? CreateGameWithDeveloperGenreId { get; }
     }
 
     [global::System.CodeDom.Compiler.GeneratedCode("StrawberryShake", "12.4.1.0")]
@@ -1363,12 +3653,12 @@ namespace Prelast.GraphQL
     [global::System.CodeDom.Compiler.GeneratedCode("StrawberryShake", "12.4.1.0")]
     public partial class CreateGenreResult : global::System.IEquatable<CreateGenreResult>, ICreateGenreResult
     {
-        public CreateGenreResult(global::Prelast.GraphQL.ICreateGenre_CreateGenre? createGenre)
+        public CreateGenreResult(global::System.Collections.Generic.IReadOnlyList<global::Prelast.GraphQL.ICreateGenre_CreateGenre?>? createGenre)
         {
             CreateGenre = createGenre;
         }
 
-        public global::Prelast.GraphQL.ICreateGenre_CreateGenre? CreateGenre { get; }
+        public global::System.Collections.Generic.IReadOnlyList<global::Prelast.GraphQL.ICreateGenre_CreateGenre?>? CreateGenre { get; }
 
         public virtual global::System.Boolean Equals(CreateGenreResult? other)
         {
@@ -1387,7 +3677,7 @@ namespace Prelast.GraphQL
                 return false;
             }
 
-            return (((CreateGenre is null && other.CreateGenre is null) || CreateGenre != null && CreateGenre.Equals(other.CreateGenre)));
+            return (global::StrawberryShake.Helper.ComparisonHelper.SequenceEqual(CreateGenre, other.CreateGenre));
         }
 
         public override global::System.Boolean Equals(global::System.Object? obj)
@@ -1417,7 +3707,13 @@ namespace Prelast.GraphQL
                 int hash = 5;
                 if (CreateGenre != null)
                 {
-                    hash ^= 397 * CreateGenre.GetHashCode();
+                    foreach (var CreateGenre_elm in CreateGenre)
+                    {
+                        if (CreateGenre_elm != null)
+                        {
+                            hash ^= 397 * CreateGenre_elm.GetHashCode();
+                        }
+                    }
                 }
 
                 return hash;
@@ -1497,7 +3793,7 @@ namespace Prelast.GraphQL
     [global::System.CodeDom.Compiler.GeneratedCode("StrawberryShake", "12.4.1.0")]
     public interface ICreateGenreResult
     {
-        public global::Prelast.GraphQL.ICreateGenre_CreateGenre? CreateGenre { get; }
+        public global::System.Collections.Generic.IReadOnlyList<global::Prelast.GraphQL.ICreateGenre_CreateGenre?>? CreateGenre { get; }
     }
 
     [global::System.CodeDom.Compiler.GeneratedCode("StrawberryShake", "12.4.1.0")]
@@ -1513,12 +3809,12 @@ namespace Prelast.GraphQL
     [global::System.CodeDom.Compiler.GeneratedCode("StrawberryShake", "12.4.1.0")]
     public partial class DelDevelResult : global::System.IEquatable<DelDevelResult>, IDelDevelResult
     {
-        public DelDevelResult(global::System.String? deleteDevById)
+        public DelDevelResult(global::System.Collections.Generic.IReadOnlyList<global::Prelast.GraphQL.IDelDevel_DeleteDevById?>? deleteDevById)
         {
             DeleteDevById = deleteDevById;
         }
 
-        public global::System.String? DeleteDevById { get; }
+        public global::System.Collections.Generic.IReadOnlyList<global::Prelast.GraphQL.IDelDevel_DeleteDevById?>? DeleteDevById { get; }
 
         public virtual global::System.Boolean Equals(DelDevelResult? other)
         {
@@ -1537,7 +3833,7 @@ namespace Prelast.GraphQL
                 return false;
             }
 
-            return (((DeleteDevById is null && other.DeleteDevById is null) || DeleteDevById != null && DeleteDevById.Equals(other.DeleteDevById)));
+            return (global::StrawberryShake.Helper.ComparisonHelper.SequenceEqual(DeleteDevById, other.DeleteDevById));
         }
 
         public override global::System.Boolean Equals(global::System.Object? obj)
@@ -1567,7 +3863,90 @@ namespace Prelast.GraphQL
                 int hash = 5;
                 if (DeleteDevById != null)
                 {
-                    hash ^= 397 * DeleteDevById.GetHashCode();
+                    foreach (var DeleteDevById_elm in DeleteDevById)
+                    {
+                        if (DeleteDevById_elm != null)
+                        {
+                            hash ^= 397 * DeleteDevById_elm.GetHashCode();
+                        }
+                    }
+                }
+
+                return hash;
+            }
+        }
+    }
+
+    [global::System.CodeDom.Compiler.GeneratedCode("StrawberryShake", "12.4.1.0")]
+    public partial class DelDevel_DeleteDevById_Developers : global::System.IEquatable<DelDevel_DeleteDevById_Developers>, IDelDevel_DeleteDevById_Developers
+    {
+        public DelDevel_DeleteDevById_Developers(global::System.Int32 developerId, global::System.String? name, global::System.String? country)
+        {
+            DeveloperId = developerId;
+            Name = name;
+            Country = country;
+        }
+
+        public global::System.Int32 DeveloperId { get; }
+
+        public global::System.String? Name { get; }
+
+        public global::System.String? Country { get; }
+
+        public virtual global::System.Boolean Equals(DelDevel_DeleteDevById_Developers? other)
+        {
+            if (ReferenceEquals(null, other))
+            {
+                return false;
+            }
+
+            if (ReferenceEquals(this, other))
+            {
+                return true;
+            }
+
+            if (other.GetType() != GetType())
+            {
+                return false;
+            }
+
+            return (DeveloperId == other.DeveloperId) && ((Name is null && other.Name is null) || Name != null && Name.Equals(other.Name)) && ((Country is null && other.Country is null) || Country != null && Country.Equals(other.Country));
+        }
+
+        public override global::System.Boolean Equals(global::System.Object? obj)
+        {
+            if (ReferenceEquals(null, obj))
+            {
+                return false;
+            }
+
+            if (ReferenceEquals(this, obj))
+            {
+                return true;
+            }
+
+            if (obj.GetType() != GetType())
+            {
+                return false;
+            }
+
+            return Equals((DelDevel_DeleteDevById_Developers)obj);
+        }
+
+        public override global::System.Int32 GetHashCode()
+        {
+            unchecked
+            {
+                int hash = 5;
+                hash ^= 397 * DeveloperId.GetHashCode();
+                if (Name != null)
+                {
+                    hash ^= 397 * Name.GetHashCode();
+                }
+
+                if (Country != null)
+                {
+                    hash ^= 397 * Country.GetHashCode();
                 }
 
                 return hash;
@@ -1578,18 +3957,28 @@ namespace Prelast.GraphQL
     [global::System.CodeDom.Compiler.GeneratedCode("StrawberryShake", "12.4.1.0")]
     public interface IDelDevelResult
     {
-        public global::System.String? DeleteDevById { get; }
+        public global::System.Collections.Generic.IReadOnlyList<global::Prelast.GraphQL.IDelDevel_DeleteDevById?>? DeleteDevById { get; }
+    }
+
+    [global::System.CodeDom.Compiler.GeneratedCode("StrawberryShake", "12.4.1.0")]
+    public interface IDelDevel_DeleteDevById : IDevelopersInfo
+    {
+    }
+
+    [global::System.CodeDom.Compiler.GeneratedCode("StrawberryShake", "12.4.1.0")]
+    public interface IDelDevel_DeleteDevById_Developers : IDelDevel_DeleteDevById
+    {
     }
 
     [global::System.CodeDom.Compiler.GeneratedCode("StrawberryShake", "12.4.1.0")]
     public partial class DelGameResult : global::System.IEquatable<DelGameResult>, IDelGameResult
     {
-        public DelGameResult(global::System.String? deleteGameById)
+        public DelGameResult(global::System.Collections.Generic.IReadOnlyList<global::Prelast.GraphQL.IDelGame_DeleteGameById?>? deleteGameById)
         {
             DeleteGameById = deleteGameById;
         }
 
-        public global::System.String? DeleteGameById { get; }
+        public global::System.Collections.Generic.IReadOnlyList<global::Prelast.GraphQL.IDelGame_DeleteGameById?>? DeleteGameById { get; }
 
         public virtual global::System.Boolean Equals(DelGameResult? other)
         {
@@ -1608,7 +3997,7 @@ namespace Prelast.GraphQL
                 return false;
             }
 
-            return (((DeleteGameById is null && other.DeleteGameById is null) || DeleteGameById != null && DeleteGameById.Equals(other.DeleteGameById)));
+            return (global::StrawberryShake.Helper.ComparisonHelper.SequenceEqual(DeleteGameById, other.DeleteGameById));
         }
 
         public override global::System.Boolean Equals(global::System.Object? obj)
@@ -1638,7 +4027,240 @@ namespace Prelast.GraphQL
                 int hash = 5;
                 if (DeleteGameById != null)
                 {
-                    hash ^= 397 * DeleteGameById.GetHashCode();
+                    foreach (var DeleteGameById_elm in DeleteGameById)
+                    {
+                        if (DeleteGameById_elm != null)
+                        {
+                            hash ^= 397 * DeleteGameById_elm.GetHashCode();
+                        }
+                    }
+                }
+
+                return hash;
+            }
+        }
+    }
+
+    [global::System.CodeDom.Compiler.GeneratedCode("StrawberryShake", "12.4.1.0")]
+    public partial class DelGame_DeleteGameById_Games : global::System.IEquatable<DelGame_DeleteGameById_Games>, IDelGame_DeleteGameById_Games
+    {
+        public DelGame_DeleteGameById_Games(global::System.Int32 gamesId, global::System.String? name, global::System.Double price, global::Prelast.GraphQL.IChangePrice_ChangeGamePriceById_Genre? genre, global::Prelast.GraphQL.IChangePrice_ChangeGamePriceById_Developer? developer)
+        {
+            GamesId = gamesId;
+            Name = name;
+            Price = price;
+            Genre = genre;
+            Developer = developer;
+        }
+
+        public global::System.Int32 GamesId { get; }
+
+        public global::System.String? Name { get; }
+
+        public global::System.Double Price { get; }
+
+        public global::Prelast.GraphQL.IChangePrice_ChangeGamePriceById_Genre? Genre { get; }
+
+        public global::Prelast.GraphQL.IChangePrice_ChangeGamePriceById_Developer? Developer { get; }
+
+        public virtual global::System.Boolean Equals(DelGame_DeleteGameById_Games? other)
+        {
+            if (ReferenceEquals(null, other))
+            {
+                return false;
+            }
+
+            if (ReferenceEquals(this, other))
+            {
+                return true;
+            }
+
+            if (other.GetType() != GetType())
+            {
+                return false;
+            }
+
+            return (GamesId == other.GamesId) && ((Name is null && other.Name is null) || Name != null && Name.Equals(other.Name)) && Price == other.Price && ((Genre is null && other.Genre is null) || Genre != null && Genre.Equals(other.Genre)) && ((Developer is null && other.Developer is null) || Developer != null && Developer.Equals(other.Developer));
+        }
+
+        public override global::System.Boolean Equals(global::System.Object? obj)
+        {
+            if (ReferenceEquals(null, obj))
+            {
+                return false;
+            }
+
+            if (ReferenceEquals(this, obj))
+            {
+                return true;
+            }
+
+            if (obj.GetType() != GetType())
+            {
+                return false;
+            }
+
+            return Equals((DelGame_DeleteGameById_Games)obj);
+        }
+
+        public override global::System.Int32 GetHashCode()
+        {
+            unchecked
+            {
+                int hash = 5;
+                hash ^= 397 * GamesId.GetHashCode();
+                if (Name != null)
+                {
+                    hash ^= 397 * Name.GetHashCode();
+                }
+
+                hash ^= 397 * Price.GetHashCode();
+                if (Genre != null)
+                {
+                    hash ^= 397 * Genre.GetHashCode();
+                }
+
+                if (Developer != null)
+                {
+                    hash ^= 397 * Developer.GetHashCode();
+                }
+
+                return hash;
+            }
+        }
+    }
+
+    [global::System.CodeDom.Compiler.GeneratedCode("StrawberryShake", "12.4.1.0")]
+    public partial class DelGame_DeleteGameById_Genre_Genre : global::System.IEquatable<DelGame_DeleteGameById_Genre_Genre>, IDelGame_DeleteGameById_Genre_Genre
+    {
+        public DelGame_DeleteGameById_Genre_Genre(global::System.String? name)
+        {
+            Name = name;
+        }
+
+        public global::System.String? Name { get; }
+
+        public virtual global::System.Boolean Equals(DelGame_DeleteGameById_Genre_Genre? other)
+        {
+            if (ReferenceEquals(null, other))
+            {
+                return false;
+            }
+
+            if (ReferenceEquals(this, other))
+            {
+                return true;
+            }
+
+            if (other.GetType() != GetType())
+            {
+                return false;
+            }
+
+            return (((Name is null && other.Name is null) || Name != null && Name.Equals(other.Name)));
+        }
+
+        public override global::System.Boolean Equals(global::System.Object? obj)
+        {
+            if (ReferenceEquals(null, obj))
+            {
+                return false;
+            }
+
+            if (ReferenceEquals(this, obj))
+            {
+                return true;
+            }
+
+            if (obj.GetType() != GetType())
+            {
+                return false;
+            }
+
+            return Equals((DelGame_DeleteGameById_Genre_Genre)obj);
+        }
+
+        public override global::System.Int32 GetHashCode()
+        {
+            unchecked
+            {
+                int hash = 5;
+                if (Name != null)
+                {
+                    hash ^= 397 * Name.GetHashCode();
+                }
+
+                return hash;
+            }
+        }
+    }
+
+    [global::System.CodeDom.Compiler.GeneratedCode("StrawberryShake", "12.4.1.0")]
+    public partial class DelGame_DeleteGameById_Developer_Developers : global::System.IEquatable<DelGame_DeleteGameById_Developer_Developers>, IDelGame_DeleteGameById_Developer_Developers
+    {
+        public DelGame_DeleteGameById_Developer_Developers(global::System.String? name, global::System.String? country)
+        {
+            Name = name;
+            Country = country;
+        }
+
+        public global::System.String? Name { get; }
+
+        public global::System.String? Country { get; }
+
+        public virtual global::System.Boolean Equals(DelGame_DeleteGameById_Developer_Developers? other)
+        {
+            if (ReferenceEquals(null, other))
+            {
+                return false;
+            }
+
+            if (ReferenceEquals(this, other))
+            {
+                return true;
+            }
+
+            if (other.GetType() != GetType())
+            {
+                return false;
+            }
+
+            return (((Name is null && other.Name is null) || Name != null && Name.Equals(other.Name))) && ((Country is null && other.Country is null) || Country != null && Country.Equals(other.Country));
+        }
+
+        public override global::System.Boolean Equals(global::System.Object? obj)
+        {
+            if (ReferenceEquals(null, obj))
+            {
+                return false;
+            }
+
+            if (ReferenceEquals(this, obj))
+            {
+                return true;
+            }
+
+            if (obj.GetType() != GetType())
+            {
+                return false;
+            }
+
+            return Equals((DelGame_DeleteGameById_Developer_Developers)obj);
+        }
+
+        public override global::System.Int32 GetHashCode()
+        {
+            unchecked
+            {
+                int hash = 5;
+                if (Name != null)
+                {
+                    hash ^= 397 * Name.GetHashCode();
+                }
+
+                if (Country != null)
+                {
+                    hash ^= 397 * Country.GetHashCode();
                 }
 
                 return hash;
@@ -1649,18 +4271,52 @@ namespace Prelast.GraphQL
     [global::System.CodeDom.Compiler.GeneratedCode("StrawberryShake", "12.4.1.0")]
     public interface IDelGameResult
     {
-        public global::System.String? DeleteGameById { get; }
+        public global::System.Collections.Generic.IReadOnlyList<global::Prelast.GraphQL.IDelGame_DeleteGameById?>? DeleteGameById { get; }
+    }
+
+    [global::System.CodeDom.Compiler.GeneratedCode("StrawberryShake", "12.4.1.0")]
+    public interface IDelGame_DeleteGameById : IGamesInfo
+    {
+    }
+
+    [global::System.CodeDom.Compiler.GeneratedCode("StrawberryShake", "12.4.1.0")]
+    public interface IDelGame_DeleteGameById_Games : IDelGame_DeleteGameById
+    {
+    }
+
+    [global::System.CodeDom.Compiler.GeneratedCode("StrawberryShake", "12.4.1.0")]
+    public interface IDelGame_DeleteGameById_Genre
+    {
+        public global::System.String? Name { get; }
+    }
+
+    [global::System.CodeDom.Compiler.GeneratedCode("StrawberryShake", "12.4.1.0")]
+    public interface IDelGame_DeleteGameById_Genre_Genre : IDelGame_DeleteGameById_Genre
+    {
+    }
+
+    [global::System.CodeDom.Compiler.GeneratedCode("StrawberryShake", "12.4.1.0")]
+    public interface IDelGame_DeleteGameById_Developer
+    {
+        public global::System.String? Name { get; }
+
+        public global::System.String? Country { get; }
+    }
+
+    [global::System.CodeDom.Compiler.GeneratedCode("StrawberryShake", "12.4.1.0")]
+    public interface IDelGame_DeleteGameById_Developer_Developers : IDelGame_DeleteGameById_Developer
+    {
     }
 
     [global::System.CodeDom.Compiler.GeneratedCode("StrawberryShake", "12.4.1.0")]
     public partial class DelGenreResult : global::System.IEquatable<DelGenreResult>, IDelGenreResult
     {
-        public DelGenreResult(global::System.String? deleteGenreById)
+        public DelGenreResult(global::System.Collections.Generic.IReadOnlyList<global::Prelast.GraphQL.IDelGenre_DeleteGenreById?>? deleteGenreById)
         {
             DeleteGenreById = deleteGenreById;
         }
 
-        public global::System.String? DeleteGenreById { get; }
+        public global::System.Collections.Generic.IReadOnlyList<global::Prelast.GraphQL.IDelGenre_DeleteGenreById?>? DeleteGenreById { get; }
 
         public virtual global::System.Boolean Equals(DelGenreResult? other)
         {
@@ -1679,7 +4335,7 @@ namespace Prelast.GraphQL
                 return false;
             }
 
-            return (((DeleteGenreById is null && other.DeleteGenreById is null) || DeleteGenreById != null && DeleteGenreById.Equals(other.DeleteGenreById)));
+            return (global::StrawberryShake.Helper.ComparisonHelper.SequenceEqual(DeleteGenreById, other.DeleteGenreById));
         }
 
         public override global::System.Boolean Equals(global::System.Object? obj)
@@ -1709,7 +4365,82 @@ namespace Prelast.GraphQL
                 int hash = 5;
                 if (DeleteGenreById != null)
                 {
-                    hash ^= 397 * DeleteGenreById.GetHashCode();
+                    foreach (var DeleteGenreById_elm in DeleteGenreById)
+                    {
+                        if (DeleteGenreById_elm != null)
+                        {
+                            hash ^= 397 * DeleteGenreById_elm.GetHashCode();
+                        }
+                    }
+                }
+
+                return hash;
+            }
+        }
+    }
+
+    [global::System.CodeDom.Compiler.GeneratedCode("StrawberryShake", "12.4.1.0")]
+    public partial class DelGenre_DeleteGenreById_Genre : global::System.IEquatable<DelGenre_DeleteGenreById_Genre>, IDelGenre_DeleteGenreById_Genre
+    {
+        public DelGenre_DeleteGenreById_Genre(global::System.Int32 genreId, global::System.String? name)
+        {
+            GenreId = genreId;
+            Name = name;
+        }
+
+        public global::System.Int32 GenreId { get; }
+
+        public global::System.String? Name { get; }
+
+        public virtual global::System.Boolean Equals(DelGenre_DeleteGenreById_Genre? other)
+        {
+            if (ReferenceEquals(null, other))
+            {
+                return false;
+            }
+
+            if (ReferenceEquals(this, other))
+            {
+                return true;
+            }
+
+            if (other.GetType() != GetType())
+            {
+                return false;
+            }
+
+            return (GenreId == other.GenreId) && ((Name is null && other.Name is null) || Name != null && Name.Equals(other.Name));
+        }
+
+        public override global::System.Boolean Equals(global::System.Object? obj)
+        {
+            if (ReferenceEquals(null, obj))
+            {
+                return false;
+            }
+
+            if (ReferenceEquals(this, obj))
+            {
+                return true;
+            }
+
+            if (obj.GetType() != GetType())
+            {
+                return false;
+            }
+
+            return Equals((DelGenre_DeleteGenreById_Genre)obj);
+        }
+
+        public override global::System.Int32 GetHashCode()
+        {
+            unchecked
+            {
+                int hash = 5;
+                hash ^= 397 * GenreId.GetHashCode();
+                if (Name != null)
+                {
+                    hash ^= 397 * Name.GetHashCode();
                 }
 
                 return hash;
@@ -1720,7 +4451,17 @@ namespace Prelast.GraphQL
     [global::System.CodeDom.Compiler.GeneratedCode("StrawberryShake", "12.4.1.0")]
     public interface IDelGenreResult
     {
-        public global::System.String? DeleteGenreById { get; }
+        public global::System.Collections.Generic.IReadOnlyList<global::Prelast.GraphQL.IDelGenre_DeleteGenreById?>? DeleteGenreById { get; }
+    }
+
+    [global::System.CodeDom.Compiler.GeneratedCode("StrawberryShake", "12.4.1.0")]
+    public interface IDelGenre_DeleteGenreById : IGenreInfo
+    {
+    }
+
+    [global::System.CodeDom.Compiler.GeneratedCode("StrawberryShake", "12.4.1.0")]
+    public interface IDelGenre_DeleteGenreById_Genre : IDelGenre_DeleteGenreById
+    {
     }
 
     [global::System.CodeDom.Compiler.GeneratedCode("StrawberryShake", "12.4.1.0")]
@@ -2304,15 +5045,21 @@ namespace Prelast.GraphQL
     [global::System.CodeDom.Compiler.GeneratedCode("StrawberryShake", "12.4.1.0")]
     public partial class GetGames_AllGameWithDevGerne_AllGameWithDevGerneConnection : global::System.IEquatable<GetGames_AllGameWithDevGerne_AllGameWithDevGerneConnection>, IGetGames_AllGameWithDevGerne_AllGameWithDevGerneConnection
     {
-        public GetGames_AllGameWithDevGerne_AllGameWithDevGerneConnection(global::System.Collections.Generic.IReadOnlyList<global::Prelast.GraphQL.IGetGames_AllGameWithDevGerne_Nodes?>? nodes)
+        public GetGames_AllGameWithDevGerne_AllGameWithDevGerneConnection(global::System.Collections.Generic.IReadOnlyList<global::Prelast.GraphQL.IGetGames_AllGameWithDevGerne_Nodes?>? nodes, global::Prelast.GraphQL.IGetGames_AllGameWithDevGerne_PageInfo pageInfo)
         {
             Nodes = nodes;
+            PageInfo = pageInfo;
         }
 
         /// <summary>
         /// A flattened list of the nodes.
         /// </summary>
         public global::System.Collections.Generic.IReadOnlyList<global::Prelast.GraphQL.IGetGames_AllGameWithDevGerne_Nodes?>? Nodes { get; }
+
+        /// <summary>
+        /// Information to aid in pagination.
+        /// </summary>
+        public global::Prelast.GraphQL.IGetGames_AllGameWithDevGerne_PageInfo PageInfo { get; }
 
         public virtual global::System.Boolean Equals(GetGames_AllGameWithDevGerne_AllGameWithDevGerneConnection? other)
         {
@@ -2331,7 +5078,7 @@ namespace Prelast.GraphQL
                 return false;
             }
 
-            return (global::StrawberryShake.Helper.ComparisonHelper.SequenceEqual(Nodes, other.Nodes));
+            return (global::StrawberryShake.Helper.ComparisonHelper.SequenceEqual(Nodes, other.Nodes)) && PageInfo.Equals(other.PageInfo);
         }
 
         public override global::System.Boolean Equals(global::System.Object? obj)
@@ -2370,6 +5117,7 @@ namespace Prelast.GraphQL
                     }
                 }
 
+                hash ^= 397 * PageInfo.GetHashCode();
                 return hash;
             }
         }
@@ -2457,6 +5205,84 @@ namespace Prelast.GraphQL
                 if (Developer != null)
                 {
                     hash ^= 397 * Developer.GetHashCode();
+                }
+
+                return hash;
+            }
+        }
+    }
+
+    /// <summary>
+    /// Information about pagination in a connection.
+    /// </summary>
+    [global::System.CodeDom.Compiler.GeneratedCode("StrawberryShake", "12.4.1.0")]
+    public partial class GetGames_AllGameWithDevGerne_PageInfo_PageInfo : global::System.IEquatable<GetGames_AllGameWithDevGerne_PageInfo_PageInfo>, IGetGames_AllGameWithDevGerne_PageInfo_PageInfo
+    {
+        public GetGames_AllGameWithDevGerne_PageInfo_PageInfo(global::System.Boolean hasNextPage, global::System.String? endCursor)
+        {
+            HasNextPage = hasNextPage;
+            EndCursor = endCursor;
+        }
+
+        /// <summary>
+        /// Indicates whether more edges exist following the set defined by the clients arguments.
+        /// </summary>
+        public global::System.Boolean HasNextPage { get; }
+
+        /// <summary>
+        /// When paginating forwards, the cursor to continue.
+        /// </summary>
+        public global::System.String? EndCursor { get; }
+
+        public virtual global::System.Boolean Equals(GetGames_AllGameWithDevGerne_PageInfo_PageInfo? other)
+        {
+            if (ReferenceEquals(null, other))
+            {
+                return false;
+            }
+
+            if (ReferenceEquals(this, other))
+            {
+                return true;
+            }
+
+            if (other.GetType() != GetType())
+            {
+                return false;
+            }
+
+            return (HasNextPage == other.HasNextPage) && ((EndCursor is null && other.EndCursor is null) || EndCursor != null && EndCursor.Equals(other.EndCursor));
+        }
+
+        public override global::System.Boolean Equals(global::System.Object? obj)
+        {
+            if (ReferenceEquals(null, obj))
+            {
+                return false;
+            }
+
+            if (ReferenceEquals(this, obj))
+            {
+                return true;
+            }
+
+            if (obj.GetType() != GetType())
+            {
+                return false;
+            }
+
+            return Equals((GetGames_AllGameWithDevGerne_PageInfo_PageInfo)obj);
+        }
+
+        public override global::System.Int32 GetHashCode()
+        {
+            unchecked
+            {
+                int hash = 5;
+                hash ^= 397 * HasNextPage.GetHashCode();
+                if (EndCursor != null)
+                {
+                    hash ^= 397 * EndCursor.GetHashCode();
                 }
 
                 return hash;
@@ -2618,6 +5444,11 @@ namespace Prelast.GraphQL
         /// A flattened list of the nodes.
         /// </summary>
         public global::System.Collections.Generic.IReadOnlyList<global::Prelast.GraphQL.IGetGames_AllGameWithDevGerne_Nodes?>? Nodes { get; }
+
+        /// <summary>
+        /// Information to aid in pagination.
+        /// </summary>
+        public global::Prelast.GraphQL.IGetGames_AllGameWithDevGerne_PageInfo PageInfo { get; }
     }
 
     /// <summary>
@@ -2635,6 +5466,31 @@ namespace Prelast.GraphQL
 
     [global::System.CodeDom.Compiler.GeneratedCode("StrawberryShake", "12.4.1.0")]
     public interface IGetGames_AllGameWithDevGerne_Nodes_Games : IGetGames_AllGameWithDevGerne_Nodes
+    {
+    }
+
+    /// <summary>
+    /// Information about pagination in a connection.
+    /// </summary>
+    [global::System.CodeDom.Compiler.GeneratedCode("StrawberryShake", "12.4.1.0")]
+    public interface IGetGames_AllGameWithDevGerne_PageInfo
+    {
+        /// <summary>
+        /// Indicates whether more edges exist following the set defined by the clients arguments.
+        /// </summary>
+        public global::System.Boolean HasNextPage { get; }
+
+        /// <summary>
+        /// When paginating forwards, the cursor to continue.
+        /// </summary>
+        public global::System.String? EndCursor { get; }
+    }
+
+    /// <summary>
+    /// Information about pagination in a connection.
+    /// </summary>
+    [global::System.CodeDom.Compiler.GeneratedCode("StrawberryShake", "12.4.1.0")]
+    public interface IGetGames_AllGameWithDevGerne_PageInfo_PageInfo : IGetGames_AllGameWithDevGerne_PageInfo
     {
     }
 
@@ -2659,6 +5515,1094 @@ namespace Prelast.GraphQL
 
     [global::System.CodeDom.Compiler.GeneratedCode("StrawberryShake", "12.4.1.0")]
     public interface IGetGames_AllGameWithDevGerne_Nodes_Developer_Developers : IGetGames_AllGameWithDevGerne_Nodes_Developer
+    {
+    }
+
+    [global::System.CodeDom.Compiler.GeneratedCode("StrawberryShake", "12.4.1.0")]
+    public partial class GetGamesNextPageResult : global::System.IEquatable<GetGamesNextPageResult>, IGetGamesNextPageResult
+    {
+        public GetGamesNextPageResult(global::Prelast.GraphQL.IGetGamesNextPage_AllGameWithDevGerne? allGameWithDevGerne)
+        {
+            AllGameWithDevGerne = allGameWithDevGerne;
+        }
+
+        public global::Prelast.GraphQL.IGetGamesNextPage_AllGameWithDevGerne? AllGameWithDevGerne { get; }
+
+        public virtual global::System.Boolean Equals(GetGamesNextPageResult? other)
+        {
+            if (ReferenceEquals(null, other))
+            {
+                return false;
+            }
+
+            if (ReferenceEquals(this, other))
+            {
+                return true;
+            }
+
+            if (other.GetType() != GetType())
+            {
+                return false;
+            }
+
+            return (((AllGameWithDevGerne is null && other.AllGameWithDevGerne is null) || AllGameWithDevGerne != null && AllGameWithDevGerne.Equals(other.AllGameWithDevGerne)));
+        }
+
+        public override global::System.Boolean Equals(global::System.Object? obj)
+        {
+            if (ReferenceEquals(null, obj))
+            {
+                return false;
+            }
+
+            if (ReferenceEquals(this, obj))
+            {
+                return true;
+            }
+
+            if (obj.GetType() != GetType())
+            {
+                return false;
+            }
+
+            return Equals((GetGamesNextPageResult)obj);
+        }
+
+        public override global::System.Int32 GetHashCode()
+        {
+            unchecked
+            {
+                int hash = 5;
+                if (AllGameWithDevGerne != null)
+                {
+                    hash ^= 397 * AllGameWithDevGerne.GetHashCode();
+                }
+
+                return hash;
+            }
+        }
+    }
+
+    /// <summary>
+    /// A connection to a list of items.
+    /// </summary>
+    [global::System.CodeDom.Compiler.GeneratedCode("StrawberryShake", "12.4.1.0")]
+    public partial class GetGamesNextPage_AllGameWithDevGerne_AllGameWithDevGerneConnection : global::System.IEquatable<GetGamesNextPage_AllGameWithDevGerne_AllGameWithDevGerneConnection>, IGetGamesNextPage_AllGameWithDevGerne_AllGameWithDevGerneConnection
+    {
+        public GetGamesNextPage_AllGameWithDevGerne_AllGameWithDevGerneConnection(global::System.Collections.Generic.IReadOnlyList<global::Prelast.GraphQL.IGetGamesNextPage_AllGameWithDevGerne_Nodes?>? nodes, global::Prelast.GraphQL.IGetGamesNextPage_AllGameWithDevGerne_PageInfo pageInfo)
+        {
+            Nodes = nodes;
+            PageInfo = pageInfo;
+        }
+
+        /// <summary>
+        /// A flattened list of the nodes.
+        /// </summary>
+        public global::System.Collections.Generic.IReadOnlyList<global::Prelast.GraphQL.IGetGamesNextPage_AllGameWithDevGerne_Nodes?>? Nodes { get; }
+
+        /// <summary>
+        /// Information to aid in pagination.
+        /// </summary>
+        public global::Prelast.GraphQL.IGetGamesNextPage_AllGameWithDevGerne_PageInfo PageInfo { get; }
+
+        public virtual global::System.Boolean Equals(GetGamesNextPage_AllGameWithDevGerne_AllGameWithDevGerneConnection? other)
+        {
+            if (ReferenceEquals(null, other))
+            {
+                return false;
+            }
+
+            if (ReferenceEquals(this, other))
+            {
+                return true;
+            }
+
+            if (other.GetType() != GetType())
+            {
+                return false;
+            }
+
+            return (global::StrawberryShake.Helper.ComparisonHelper.SequenceEqual(Nodes, other.Nodes)) && PageInfo.Equals(other.PageInfo);
+        }
+
+        public override global::System.Boolean Equals(global::System.Object? obj)
+        {
+            if (ReferenceEquals(null, obj))
+            {
+                return false;
+            }
+
+            if (ReferenceEquals(this, obj))
+            {
+                return true;
+            }
+
+            if (obj.GetType() != GetType())
+            {
+                return false;
+            }
+
+            return Equals((GetGamesNextPage_AllGameWithDevGerne_AllGameWithDevGerneConnection)obj);
+        }
+
+        public override global::System.Int32 GetHashCode()
+        {
+            unchecked
+            {
+                int hash = 5;
+                if (Nodes != null)
+                {
+                    foreach (var Nodes_elm in Nodes)
+                    {
+                        if (Nodes_elm != null)
+                        {
+                            hash ^= 397 * Nodes_elm.GetHashCode();
+                        }
+                    }
+                }
+
+                hash ^= 397 * PageInfo.GetHashCode();
+                return hash;
+            }
+        }
+    }
+
+    [global::System.CodeDom.Compiler.GeneratedCode("StrawberryShake", "12.4.1.0")]
+    public partial class GetGamesNextPage_AllGameWithDevGerne_Nodes_Games : global::System.IEquatable<GetGamesNextPage_AllGameWithDevGerne_Nodes_Games>, IGetGamesNextPage_AllGameWithDevGerne_Nodes_Games
+    {
+        public GetGamesNextPage_AllGameWithDevGerne_Nodes_Games(global::System.Int32 gamesId, global::System.String? name, global::System.Double price, global::Prelast.GraphQL.IChangePrice_ChangeGamePriceById_Genre? genre, global::Prelast.GraphQL.IChangePrice_ChangeGamePriceById_Developer? developer)
+        {
+            GamesId = gamesId;
+            Name = name;
+            Price = price;
+            Genre = genre;
+            Developer = developer;
+        }
+
+        public global::System.Int32 GamesId { get; }
+
+        public global::System.String? Name { get; }
+
+        public global::System.Double Price { get; }
+
+        public global::Prelast.GraphQL.IChangePrice_ChangeGamePriceById_Genre? Genre { get; }
+
+        public global::Prelast.GraphQL.IChangePrice_ChangeGamePriceById_Developer? Developer { get; }
+
+        public virtual global::System.Boolean Equals(GetGamesNextPage_AllGameWithDevGerne_Nodes_Games? other)
+        {
+            if (ReferenceEquals(null, other))
+            {
+                return false;
+            }
+
+            if (ReferenceEquals(this, other))
+            {
+                return true;
+            }
+
+            if (other.GetType() != GetType())
+            {
+                return false;
+            }
+
+            return (GamesId == other.GamesId) && ((Name is null && other.Name is null) || Name != null && Name.Equals(other.Name)) && Price == other.Price && ((Genre is null && other.Genre is null) || Genre != null && Genre.Equals(other.Genre)) && ((Developer is null && other.Developer is null) || Developer != null && Developer.Equals(other.Developer));
+        }
+
+        public override global::System.Boolean Equals(global::System.Object? obj)
+        {
+            if (ReferenceEquals(null, obj))
+            {
+                return false;
+            }
+
+            if (ReferenceEquals(this, obj))
+            {
+                return true;
+            }
+
+            if (obj.GetType() != GetType())
+            {
+                return false;
+            }
+
+            return Equals((GetGamesNextPage_AllGameWithDevGerne_Nodes_Games)obj);
+        }
+
+        public override global::System.Int32 GetHashCode()
+        {
+            unchecked
+            {
+                int hash = 5;
+                hash ^= 397 * GamesId.GetHashCode();
+                if (Name != null)
+                {
+                    hash ^= 397 * Name.GetHashCode();
+                }
+
+                hash ^= 397 * Price.GetHashCode();
+                if (Genre != null)
+                {
+                    hash ^= 397 * Genre.GetHashCode();
+                }
+
+                if (Developer != null)
+                {
+                    hash ^= 397 * Developer.GetHashCode();
+                }
+
+                return hash;
+            }
+        }
+    }
+
+    /// <summary>
+    /// Information about pagination in a connection.
+    /// </summary>
+    [global::System.CodeDom.Compiler.GeneratedCode("StrawberryShake", "12.4.1.0")]
+    public partial class GetGamesNextPage_AllGameWithDevGerne_PageInfo_PageInfo : global::System.IEquatable<GetGamesNextPage_AllGameWithDevGerne_PageInfo_PageInfo>, IGetGamesNextPage_AllGameWithDevGerne_PageInfo_PageInfo
+    {
+        public GetGamesNextPage_AllGameWithDevGerne_PageInfo_PageInfo(global::System.Boolean hasNextPage, global::System.String? endCursor)
+        {
+            HasNextPage = hasNextPage;
+            EndCursor = endCursor;
+        }
+
+        /// <summary>
+        /// Indicates whether more edges exist following the set defined by the clients arguments.
+        /// </summary>
+        public global::System.Boolean HasNextPage { get; }
+
+        /// <summary>
+        /// When paginating forwards, the cursor to continue.
+        /// </summary>
+        public global::System.String? EndCursor { get; }
+
+        public virtual global::System.Boolean Equals(GetGamesNextPage_AllGameWithDevGerne_PageInfo_PageInfo? other)
+        {
+            if (ReferenceEquals(null, other))
+            {
+                return false;
+            }
+
+            if (ReferenceEquals(this, other))
+            {
+                return true;
+            }
+
+            if (other.GetType() != GetType())
+            {
+                return false;
+            }
+
+            return (HasNextPage == other.HasNextPage) && ((EndCursor is null && other.EndCursor is null) || EndCursor != null && EndCursor.Equals(other.EndCursor));
+        }
+
+        public override global::System.Boolean Equals(global::System.Object? obj)
+        {
+            if (ReferenceEquals(null, obj))
+            {
+                return false;
+            }
+
+            if (ReferenceEquals(this, obj))
+            {
+                return true;
+            }
+
+            if (obj.GetType() != GetType())
+            {
+                return false;
+            }
+
+            return Equals((GetGamesNextPage_AllGameWithDevGerne_PageInfo_PageInfo)obj);
+        }
+
+        public override global::System.Int32 GetHashCode()
+        {
+            unchecked
+            {
+                int hash = 5;
+                hash ^= 397 * HasNextPage.GetHashCode();
+                if (EndCursor != null)
+                {
+                    hash ^= 397 * EndCursor.GetHashCode();
+                }
+
+                return hash;
+            }
+        }
+    }
+
+    [global::System.CodeDom.Compiler.GeneratedCode("StrawberryShake", "12.4.1.0")]
+    public partial class GetGamesNextPage_AllGameWithDevGerne_Nodes_Genre_Genre : global::System.IEquatable<GetGamesNextPage_AllGameWithDevGerne_Nodes_Genre_Genre>, IGetGamesNextPage_AllGameWithDevGerne_Nodes_Genre_Genre
+    {
+        public GetGamesNextPage_AllGameWithDevGerne_Nodes_Genre_Genre(global::System.String? name)
+        {
+            Name = name;
+        }
+
+        public global::System.String? Name { get; }
+
+        public virtual global::System.Boolean Equals(GetGamesNextPage_AllGameWithDevGerne_Nodes_Genre_Genre? other)
+        {
+            if (ReferenceEquals(null, other))
+            {
+                return false;
+            }
+
+            if (ReferenceEquals(this, other))
+            {
+                return true;
+            }
+
+            if (other.GetType() != GetType())
+            {
+                return false;
+            }
+
+            return (((Name is null && other.Name is null) || Name != null && Name.Equals(other.Name)));
+        }
+
+        public override global::System.Boolean Equals(global::System.Object? obj)
+        {
+            if (ReferenceEquals(null, obj))
+            {
+                return false;
+            }
+
+            if (ReferenceEquals(this, obj))
+            {
+                return true;
+            }
+
+            if (obj.GetType() != GetType())
+            {
+                return false;
+            }
+
+            return Equals((GetGamesNextPage_AllGameWithDevGerne_Nodes_Genre_Genre)obj);
+        }
+
+        public override global::System.Int32 GetHashCode()
+        {
+            unchecked
+            {
+                int hash = 5;
+                if (Name != null)
+                {
+                    hash ^= 397 * Name.GetHashCode();
+                }
+
+                return hash;
+            }
+        }
+    }
+
+    [global::System.CodeDom.Compiler.GeneratedCode("StrawberryShake", "12.4.1.0")]
+    public partial class GetGamesNextPage_AllGameWithDevGerne_Nodes_Developer_Developers : global::System.IEquatable<GetGamesNextPage_AllGameWithDevGerne_Nodes_Developer_Developers>, IGetGamesNextPage_AllGameWithDevGerne_Nodes_Developer_Developers
+    {
+        public GetGamesNextPage_AllGameWithDevGerne_Nodes_Developer_Developers(global::System.String? name, global::System.String? country)
+        {
+            Name = name;
+            Country = country;
+        }
+
+        public global::System.String? Name { get; }
+
+        public global::System.String? Country { get; }
+
+        public virtual global::System.Boolean Equals(GetGamesNextPage_AllGameWithDevGerne_Nodes_Developer_Developers? other)
+        {
+            if (ReferenceEquals(null, other))
+            {
+                return false;
+            }
+
+            if (ReferenceEquals(this, other))
+            {
+                return true;
+            }
+
+            if (other.GetType() != GetType())
+            {
+                return false;
+            }
+
+            return (((Name is null && other.Name is null) || Name != null && Name.Equals(other.Name))) && ((Country is null && other.Country is null) || Country != null && Country.Equals(other.Country));
+        }
+
+        public override global::System.Boolean Equals(global::System.Object? obj)
+        {
+            if (ReferenceEquals(null, obj))
+            {
+                return false;
+            }
+
+            if (ReferenceEquals(this, obj))
+            {
+                return true;
+            }
+
+            if (obj.GetType() != GetType())
+            {
+                return false;
+            }
+
+            return Equals((GetGamesNextPage_AllGameWithDevGerne_Nodes_Developer_Developers)obj);
+        }
+
+        public override global::System.Int32 GetHashCode()
+        {
+            unchecked
+            {
+                int hash = 5;
+                if (Name != null)
+                {
+                    hash ^= 397 * Name.GetHashCode();
+                }
+
+                if (Country != null)
+                {
+                    hash ^= 397 * Country.GetHashCode();
+                }
+
+                return hash;
+            }
+        }
+    }
+
+    [global::System.CodeDom.Compiler.GeneratedCode("StrawberryShake", "12.4.1.0")]
+    public interface IGetGamesNextPageResult
+    {
+        public global::Prelast.GraphQL.IGetGamesNextPage_AllGameWithDevGerne? AllGameWithDevGerne { get; }
+    }
+
+    /// <summary>
+    /// A connection to a list of items.
+    /// </summary>
+    [global::System.CodeDom.Compiler.GeneratedCode("StrawberryShake", "12.4.1.0")]
+    public interface IGetGamesNextPage_AllGameWithDevGerne
+    {
+        /// <summary>
+        /// A flattened list of the nodes.
+        /// </summary>
+        public global::System.Collections.Generic.IReadOnlyList<global::Prelast.GraphQL.IGetGamesNextPage_AllGameWithDevGerne_Nodes?>? Nodes { get; }
+
+        /// <summary>
+        /// Information to aid in pagination.
+        /// </summary>
+        public global::Prelast.GraphQL.IGetGamesNextPage_AllGameWithDevGerne_PageInfo PageInfo { get; }
+    }
+
+    /// <summary>
+    /// A connection to a list of items.
+    /// </summary>
+    [global::System.CodeDom.Compiler.GeneratedCode("StrawberryShake", "12.4.1.0")]
+    public interface IGetGamesNextPage_AllGameWithDevGerne_AllGameWithDevGerneConnection : IGetGamesNextPage_AllGameWithDevGerne
+    {
+    }
+
+    [global::System.CodeDom.Compiler.GeneratedCode("StrawberryShake", "12.4.1.0")]
+    public interface IGetGamesNextPage_AllGameWithDevGerne_Nodes : IGamesInfo
+    {
+    }
+
+    [global::System.CodeDom.Compiler.GeneratedCode("StrawberryShake", "12.4.1.0")]
+    public interface IGetGamesNextPage_AllGameWithDevGerne_Nodes_Games : IGetGamesNextPage_AllGameWithDevGerne_Nodes
+    {
+    }
+
+    /// <summary>
+    /// Information about pagination in a connection.
+    /// </summary>
+    [global::System.CodeDom.Compiler.GeneratedCode("StrawberryShake", "12.4.1.0")]
+    public interface IGetGamesNextPage_AllGameWithDevGerne_PageInfo
+    {
+        /// <summary>
+        /// Indicates whether more edges exist following the set defined by the clients arguments.
+        /// </summary>
+        public global::System.Boolean HasNextPage { get; }
+
+        /// <summary>
+        /// When paginating forwards, the cursor to continue.
+        /// </summary>
+        public global::System.String? EndCursor { get; }
+    }
+
+    /// <summary>
+    /// Information about pagination in a connection.
+    /// </summary>
+    [global::System.CodeDom.Compiler.GeneratedCode("StrawberryShake", "12.4.1.0")]
+    public interface IGetGamesNextPage_AllGameWithDevGerne_PageInfo_PageInfo : IGetGamesNextPage_AllGameWithDevGerne_PageInfo
+    {
+    }
+
+    [global::System.CodeDom.Compiler.GeneratedCode("StrawberryShake", "12.4.1.0")]
+    public interface IGetGamesNextPage_AllGameWithDevGerne_Nodes_Genre
+    {
+        public global::System.String? Name { get; }
+    }
+
+    [global::System.CodeDom.Compiler.GeneratedCode("StrawberryShake", "12.4.1.0")]
+    public interface IGetGamesNextPage_AllGameWithDevGerne_Nodes_Genre_Genre : IGetGamesNextPage_AllGameWithDevGerne_Nodes_Genre
+    {
+    }
+
+    [global::System.CodeDom.Compiler.GeneratedCode("StrawberryShake", "12.4.1.0")]
+    public interface IGetGamesNextPage_AllGameWithDevGerne_Nodes_Developer
+    {
+        public global::System.String? Name { get; }
+
+        public global::System.String? Country { get; }
+    }
+
+    [global::System.CodeDom.Compiler.GeneratedCode("StrawberryShake", "12.4.1.0")]
+    public interface IGetGamesNextPage_AllGameWithDevGerne_Nodes_Developer_Developers : IGetGamesNextPage_AllGameWithDevGerne_Nodes_Developer
+    {
+    }
+
+    [global::System.CodeDom.Compiler.GeneratedCode("StrawberryShake", "12.4.1.0")]
+    public partial class GetGamesPrevPageResult : global::System.IEquatable<GetGamesPrevPageResult>, IGetGamesPrevPageResult
+    {
+        public GetGamesPrevPageResult(global::Prelast.GraphQL.IGetGamesPrevPage_AllGameWithDevGerne? allGameWithDevGerne)
+        {
+            AllGameWithDevGerne = allGameWithDevGerne;
+        }
+
+        public global::Prelast.GraphQL.IGetGamesPrevPage_AllGameWithDevGerne? AllGameWithDevGerne { get; }
+
+        public virtual global::System.Boolean Equals(GetGamesPrevPageResult? other)
+        {
+            if (ReferenceEquals(null, other))
+            {
+                return false;
+            }
+
+            if (ReferenceEquals(this, other))
+            {
+                return true;
+            }
+
+            if (other.GetType() != GetType())
+            {
+                return false;
+            }
+
+            return (((AllGameWithDevGerne is null && other.AllGameWithDevGerne is null) || AllGameWithDevGerne != null && AllGameWithDevGerne.Equals(other.AllGameWithDevGerne)));
+        }
+
+        public override global::System.Boolean Equals(global::System.Object? obj)
+        {
+            if (ReferenceEquals(null, obj))
+            {
+                return false;
+            }
+
+            if (ReferenceEquals(this, obj))
+            {
+                return true;
+            }
+
+            if (obj.GetType() != GetType())
+            {
+                return false;
+            }
+
+            return Equals((GetGamesPrevPageResult)obj);
+        }
+
+        public override global::System.Int32 GetHashCode()
+        {
+            unchecked
+            {
+                int hash = 5;
+                if (AllGameWithDevGerne != null)
+                {
+                    hash ^= 397 * AllGameWithDevGerne.GetHashCode();
+                }
+
+                return hash;
+            }
+        }
+    }
+
+    /// <summary>
+    /// A connection to a list of items.
+    /// </summary>
+    [global::System.CodeDom.Compiler.GeneratedCode("StrawberryShake", "12.4.1.0")]
+    public partial class GetGamesPrevPage_AllGameWithDevGerne_AllGameWithDevGerneConnection : global::System.IEquatable<GetGamesPrevPage_AllGameWithDevGerne_AllGameWithDevGerneConnection>, IGetGamesPrevPage_AllGameWithDevGerne_AllGameWithDevGerneConnection
+    {
+        public GetGamesPrevPage_AllGameWithDevGerne_AllGameWithDevGerneConnection(global::System.Collections.Generic.IReadOnlyList<global::Prelast.GraphQL.IGetGamesPrevPage_AllGameWithDevGerne_Nodes?>? nodes, global::Prelast.GraphQL.IGetGamesPrevPage_AllGameWithDevGerne_PageInfo pageInfo)
+        {
+            Nodes = nodes;
+            PageInfo = pageInfo;
+        }
+
+        /// <summary>
+        /// A flattened list of the nodes.
+        /// </summary>
+        public global::System.Collections.Generic.IReadOnlyList<global::Prelast.GraphQL.IGetGamesPrevPage_AllGameWithDevGerne_Nodes?>? Nodes { get; }
+
+        /// <summary>
+        /// Information to aid in pagination.
+        /// </summary>
+        public global::Prelast.GraphQL.IGetGamesPrevPage_AllGameWithDevGerne_PageInfo PageInfo { get; }
+
+        public virtual global::System.Boolean Equals(GetGamesPrevPage_AllGameWithDevGerne_AllGameWithDevGerneConnection? other)
+        {
+            if (ReferenceEquals(null, other))
+            {
+                return false;
+            }
+
+            if (ReferenceEquals(this, other))
+            {
+                return true;
+            }
+
+            if (other.GetType() != GetType())
+            {
+                return false;
+            }
+
+            return (global::StrawberryShake.Helper.ComparisonHelper.SequenceEqual(Nodes, other.Nodes)) && PageInfo.Equals(other.PageInfo);
+        }
+
+        public override global::System.Boolean Equals(global::System.Object? obj)
+        {
+            if (ReferenceEquals(null, obj))
+            {
+                return false;
+            }
+
+            if (ReferenceEquals(this, obj))
+            {
+                return true;
+            }
+
+            if (obj.GetType() != GetType())
+            {
+                return false;
+            }
+
+            return Equals((GetGamesPrevPage_AllGameWithDevGerne_AllGameWithDevGerneConnection)obj);
+        }
+
+        public override global::System.Int32 GetHashCode()
+        {
+            unchecked
+            {
+                int hash = 5;
+                if (Nodes != null)
+                {
+                    foreach (var Nodes_elm in Nodes)
+                    {
+                        if (Nodes_elm != null)
+                        {
+                            hash ^= 397 * Nodes_elm.GetHashCode();
+                        }
+                    }
+                }
+
+                hash ^= 397 * PageInfo.GetHashCode();
+                return hash;
+            }
+        }
+    }
+
+    [global::System.CodeDom.Compiler.GeneratedCode("StrawberryShake", "12.4.1.0")]
+    public partial class GetGamesPrevPage_AllGameWithDevGerne_Nodes_Games : global::System.IEquatable<GetGamesPrevPage_AllGameWithDevGerne_Nodes_Games>, IGetGamesPrevPage_AllGameWithDevGerne_Nodes_Games
+    {
+        public GetGamesPrevPage_AllGameWithDevGerne_Nodes_Games(global::System.Int32 gamesId, global::System.String? name, global::System.Double price, global::Prelast.GraphQL.IChangePrice_ChangeGamePriceById_Genre? genre, global::Prelast.GraphQL.IChangePrice_ChangeGamePriceById_Developer? developer)
+        {
+            GamesId = gamesId;
+            Name = name;
+            Price = price;
+            Genre = genre;
+            Developer = developer;
+        }
+
+        public global::System.Int32 GamesId { get; }
+
+        public global::System.String? Name { get; }
+
+        public global::System.Double Price { get; }
+
+        public global::Prelast.GraphQL.IChangePrice_ChangeGamePriceById_Genre? Genre { get; }
+
+        public global::Prelast.GraphQL.IChangePrice_ChangeGamePriceById_Developer? Developer { get; }
+
+        public virtual global::System.Boolean Equals(GetGamesPrevPage_AllGameWithDevGerne_Nodes_Games? other)
+        {
+            if (ReferenceEquals(null, other))
+            {
+                return false;
+            }
+
+            if (ReferenceEquals(this, other))
+            {
+                return true;
+            }
+
+            if (other.GetType() != GetType())
+            {
+                return false;
+            }
+
+            return (GamesId == other.GamesId) && ((Name is null && other.Name is null) || Name != null && Name.Equals(other.Name)) && Price == other.Price && ((Genre is null && other.Genre is null) || Genre != null && Genre.Equals(other.Genre)) && ((Developer is null && other.Developer is null) || Developer != null && Developer.Equals(other.Developer));
+        }
+
+        public override global::System.Boolean Equals(global::System.Object? obj)
+        {
+            if (ReferenceEquals(null, obj))
+            {
+                return false;
+            }
+
+            if (ReferenceEquals(this, obj))
+            {
+                return true;
+            }
+
+            if (obj.GetType() != GetType())
+            {
+                return false;
+            }
+
+            return Equals((GetGamesPrevPage_AllGameWithDevGerne_Nodes_Games)obj);
+        }
+
+        public override global::System.Int32 GetHashCode()
+        {
+            unchecked
+            {
+                int hash = 5;
+                hash ^= 397 * GamesId.GetHashCode();
+                if (Name != null)
+                {
+                    hash ^= 397 * Name.GetHashCode();
+                }
+
+                hash ^= 397 * Price.GetHashCode();
+                if (Genre != null)
+                {
+                    hash ^= 397 * Genre.GetHashCode();
+                }
+
+                if (Developer != null)
+                {
+                    hash ^= 397 * Developer.GetHashCode();
+                }
+
+                return hash;
+            }
+        }
+    }
+
+    /// <summary>
+    /// Information about pagination in a connection.
+    /// </summary>
+    [global::System.CodeDom.Compiler.GeneratedCode("StrawberryShake", "12.4.1.0")]
+    public partial class GetGamesPrevPage_AllGameWithDevGerne_PageInfo_PageInfo : global::System.IEquatable<GetGamesPrevPage_AllGameWithDevGerne_PageInfo_PageInfo>, IGetGamesPrevPage_AllGameWithDevGerne_PageInfo_PageInfo
+    {
+        public GetGamesPrevPage_AllGameWithDevGerne_PageInfo_PageInfo(global::System.Boolean hasNextPage, global::System.String? endCursor)
+        {
+            HasNextPage = hasNextPage;
+            EndCursor = endCursor;
+        }
+
+        /// <summary>
+        /// Indicates whether more edges exist following the set defined by the clients arguments.
+        /// </summary>
+        public global::System.Boolean HasNextPage { get; }
+
+        /// <summary>
+        /// When paginating forwards, the cursor to continue.
+        /// </summary>
+        public global::System.String? EndCursor { get; }
+
+        public virtual global::System.Boolean Equals(GetGamesPrevPage_AllGameWithDevGerne_PageInfo_PageInfo? other)
+        {
+            if (ReferenceEquals(null, other))
+            {
+                return false;
+            }
+
+            if (ReferenceEquals(this, other))
+            {
+                return true;
+            }
+
+            if (other.GetType() != GetType())
+            {
+                return false;
+            }
+
+            return (HasNextPage == other.HasNextPage) && ((EndCursor is null && other.EndCursor is null) || EndCursor != null && EndCursor.Equals(other.EndCursor));
+        }
+
+        public override global::System.Boolean Equals(global::System.Object? obj)
+        {
+            if (ReferenceEquals(null, obj))
+            {
+                return false;
+            }
+
+            if (ReferenceEquals(this, obj))
+            {
+                return true;
+            }
+
+            if (obj.GetType() != GetType())
+            {
+                return false;
+            }
+
+            return Equals((GetGamesPrevPage_AllGameWithDevGerne_PageInfo_PageInfo)obj);
+        }
+
+        public override global::System.Int32 GetHashCode()
+        {
+            unchecked
+            {
+                int hash = 5;
+                hash ^= 397 * HasNextPage.GetHashCode();
+                if (EndCursor != null)
+                {
+                    hash ^= 397 * EndCursor.GetHashCode();
+                }
+
+                return hash;
+            }
+        }
+    }
+
+    [global::System.CodeDom.Compiler.GeneratedCode("StrawberryShake", "12.4.1.0")]
+    public partial class GetGamesPrevPage_AllGameWithDevGerne_Nodes_Genre_Genre : global::System.IEquatable<GetGamesPrevPage_AllGameWithDevGerne_Nodes_Genre_Genre>, IGetGamesPrevPage_AllGameWithDevGerne_Nodes_Genre_Genre
+    {
+        public GetGamesPrevPage_AllGameWithDevGerne_Nodes_Genre_Genre(global::System.String? name)
+        {
+            Name = name;
+        }
+
+        public global::System.String? Name { get; }
+
+        public virtual global::System.Boolean Equals(GetGamesPrevPage_AllGameWithDevGerne_Nodes_Genre_Genre? other)
+        {
+            if (ReferenceEquals(null, other))
+            {
+                return false;
+            }
+
+            if (ReferenceEquals(this, other))
+            {
+                return true;
+            }
+
+            if (other.GetType() != GetType())
+            {
+                return false;
+            }
+
+            return (((Name is null && other.Name is null) || Name != null && Name.Equals(other.Name)));
+        }
+
+        public override global::System.Boolean Equals(global::System.Object? obj)
+        {
+            if (ReferenceEquals(null, obj))
+            {
+                return false;
+            }
+
+            if (ReferenceEquals(this, obj))
+            {
+                return true;
+            }
+
+            if (obj.GetType() != GetType())
+            {
+                return false;
+            }
+
+            return Equals((GetGamesPrevPage_AllGameWithDevGerne_Nodes_Genre_Genre)obj);
+        }
+
+        public override global::System.Int32 GetHashCode()
+        {
+            unchecked
+            {
+                int hash = 5;
+                if (Name != null)
+                {
+                    hash ^= 397 * Name.GetHashCode();
+                }
+
+                return hash;
+            }
+        }
+    }
+
+    [global::System.CodeDom.Compiler.GeneratedCode("StrawberryShake", "12.4.1.0")]
+    public partial class GetGamesPrevPage_AllGameWithDevGerne_Nodes_Developer_Developers : global::System.IEquatable<GetGamesPrevPage_AllGameWithDevGerne_Nodes_Developer_Developers>, IGetGamesPrevPage_AllGameWithDevGerne_Nodes_Developer_Developers
+    {
+        public GetGamesPrevPage_AllGameWithDevGerne_Nodes_Developer_Developers(global::System.String? name, global::System.String? country)
+        {
+            Name = name;
+            Country = country;
+        }
+
+        public global::System.String? Name { get; }
+
+        public global::System.String? Country { get; }
+
+        public virtual global::System.Boolean Equals(GetGamesPrevPage_AllGameWithDevGerne_Nodes_Developer_Developers? other)
+        {
+            if (ReferenceEquals(null, other))
+            {
+                return false;
+            }
+
+            if (ReferenceEquals(this, other))
+            {
+                return true;
+            }
+
+            if (other.GetType() != GetType())
+            {
+                return false;
+            }
+
+            return (((Name is null && other.Name is null) || Name != null && Name.Equals(other.Name))) && ((Country is null && other.Country is null) || Country != null && Country.Equals(other.Country));
+        }
+
+        public override global::System.Boolean Equals(global::System.Object? obj)
+        {
+            if (ReferenceEquals(null, obj))
+            {
+                return false;
+            }
+
+            if (ReferenceEquals(this, obj))
+            {
+                return true;
+            }
+
+            if (obj.GetType() != GetType())
+            {
+                return false;
+            }
+
+            return Equals((GetGamesPrevPage_AllGameWithDevGerne_Nodes_Developer_Developers)obj);
+        }
+
+        public override global::System.Int32 GetHashCode()
+        {
+            unchecked
+            {
+                int hash = 5;
+                if (Name != null)
+                {
+                    hash ^= 397 * Name.GetHashCode();
+                }
+
+                if (Country != null)
+                {
+                    hash ^= 397 * Country.GetHashCode();
+                }
+
+                return hash;
+            }
+        }
+    }
+
+    [global::System.CodeDom.Compiler.GeneratedCode("StrawberryShake", "12.4.1.0")]
+    public interface IGetGamesPrevPageResult
+    {
+        public global::Prelast.GraphQL.IGetGamesPrevPage_AllGameWithDevGerne? AllGameWithDevGerne { get; }
+    }
+
+    /// <summary>
+    /// A connection to a list of items.
+    /// </summary>
+    [global::System.CodeDom.Compiler.GeneratedCode("StrawberryShake", "12.4.1.0")]
+    public interface IGetGamesPrevPage_AllGameWithDevGerne
+    {
+        /// <summary>
+        /// A flattened list of the nodes.
+        /// </summary>
+        public global::System.Collections.Generic.IReadOnlyList<global::Prelast.GraphQL.IGetGamesPrevPage_AllGameWithDevGerne_Nodes?>? Nodes { get; }
+
+        /// <summary>
+        /// Information to aid in pagination.
+        /// </summary>
+        public global::Prelast.GraphQL.IGetGamesPrevPage_AllGameWithDevGerne_PageInfo PageInfo { get; }
+    }
+
+    /// <summary>
+    /// A connection to a list of items.
+    /// </summary>
+    [global::System.CodeDom.Compiler.GeneratedCode("StrawberryShake", "12.4.1.0")]
+    public interface IGetGamesPrevPage_AllGameWithDevGerne_AllGameWithDevGerneConnection : IGetGamesPrevPage_AllGameWithDevGerne
+    {
+    }
+
+    [global::System.CodeDom.Compiler.GeneratedCode("StrawberryShake", "12.4.1.0")]
+    public interface IGetGamesPrevPage_AllGameWithDevGerne_Nodes : IGamesInfo
+    {
+    }
+
+    [global::System.CodeDom.Compiler.GeneratedCode("StrawberryShake", "12.4.1.0")]
+    public interface IGetGamesPrevPage_AllGameWithDevGerne_Nodes_Games : IGetGamesPrevPage_AllGameWithDevGerne_Nodes
+    {
+    }
+
+    /// <summary>
+    /// Information about pagination in a connection.
+    /// </summary>
+    [global::System.CodeDom.Compiler.GeneratedCode("StrawberryShake", "12.4.1.0")]
+    public interface IGetGamesPrevPage_AllGameWithDevGerne_PageInfo
+    {
+        /// <summary>
+        /// Indicates whether more edges exist following the set defined by the clients arguments.
+        /// </summary>
+        public global::System.Boolean HasNextPage { get; }
+
+        /// <summary>
+        /// When paginating forwards, the cursor to continue.
+        /// </summary>
+        public global::System.String? EndCursor { get; }
+    }
+
+    /// <summary>
+    /// Information about pagination in a connection.
+    /// </summary>
+    [global::System.CodeDom.Compiler.GeneratedCode("StrawberryShake", "12.4.1.0")]
+    public interface IGetGamesPrevPage_AllGameWithDevGerne_PageInfo_PageInfo : IGetGamesPrevPage_AllGameWithDevGerne_PageInfo
+    {
+    }
+
+    [global::System.CodeDom.Compiler.GeneratedCode("StrawberryShake", "12.4.1.0")]
+    public interface IGetGamesPrevPage_AllGameWithDevGerne_Nodes_Genre
+    {
+        public global::System.String? Name { get; }
+    }
+
+    [global::System.CodeDom.Compiler.GeneratedCode("StrawberryShake", "12.4.1.0")]
+    public interface IGetGamesPrevPage_AllGameWithDevGerne_Nodes_Genre_Genre : IGetGamesPrevPage_AllGameWithDevGerne_Nodes_Genre
+    {
+    }
+
+    [global::System.CodeDom.Compiler.GeneratedCode("StrawberryShake", "12.4.1.0")]
+    public interface IGetGamesPrevPage_AllGameWithDevGerne_Nodes_Developer
+    {
+        public global::System.String? Name { get; }
+
+        public global::System.String? Country { get; }
+    }
+
+    [global::System.CodeDom.Compiler.GeneratedCode("StrawberryShake", "12.4.1.0")]
+    public interface IGetGamesPrevPage_AllGameWithDevGerne_Nodes_Developer_Developers : IGetGamesPrevPage_AllGameWithDevGerne_Nodes_Developer
     {
     }
 
@@ -3586,6 +7530,949 @@ namespace Prelast.GraphQL
     }
 
     /// <summary>
+    /// Represents the operation service of the GetDevelWithPaging GraphQL operation
+    /// <code>
+    /// query GetDevelWithPaging($countItem: Int!) {
+    ///   allDeveloper(first: $countItem) {
+    ///     __typename
+    ///     nodes {
+    ///       __typename
+    ///       ... DevelopersInfo
+    ///     }
+    ///     pageInfo {
+    ///       __typename
+    ///       hasNextPage
+    ///       endCursor
+    ///     }
+    ///   }
+    /// }
+    /// 
+    /// fragment DevelopersInfo on Developers {
+    ///   developerId
+    ///   name
+    ///   country
+    /// }
+    /// </code>
+    /// </summary>
+    [global::System.CodeDom.Compiler.GeneratedCode("StrawberryShake", "12.4.1.0")]
+    public partial class GetDevelWithPagingQueryDocument : global::StrawberryShake.IDocument
+    {
+        private GetDevelWithPagingQueryDocument()
+        {
+        }
+
+        public static GetDevelWithPagingQueryDocument Instance { get; } = new GetDevelWithPagingQueryDocument();
+        public global::StrawberryShake.OperationKind Kind => global::StrawberryShake.OperationKind.Query;
+        public global::System.ReadOnlySpan<global::System.Byte> Body => new global::System.Byte[]{0x71, 0x75, 0x65, 0x72, 0x79, 0x20, 0x47, 0x65, 0x74, 0x44, 0x65, 0x76, 0x65, 0x6c, 0x57, 0x69, 0x74, 0x68, 0x50, 0x61, 0x67, 0x69, 0x6e, 0x67, 0x28, 0x24, 0x63, 0x6f, 0x75, 0x6e, 0x74, 0x49, 0x74, 0x65, 0x6d, 0x3a, 0x20, 0x49, 0x6e, 0x74, 0x21, 0x29, 0x20, 0x7b, 0x20, 0x61, 0x6c, 0x6c, 0x44, 0x65, 0x76, 0x65, 0x6c, 0x6f, 0x70, 0x65, 0x72, 0x28, 0x66, 0x69, 0x72, 0x73, 0x74, 0x3a, 0x20, 0x24, 0x63, 0x6f, 0x75, 0x6e, 0x74, 0x49, 0x74, 0x65, 0x6d, 0x29, 0x20, 0x7b, 0x20, 0x5f, 0x5f, 0x74, 0x79, 0x70, 0x65, 0x6e, 0x61, 0x6d, 0x65, 0x20, 0x6e, 0x6f, 0x64, 0x65, 0x73, 0x20, 0x7b, 0x20, 0x5f, 0x5f, 0x74, 0x79, 0x70, 0x65, 0x6e, 0x61, 0x6d, 0x65, 0x20, 0x2e, 0x2e, 0x2e, 0x20, 0x44, 0x65, 0x76, 0x65, 0x6c, 0x6f, 0x70, 0x65, 0x72, 0x73, 0x49, 0x6e, 0x66, 0x6f, 0x20, 0x7d, 0x20, 0x70, 0x61, 0x67, 0x65, 0x49, 0x6e, 0x66, 0x6f, 0x20, 0x7b, 0x20, 0x5f, 0x5f, 0x74, 0x79, 0x70, 0x65, 0x6e, 0x61, 0x6d, 0x65, 0x20, 0x68, 0x61, 0x73, 0x4e, 0x65, 0x78, 0x74, 0x50, 0x61, 0x67, 0x65, 0x20, 0x65, 0x6e, 0x64, 0x43, 0x75, 0x72, 0x73, 0x6f, 0x72, 0x20, 0x7d, 0x20, 0x7d, 0x20, 0x7d, 0x20, 0x66, 0x72, 0x61, 0x67, 0x6d, 0x65, 0x6e, 0x74, 0x20, 0x44, 0x65, 0x76, 0x65, 0x6c, 0x6f, 0x70, 0x65, 0x72, 0x73, 0x49, 0x6e, 0x66, 0x6f, 0x20, 0x6f, 0x6e, 0x20, 0x44, 0x65, 0x76, 0x65, 0x6c, 0x6f, 0x70, 0x65, 0x72, 0x73, 0x20, 0x7b, 0x20, 0x64, 0x65, 0x76, 0x65, 0x6c, 0x6f, 0x70, 0x65, 0x72, 0x49, 0x64, 0x20, 0x6e, 0x61, 0x6d, 0x65, 0x20, 0x63, 0x6f, 0x75, 0x6e, 0x74, 0x72, 0x79, 0x20, 0x7d};
+        public global::StrawberryShake.DocumentHash Hash { get; } = new global::StrawberryShake.DocumentHash("md5Hash", "f0f96120073e0f7ec375b6bef2ce113d");
+        public override global::System.String ToString()
+        {
+#if NETSTANDARD2_0
+        return global::System.Text.Encoding.UTF8.GetString(Body.ToArray());
+#else
+            return global::System.Text.Encoding.UTF8.GetString(Body);
+#endif
+        }
+    }
+
+    /// <summary>
+    /// Represents the operation service of the GetDevelWithPaging GraphQL operation
+    /// <code>
+    /// query GetDevelWithPaging($countItem: Int!) {
+    ///   allDeveloper(first: $countItem) {
+    ///     __typename
+    ///     nodes {
+    ///       __typename
+    ///       ... DevelopersInfo
+    ///     }
+    ///     pageInfo {
+    ///       __typename
+    ///       hasNextPage
+    ///       endCursor
+    ///     }
+    ///   }
+    /// }
+    /// 
+    /// fragment DevelopersInfo on Developers {
+    ///   developerId
+    ///   name
+    ///   country
+    /// }
+    /// </code>
+    /// </summary>
+    [global::System.CodeDom.Compiler.GeneratedCode("StrawberryShake", "12.4.1.0")]
+    public partial class GetDevelWithPagingQuery : global::Prelast.GraphQL.IGetDevelWithPagingQuery
+    {
+        private readonly global::StrawberryShake.IOperationExecutor<IGetDevelWithPagingResult> _operationExecutor;
+        private readonly global::StrawberryShake.Serialization.IInputValueFormatter _intFormatter;
+        public GetDevelWithPagingQuery(global::StrawberryShake.IOperationExecutor<IGetDevelWithPagingResult> operationExecutor, global::StrawberryShake.Serialization.ISerializerResolver serializerResolver)
+        {
+            _operationExecutor = operationExecutor ?? throw new global::System.ArgumentNullException(nameof(operationExecutor));
+            _intFormatter = serializerResolver.GetInputValueFormatter("Int");
+        }
+
+        global::System.Type global::StrawberryShake.IOperationRequestFactory.ResultType => typeof(IGetDevelWithPagingResult);
+        public async global::System.Threading.Tasks.Task<global::StrawberryShake.IOperationResult<IGetDevelWithPagingResult>> ExecuteAsync(global::System.Int32 countItem, global::System.Threading.CancellationToken cancellationToken = default)
+        {
+            var request = CreateRequest(countItem);
+            return await _operationExecutor.ExecuteAsync(request, cancellationToken).ConfigureAwait(false);
+        }
+
+        public global::System.IObservable<global::StrawberryShake.IOperationResult<IGetDevelWithPagingResult>> Watch(global::System.Int32 countItem, global::StrawberryShake.ExecutionStrategy? strategy = null)
+        {
+            var request = CreateRequest(countItem);
+            return _operationExecutor.Watch(request, strategy);
+        }
+
+        private global::StrawberryShake.OperationRequest CreateRequest(global::System.Int32 countItem)
+        {
+            var variables = new global::System.Collections.Generic.Dictionary<global::System.String, global::System.Object?>();
+            variables.Add("countItem", FormatCountItem(countItem));
+            return CreateRequest(variables);
+        }
+
+        private global::StrawberryShake.OperationRequest CreateRequest(global::System.Collections.Generic.IReadOnlyDictionary<global::System.String, global::System.Object?>? variables)
+        {
+            return new global::StrawberryShake.OperationRequest(id: GetDevelWithPagingQueryDocument.Instance.Hash.Value, name: "GetDevelWithPaging", document: GetDevelWithPagingQueryDocument.Instance, strategy: global::StrawberryShake.RequestStrategy.Default, variables: variables);
+        }
+
+        private global::System.Object? FormatCountItem(global::System.Int32 value)
+        {
+            return _intFormatter.Format(value);
+        }
+
+        global::StrawberryShake.OperationRequest global::StrawberryShake.IOperationRequestFactory.Create(global::System.Collections.Generic.IReadOnlyDictionary<global::System.String, global::System.Object?>? variables)
+        {
+            return CreateRequest(variables!);
+        }
+    }
+
+    /// <summary>
+    /// Represents the operation service of the GetDevelWithPaging GraphQL operation
+    /// <code>
+    /// query GetDevelWithPaging($countItem: Int!) {
+    ///   allDeveloper(first: $countItem) {
+    ///     __typename
+    ///     nodes {
+    ///       __typename
+    ///       ... DevelopersInfo
+    ///     }
+    ///     pageInfo {
+    ///       __typename
+    ///       hasNextPage
+    ///       endCursor
+    ///     }
+    ///   }
+    /// }
+    /// 
+    /// fragment DevelopersInfo on Developers {
+    ///   developerId
+    ///   name
+    ///   country
+    /// }
+    /// </code>
+    /// </summary>
+    [global::System.CodeDom.Compiler.GeneratedCode("StrawberryShake", "12.4.1.0")]
+    public interface IGetDevelWithPagingQuery : global::StrawberryShake.IOperationRequestFactory
+    {
+        global::System.Threading.Tasks.Task<global::StrawberryShake.IOperationResult<IGetDevelWithPagingResult>> ExecuteAsync(global::System.Int32 countItem, global::System.Threading.CancellationToken cancellationToken = default);
+        global::System.IObservable<global::StrawberryShake.IOperationResult<IGetDevelWithPagingResult>> Watch(global::System.Int32 countItem, global::StrawberryShake.ExecutionStrategy? strategy = null);
+    }
+
+    /// <summary>
+    /// Represents the operation service of the GetDevelPrevPage GraphQL operation
+    /// <code>
+    /// query GetDevelPrevPage($countItem: Int!, $cursot: String!) {
+    ///   allDeveloper(last: $countItem, before: $cursot) {
+    ///     __typename
+    ///     nodes {
+    ///       __typename
+    ///       ... DevelopersInfo
+    ///     }
+    ///     pageInfo {
+    ///       __typename
+    ///       hasNextPage
+    ///       endCursor
+    ///     }
+    ///   }
+    /// }
+    /// 
+    /// fragment DevelopersInfo on Developers {
+    ///   developerId
+    ///   name
+    ///   country
+    /// }
+    /// </code>
+    /// </summary>
+    [global::System.CodeDom.Compiler.GeneratedCode("StrawberryShake", "12.4.1.0")]
+    public partial class GetDevelPrevPageQueryDocument : global::StrawberryShake.IDocument
+    {
+        private GetDevelPrevPageQueryDocument()
+        {
+        }
+
+        public static GetDevelPrevPageQueryDocument Instance { get; } = new GetDevelPrevPageQueryDocument();
+        public global::StrawberryShake.OperationKind Kind => global::StrawberryShake.OperationKind.Query;
+        public global::System.ReadOnlySpan<global::System.Byte> Body => new global::System.Byte[]{0x71, 0x75, 0x65, 0x72, 0x79, 0x20, 0x47, 0x65, 0x74, 0x44, 0x65, 0x76, 0x65, 0x6c, 0x50, 0x72, 0x65, 0x76, 0x50, 0x61, 0x67, 0x65, 0x28, 0x24, 0x63, 0x6f, 0x75, 0x6e, 0x74, 0x49, 0x74, 0x65, 0x6d, 0x3a, 0x20, 0x49, 0x6e, 0x74, 0x21, 0x2c, 0x20, 0x24, 0x63, 0x75, 0x72, 0x73, 0x6f, 0x74, 0x3a, 0x20, 0x53, 0x74, 0x72, 0x69, 0x6e, 0x67, 0x21, 0x29, 0x20, 0x7b, 0x20, 0x61, 0x6c, 0x6c, 0x44, 0x65, 0x76, 0x65, 0x6c, 0x6f, 0x70, 0x65, 0x72, 0x28, 0x6c, 0x61, 0x73, 0x74, 0x3a, 0x20, 0x24, 0x63, 0x6f, 0x75, 0x6e, 0x74, 0x49, 0x74, 0x65, 0x6d, 0x2c, 0x20, 0x62, 0x65, 0x66, 0x6f, 0x72, 0x65, 0x3a, 0x20, 0x24, 0x63, 0x75, 0x72, 0x73, 0x6f, 0x74, 0x29, 0x20, 0x7b, 0x20, 0x5f, 0x5f, 0x74, 0x79, 0x70, 0x65, 0x6e, 0x61, 0x6d, 0x65, 0x20, 0x6e, 0x6f, 0x64, 0x65, 0x73, 0x20, 0x7b, 0x20, 0x5f, 0x5f, 0x74, 0x79, 0x70, 0x65, 0x6e, 0x61, 0x6d, 0x65, 0x20, 0x2e, 0x2e, 0x2e, 0x20, 0x44, 0x65, 0x76, 0x65, 0x6c, 0x6f, 0x70, 0x65, 0x72, 0x73, 0x49, 0x6e, 0x66, 0x6f, 0x20, 0x7d, 0x20, 0x70, 0x61, 0x67, 0x65, 0x49, 0x6e, 0x66, 0x6f, 0x20, 0x7b, 0x20, 0x5f, 0x5f, 0x74, 0x79, 0x70, 0x65, 0x6e, 0x61, 0x6d, 0x65, 0x20, 0x68, 0x61, 0x73, 0x4e, 0x65, 0x78, 0x74, 0x50, 0x61, 0x67, 0x65, 0x20, 0x65, 0x6e, 0x64, 0x43, 0x75, 0x72, 0x73, 0x6f, 0x72, 0x20, 0x7d, 0x20, 0x7d, 0x20, 0x7d, 0x20, 0x66, 0x72, 0x61, 0x67, 0x6d, 0x65, 0x6e, 0x74, 0x20, 0x44, 0x65, 0x76, 0x65, 0x6c, 0x6f, 0x70, 0x65, 0x72, 0x73, 0x49, 0x6e, 0x66, 0x6f, 0x20, 0x6f, 0x6e, 0x20, 0x44, 0x65, 0x76, 0x65, 0x6c, 0x6f, 0x70, 0x65, 0x72, 0x73, 0x20, 0x7b, 0x20, 0x64, 0x65, 0x76, 0x65, 0x6c, 0x6f, 0x70, 0x65, 0x72, 0x49, 0x64, 0x20, 0x6e, 0x61, 0x6d, 0x65, 0x20, 0x63, 0x6f, 0x75, 0x6e, 0x74, 0x72, 0x79, 0x20, 0x7d};
+        public global::StrawberryShake.DocumentHash Hash { get; } = new global::StrawberryShake.DocumentHash("md5Hash", "5ae389f422c421138fedd8da4c7b3284");
+        public override global::System.String ToString()
+        {
+#if NETSTANDARD2_0
+        return global::System.Text.Encoding.UTF8.GetString(Body.ToArray());
+#else
+            return global::System.Text.Encoding.UTF8.GetString(Body);
+#endif
+        }
+    }
+
+    /// <summary>
+    /// Represents the operation service of the GetDevelPrevPage GraphQL operation
+    /// <code>
+    /// query GetDevelPrevPage($countItem: Int!, $cursot: String!) {
+    ///   allDeveloper(last: $countItem, before: $cursot) {
+    ///     __typename
+    ///     nodes {
+    ///       __typename
+    ///       ... DevelopersInfo
+    ///     }
+    ///     pageInfo {
+    ///       __typename
+    ///       hasNextPage
+    ///       endCursor
+    ///     }
+    ///   }
+    /// }
+    /// 
+    /// fragment DevelopersInfo on Developers {
+    ///   developerId
+    ///   name
+    ///   country
+    /// }
+    /// </code>
+    /// </summary>
+    [global::System.CodeDom.Compiler.GeneratedCode("StrawberryShake", "12.4.1.0")]
+    public partial class GetDevelPrevPageQuery : global::Prelast.GraphQL.IGetDevelPrevPageQuery
+    {
+        private readonly global::StrawberryShake.IOperationExecutor<IGetDevelPrevPageResult> _operationExecutor;
+        private readonly global::StrawberryShake.Serialization.IInputValueFormatter _intFormatter;
+        private readonly global::StrawberryShake.Serialization.IInputValueFormatter _stringFormatter;
+        public GetDevelPrevPageQuery(global::StrawberryShake.IOperationExecutor<IGetDevelPrevPageResult> operationExecutor, global::StrawberryShake.Serialization.ISerializerResolver serializerResolver)
+        {
+            _operationExecutor = operationExecutor ?? throw new global::System.ArgumentNullException(nameof(operationExecutor));
+            _intFormatter = serializerResolver.GetInputValueFormatter("Int");
+            _stringFormatter = serializerResolver.GetInputValueFormatter("String");
+        }
+
+        global::System.Type global::StrawberryShake.IOperationRequestFactory.ResultType => typeof(IGetDevelPrevPageResult);
+        public async global::System.Threading.Tasks.Task<global::StrawberryShake.IOperationResult<IGetDevelPrevPageResult>> ExecuteAsync(global::System.Int32 countItem, global::System.String cursot, global::System.Threading.CancellationToken cancellationToken = default)
+        {
+            var request = CreateRequest(countItem, cursot);
+            return await _operationExecutor.ExecuteAsync(request, cancellationToken).ConfigureAwait(false);
+        }
+
+        public global::System.IObservable<global::StrawberryShake.IOperationResult<IGetDevelPrevPageResult>> Watch(global::System.Int32 countItem, global::System.String cursot, global::StrawberryShake.ExecutionStrategy? strategy = null)
+        {
+            var request = CreateRequest(countItem, cursot);
+            return _operationExecutor.Watch(request, strategy);
+        }
+
+        private global::StrawberryShake.OperationRequest CreateRequest(global::System.Int32 countItem, global::System.String cursot)
+        {
+            var variables = new global::System.Collections.Generic.Dictionary<global::System.String, global::System.Object?>();
+            variables.Add("countItem", FormatCountItem(countItem));
+            variables.Add("cursot", FormatCursot(cursot));
+            return CreateRequest(variables);
+        }
+
+        private global::StrawberryShake.OperationRequest CreateRequest(global::System.Collections.Generic.IReadOnlyDictionary<global::System.String, global::System.Object?>? variables)
+        {
+            return new global::StrawberryShake.OperationRequest(id: GetDevelPrevPageQueryDocument.Instance.Hash.Value, name: "GetDevelPrevPage", document: GetDevelPrevPageQueryDocument.Instance, strategy: global::StrawberryShake.RequestStrategy.Default, variables: variables);
+        }
+
+        private global::System.Object? FormatCountItem(global::System.Int32 value)
+        {
+            return _intFormatter.Format(value);
+        }
+
+        private global::System.Object? FormatCursot(global::System.String value)
+        {
+            if (value is null)
+            {
+                throw new global::System.ArgumentNullException(nameof(value));
+            }
+
+            return _stringFormatter.Format(value);
+        }
+
+        global::StrawberryShake.OperationRequest global::StrawberryShake.IOperationRequestFactory.Create(global::System.Collections.Generic.IReadOnlyDictionary<global::System.String, global::System.Object?>? variables)
+        {
+            return CreateRequest(variables!);
+        }
+    }
+
+    /// <summary>
+    /// Represents the operation service of the GetDevelPrevPage GraphQL operation
+    /// <code>
+    /// query GetDevelPrevPage($countItem: Int!, $cursot: String!) {
+    ///   allDeveloper(last: $countItem, before: $cursot) {
+    ///     __typename
+    ///     nodes {
+    ///       __typename
+    ///       ... DevelopersInfo
+    ///     }
+    ///     pageInfo {
+    ///       __typename
+    ///       hasNextPage
+    ///       endCursor
+    ///     }
+    ///   }
+    /// }
+    /// 
+    /// fragment DevelopersInfo on Developers {
+    ///   developerId
+    ///   name
+    ///   country
+    /// }
+    /// </code>
+    /// </summary>
+    [global::System.CodeDom.Compiler.GeneratedCode("StrawberryShake", "12.4.1.0")]
+    public interface IGetDevelPrevPageQuery : global::StrawberryShake.IOperationRequestFactory
+    {
+        global::System.Threading.Tasks.Task<global::StrawberryShake.IOperationResult<IGetDevelPrevPageResult>> ExecuteAsync(global::System.Int32 countItem, global::System.String cursot, global::System.Threading.CancellationToken cancellationToken = default);
+        global::System.IObservable<global::StrawberryShake.IOperationResult<IGetDevelPrevPageResult>> Watch(global::System.Int32 countItem, global::System.String cursot, global::StrawberryShake.ExecutionStrategy? strategy = null);
+    }
+
+    /// <summary>
+    /// Represents the operation service of the GetDevelNextPage GraphQL operation
+    /// <code>
+    /// query GetDevelNextPage($countItem: Int!, $cursot: String!) {
+    ///   allDeveloper(first: $countItem, after: $cursot) {
+    ///     __typename
+    ///     nodes {
+    ///       __typename
+    ///       ... DevelopersInfo
+    ///     }
+    ///     pageInfo {
+    ///       __typename
+    ///       hasNextPage
+    ///       endCursor
+    ///     }
+    ///   }
+    /// }
+    /// 
+    /// fragment DevelopersInfo on Developers {
+    ///   developerId
+    ///   name
+    ///   country
+    /// }
+    /// </code>
+    /// </summary>
+    [global::System.CodeDom.Compiler.GeneratedCode("StrawberryShake", "12.4.1.0")]
+    public partial class GetDevelNextPageQueryDocument : global::StrawberryShake.IDocument
+    {
+        private GetDevelNextPageQueryDocument()
+        {
+        }
+
+        public static GetDevelNextPageQueryDocument Instance { get; } = new GetDevelNextPageQueryDocument();
+        public global::StrawberryShake.OperationKind Kind => global::StrawberryShake.OperationKind.Query;
+        public global::System.ReadOnlySpan<global::System.Byte> Body => new global::System.Byte[]{0x71, 0x75, 0x65, 0x72, 0x79, 0x20, 0x47, 0x65, 0x74, 0x44, 0x65, 0x76, 0x65, 0x6c, 0x4e, 0x65, 0x78, 0x74, 0x50, 0x61, 0x67, 0x65, 0x28, 0x24, 0x63, 0x6f, 0x75, 0x6e, 0x74, 0x49, 0x74, 0x65, 0x6d, 0x3a, 0x20, 0x49, 0x6e, 0x74, 0x21, 0x2c, 0x20, 0x24, 0x63, 0x75, 0x72, 0x73, 0x6f, 0x74, 0x3a, 0x20, 0x53, 0x74, 0x72, 0x69, 0x6e, 0x67, 0x21, 0x29, 0x20, 0x7b, 0x20, 0x61, 0x6c, 0x6c, 0x44, 0x65, 0x76, 0x65, 0x6c, 0x6f, 0x70, 0x65, 0x72, 0x28, 0x66, 0x69, 0x72, 0x73, 0x74, 0x3a, 0x20, 0x24, 0x63, 0x6f, 0x75, 0x6e, 0x74, 0x49, 0x74, 0x65, 0x6d, 0x2c, 0x20, 0x61, 0x66, 0x74, 0x65, 0x72, 0x3a, 0x20, 0x24, 0x63, 0x75, 0x72, 0x73, 0x6f, 0x74, 0x29, 0x20, 0x7b, 0x20, 0x5f, 0x5f, 0x74, 0x79, 0x70, 0x65, 0x6e, 0x61, 0x6d, 0x65, 0x20, 0x6e, 0x6f, 0x64, 0x65, 0x73, 0x20, 0x7b, 0x20, 0x5f, 0x5f, 0x74, 0x79, 0x70, 0x65, 0x6e, 0x61, 0x6d, 0x65, 0x20, 0x2e, 0x2e, 0x2e, 0x20, 0x44, 0x65, 0x76, 0x65, 0x6c, 0x6f, 0x70, 0x65, 0x72, 0x73, 0x49, 0x6e, 0x66, 0x6f, 0x20, 0x7d, 0x20, 0x70, 0x61, 0x67, 0x65, 0x49, 0x6e, 0x66, 0x6f, 0x20, 0x7b, 0x20, 0x5f, 0x5f, 0x74, 0x79, 0x70, 0x65, 0x6e, 0x61, 0x6d, 0x65, 0x20, 0x68, 0x61, 0x73, 0x4e, 0x65, 0x78, 0x74, 0x50, 0x61, 0x67, 0x65, 0x20, 0x65, 0x6e, 0x64, 0x43, 0x75, 0x72, 0x73, 0x6f, 0x72, 0x20, 0x7d, 0x20, 0x7d, 0x20, 0x7d, 0x20, 0x66, 0x72, 0x61, 0x67, 0x6d, 0x65, 0x6e, 0x74, 0x20, 0x44, 0x65, 0x76, 0x65, 0x6c, 0x6f, 0x70, 0x65, 0x72, 0x73, 0x49, 0x6e, 0x66, 0x6f, 0x20, 0x6f, 0x6e, 0x20, 0x44, 0x65, 0x76, 0x65, 0x6c, 0x6f, 0x70, 0x65, 0x72, 0x73, 0x20, 0x7b, 0x20, 0x64, 0x65, 0x76, 0x65, 0x6c, 0x6f, 0x70, 0x65, 0x72, 0x49, 0x64, 0x20, 0x6e, 0x61, 0x6d, 0x65, 0x20, 0x63, 0x6f, 0x75, 0x6e, 0x74, 0x72, 0x79, 0x20, 0x7d};
+        public global::StrawberryShake.DocumentHash Hash { get; } = new global::StrawberryShake.DocumentHash("md5Hash", "f544d38d091f2beb7fac343d73c69a6b");
+        public override global::System.String ToString()
+        {
+#if NETSTANDARD2_0
+        return global::System.Text.Encoding.UTF8.GetString(Body.ToArray());
+#else
+            return global::System.Text.Encoding.UTF8.GetString(Body);
+#endif
+        }
+    }
+
+    /// <summary>
+    /// Represents the operation service of the GetDevelNextPage GraphQL operation
+    /// <code>
+    /// query GetDevelNextPage($countItem: Int!, $cursot: String!) {
+    ///   allDeveloper(first: $countItem, after: $cursot) {
+    ///     __typename
+    ///     nodes {
+    ///       __typename
+    ///       ... DevelopersInfo
+    ///     }
+    ///     pageInfo {
+    ///       __typename
+    ///       hasNextPage
+    ///       endCursor
+    ///     }
+    ///   }
+    /// }
+    /// 
+    /// fragment DevelopersInfo on Developers {
+    ///   developerId
+    ///   name
+    ///   country
+    /// }
+    /// </code>
+    /// </summary>
+    [global::System.CodeDom.Compiler.GeneratedCode("StrawberryShake", "12.4.1.0")]
+    public partial class GetDevelNextPageQuery : global::Prelast.GraphQL.IGetDevelNextPageQuery
+    {
+        private readonly global::StrawberryShake.IOperationExecutor<IGetDevelNextPageResult> _operationExecutor;
+        private readonly global::StrawberryShake.Serialization.IInputValueFormatter _intFormatter;
+        private readonly global::StrawberryShake.Serialization.IInputValueFormatter _stringFormatter;
+        public GetDevelNextPageQuery(global::StrawberryShake.IOperationExecutor<IGetDevelNextPageResult> operationExecutor, global::StrawberryShake.Serialization.ISerializerResolver serializerResolver)
+        {
+            _operationExecutor = operationExecutor ?? throw new global::System.ArgumentNullException(nameof(operationExecutor));
+            _intFormatter = serializerResolver.GetInputValueFormatter("Int");
+            _stringFormatter = serializerResolver.GetInputValueFormatter("String");
+        }
+
+        global::System.Type global::StrawberryShake.IOperationRequestFactory.ResultType => typeof(IGetDevelNextPageResult);
+        public async global::System.Threading.Tasks.Task<global::StrawberryShake.IOperationResult<IGetDevelNextPageResult>> ExecuteAsync(global::System.Int32 countItem, global::System.String cursot, global::System.Threading.CancellationToken cancellationToken = default)
+        {
+            var request = CreateRequest(countItem, cursot);
+            return await _operationExecutor.ExecuteAsync(request, cancellationToken).ConfigureAwait(false);
+        }
+
+        public global::System.IObservable<global::StrawberryShake.IOperationResult<IGetDevelNextPageResult>> Watch(global::System.Int32 countItem, global::System.String cursot, global::StrawberryShake.ExecutionStrategy? strategy = null)
+        {
+            var request = CreateRequest(countItem, cursot);
+            return _operationExecutor.Watch(request, strategy);
+        }
+
+        private global::StrawberryShake.OperationRequest CreateRequest(global::System.Int32 countItem, global::System.String cursot)
+        {
+            var variables = new global::System.Collections.Generic.Dictionary<global::System.String, global::System.Object?>();
+            variables.Add("countItem", FormatCountItem(countItem));
+            variables.Add("cursot", FormatCursot(cursot));
+            return CreateRequest(variables);
+        }
+
+        private global::StrawberryShake.OperationRequest CreateRequest(global::System.Collections.Generic.IReadOnlyDictionary<global::System.String, global::System.Object?>? variables)
+        {
+            return new global::StrawberryShake.OperationRequest(id: GetDevelNextPageQueryDocument.Instance.Hash.Value, name: "GetDevelNextPage", document: GetDevelNextPageQueryDocument.Instance, strategy: global::StrawberryShake.RequestStrategy.Default, variables: variables);
+        }
+
+        private global::System.Object? FormatCountItem(global::System.Int32 value)
+        {
+            return _intFormatter.Format(value);
+        }
+
+        private global::System.Object? FormatCursot(global::System.String value)
+        {
+            if (value is null)
+            {
+                throw new global::System.ArgumentNullException(nameof(value));
+            }
+
+            return _stringFormatter.Format(value);
+        }
+
+        global::StrawberryShake.OperationRequest global::StrawberryShake.IOperationRequestFactory.Create(global::System.Collections.Generic.IReadOnlyDictionary<global::System.String, global::System.Object?>? variables)
+        {
+            return CreateRequest(variables!);
+        }
+    }
+
+    /// <summary>
+    /// Represents the operation service of the GetDevelNextPage GraphQL operation
+    /// <code>
+    /// query GetDevelNextPage($countItem: Int!, $cursot: String!) {
+    ///   allDeveloper(first: $countItem, after: $cursot) {
+    ///     __typename
+    ///     nodes {
+    ///       __typename
+    ///       ... DevelopersInfo
+    ///     }
+    ///     pageInfo {
+    ///       __typename
+    ///       hasNextPage
+    ///       endCursor
+    ///     }
+    ///   }
+    /// }
+    /// 
+    /// fragment DevelopersInfo on Developers {
+    ///   developerId
+    ///   name
+    ///   country
+    /// }
+    /// </code>
+    /// </summary>
+    [global::System.CodeDom.Compiler.GeneratedCode("StrawberryShake", "12.4.1.0")]
+    public interface IGetDevelNextPageQuery : global::StrawberryShake.IOperationRequestFactory
+    {
+        global::System.Threading.Tasks.Task<global::StrawberryShake.IOperationResult<IGetDevelNextPageResult>> ExecuteAsync(global::System.Int32 countItem, global::System.String cursot, global::System.Threading.CancellationToken cancellationToken = default);
+        global::System.IObservable<global::StrawberryShake.IOperationResult<IGetDevelNextPageResult>> Watch(global::System.Int32 countItem, global::System.String cursot, global::StrawberryShake.ExecutionStrategy? strategy = null);
+    }
+
+    /// <summary>
+    /// Represents the operation service of the GetGenreWithPaging GraphQL operation
+    /// <code>
+    /// query GetGenreWithPaging($countItem: Int!) {
+    ///   allGenre(first: $countItem) {
+    ///     __typename
+    ///     nodes {
+    ///       __typename
+    ///       ... GenreInfo
+    ///     }
+    ///     pageInfo {
+    ///       __typename
+    ///       hasNextPage
+    ///       endCursor
+    ///     }
+    ///   }
+    /// }
+    /// 
+    /// fragment GenreInfo on Genre {
+    ///   genreId
+    ///   name
+    /// }
+    /// </code>
+    /// </summary>
+    [global::System.CodeDom.Compiler.GeneratedCode("StrawberryShake", "12.4.1.0")]
+    public partial class GetGenreWithPagingQueryDocument : global::StrawberryShake.IDocument
+    {
+        private GetGenreWithPagingQueryDocument()
+        {
+        }
+
+        public static GetGenreWithPagingQueryDocument Instance { get; } = new GetGenreWithPagingQueryDocument();
+        public global::StrawberryShake.OperationKind Kind => global::StrawberryShake.OperationKind.Query;
+        public global::System.ReadOnlySpan<global::System.Byte> Body => new global::System.Byte[]{0x71, 0x75, 0x65, 0x72, 0x79, 0x20, 0x47, 0x65, 0x74, 0x47, 0x65, 0x6e, 0x72, 0x65, 0x57, 0x69, 0x74, 0x68, 0x50, 0x61, 0x67, 0x69, 0x6e, 0x67, 0x28, 0x24, 0x63, 0x6f, 0x75, 0x6e, 0x74, 0x49, 0x74, 0x65, 0x6d, 0x3a, 0x20, 0x49, 0x6e, 0x74, 0x21, 0x29, 0x20, 0x7b, 0x20, 0x61, 0x6c, 0x6c, 0x47, 0x65, 0x6e, 0x72, 0x65, 0x28, 0x66, 0x69, 0x72, 0x73, 0x74, 0x3a, 0x20, 0x24, 0x63, 0x6f, 0x75, 0x6e, 0x74, 0x49, 0x74, 0x65, 0x6d, 0x29, 0x20, 0x7b, 0x20, 0x5f, 0x5f, 0x74, 0x79, 0x70, 0x65, 0x6e, 0x61, 0x6d, 0x65, 0x20, 0x6e, 0x6f, 0x64, 0x65, 0x73, 0x20, 0x7b, 0x20, 0x5f, 0x5f, 0x74, 0x79, 0x70, 0x65, 0x6e, 0x61, 0x6d, 0x65, 0x20, 0x2e, 0x2e, 0x2e, 0x20, 0x47, 0x65, 0x6e, 0x72, 0x65, 0x49, 0x6e, 0x66, 0x6f, 0x20, 0x7d, 0x20, 0x70, 0x61, 0x67, 0x65, 0x49, 0x6e, 0x66, 0x6f, 0x20, 0x7b, 0x20, 0x5f, 0x5f, 0x74, 0x79, 0x70, 0x65, 0x6e, 0x61, 0x6d, 0x65, 0x20, 0x68, 0x61, 0x73, 0x4e, 0x65, 0x78, 0x74, 0x50, 0x61, 0x67, 0x65, 0x20, 0x65, 0x6e, 0x64, 0x43, 0x75, 0x72, 0x73, 0x6f, 0x72, 0x20, 0x7d, 0x20, 0x7d, 0x20, 0x7d, 0x20, 0x66, 0x72, 0x61, 0x67, 0x6d, 0x65, 0x6e, 0x74, 0x20, 0x47, 0x65, 0x6e, 0x72, 0x65, 0x49, 0x6e, 0x66, 0x6f, 0x20, 0x6f, 0x6e, 0x20, 0x47, 0x65, 0x6e, 0x72, 0x65, 0x20, 0x7b, 0x20, 0x67, 0x65, 0x6e, 0x72, 0x65, 0x49, 0x64, 0x20, 0x6e, 0x61, 0x6d, 0x65, 0x20, 0x7d};
+        public global::StrawberryShake.DocumentHash Hash { get; } = new global::StrawberryShake.DocumentHash("md5Hash", "f56e2099a2cf00307c88ef0c0817ee56");
+        public override global::System.String ToString()
+        {
+#if NETSTANDARD2_0
+        return global::System.Text.Encoding.UTF8.GetString(Body.ToArray());
+#else
+            return global::System.Text.Encoding.UTF8.GetString(Body);
+#endif
+        }
+    }
+
+    /// <summary>
+    /// Represents the operation service of the GetGenreWithPaging GraphQL operation
+    /// <code>
+    /// query GetGenreWithPaging($countItem: Int!) {
+    ///   allGenre(first: $countItem) {
+    ///     __typename
+    ///     nodes {
+    ///       __typename
+    ///       ... GenreInfo
+    ///     }
+    ///     pageInfo {
+    ///       __typename
+    ///       hasNextPage
+    ///       endCursor
+    ///     }
+    ///   }
+    /// }
+    /// 
+    /// fragment GenreInfo on Genre {
+    ///   genreId
+    ///   name
+    /// }
+    /// </code>
+    /// </summary>
+    [global::System.CodeDom.Compiler.GeneratedCode("StrawberryShake", "12.4.1.0")]
+    public partial class GetGenreWithPagingQuery : global::Prelast.GraphQL.IGetGenreWithPagingQuery
+    {
+        private readonly global::StrawberryShake.IOperationExecutor<IGetGenreWithPagingResult> _operationExecutor;
+        private readonly global::StrawberryShake.Serialization.IInputValueFormatter _intFormatter;
+        public GetGenreWithPagingQuery(global::StrawberryShake.IOperationExecutor<IGetGenreWithPagingResult> operationExecutor, global::StrawberryShake.Serialization.ISerializerResolver serializerResolver)
+        {
+            _operationExecutor = operationExecutor ?? throw new global::System.ArgumentNullException(nameof(operationExecutor));
+            _intFormatter = serializerResolver.GetInputValueFormatter("Int");
+        }
+
+        global::System.Type global::StrawberryShake.IOperationRequestFactory.ResultType => typeof(IGetGenreWithPagingResult);
+        public async global::System.Threading.Tasks.Task<global::StrawberryShake.IOperationResult<IGetGenreWithPagingResult>> ExecuteAsync(global::System.Int32 countItem, global::System.Threading.CancellationToken cancellationToken = default)
+        {
+            var request = CreateRequest(countItem);
+            return await _operationExecutor.ExecuteAsync(request, cancellationToken).ConfigureAwait(false);
+        }
+
+        public global::System.IObservable<global::StrawberryShake.IOperationResult<IGetGenreWithPagingResult>> Watch(global::System.Int32 countItem, global::StrawberryShake.ExecutionStrategy? strategy = null)
+        {
+            var request = CreateRequest(countItem);
+            return _operationExecutor.Watch(request, strategy);
+        }
+
+        private global::StrawberryShake.OperationRequest CreateRequest(global::System.Int32 countItem)
+        {
+            var variables = new global::System.Collections.Generic.Dictionary<global::System.String, global::System.Object?>();
+            variables.Add("countItem", FormatCountItem(countItem));
+            return CreateRequest(variables);
+        }
+
+        private global::StrawberryShake.OperationRequest CreateRequest(global::System.Collections.Generic.IReadOnlyDictionary<global::System.String, global::System.Object?>? variables)
+        {
+            return new global::StrawberryShake.OperationRequest(id: GetGenreWithPagingQueryDocument.Instance.Hash.Value, name: "GetGenreWithPaging", document: GetGenreWithPagingQueryDocument.Instance, strategy: global::StrawberryShake.RequestStrategy.Default, variables: variables);
+        }
+
+        private global::System.Object? FormatCountItem(global::System.Int32 value)
+        {
+            return _intFormatter.Format(value);
+        }
+
+        global::StrawberryShake.OperationRequest global::StrawberryShake.IOperationRequestFactory.Create(global::System.Collections.Generic.IReadOnlyDictionary<global::System.String, global::System.Object?>? variables)
+        {
+            return CreateRequest(variables!);
+        }
+    }
+
+    /// <summary>
+    /// Represents the operation service of the GetGenreWithPaging GraphQL operation
+    /// <code>
+    /// query GetGenreWithPaging($countItem: Int!) {
+    ///   allGenre(first: $countItem) {
+    ///     __typename
+    ///     nodes {
+    ///       __typename
+    ///       ... GenreInfo
+    ///     }
+    ///     pageInfo {
+    ///       __typename
+    ///       hasNextPage
+    ///       endCursor
+    ///     }
+    ///   }
+    /// }
+    /// 
+    /// fragment GenreInfo on Genre {
+    ///   genreId
+    ///   name
+    /// }
+    /// </code>
+    /// </summary>
+    [global::System.CodeDom.Compiler.GeneratedCode("StrawberryShake", "12.4.1.0")]
+    public interface IGetGenreWithPagingQuery : global::StrawberryShake.IOperationRequestFactory
+    {
+        global::System.Threading.Tasks.Task<global::StrawberryShake.IOperationResult<IGetGenreWithPagingResult>> ExecuteAsync(global::System.Int32 countItem, global::System.Threading.CancellationToken cancellationToken = default);
+        global::System.IObservable<global::StrawberryShake.IOperationResult<IGetGenreWithPagingResult>> Watch(global::System.Int32 countItem, global::StrawberryShake.ExecutionStrategy? strategy = null);
+    }
+
+    /// <summary>
+    /// Represents the operation service of the GetGenreNextPage GraphQL operation
+    /// <code>
+    /// query GetGenreNextPage($countItem: Int!, $cursor: String!) {
+    ///   allGenre(first: $countItem, after: $cursor) {
+    ///     __typename
+    ///     nodes {
+    ///       __typename
+    ///       ... GenreInfo
+    ///     }
+    ///     pageInfo {
+    ///       __typename
+    ///       hasNextPage
+    ///       endCursor
+    ///     }
+    ///   }
+    /// }
+    /// 
+    /// fragment GenreInfo on Genre {
+    ///   genreId
+    ///   name
+    /// }
+    /// </code>
+    /// </summary>
+    [global::System.CodeDom.Compiler.GeneratedCode("StrawberryShake", "12.4.1.0")]
+    public partial class GetGenreNextPageQueryDocument : global::StrawberryShake.IDocument
+    {
+        private GetGenreNextPageQueryDocument()
+        {
+        }
+
+        public static GetGenreNextPageQueryDocument Instance { get; } = new GetGenreNextPageQueryDocument();
+        public global::StrawberryShake.OperationKind Kind => global::StrawberryShake.OperationKind.Query;
+        public global::System.ReadOnlySpan<global::System.Byte> Body => new global::System.Byte[]{0x71, 0x75, 0x65, 0x72, 0x79, 0x20, 0x47, 0x65, 0x74, 0x47, 0x65, 0x6e, 0x72, 0x65, 0x4e, 0x65, 0x78, 0x74, 0x50, 0x61, 0x67, 0x65, 0x28, 0x24, 0x63, 0x6f, 0x75, 0x6e, 0x74, 0x49, 0x74, 0x65, 0x6d, 0x3a, 0x20, 0x49, 0x6e, 0x74, 0x21, 0x2c, 0x20, 0x24, 0x63, 0x75, 0x72, 0x73, 0x6f, 0x72, 0x3a, 0x20, 0x53, 0x74, 0x72, 0x69, 0x6e, 0x67, 0x21, 0x29, 0x20, 0x7b, 0x20, 0x61, 0x6c, 0x6c, 0x47, 0x65, 0x6e, 0x72, 0x65, 0x28, 0x66, 0x69, 0x72, 0x73, 0x74, 0x3a, 0x20, 0x24, 0x63, 0x6f, 0x75, 0x6e, 0x74, 0x49, 0x74, 0x65, 0x6d, 0x2c, 0x20, 0x61, 0x66, 0x74, 0x65, 0x72, 0x3a, 0x20, 0x24, 0x63, 0x75, 0x72, 0x73, 0x6f, 0x72, 0x29, 0x20, 0x7b, 0x20, 0x5f, 0x5f, 0x74, 0x79, 0x70, 0x65, 0x6e, 0x61, 0x6d, 0x65, 0x20, 0x6e, 0x6f, 0x64, 0x65, 0x73, 0x20, 0x7b, 0x20, 0x5f, 0x5f, 0x74, 0x79, 0x70, 0x65, 0x6e, 0x61, 0x6d, 0x65, 0x20, 0x2e, 0x2e, 0x2e, 0x20, 0x47, 0x65, 0x6e, 0x72, 0x65, 0x49, 0x6e, 0x66, 0x6f, 0x20, 0x7d, 0x20, 0x70, 0x61, 0x67, 0x65, 0x49, 0x6e, 0x66, 0x6f, 0x20, 0x7b, 0x20, 0x5f, 0x5f, 0x74, 0x79, 0x70, 0x65, 0x6e, 0x61, 0x6d, 0x65, 0x20, 0x68, 0x61, 0x73, 0x4e, 0x65, 0x78, 0x74, 0x50, 0x61, 0x67, 0x65, 0x20, 0x65, 0x6e, 0x64, 0x43, 0x75, 0x72, 0x73, 0x6f, 0x72, 0x20, 0x7d, 0x20, 0x7d, 0x20, 0x7d, 0x20, 0x66, 0x72, 0x61, 0x67, 0x6d, 0x65, 0x6e, 0x74, 0x20, 0x47, 0x65, 0x6e, 0x72, 0x65, 0x49, 0x6e, 0x66, 0x6f, 0x20, 0x6f, 0x6e, 0x20, 0x47, 0x65, 0x6e, 0x72, 0x65, 0x20, 0x7b, 0x20, 0x67, 0x65, 0x6e, 0x72, 0x65, 0x49, 0x64, 0x20, 0x6e, 0x61, 0x6d, 0x65, 0x20, 0x7d};
+        public global::StrawberryShake.DocumentHash Hash { get; } = new global::StrawberryShake.DocumentHash("md5Hash", "93e99742956095f6a70ac1784ba639fd");
+        public override global::System.String ToString()
+        {
+#if NETSTANDARD2_0
+        return global::System.Text.Encoding.UTF8.GetString(Body.ToArray());
+#else
+            return global::System.Text.Encoding.UTF8.GetString(Body);
+#endif
+        }
+    }
+
+    /// <summary>
+    /// Represents the operation service of the GetGenreNextPage GraphQL operation
+    /// <code>
+    /// query GetGenreNextPage($countItem: Int!, $cursor: String!) {
+    ///   allGenre(first: $countItem, after: $cursor) {
+    ///     __typename
+    ///     nodes {
+    ///       __typename
+    ///       ... GenreInfo
+    ///     }
+    ///     pageInfo {
+    ///       __typename
+    ///       hasNextPage
+    ///       endCursor
+    ///     }
+    ///   }
+    /// }
+    /// 
+    /// fragment GenreInfo on Genre {
+    ///   genreId
+    ///   name
+    /// }
+    /// </code>
+    /// </summary>
+    [global::System.CodeDom.Compiler.GeneratedCode("StrawberryShake", "12.4.1.0")]
+    public partial class GetGenreNextPageQuery : global::Prelast.GraphQL.IGetGenreNextPageQuery
+    {
+        private readonly global::StrawberryShake.IOperationExecutor<IGetGenreNextPageResult> _operationExecutor;
+        private readonly global::StrawberryShake.Serialization.IInputValueFormatter _intFormatter;
+        private readonly global::StrawberryShake.Serialization.IInputValueFormatter _stringFormatter;
+        public GetGenreNextPageQuery(global::StrawberryShake.IOperationExecutor<IGetGenreNextPageResult> operationExecutor, global::StrawberryShake.Serialization.ISerializerResolver serializerResolver)
+        {
+            _operationExecutor = operationExecutor ?? throw new global::System.ArgumentNullException(nameof(operationExecutor));
+            _intFormatter = serializerResolver.GetInputValueFormatter("Int");
+            _stringFormatter = serializerResolver.GetInputValueFormatter("String");
+        }
+
+        global::System.Type global::StrawberryShake.IOperationRequestFactory.ResultType => typeof(IGetGenreNextPageResult);
+        public async global::System.Threading.Tasks.Task<global::StrawberryShake.IOperationResult<IGetGenreNextPageResult>> ExecuteAsync(global::System.Int32 countItem, global::System.String cursor, global::System.Threading.CancellationToken cancellationToken = default)
+        {
+            var request = CreateRequest(countItem, cursor);
+            return await _operationExecutor.ExecuteAsync(request, cancellationToken).ConfigureAwait(false);
+        }
+
+        public global::System.IObservable<global::StrawberryShake.IOperationResult<IGetGenreNextPageResult>> Watch(global::System.Int32 countItem, global::System.String cursor, global::StrawberryShake.ExecutionStrategy? strategy = null)
+        {
+            var request = CreateRequest(countItem, cursor);
+            return _operationExecutor.Watch(request, strategy);
+        }
+
+        private global::StrawberryShake.OperationRequest CreateRequest(global::System.Int32 countItem, global::System.String cursor)
+        {
+            var variables = new global::System.Collections.Generic.Dictionary<global::System.String, global::System.Object?>();
+            variables.Add("countItem", FormatCountItem(countItem));
+            variables.Add("cursor", FormatCursor(cursor));
+            return CreateRequest(variables);
+        }
+
+        private global::StrawberryShake.OperationRequest CreateRequest(global::System.Collections.Generic.IReadOnlyDictionary<global::System.String, global::System.Object?>? variables)
+        {
+            return new global::StrawberryShake.OperationRequest(id: GetGenreNextPageQueryDocument.Instance.Hash.Value, name: "GetGenreNextPage", document: GetGenreNextPageQueryDocument.Instance, strategy: global::StrawberryShake.RequestStrategy.Default, variables: variables);
+        }
+
+        private global::System.Object? FormatCountItem(global::System.Int32 value)
+        {
+            return _intFormatter.Format(value);
+        }
+
+        private global::System.Object? FormatCursor(global::System.String value)
+        {
+            if (value is null)
+            {
+                throw new global::System.ArgumentNullException(nameof(value));
+            }
+
+            return _stringFormatter.Format(value);
+        }
+
+        global::StrawberryShake.OperationRequest global::StrawberryShake.IOperationRequestFactory.Create(global::System.Collections.Generic.IReadOnlyDictionary<global::System.String, global::System.Object?>? variables)
+        {
+            return CreateRequest(variables!);
+        }
+    }
+
+    /// <summary>
+    /// Represents the operation service of the GetGenreNextPage GraphQL operation
+    /// <code>
+    /// query GetGenreNextPage($countItem: Int!, $cursor: String!) {
+    ///   allGenre(first: $countItem, after: $cursor) {
+    ///     __typename
+    ///     nodes {
+    ///       __typename
+    ///       ... GenreInfo
+    ///     }
+    ///     pageInfo {
+    ///       __typename
+    ///       hasNextPage
+    ///       endCursor
+    ///     }
+    ///   }
+    /// }
+    /// 
+    /// fragment GenreInfo on Genre {
+    ///   genreId
+    ///   name
+    /// }
+    /// </code>
+    /// </summary>
+    [global::System.CodeDom.Compiler.GeneratedCode("StrawberryShake", "12.4.1.0")]
+    public interface IGetGenreNextPageQuery : global::StrawberryShake.IOperationRequestFactory
+    {
+        global::System.Threading.Tasks.Task<global::StrawberryShake.IOperationResult<IGetGenreNextPageResult>> ExecuteAsync(global::System.Int32 countItem, global::System.String cursor, global::System.Threading.CancellationToken cancellationToken = default);
+        global::System.IObservable<global::StrawberryShake.IOperationResult<IGetGenreNextPageResult>> Watch(global::System.Int32 countItem, global::System.String cursor, global::StrawberryShake.ExecutionStrategy? strategy = null);
+    }
+
+    /// <summary>
+    /// Represents the operation service of the GetGenrePrevPage GraphQL operation
+    /// <code>
+    /// query GetGenrePrevPage($countItem: Int!, $cursor: String!) {
+    ///   allGenre(last: $countItem, before: $cursor) {
+    ///     __typename
+    ///     nodes {
+    ///       __typename
+    ///       ... GenreInfo
+    ///     }
+    ///     pageInfo {
+    ///       __typename
+    ///       hasNextPage
+    ///       endCursor
+    ///     }
+    ///   }
+    /// }
+    /// 
+    /// fragment GenreInfo on Genre {
+    ///   genreId
+    ///   name
+    /// }
+    /// </code>
+    /// </summary>
+    [global::System.CodeDom.Compiler.GeneratedCode("StrawberryShake", "12.4.1.0")]
+    public partial class GetGenrePrevPageQueryDocument : global::StrawberryShake.IDocument
+    {
+        private GetGenrePrevPageQueryDocument()
+        {
+        }
+
+        public static GetGenrePrevPageQueryDocument Instance { get; } = new GetGenrePrevPageQueryDocument();
+        public global::StrawberryShake.OperationKind Kind => global::StrawberryShake.OperationKind.Query;
+        public global::System.ReadOnlySpan<global::System.Byte> Body => new global::System.Byte[]{0x71, 0x75, 0x65, 0x72, 0x79, 0x20, 0x47, 0x65, 0x74, 0x47, 0x65, 0x6e, 0x72, 0x65, 0x50, 0x72, 0x65, 0x76, 0x50, 0x61, 0x67, 0x65, 0x28, 0x24, 0x63, 0x6f, 0x75, 0x6e, 0x74, 0x49, 0x74, 0x65, 0x6d, 0x3a, 0x20, 0x49, 0x6e, 0x74, 0x21, 0x2c, 0x20, 0x24, 0x63, 0x75, 0x72, 0x73, 0x6f, 0x72, 0x3a, 0x20, 0x53, 0x74, 0x72, 0x69, 0x6e, 0x67, 0x21, 0x29, 0x20, 0x7b, 0x20, 0x61, 0x6c, 0x6c, 0x47, 0x65, 0x6e, 0x72, 0x65, 0x28, 0x6c, 0x61, 0x73, 0x74, 0x3a, 0x20, 0x24, 0x63, 0x6f, 0x75, 0x6e, 0x74, 0x49, 0x74, 0x65, 0x6d, 0x2c, 0x20, 0x62, 0x65, 0x66, 0x6f, 0x72, 0x65, 0x3a, 0x20, 0x24, 0x63, 0x75, 0x72, 0x73, 0x6f, 0x72, 0x29, 0x20, 0x7b, 0x20, 0x5f, 0x5f, 0x74, 0x79, 0x70, 0x65, 0x6e, 0x61, 0x6d, 0x65, 0x20, 0x6e, 0x6f, 0x64, 0x65, 0x73, 0x20, 0x7b, 0x20, 0x5f, 0x5f, 0x74, 0x79, 0x70, 0x65, 0x6e, 0x61, 0x6d, 0x65, 0x20, 0x2e, 0x2e, 0x2e, 0x20, 0x47, 0x65, 0x6e, 0x72, 0x65, 0x49, 0x6e, 0x66, 0x6f, 0x20, 0x7d, 0x20, 0x70, 0x61, 0x67, 0x65, 0x49, 0x6e, 0x66, 0x6f, 0x20, 0x7b, 0x20, 0x5f, 0x5f, 0x74, 0x79, 0x70, 0x65, 0x6e, 0x61, 0x6d, 0x65, 0x20, 0x68, 0x61, 0x73, 0x4e, 0x65, 0x78, 0x74, 0x50, 0x61, 0x67, 0x65, 0x20, 0x65, 0x6e, 0x64, 0x43, 0x75, 0x72, 0x73, 0x6f, 0x72, 0x20, 0x7d, 0x20, 0x7d, 0x20, 0x7d, 0x20, 0x66, 0x72, 0x61, 0x67, 0x6d, 0x65, 0x6e, 0x74, 0x20, 0x47, 0x65, 0x6e, 0x72, 0x65, 0x49, 0x6e, 0x66, 0x6f, 0x20, 0x6f, 0x6e, 0x20, 0x47, 0x65, 0x6e, 0x72, 0x65, 0x20, 0x7b, 0x20, 0x67, 0x65, 0x6e, 0x72, 0x65, 0x49, 0x64, 0x20, 0x6e, 0x61, 0x6d, 0x65, 0x20, 0x7d};
+        public global::StrawberryShake.DocumentHash Hash { get; } = new global::StrawberryShake.DocumentHash("md5Hash", "2d6b097a8445a15e9be53fe06f3b32ff");
+        public override global::System.String ToString()
+        {
+#if NETSTANDARD2_0
+        return global::System.Text.Encoding.UTF8.GetString(Body.ToArray());
+#else
+            return global::System.Text.Encoding.UTF8.GetString(Body);
+#endif
+        }
+    }
+
+    /// <summary>
+    /// Represents the operation service of the GetGenrePrevPage GraphQL operation
+    /// <code>
+    /// query GetGenrePrevPage($countItem: Int!, $cursor: String!) {
+    ///   allGenre(last: $countItem, before: $cursor) {
+    ///     __typename
+    ///     nodes {
+    ///       __typename
+    ///       ... GenreInfo
+    ///     }
+    ///     pageInfo {
+    ///       __typename
+    ///       hasNextPage
+    ///       endCursor
+    ///     }
+    ///   }
+    /// }
+    /// 
+    /// fragment GenreInfo on Genre {
+    ///   genreId
+    ///   name
+    /// }
+    /// </code>
+    /// </summary>
+    [global::System.CodeDom.Compiler.GeneratedCode("StrawberryShake", "12.4.1.0")]
+    public partial class GetGenrePrevPageQuery : global::Prelast.GraphQL.IGetGenrePrevPageQuery
+    {
+        private readonly global::StrawberryShake.IOperationExecutor<IGetGenrePrevPageResult> _operationExecutor;
+        private readonly global::StrawberryShake.Serialization.IInputValueFormatter _intFormatter;
+        private readonly global::StrawberryShake.Serialization.IInputValueFormatter _stringFormatter;
+        public GetGenrePrevPageQuery(global::StrawberryShake.IOperationExecutor<IGetGenrePrevPageResult> operationExecutor, global::StrawberryShake.Serialization.ISerializerResolver serializerResolver)
+        {
+            _operationExecutor = operationExecutor ?? throw new global::System.ArgumentNullException(nameof(operationExecutor));
+            _intFormatter = serializerResolver.GetInputValueFormatter("Int");
+            _stringFormatter = serializerResolver.GetInputValueFormatter("String");
+        }
+
+        global::System.Type global::StrawberryShake.IOperationRequestFactory.ResultType => typeof(IGetGenrePrevPageResult);
+        public async global::System.Threading.Tasks.Task<global::StrawberryShake.IOperationResult<IGetGenrePrevPageResult>> ExecuteAsync(global::System.Int32 countItem, global::System.String cursor, global::System.Threading.CancellationToken cancellationToken = default)
+        {
+            var request = CreateRequest(countItem, cursor);
+            return await _operationExecutor.ExecuteAsync(request, cancellationToken).ConfigureAwait(false);
+        }
+
+        public global::System.IObservable<global::StrawberryShake.IOperationResult<IGetGenrePrevPageResult>> Watch(global::System.Int32 countItem, global::System.String cursor, global::StrawberryShake.ExecutionStrategy? strategy = null)
+        {
+            var request = CreateRequest(countItem, cursor);
+            return _operationExecutor.Watch(request, strategy);
+        }
+
+        private global::StrawberryShake.OperationRequest CreateRequest(global::System.Int32 countItem, global::System.String cursor)
+        {
+            var variables = new global::System.Collections.Generic.Dictionary<global::System.String, global::System.Object?>();
+            variables.Add("countItem", FormatCountItem(countItem));
+            variables.Add("cursor", FormatCursor(cursor));
+            return CreateRequest(variables);
+        }
+
+        private global::StrawberryShake.OperationRequest CreateRequest(global::System.Collections.Generic.IReadOnlyDictionary<global::System.String, global::System.Object?>? variables)
+        {
+            return new global::StrawberryShake.OperationRequest(id: GetGenrePrevPageQueryDocument.Instance.Hash.Value, name: "GetGenrePrevPage", document: GetGenrePrevPageQueryDocument.Instance, strategy: global::StrawberryShake.RequestStrategy.Default, variables: variables);
+        }
+
+        private global::System.Object? FormatCountItem(global::System.Int32 value)
+        {
+            return _intFormatter.Format(value);
+        }
+
+        private global::System.Object? FormatCursor(global::System.String value)
+        {
+            if (value is null)
+            {
+                throw new global::System.ArgumentNullException(nameof(value));
+            }
+
+            return _stringFormatter.Format(value);
+        }
+
+        global::StrawberryShake.OperationRequest global::StrawberryShake.IOperationRequestFactory.Create(global::System.Collections.Generic.IReadOnlyDictionary<global::System.String, global::System.Object?>? variables)
+        {
+            return CreateRequest(variables!);
+        }
+    }
+
+    /// <summary>
+    /// Represents the operation service of the GetGenrePrevPage GraphQL operation
+    /// <code>
+    /// query GetGenrePrevPage($countItem: Int!, $cursor: String!) {
+    ///   allGenre(last: $countItem, before: $cursor) {
+    ///     __typename
+    ///     nodes {
+    ///       __typename
+    ///       ... GenreInfo
+    ///     }
+    ///     pageInfo {
+    ///       __typename
+    ///       hasNextPage
+    ///       endCursor
+    ///     }
+    ///   }
+    /// }
+    /// 
+    /// fragment GenreInfo on Genre {
+    ///   genreId
+    ///   name
+    /// }
+    /// </code>
+    /// </summary>
+    [global::System.CodeDom.Compiler.GeneratedCode("StrawberryShake", "12.4.1.0")]
+    public interface IGetGenrePrevPageQuery : global::StrawberryShake.IOperationRequestFactory
+    {
+        global::System.Threading.Tasks.Task<global::StrawberryShake.IOperationResult<IGetGenrePrevPageResult>> ExecuteAsync(global::System.Int32 countItem, global::System.String cursor, global::System.Threading.CancellationToken cancellationToken = default);
+        global::System.IObservable<global::StrawberryShake.IOperationResult<IGetGenrePrevPageResult>> Watch(global::System.Int32 countItem, global::System.String cursor, global::StrawberryShake.ExecutionStrategy? strategy = null);
+    }
+
+    /// <summary>
     /// Represents the operation service of the ChangeNameDev GraphQL operation
     /// <code>
     /// mutation ChangeNameDev($id: Int!, $name: String!) {
@@ -4475,7 +9362,16 @@ namespace Prelast.GraphQL
     /// Represents the operation service of the DelDevel GraphQL operation
     /// <code>
     /// mutation DelDevel($devId: Int!) {
-    ///   deleteDevById(id: $devId)
+    ///   deleteDevById(id: $devId) {
+    ///     __typename
+    ///     ... DevelopersInfo
+    ///   }
+    /// }
+    /// 
+    /// fragment DevelopersInfo on Developers {
+    ///   developerId
+    ///   name
+    ///   country
     /// }
     /// </code>
     /// </summary>
@@ -4488,8 +9384,8 @@ namespace Prelast.GraphQL
 
         public static DelDevelMutationDocument Instance { get; } = new DelDevelMutationDocument();
         public global::StrawberryShake.OperationKind Kind => global::StrawberryShake.OperationKind.Mutation;
-        public global::System.ReadOnlySpan<global::System.Byte> Body => new global::System.Byte[]{0x6d, 0x75, 0x74, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x20, 0x44, 0x65, 0x6c, 0x44, 0x65, 0x76, 0x65, 0x6c, 0x28, 0x24, 0x64, 0x65, 0x76, 0x49, 0x64, 0x3a, 0x20, 0x49, 0x6e, 0x74, 0x21, 0x29, 0x20, 0x7b, 0x20, 0x64, 0x65, 0x6c, 0x65, 0x74, 0x65, 0x44, 0x65, 0x76, 0x42, 0x79, 0x49, 0x64, 0x28, 0x69, 0x64, 0x3a, 0x20, 0x24, 0x64, 0x65, 0x76, 0x49, 0x64, 0x29, 0x20, 0x7d};
-        public global::StrawberryShake.DocumentHash Hash { get; } = new global::StrawberryShake.DocumentHash("md5Hash", "86c99e1250d80eaf92b93377de69f8f6");
+        public global::System.ReadOnlySpan<global::System.Byte> Body => new global::System.Byte[]{0x6d, 0x75, 0x74, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x20, 0x44, 0x65, 0x6c, 0x44, 0x65, 0x76, 0x65, 0x6c, 0x28, 0x24, 0x64, 0x65, 0x76, 0x49, 0x64, 0x3a, 0x20, 0x49, 0x6e, 0x74, 0x21, 0x29, 0x20, 0x7b, 0x20, 0x64, 0x65, 0x6c, 0x65, 0x74, 0x65, 0x44, 0x65, 0x76, 0x42, 0x79, 0x49, 0x64, 0x28, 0x69, 0x64, 0x3a, 0x20, 0x24, 0x64, 0x65, 0x76, 0x49, 0x64, 0x29, 0x20, 0x7b, 0x20, 0x5f, 0x5f, 0x74, 0x79, 0x70, 0x65, 0x6e, 0x61, 0x6d, 0x65, 0x20, 0x2e, 0x2e, 0x2e, 0x20, 0x44, 0x65, 0x76, 0x65, 0x6c, 0x6f, 0x70, 0x65, 0x72, 0x73, 0x49, 0x6e, 0x66, 0x6f, 0x20, 0x7d, 0x20, 0x7d, 0x20, 0x66, 0x72, 0x61, 0x67, 0x6d, 0x65, 0x6e, 0x74, 0x20, 0x44, 0x65, 0x76, 0x65, 0x6c, 0x6f, 0x70, 0x65, 0x72, 0x73, 0x49, 0x6e, 0x66, 0x6f, 0x20, 0x6f, 0x6e, 0x20, 0x44, 0x65, 0x76, 0x65, 0x6c, 0x6f, 0x70, 0x65, 0x72, 0x73, 0x20, 0x7b, 0x20, 0x64, 0x65, 0x76, 0x65, 0x6c, 0x6f, 0x70, 0x65, 0x72, 0x49, 0x64, 0x20, 0x6e, 0x61, 0x6d, 0x65, 0x20, 0x63, 0x6f, 0x75, 0x6e, 0x74, 0x72, 0x79, 0x20, 0x7d};
+        public global::StrawberryShake.DocumentHash Hash { get; } = new global::StrawberryShake.DocumentHash("md5Hash", "48a91755bb5834125ccc24b35da74f77");
         public override global::System.String ToString()
         {
 #if NETSTANDARD2_0
@@ -4504,7 +9400,16 @@ namespace Prelast.GraphQL
     /// Represents the operation service of the DelDevel GraphQL operation
     /// <code>
     /// mutation DelDevel($devId: Int!) {
-    ///   deleteDevById(id: $devId)
+    ///   deleteDevById(id: $devId) {
+    ///     __typename
+    ///     ... DevelopersInfo
+    ///   }
+    /// }
+    /// 
+    /// fragment DevelopersInfo on Developers {
+    ///   developerId
+    ///   name
+    ///   country
     /// }
     /// </code>
     /// </summary>
@@ -4559,7 +9464,16 @@ namespace Prelast.GraphQL
     /// Represents the operation service of the DelDevel GraphQL operation
     /// <code>
     /// mutation DelDevel($devId: Int!) {
-    ///   deleteDevById(id: $devId)
+    ///   deleteDevById(id: $devId) {
+    ///     __typename
+    ///     ... DevelopersInfo
+    ///   }
+    /// }
+    /// 
+    /// fragment DevelopersInfo on Developers {
+    ///   developerId
+    ///   name
+    ///   country
     /// }
     /// </code>
     /// </summary>
@@ -4574,7 +9488,25 @@ namespace Prelast.GraphQL
     /// Represents the operation service of the DelGame GraphQL operation
     /// <code>
     /// mutation DelGame($gameId: Int!) {
-    ///   deleteGameById(id: $gameId)
+    ///   deleteGameById(id: $gameId) {
+    ///     __typename
+    ///     ... GamesInfo
+    ///   }
+    /// }
+    /// 
+    /// fragment GamesInfo on Games {
+    ///   gamesId
+    ///   name
+    ///   price
+    ///   genre {
+    ///     __typename
+    ///     name
+    ///   }
+    ///   developer {
+    ///     __typename
+    ///     name
+    ///     country
+    ///   }
     /// }
     /// </code>
     /// </summary>
@@ -4587,8 +9519,8 @@ namespace Prelast.GraphQL
 
         public static DelGameMutationDocument Instance { get; } = new DelGameMutationDocument();
         public global::StrawberryShake.OperationKind Kind => global::StrawberryShake.OperationKind.Mutation;
-        public global::System.ReadOnlySpan<global::System.Byte> Body => new global::System.Byte[]{0x6d, 0x75, 0x74, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x20, 0x44, 0x65, 0x6c, 0x47, 0x61, 0x6d, 0x65, 0x28, 0x24, 0x67, 0x61, 0x6d, 0x65, 0x49, 0x64, 0x3a, 0x20, 0x49, 0x6e, 0x74, 0x21, 0x29, 0x20, 0x7b, 0x20, 0x64, 0x65, 0x6c, 0x65, 0x74, 0x65, 0x47, 0x61, 0x6d, 0x65, 0x42, 0x79, 0x49, 0x64, 0x28, 0x69, 0x64, 0x3a, 0x20, 0x24, 0x67, 0x61, 0x6d, 0x65, 0x49, 0x64, 0x29, 0x20, 0x7d};
-        public global::StrawberryShake.DocumentHash Hash { get; } = new global::StrawberryShake.DocumentHash("md5Hash", "da5bf36230d5c6fa7d61aa326f297c25");
+        public global::System.ReadOnlySpan<global::System.Byte> Body => new global::System.Byte[]{0x6d, 0x75, 0x74, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x20, 0x44, 0x65, 0x6c, 0x47, 0x61, 0x6d, 0x65, 0x28, 0x24, 0x67, 0x61, 0x6d, 0x65, 0x49, 0x64, 0x3a, 0x20, 0x49, 0x6e, 0x74, 0x21, 0x29, 0x20, 0x7b, 0x20, 0x64, 0x65, 0x6c, 0x65, 0x74, 0x65, 0x47, 0x61, 0x6d, 0x65, 0x42, 0x79, 0x49, 0x64, 0x28, 0x69, 0x64, 0x3a, 0x20, 0x24, 0x67, 0x61, 0x6d, 0x65, 0x49, 0x64, 0x29, 0x20, 0x7b, 0x20, 0x5f, 0x5f, 0x74, 0x79, 0x70, 0x65, 0x6e, 0x61, 0x6d, 0x65, 0x20, 0x2e, 0x2e, 0x2e, 0x20, 0x47, 0x61, 0x6d, 0x65, 0x73, 0x49, 0x6e, 0x66, 0x6f, 0x20, 0x7d, 0x20, 0x7d, 0x20, 0x66, 0x72, 0x61, 0x67, 0x6d, 0x65, 0x6e, 0x74, 0x20, 0x47, 0x61, 0x6d, 0x65, 0x73, 0x49, 0x6e, 0x66, 0x6f, 0x20, 0x6f, 0x6e, 0x20, 0x47, 0x61, 0x6d, 0x65, 0x73, 0x20, 0x7b, 0x20, 0x67, 0x61, 0x6d, 0x65, 0x73, 0x49, 0x64, 0x20, 0x6e, 0x61, 0x6d, 0x65, 0x20, 0x70, 0x72, 0x69, 0x63, 0x65, 0x20, 0x67, 0x65, 0x6e, 0x72, 0x65, 0x20, 0x7b, 0x20, 0x5f, 0x5f, 0x74, 0x79, 0x70, 0x65, 0x6e, 0x61, 0x6d, 0x65, 0x20, 0x6e, 0x61, 0x6d, 0x65, 0x20, 0x7d, 0x20, 0x64, 0x65, 0x76, 0x65, 0x6c, 0x6f, 0x70, 0x65, 0x72, 0x20, 0x7b, 0x20, 0x5f, 0x5f, 0x74, 0x79, 0x70, 0x65, 0x6e, 0x61, 0x6d, 0x65, 0x20, 0x6e, 0x61, 0x6d, 0x65, 0x20, 0x63, 0x6f, 0x75, 0x6e, 0x74, 0x72, 0x79, 0x20, 0x7d, 0x20, 0x7d};
+        public global::StrawberryShake.DocumentHash Hash { get; } = new global::StrawberryShake.DocumentHash("md5Hash", "1a8ab4651f2e48523c7906413510ba74");
         public override global::System.String ToString()
         {
 #if NETSTANDARD2_0
@@ -4603,7 +9535,25 @@ namespace Prelast.GraphQL
     /// Represents the operation service of the DelGame GraphQL operation
     /// <code>
     /// mutation DelGame($gameId: Int!) {
-    ///   deleteGameById(id: $gameId)
+    ///   deleteGameById(id: $gameId) {
+    ///     __typename
+    ///     ... GamesInfo
+    ///   }
+    /// }
+    /// 
+    /// fragment GamesInfo on Games {
+    ///   gamesId
+    ///   name
+    ///   price
+    ///   genre {
+    ///     __typename
+    ///     name
+    ///   }
+    ///   developer {
+    ///     __typename
+    ///     name
+    ///     country
+    ///   }
     /// }
     /// </code>
     /// </summary>
@@ -4658,7 +9608,25 @@ namespace Prelast.GraphQL
     /// Represents the operation service of the DelGame GraphQL operation
     /// <code>
     /// mutation DelGame($gameId: Int!) {
-    ///   deleteGameById(id: $gameId)
+    ///   deleteGameById(id: $gameId) {
+    ///     __typename
+    ///     ... GamesInfo
+    ///   }
+    /// }
+    /// 
+    /// fragment GamesInfo on Games {
+    ///   gamesId
+    ///   name
+    ///   price
+    ///   genre {
+    ///     __typename
+    ///     name
+    ///   }
+    ///   developer {
+    ///     __typename
+    ///     name
+    ///     country
+    ///   }
     /// }
     /// </code>
     /// </summary>
@@ -4673,7 +9641,15 @@ namespace Prelast.GraphQL
     /// Represents the operation service of the DelGenre GraphQL operation
     /// <code>
     /// mutation DelGenre($id: Int!) {
-    ///   deleteGenreById(id: $id)
+    ///   deleteGenreById(id: $id) {
+    ///     __typename
+    ///     ... GenreInfo
+    ///   }
+    /// }
+    /// 
+    /// fragment GenreInfo on Genre {
+    ///   genreId
+    ///   name
     /// }
     /// </code>
     /// </summary>
@@ -4686,8 +9662,8 @@ namespace Prelast.GraphQL
 
         public static DelGenreMutationDocument Instance { get; } = new DelGenreMutationDocument();
         public global::StrawberryShake.OperationKind Kind => global::StrawberryShake.OperationKind.Mutation;
-        public global::System.ReadOnlySpan<global::System.Byte> Body => new global::System.Byte[]{0x6d, 0x75, 0x74, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x20, 0x44, 0x65, 0x6c, 0x47, 0x65, 0x6e, 0x72, 0x65, 0x28, 0x24, 0x69, 0x64, 0x3a, 0x20, 0x49, 0x6e, 0x74, 0x21, 0x29, 0x20, 0x7b, 0x20, 0x64, 0x65, 0x6c, 0x65, 0x74, 0x65, 0x47, 0x65, 0x6e, 0x72, 0x65, 0x42, 0x79, 0x49, 0x64, 0x28, 0x69, 0x64, 0x3a, 0x20, 0x24, 0x69, 0x64, 0x29, 0x20, 0x7d};
-        public global::StrawberryShake.DocumentHash Hash { get; } = new global::StrawberryShake.DocumentHash("md5Hash", "3acb0ed4088ad16772f2e68c4b7cc4c3");
+        public global::System.ReadOnlySpan<global::System.Byte> Body => new global::System.Byte[]{0x6d, 0x75, 0x74, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x20, 0x44, 0x65, 0x6c, 0x47, 0x65, 0x6e, 0x72, 0x65, 0x28, 0x24, 0x69, 0x64, 0x3a, 0x20, 0x49, 0x6e, 0x74, 0x21, 0x29, 0x20, 0x7b, 0x20, 0x64, 0x65, 0x6c, 0x65, 0x74, 0x65, 0x47, 0x65, 0x6e, 0x72, 0x65, 0x42, 0x79, 0x49, 0x64, 0x28, 0x69, 0x64, 0x3a, 0x20, 0x24, 0x69, 0x64, 0x29, 0x20, 0x7b, 0x20, 0x5f, 0x5f, 0x74, 0x79, 0x70, 0x65, 0x6e, 0x61, 0x6d, 0x65, 0x20, 0x2e, 0x2e, 0x2e, 0x20, 0x47, 0x65, 0x6e, 0x72, 0x65, 0x49, 0x6e, 0x66, 0x6f, 0x20, 0x7d, 0x20, 0x7d, 0x20, 0x66, 0x72, 0x61, 0x67, 0x6d, 0x65, 0x6e, 0x74, 0x20, 0x47, 0x65, 0x6e, 0x72, 0x65, 0x49, 0x6e, 0x66, 0x6f, 0x20, 0x6f, 0x6e, 0x20, 0x47, 0x65, 0x6e, 0x72, 0x65, 0x20, 0x7b, 0x20, 0x67, 0x65, 0x6e, 0x72, 0x65, 0x49, 0x64, 0x20, 0x6e, 0x61, 0x6d, 0x65, 0x20, 0x7d};
+        public global::StrawberryShake.DocumentHash Hash { get; } = new global::StrawberryShake.DocumentHash("md5Hash", "65215ac25cffbf3275bfc32697e1fba1");
         public override global::System.String ToString()
         {
 #if NETSTANDARD2_0
@@ -4702,7 +9678,15 @@ namespace Prelast.GraphQL
     /// Represents the operation service of the DelGenre GraphQL operation
     /// <code>
     /// mutation DelGenre($id: Int!) {
-    ///   deleteGenreById(id: $id)
+    ///   deleteGenreById(id: $id) {
+    ///     __typename
+    ///     ... GenreInfo
+    ///   }
+    /// }
+    /// 
+    /// fragment GenreInfo on Genre {
+    ///   genreId
+    ///   name
     /// }
     /// </code>
     /// </summary>
@@ -4757,7 +9741,15 @@ namespace Prelast.GraphQL
     /// Represents the operation service of the DelGenre GraphQL operation
     /// <code>
     /// mutation DelGenre($id: Int!) {
-    ///   deleteGenreById(id: $id)
+    ///   deleteGenreById(id: $id) {
+    ///     __typename
+    ///     ... GenreInfo
+    ///   }
+    /// }
+    /// 
+    /// fragment GenreInfo on Genre {
+    ///   genreId
+    ///   name
     /// }
     /// </code>
     /// </summary>
@@ -5037,12 +10029,17 @@ namespace Prelast.GraphQL
     /// <summary>
     /// Represents the operation service of the GetGames GraphQL operation
     /// <code>
-    /// query GetGames {
-    ///   allGameWithDevGerne {
+    /// query GetGames($countItem: Int!) {
+    ///   allGameWithDevGerne(first: $countItem) {
     ///     __typename
     ///     nodes {
     ///       __typename
     ///       ... GamesInfo
+    ///     }
+    ///     pageInfo {
+    ///       __typename
+    ///       hasNextPage
+    ///       endCursor
     ///     }
     ///   }
     /// }
@@ -5072,8 +10069,8 @@ namespace Prelast.GraphQL
 
         public static GetGamesQueryDocument Instance { get; } = new GetGamesQueryDocument();
         public global::StrawberryShake.OperationKind Kind => global::StrawberryShake.OperationKind.Query;
-        public global::System.ReadOnlySpan<global::System.Byte> Body => new global::System.Byte[]{0x71, 0x75, 0x65, 0x72, 0x79, 0x20, 0x47, 0x65, 0x74, 0x47, 0x61, 0x6d, 0x65, 0x73, 0x20, 0x7b, 0x20, 0x61, 0x6c, 0x6c, 0x47, 0x61, 0x6d, 0x65, 0x57, 0x69, 0x74, 0x68, 0x44, 0x65, 0x76, 0x47, 0x65, 0x72, 0x6e, 0x65, 0x20, 0x7b, 0x20, 0x5f, 0x5f, 0x74, 0x79, 0x70, 0x65, 0x6e, 0x61, 0x6d, 0x65, 0x20, 0x6e, 0x6f, 0x64, 0x65, 0x73, 0x20, 0x7b, 0x20, 0x5f, 0x5f, 0x74, 0x79, 0x70, 0x65, 0x6e, 0x61, 0x6d, 0x65, 0x20, 0x2e, 0x2e, 0x2e, 0x20, 0x47, 0x61, 0x6d, 0x65, 0x73, 0x49, 0x6e, 0x66, 0x6f, 0x20, 0x7d, 0x20, 0x7d, 0x20, 0x7d, 0x20, 0x66, 0x72, 0x61, 0x67, 0x6d, 0x65, 0x6e, 0x74, 0x20, 0x47, 0x61, 0x6d, 0x65, 0x73, 0x49, 0x6e, 0x66, 0x6f, 0x20, 0x6f, 0x6e, 0x20, 0x47, 0x61, 0x6d, 0x65, 0x73, 0x20, 0x7b, 0x20, 0x67, 0x61, 0x6d, 0x65, 0x73, 0x49, 0x64, 0x20, 0x6e, 0x61, 0x6d, 0x65, 0x20, 0x70, 0x72, 0x69, 0x63, 0x65, 0x20, 0x67, 0x65, 0x6e, 0x72, 0x65, 0x20, 0x7b, 0x20, 0x5f, 0x5f, 0x74, 0x79, 0x70, 0x65, 0x6e, 0x61, 0x6d, 0x65, 0x20, 0x6e, 0x61, 0x6d, 0x65, 0x20, 0x7d, 0x20, 0x64, 0x65, 0x76, 0x65, 0x6c, 0x6f, 0x70, 0x65, 0x72, 0x20, 0x7b, 0x20, 0x5f, 0x5f, 0x74, 0x79, 0x70, 0x65, 0x6e, 0x61, 0x6d, 0x65, 0x20, 0x6e, 0x61, 0x6d, 0x65, 0x20, 0x63, 0x6f, 0x75, 0x6e, 0x74, 0x72, 0x79, 0x20, 0x7d, 0x20, 0x7d};
-        public global::StrawberryShake.DocumentHash Hash { get; } = new global::StrawberryShake.DocumentHash("md5Hash", "a2f145ba3893a823a42956d9b36e3a61");
+        public global::System.ReadOnlySpan<global::System.Byte> Body => new global::System.Byte[]{0x71, 0x75, 0x65, 0x72, 0x79, 0x20, 0x47, 0x65, 0x74, 0x47, 0x61, 0x6d, 0x65, 0x73, 0x28, 0x24, 0x63, 0x6f, 0x75, 0x6e, 0x74, 0x49, 0x74, 0x65, 0x6d, 0x3a, 0x20, 0x49, 0x6e, 0x74, 0x21, 0x29, 0x20, 0x7b, 0x20, 0x61, 0x6c, 0x6c, 0x47, 0x61, 0x6d, 0x65, 0x57, 0x69, 0x74, 0x68, 0x44, 0x65, 0x76, 0x47, 0x65, 0x72, 0x6e, 0x65, 0x28, 0x66, 0x69, 0x72, 0x73, 0x74, 0x3a, 0x20, 0x24, 0x63, 0x6f, 0x75, 0x6e, 0x74, 0x49, 0x74, 0x65, 0x6d, 0x29, 0x20, 0x7b, 0x20, 0x5f, 0x5f, 0x74, 0x79, 0x70, 0x65, 0x6e, 0x61, 0x6d, 0x65, 0x20, 0x6e, 0x6f, 0x64, 0x65, 0x73, 0x20, 0x7b, 0x20, 0x5f, 0x5f, 0x74, 0x79, 0x70, 0x65, 0x6e, 0x61, 0x6d, 0x65, 0x20, 0x2e, 0x2e, 0x2e, 0x20, 0x47, 0x61, 0x6d, 0x65, 0x73, 0x49, 0x6e, 0x66, 0x6f, 0x20, 0x7d, 0x20, 0x70, 0x61, 0x67, 0x65, 0x49, 0x6e, 0x66, 0x6f, 0x20, 0x7b, 0x20, 0x5f, 0x5f, 0x74, 0x79, 0x70, 0x65, 0x6e, 0x61, 0x6d, 0x65, 0x20, 0x68, 0x61, 0x73, 0x4e, 0x65, 0x78, 0x74, 0x50, 0x61, 0x67, 0x65, 0x20, 0x65, 0x6e, 0x64, 0x43, 0x75, 0x72, 0x73, 0x6f, 0x72, 0x20, 0x7d, 0x20, 0x7d, 0x20, 0x7d, 0x20, 0x66, 0x72, 0x61, 0x67, 0x6d, 0x65, 0x6e, 0x74, 0x20, 0x47, 0x61, 0x6d, 0x65, 0x73, 0x49, 0x6e, 0x66, 0x6f, 0x20, 0x6f, 0x6e, 0x20, 0x47, 0x61, 0x6d, 0x65, 0x73, 0x20, 0x7b, 0x20, 0x67, 0x61, 0x6d, 0x65, 0x73, 0x49, 0x64, 0x20, 0x6e, 0x61, 0x6d, 0x65, 0x20, 0x70, 0x72, 0x69, 0x63, 0x65, 0x20, 0x67, 0x65, 0x6e, 0x72, 0x65, 0x20, 0x7b, 0x20, 0x5f, 0x5f, 0x74, 0x79, 0x70, 0x65, 0x6e, 0x61, 0x6d, 0x65, 0x20, 0x6e, 0x61, 0x6d, 0x65, 0x20, 0x7d, 0x20, 0x64, 0x65, 0x76, 0x65, 0x6c, 0x6f, 0x70, 0x65, 0x72, 0x20, 0x7b, 0x20, 0x5f, 0x5f, 0x74, 0x79, 0x70, 0x65, 0x6e, 0x61, 0x6d, 0x65, 0x20, 0x6e, 0x61, 0x6d, 0x65, 0x20, 0x63, 0x6f, 0x75, 0x6e, 0x74, 0x72, 0x79, 0x20, 0x7d, 0x20, 0x7d};
+        public global::StrawberryShake.DocumentHash Hash { get; } = new global::StrawberryShake.DocumentHash("md5Hash", "eaa85a40b5f50c7eccfd4db2240f2f6f");
         public override global::System.String ToString()
         {
 #if NETSTANDARD2_0
@@ -5087,12 +10084,17 @@ namespace Prelast.GraphQL
     /// <summary>
     /// Represents the operation service of the GetGames GraphQL operation
     /// <code>
-    /// query GetGames {
-    ///   allGameWithDevGerne {
+    /// query GetGames($countItem: Int!) {
+    ///   allGameWithDevGerne(first: $countItem) {
     ///     __typename
     ///     nodes {
     ///       __typename
     ///       ... GamesInfo
+    ///     }
+    ///     pageInfo {
+    ///       __typename
+    ///       hasNextPage
+    ///       endCursor
     ///     }
     ///   }
     /// }
@@ -5117,49 +10119,63 @@ namespace Prelast.GraphQL
     public partial class GetGamesQuery : global::Prelast.GraphQL.IGetGamesQuery
     {
         private readonly global::StrawberryShake.IOperationExecutor<IGetGamesResult> _operationExecutor;
-        public GetGamesQuery(global::StrawberryShake.IOperationExecutor<IGetGamesResult> operationExecutor)
+        private readonly global::StrawberryShake.Serialization.IInputValueFormatter _intFormatter;
+        public GetGamesQuery(global::StrawberryShake.IOperationExecutor<IGetGamesResult> operationExecutor, global::StrawberryShake.Serialization.ISerializerResolver serializerResolver)
         {
             _operationExecutor = operationExecutor ?? throw new global::System.ArgumentNullException(nameof(operationExecutor));
+            _intFormatter = serializerResolver.GetInputValueFormatter("Int");
         }
 
         global::System.Type global::StrawberryShake.IOperationRequestFactory.ResultType => typeof(IGetGamesResult);
-        public async global::System.Threading.Tasks.Task<global::StrawberryShake.IOperationResult<IGetGamesResult>> ExecuteAsync(global::System.Threading.CancellationToken cancellationToken = default)
+        public async global::System.Threading.Tasks.Task<global::StrawberryShake.IOperationResult<IGetGamesResult>> ExecuteAsync(global::System.Int32 countItem, global::System.Threading.CancellationToken cancellationToken = default)
         {
-            var request = CreateRequest();
+            var request = CreateRequest(countItem);
             return await _operationExecutor.ExecuteAsync(request, cancellationToken).ConfigureAwait(false);
         }
 
-        public global::System.IObservable<global::StrawberryShake.IOperationResult<IGetGamesResult>> Watch(global::StrawberryShake.ExecutionStrategy? strategy = null)
+        public global::System.IObservable<global::StrawberryShake.IOperationResult<IGetGamesResult>> Watch(global::System.Int32 countItem, global::StrawberryShake.ExecutionStrategy? strategy = null)
         {
-            var request = CreateRequest();
+            var request = CreateRequest(countItem);
             return _operationExecutor.Watch(request, strategy);
         }
 
-        private global::StrawberryShake.OperationRequest CreateRequest()
+        private global::StrawberryShake.OperationRequest CreateRequest(global::System.Int32 countItem)
         {
-            return CreateRequest(null);
+            var variables = new global::System.Collections.Generic.Dictionary<global::System.String, global::System.Object?>();
+            variables.Add("countItem", FormatCountItem(countItem));
+            return CreateRequest(variables);
         }
 
         private global::StrawberryShake.OperationRequest CreateRequest(global::System.Collections.Generic.IReadOnlyDictionary<global::System.String, global::System.Object?>? variables)
         {
-            return new global::StrawberryShake.OperationRequest(id: GetGamesQueryDocument.Instance.Hash.Value, name: "GetGames", document: GetGamesQueryDocument.Instance, strategy: global::StrawberryShake.RequestStrategy.Default);
+            return new global::StrawberryShake.OperationRequest(id: GetGamesQueryDocument.Instance.Hash.Value, name: "GetGames", document: GetGamesQueryDocument.Instance, strategy: global::StrawberryShake.RequestStrategy.Default, variables: variables);
+        }
+
+        private global::System.Object? FormatCountItem(global::System.Int32 value)
+        {
+            return _intFormatter.Format(value);
         }
 
         global::StrawberryShake.OperationRequest global::StrawberryShake.IOperationRequestFactory.Create(global::System.Collections.Generic.IReadOnlyDictionary<global::System.String, global::System.Object?>? variables)
         {
-            return CreateRequest();
+            return CreateRequest(variables!);
         }
     }
 
     /// <summary>
     /// Represents the operation service of the GetGames GraphQL operation
     /// <code>
-    /// query GetGames {
-    ///   allGameWithDevGerne {
+    /// query GetGames($countItem: Int!) {
+    ///   allGameWithDevGerne(first: $countItem) {
     ///     __typename
     ///     nodes {
     ///       __typename
     ///       ... GamesInfo
+    ///     }
+    ///     pageInfo {
+    ///       __typename
+    ///       hasNextPage
+    ///       endCursor
     ///     }
     ///   }
     /// }
@@ -5183,8 +10199,388 @@ namespace Prelast.GraphQL
     [global::System.CodeDom.Compiler.GeneratedCode("StrawberryShake", "12.4.1.0")]
     public interface IGetGamesQuery : global::StrawberryShake.IOperationRequestFactory
     {
-        global::System.Threading.Tasks.Task<global::StrawberryShake.IOperationResult<IGetGamesResult>> ExecuteAsync(global::System.Threading.CancellationToken cancellationToken = default);
-        global::System.IObservable<global::StrawberryShake.IOperationResult<IGetGamesResult>> Watch(global::StrawberryShake.ExecutionStrategy? strategy = null);
+        global::System.Threading.Tasks.Task<global::StrawberryShake.IOperationResult<IGetGamesResult>> ExecuteAsync(global::System.Int32 countItem, global::System.Threading.CancellationToken cancellationToken = default);
+        global::System.IObservable<global::StrawberryShake.IOperationResult<IGetGamesResult>> Watch(global::System.Int32 countItem, global::StrawberryShake.ExecutionStrategy? strategy = null);
+    }
+
+    /// <summary>
+    /// Represents the operation service of the GetGamesNextPage GraphQL operation
+    /// <code>
+    /// query GetGamesNextPage($countItem: Int!, $cursot: String!) {
+    ///   allGameWithDevGerne(first: $countItem, after: $cursot) {
+    ///     __typename
+    ///     nodes {
+    ///       __typename
+    ///       ... GamesInfo
+    ///     }
+    ///     pageInfo {
+    ///       __typename
+    ///       hasNextPage
+    ///       endCursor
+    ///     }
+    ///   }
+    /// }
+    /// 
+    /// fragment GamesInfo on Games {
+    ///   gamesId
+    ///   name
+    ///   price
+    ///   genre {
+    ///     __typename
+    ///     name
+    ///   }
+    ///   developer {
+    ///     __typename
+    ///     name
+    ///     country
+    ///   }
+    /// }
+    /// </code>
+    /// </summary>
+    [global::System.CodeDom.Compiler.GeneratedCode("StrawberryShake", "12.4.1.0")]
+    public partial class GetGamesNextPageQueryDocument : global::StrawberryShake.IDocument
+    {
+        private GetGamesNextPageQueryDocument()
+        {
+        }
+
+        public static GetGamesNextPageQueryDocument Instance { get; } = new GetGamesNextPageQueryDocument();
+        public global::StrawberryShake.OperationKind Kind => global::StrawberryShake.OperationKind.Query;
+        public global::System.ReadOnlySpan<global::System.Byte> Body => new global::System.Byte[]{0x71, 0x75, 0x65, 0x72, 0x79, 0x20, 0x47, 0x65, 0x74, 0x47, 0x61, 0x6d, 0x65, 0x73, 0x4e, 0x65, 0x78, 0x74, 0x50, 0x61, 0x67, 0x65, 0x28, 0x24, 0x63, 0x6f, 0x75, 0x6e, 0x74, 0x49, 0x74, 0x65, 0x6d, 0x3a, 0x20, 0x49, 0x6e, 0x74, 0x21, 0x2c, 0x20, 0x24, 0x63, 0x75, 0x72, 0x73, 0x6f, 0x74, 0x3a, 0x20, 0x53, 0x74, 0x72, 0x69, 0x6e, 0x67, 0x21, 0x29, 0x20, 0x7b, 0x20, 0x61, 0x6c, 0x6c, 0x47, 0x61, 0x6d, 0x65, 0x57, 0x69, 0x74, 0x68, 0x44, 0x65, 0x76, 0x47, 0x65, 0x72, 0x6e, 0x65, 0x28, 0x66, 0x69, 0x72, 0x73, 0x74, 0x3a, 0x20, 0x24, 0x63, 0x6f, 0x75, 0x6e, 0x74, 0x49, 0x74, 0x65, 0x6d, 0x2c, 0x20, 0x61, 0x66, 0x74, 0x65, 0x72, 0x3a, 0x20, 0x24, 0x63, 0x75, 0x72, 0x73, 0x6f, 0x74, 0x29, 0x20, 0x7b, 0x20, 0x5f, 0x5f, 0x74, 0x79, 0x70, 0x65, 0x6e, 0x61, 0x6d, 0x65, 0x20, 0x6e, 0x6f, 0x64, 0x65, 0x73, 0x20, 0x7b, 0x20, 0x5f, 0x5f, 0x74, 0x79, 0x70, 0x65, 0x6e, 0x61, 0x6d, 0x65, 0x20, 0x2e, 0x2e, 0x2e, 0x20, 0x47, 0x61, 0x6d, 0x65, 0x73, 0x49, 0x6e, 0x66, 0x6f, 0x20, 0x7d, 0x20, 0x70, 0x61, 0x67, 0x65, 0x49, 0x6e, 0x66, 0x6f, 0x20, 0x7b, 0x20, 0x5f, 0x5f, 0x74, 0x79, 0x70, 0x65, 0x6e, 0x61, 0x6d, 0x65, 0x20, 0x68, 0x61, 0x73, 0x4e, 0x65, 0x78, 0x74, 0x50, 0x61, 0x67, 0x65, 0x20, 0x65, 0x6e, 0x64, 0x43, 0x75, 0x72, 0x73, 0x6f, 0x72, 0x20, 0x7d, 0x20, 0x7d, 0x20, 0x7d, 0x20, 0x66, 0x72, 0x61, 0x67, 0x6d, 0x65, 0x6e, 0x74, 0x20, 0x47, 0x61, 0x6d, 0x65, 0x73, 0x49, 0x6e, 0x66, 0x6f, 0x20, 0x6f, 0x6e, 0x20, 0x47, 0x61, 0x6d, 0x65, 0x73, 0x20, 0x7b, 0x20, 0x67, 0x61, 0x6d, 0x65, 0x73, 0x49, 0x64, 0x20, 0x6e, 0x61, 0x6d, 0x65, 0x20, 0x70, 0x72, 0x69, 0x63, 0x65, 0x20, 0x67, 0x65, 0x6e, 0x72, 0x65, 0x20, 0x7b, 0x20, 0x5f, 0x5f, 0x74, 0x79, 0x70, 0x65, 0x6e, 0x61, 0x6d, 0x65, 0x20, 0x6e, 0x61, 0x6d, 0x65, 0x20, 0x7d, 0x20, 0x64, 0x65, 0x76, 0x65, 0x6c, 0x6f, 0x70, 0x65, 0x72, 0x20, 0x7b, 0x20, 0x5f, 0x5f, 0x74, 0x79, 0x70, 0x65, 0x6e, 0x61, 0x6d, 0x65, 0x20, 0x6e, 0x61, 0x6d, 0x65, 0x20, 0x63, 0x6f, 0x75, 0x6e, 0x74, 0x72, 0x79, 0x20, 0x7d, 0x20, 0x7d};
+        public global::StrawberryShake.DocumentHash Hash { get; } = new global::StrawberryShake.DocumentHash("md5Hash", "fd530c08cfb0e35ea3ffbd04d6c61bf0");
+        public override global::System.String ToString()
+        {
+#if NETSTANDARD2_0
+        return global::System.Text.Encoding.UTF8.GetString(Body.ToArray());
+#else
+            return global::System.Text.Encoding.UTF8.GetString(Body);
+#endif
+        }
+    }
+
+    /// <summary>
+    /// Represents the operation service of the GetGamesNextPage GraphQL operation
+    /// <code>
+    /// query GetGamesNextPage($countItem: Int!, $cursot: String!) {
+    ///   allGameWithDevGerne(first: $countItem, after: $cursot) {
+    ///     __typename
+    ///     nodes {
+    ///       __typename
+    ///       ... GamesInfo
+    ///     }
+    ///     pageInfo {
+    ///       __typename
+    ///       hasNextPage
+    ///       endCursor
+    ///     }
+    ///   }
+    /// }
+    /// 
+    /// fragment GamesInfo on Games {
+    ///   gamesId
+    ///   name
+    ///   price
+    ///   genre {
+    ///     __typename
+    ///     name
+    ///   }
+    ///   developer {
+    ///     __typename
+    ///     name
+    ///     country
+    ///   }
+    /// }
+    /// </code>
+    /// </summary>
+    [global::System.CodeDom.Compiler.GeneratedCode("StrawberryShake", "12.4.1.0")]
+    public partial class GetGamesNextPageQuery : global::Prelast.GraphQL.IGetGamesNextPageQuery
+    {
+        private readonly global::StrawberryShake.IOperationExecutor<IGetGamesNextPageResult> _operationExecutor;
+        private readonly global::StrawberryShake.Serialization.IInputValueFormatter _intFormatter;
+        private readonly global::StrawberryShake.Serialization.IInputValueFormatter _stringFormatter;
+        public GetGamesNextPageQuery(global::StrawberryShake.IOperationExecutor<IGetGamesNextPageResult> operationExecutor, global::StrawberryShake.Serialization.ISerializerResolver serializerResolver)
+        {
+            _operationExecutor = operationExecutor ?? throw new global::System.ArgumentNullException(nameof(operationExecutor));
+            _intFormatter = serializerResolver.GetInputValueFormatter("Int");
+            _stringFormatter = serializerResolver.GetInputValueFormatter("String");
+        }
+
+        global::System.Type global::StrawberryShake.IOperationRequestFactory.ResultType => typeof(IGetGamesNextPageResult);
+        public async global::System.Threading.Tasks.Task<global::StrawberryShake.IOperationResult<IGetGamesNextPageResult>> ExecuteAsync(global::System.Int32 countItem, global::System.String cursot, global::System.Threading.CancellationToken cancellationToken = default)
+        {
+            var request = CreateRequest(countItem, cursot);
+            return await _operationExecutor.ExecuteAsync(request, cancellationToken).ConfigureAwait(false);
+        }
+
+        public global::System.IObservable<global::StrawberryShake.IOperationResult<IGetGamesNextPageResult>> Watch(global::System.Int32 countItem, global::System.String cursot, global::StrawberryShake.ExecutionStrategy? strategy = null)
+        {
+            var request = CreateRequest(countItem, cursot);
+            return _operationExecutor.Watch(request, strategy);
+        }
+
+        private global::StrawberryShake.OperationRequest CreateRequest(global::System.Int32 countItem, global::System.String cursot)
+        {
+            var variables = new global::System.Collections.Generic.Dictionary<global::System.String, global::System.Object?>();
+            variables.Add("countItem", FormatCountItem(countItem));
+            variables.Add("cursot", FormatCursot(cursot));
+            return CreateRequest(variables);
+        }
+
+        private global::StrawberryShake.OperationRequest CreateRequest(global::System.Collections.Generic.IReadOnlyDictionary<global::System.String, global::System.Object?>? variables)
+        {
+            return new global::StrawberryShake.OperationRequest(id: GetGamesNextPageQueryDocument.Instance.Hash.Value, name: "GetGamesNextPage", document: GetGamesNextPageQueryDocument.Instance, strategy: global::StrawberryShake.RequestStrategy.Default, variables: variables);
+        }
+
+        private global::System.Object? FormatCountItem(global::System.Int32 value)
+        {
+            return _intFormatter.Format(value);
+        }
+
+        private global::System.Object? FormatCursot(global::System.String value)
+        {
+            if (value is null)
+            {
+                throw new global::System.ArgumentNullException(nameof(value));
+            }
+
+            return _stringFormatter.Format(value);
+        }
+
+        global::StrawberryShake.OperationRequest global::StrawberryShake.IOperationRequestFactory.Create(global::System.Collections.Generic.IReadOnlyDictionary<global::System.String, global::System.Object?>? variables)
+        {
+            return CreateRequest(variables!);
+        }
+    }
+
+    /// <summary>
+    /// Represents the operation service of the GetGamesNextPage GraphQL operation
+    /// <code>
+    /// query GetGamesNextPage($countItem: Int!, $cursot: String!) {
+    ///   allGameWithDevGerne(first: $countItem, after: $cursot) {
+    ///     __typename
+    ///     nodes {
+    ///       __typename
+    ///       ... GamesInfo
+    ///     }
+    ///     pageInfo {
+    ///       __typename
+    ///       hasNextPage
+    ///       endCursor
+    ///     }
+    ///   }
+    /// }
+    /// 
+    /// fragment GamesInfo on Games {
+    ///   gamesId
+    ///   name
+    ///   price
+    ///   genre {
+    ///     __typename
+    ///     name
+    ///   }
+    ///   developer {
+    ///     __typename
+    ///     name
+    ///     country
+    ///   }
+    /// }
+    /// </code>
+    /// </summary>
+    [global::System.CodeDom.Compiler.GeneratedCode("StrawberryShake", "12.4.1.0")]
+    public interface IGetGamesNextPageQuery : global::StrawberryShake.IOperationRequestFactory
+    {
+        global::System.Threading.Tasks.Task<global::StrawberryShake.IOperationResult<IGetGamesNextPageResult>> ExecuteAsync(global::System.Int32 countItem, global::System.String cursot, global::System.Threading.CancellationToken cancellationToken = default);
+        global::System.IObservable<global::StrawberryShake.IOperationResult<IGetGamesNextPageResult>> Watch(global::System.Int32 countItem, global::System.String cursot, global::StrawberryShake.ExecutionStrategy? strategy = null);
+    }
+
+    /// <summary>
+    /// Represents the operation service of the GetGamesPrevPage GraphQL operation
+    /// <code>
+    /// query GetGamesPrevPage($countItem: Int!, $cursor: String!) {
+    ///   allGameWithDevGerne(last: $countItem, before: $cursor) {
+    ///     __typename
+    ///     nodes {
+    ///       __typename
+    ///       ... GamesInfo
+    ///     }
+    ///     pageInfo {
+    ///       __typename
+    ///       hasNextPage
+    ///       endCursor
+    ///     }
+    ///   }
+    /// }
+    /// 
+    /// fragment GamesInfo on Games {
+    ///   gamesId
+    ///   name
+    ///   price
+    ///   genre {
+    ///     __typename
+    ///     name
+    ///   }
+    ///   developer {
+    ///     __typename
+    ///     name
+    ///     country
+    ///   }
+    /// }
+    /// </code>
+    /// </summary>
+    [global::System.CodeDom.Compiler.GeneratedCode("StrawberryShake", "12.4.1.0")]
+    public partial class GetGamesPrevPageQueryDocument : global::StrawberryShake.IDocument
+    {
+        private GetGamesPrevPageQueryDocument()
+        {
+        }
+
+        public static GetGamesPrevPageQueryDocument Instance { get; } = new GetGamesPrevPageQueryDocument();
+        public global::StrawberryShake.OperationKind Kind => global::StrawberryShake.OperationKind.Query;
+        public global::System.ReadOnlySpan<global::System.Byte> Body => new global::System.Byte[]{0x71, 0x75, 0x65, 0x72, 0x79, 0x20, 0x47, 0x65, 0x74, 0x47, 0x61, 0x6d, 0x65, 0x73, 0x50, 0x72, 0x65, 0x76, 0x50, 0x61, 0x67, 0x65, 0x28, 0x24, 0x63, 0x6f, 0x75, 0x6e, 0x74, 0x49, 0x74, 0x65, 0x6d, 0x3a, 0x20, 0x49, 0x6e, 0x74, 0x21, 0x2c, 0x20, 0x24, 0x63, 0x75, 0x72, 0x73, 0x6f, 0x72, 0x3a, 0x20, 0x53, 0x74, 0x72, 0x69, 0x6e, 0x67, 0x21, 0x29, 0x20, 0x7b, 0x20, 0x61, 0x6c, 0x6c, 0x47, 0x61, 0x6d, 0x65, 0x57, 0x69, 0x74, 0x68, 0x44, 0x65, 0x76, 0x47, 0x65, 0x72, 0x6e, 0x65, 0x28, 0x6c, 0x61, 0x73, 0x74, 0x3a, 0x20, 0x24, 0x63, 0x6f, 0x75, 0x6e, 0x74, 0x49, 0x74, 0x65, 0x6d, 0x2c, 0x20, 0x62, 0x65, 0x66, 0x6f, 0x72, 0x65, 0x3a, 0x20, 0x24, 0x63, 0x75, 0x72, 0x73, 0x6f, 0x72, 0x29, 0x20, 0x7b, 0x20, 0x5f, 0x5f, 0x74, 0x79, 0x70, 0x65, 0x6e, 0x61, 0x6d, 0x65, 0x20, 0x6e, 0x6f, 0x64, 0x65, 0x73, 0x20, 0x7b, 0x20, 0x5f, 0x5f, 0x74, 0x79, 0x70, 0x65, 0x6e, 0x61, 0x6d, 0x65, 0x20, 0x2e, 0x2e, 0x2e, 0x20, 0x47, 0x61, 0x6d, 0x65, 0x73, 0x49, 0x6e, 0x66, 0x6f, 0x20, 0x7d, 0x20, 0x70, 0x61, 0x67, 0x65, 0x49, 0x6e, 0x66, 0x6f, 0x20, 0x7b, 0x20, 0x5f, 0x5f, 0x74, 0x79, 0x70, 0x65, 0x6e, 0x61, 0x6d, 0x65, 0x20, 0x68, 0x61, 0x73, 0x4e, 0x65, 0x78, 0x74, 0x50, 0x61, 0x67, 0x65, 0x20, 0x65, 0x6e, 0x64, 0x43, 0x75, 0x72, 0x73, 0x6f, 0x72, 0x20, 0x7d, 0x20, 0x7d, 0x20, 0x7d, 0x20, 0x66, 0x72, 0x61, 0x67, 0x6d, 0x65, 0x6e, 0x74, 0x20, 0x47, 0x61, 0x6d, 0x65, 0x73, 0x49, 0x6e, 0x66, 0x6f, 0x20, 0x6f, 0x6e, 0x20, 0x47, 0x61, 0x6d, 0x65, 0x73, 0x20, 0x7b, 0x20, 0x67, 0x61, 0x6d, 0x65, 0x73, 0x49, 0x64, 0x20, 0x6e, 0x61, 0x6d, 0x65, 0x20, 0x70, 0x72, 0x69, 0x63, 0x65, 0x20, 0x67, 0x65, 0x6e, 0x72, 0x65, 0x20, 0x7b, 0x20, 0x5f, 0x5f, 0x74, 0x79, 0x70, 0x65, 0x6e, 0x61, 0x6d, 0x65, 0x20, 0x6e, 0x61, 0x6d, 0x65, 0x20, 0x7d, 0x20, 0x64, 0x65, 0x76, 0x65, 0x6c, 0x6f, 0x70, 0x65, 0x72, 0x20, 0x7b, 0x20, 0x5f, 0x5f, 0x74, 0x79, 0x70, 0x65, 0x6e, 0x61, 0x6d, 0x65, 0x20, 0x6e, 0x61, 0x6d, 0x65, 0x20, 0x63, 0x6f, 0x75, 0x6e, 0x74, 0x72, 0x79, 0x20, 0x7d, 0x20, 0x7d};
+        public global::StrawberryShake.DocumentHash Hash { get; } = new global::StrawberryShake.DocumentHash("md5Hash", "b6beab724db8404af0aca3625fa211ba");
+        public override global::System.String ToString()
+        {
+#if NETSTANDARD2_0
+        return global::System.Text.Encoding.UTF8.GetString(Body.ToArray());
+#else
+            return global::System.Text.Encoding.UTF8.GetString(Body);
+#endif
+        }
+    }
+
+    /// <summary>
+    /// Represents the operation service of the GetGamesPrevPage GraphQL operation
+    /// <code>
+    /// query GetGamesPrevPage($countItem: Int!, $cursor: String!) {
+    ///   allGameWithDevGerne(last: $countItem, before: $cursor) {
+    ///     __typename
+    ///     nodes {
+    ///       __typename
+    ///       ... GamesInfo
+    ///     }
+    ///     pageInfo {
+    ///       __typename
+    ///       hasNextPage
+    ///       endCursor
+    ///     }
+    ///   }
+    /// }
+    /// 
+    /// fragment GamesInfo on Games {
+    ///   gamesId
+    ///   name
+    ///   price
+    ///   genre {
+    ///     __typename
+    ///     name
+    ///   }
+    ///   developer {
+    ///     __typename
+    ///     name
+    ///     country
+    ///   }
+    /// }
+    /// </code>
+    /// </summary>
+    [global::System.CodeDom.Compiler.GeneratedCode("StrawberryShake", "12.4.1.0")]
+    public partial class GetGamesPrevPageQuery : global::Prelast.GraphQL.IGetGamesPrevPageQuery
+    {
+        private readonly global::StrawberryShake.IOperationExecutor<IGetGamesPrevPageResult> _operationExecutor;
+        private readonly global::StrawberryShake.Serialization.IInputValueFormatter _intFormatter;
+        private readonly global::StrawberryShake.Serialization.IInputValueFormatter _stringFormatter;
+        public GetGamesPrevPageQuery(global::StrawberryShake.IOperationExecutor<IGetGamesPrevPageResult> operationExecutor, global::StrawberryShake.Serialization.ISerializerResolver serializerResolver)
+        {
+            _operationExecutor = operationExecutor ?? throw new global::System.ArgumentNullException(nameof(operationExecutor));
+            _intFormatter = serializerResolver.GetInputValueFormatter("Int");
+            _stringFormatter = serializerResolver.GetInputValueFormatter("String");
+        }
+
+        global::System.Type global::StrawberryShake.IOperationRequestFactory.ResultType => typeof(IGetGamesPrevPageResult);
+        public async global::System.Threading.Tasks.Task<global::StrawberryShake.IOperationResult<IGetGamesPrevPageResult>> ExecuteAsync(global::System.Int32 countItem, global::System.String cursor, global::System.Threading.CancellationToken cancellationToken = default)
+        {
+            var request = CreateRequest(countItem, cursor);
+            return await _operationExecutor.ExecuteAsync(request, cancellationToken).ConfigureAwait(false);
+        }
+
+        public global::System.IObservable<global::StrawberryShake.IOperationResult<IGetGamesPrevPageResult>> Watch(global::System.Int32 countItem, global::System.String cursor, global::StrawberryShake.ExecutionStrategy? strategy = null)
+        {
+            var request = CreateRequest(countItem, cursor);
+            return _operationExecutor.Watch(request, strategy);
+        }
+
+        private global::StrawberryShake.OperationRequest CreateRequest(global::System.Int32 countItem, global::System.String cursor)
+        {
+            var variables = new global::System.Collections.Generic.Dictionary<global::System.String, global::System.Object?>();
+            variables.Add("countItem", FormatCountItem(countItem));
+            variables.Add("cursor", FormatCursor(cursor));
+            return CreateRequest(variables);
+        }
+
+        private global::StrawberryShake.OperationRequest CreateRequest(global::System.Collections.Generic.IReadOnlyDictionary<global::System.String, global::System.Object?>? variables)
+        {
+            return new global::StrawberryShake.OperationRequest(id: GetGamesPrevPageQueryDocument.Instance.Hash.Value, name: "GetGamesPrevPage", document: GetGamesPrevPageQueryDocument.Instance, strategy: global::StrawberryShake.RequestStrategy.Default, variables: variables);
+        }
+
+        private global::System.Object? FormatCountItem(global::System.Int32 value)
+        {
+            return _intFormatter.Format(value);
+        }
+
+        private global::System.Object? FormatCursor(global::System.String value)
+        {
+            if (value is null)
+            {
+                throw new global::System.ArgumentNullException(nameof(value));
+            }
+
+            return _stringFormatter.Format(value);
+        }
+
+        global::StrawberryShake.OperationRequest global::StrawberryShake.IOperationRequestFactory.Create(global::System.Collections.Generic.IReadOnlyDictionary<global::System.String, global::System.Object?>? variables)
+        {
+            return CreateRequest(variables!);
+        }
+    }
+
+    /// <summary>
+    /// Represents the operation service of the GetGamesPrevPage GraphQL operation
+    /// <code>
+    /// query GetGamesPrevPage($countItem: Int!, $cursor: String!) {
+    ///   allGameWithDevGerne(last: $countItem, before: $cursor) {
+    ///     __typename
+    ///     nodes {
+    ///       __typename
+    ///       ... GamesInfo
+    ///     }
+    ///     pageInfo {
+    ///       __typename
+    ///       hasNextPage
+    ///       endCursor
+    ///     }
+    ///   }
+    /// }
+    /// 
+    /// fragment GamesInfo on Games {
+    ///   gamesId
+    ///   name
+    ///   price
+    ///   genre {
+    ///     __typename
+    ///     name
+    ///   }
+    ///   developer {
+    ///     __typename
+    ///     name
+    ///     country
+    ///   }
+    /// }
+    /// </code>
+    /// </summary>
+    [global::System.CodeDom.Compiler.GeneratedCode("StrawberryShake", "12.4.1.0")]
+    public interface IGetGamesPrevPageQuery : global::StrawberryShake.IOperationRequestFactory
+    {
+        global::System.Threading.Tasks.Task<global::StrawberryShake.IOperationResult<IGetGamesPrevPageResult>> ExecuteAsync(global::System.Int32 countItem, global::System.String cursor, global::System.Threading.CancellationToken cancellationToken = default);
+        global::System.IObservable<global::StrawberryShake.IOperationResult<IGetGamesPrevPageResult>> Watch(global::System.Int32 countItem, global::System.String cursor, global::StrawberryShake.ExecutionStrategy? strategy = null);
     }
 
     /// <summary>
@@ -5622,6 +11018,12 @@ namespace Prelast.GraphQL
     [global::System.CodeDom.Compiler.GeneratedCode("StrawberryShake", "12.4.1.0")]
     public partial class ConferenceClient : global::Prelast.GraphQL.IConferenceClient
     {
+        private readonly global::Prelast.GraphQL.IGetDevelWithPagingQuery _getDevelWithPaging;
+        private readonly global::Prelast.GraphQL.IGetDevelPrevPageQuery _getDevelPrevPage;
+        private readonly global::Prelast.GraphQL.IGetDevelNextPageQuery _getDevelNextPage;
+        private readonly global::Prelast.GraphQL.IGetGenreWithPagingQuery _getGenreWithPaging;
+        private readonly global::Prelast.GraphQL.IGetGenreNextPageQuery _getGenreNextPage;
+        private readonly global::Prelast.GraphQL.IGetGenrePrevPageQuery _getGenrePrevPage;
         private readonly global::Prelast.GraphQL.IChangeNameDevMutation _changeNameDev;
         private readonly global::Prelast.GraphQL.IChangeNameGenreMutation _changeNameGenre;
         private readonly global::Prelast.GraphQL.IChangePriceMutation _changePrice;
@@ -5634,11 +11036,19 @@ namespace Prelast.GraphQL
         private readonly global::Prelast.GraphQL.IGetDevelQuery _getDevel;
         private readonly global::Prelast.GraphQL.IGetDevelWithFiltrQuery _getDevelWithFiltr;
         private readonly global::Prelast.GraphQL.IGetGamesQuery _getGames;
+        private readonly global::Prelast.GraphQL.IGetGamesNextPageQuery _getGamesNextPage;
+        private readonly global::Prelast.GraphQL.IGetGamesPrevPageQuery _getGamesPrevPage;
         private readonly global::Prelast.GraphQL.IGetGamesWithFiltrQuery _getGamesWithFiltr;
         private readonly global::Prelast.GraphQL.IGetGenreQuery _getGenre;
         private readonly global::Prelast.GraphQL.IGetGenreWithFiltrQuery _getGenreWithFiltr;
-        public ConferenceClient(global::Prelast.GraphQL.IChangeNameDevMutation changeNameDev, global::Prelast.GraphQL.IChangeNameGenreMutation changeNameGenre, global::Prelast.GraphQL.IChangePriceMutation changePrice, global::Prelast.GraphQL.ICreateDevMutation createDev, global::Prelast.GraphQL.ICreateGameMutation createGame, global::Prelast.GraphQL.ICreateGenreMutation createGenre, global::Prelast.GraphQL.IDelDevelMutation delDevel, global::Prelast.GraphQL.IDelGameMutation delGame, global::Prelast.GraphQL.IDelGenreMutation delGenre, global::Prelast.GraphQL.IGetDevelQuery getDevel, global::Prelast.GraphQL.IGetDevelWithFiltrQuery getDevelWithFiltr, global::Prelast.GraphQL.IGetGamesQuery getGames, global::Prelast.GraphQL.IGetGamesWithFiltrQuery getGamesWithFiltr, global::Prelast.GraphQL.IGetGenreQuery getGenre, global::Prelast.GraphQL.IGetGenreWithFiltrQuery getGenreWithFiltr)
+        public ConferenceClient(global::Prelast.GraphQL.IGetDevelWithPagingQuery getDevelWithPaging, global::Prelast.GraphQL.IGetDevelPrevPageQuery getDevelPrevPage, global::Prelast.GraphQL.IGetDevelNextPageQuery getDevelNextPage, global::Prelast.GraphQL.IGetGenreWithPagingQuery getGenreWithPaging, global::Prelast.GraphQL.IGetGenreNextPageQuery getGenreNextPage, global::Prelast.GraphQL.IGetGenrePrevPageQuery getGenrePrevPage, global::Prelast.GraphQL.IChangeNameDevMutation changeNameDev, global::Prelast.GraphQL.IChangeNameGenreMutation changeNameGenre, global::Prelast.GraphQL.IChangePriceMutation changePrice, global::Prelast.GraphQL.ICreateDevMutation createDev, global::Prelast.GraphQL.ICreateGameMutation createGame, global::Prelast.GraphQL.ICreateGenreMutation createGenre, global::Prelast.GraphQL.IDelDevelMutation delDevel, global::Prelast.GraphQL.IDelGameMutation delGame, global::Prelast.GraphQL.IDelGenreMutation delGenre, global::Prelast.GraphQL.IGetDevelQuery getDevel, global::Prelast.GraphQL.IGetDevelWithFiltrQuery getDevelWithFiltr, global::Prelast.GraphQL.IGetGamesQuery getGames, global::Prelast.GraphQL.IGetGamesNextPageQuery getGamesNextPage, global::Prelast.GraphQL.IGetGamesPrevPageQuery getGamesPrevPage, global::Prelast.GraphQL.IGetGamesWithFiltrQuery getGamesWithFiltr, global::Prelast.GraphQL.IGetGenreQuery getGenre, global::Prelast.GraphQL.IGetGenreWithFiltrQuery getGenreWithFiltr)
         {
+            _getDevelWithPaging = getDevelWithPaging ?? throw new global::System.ArgumentNullException(nameof(getDevelWithPaging));
+            _getDevelPrevPage = getDevelPrevPage ?? throw new global::System.ArgumentNullException(nameof(getDevelPrevPage));
+            _getDevelNextPage = getDevelNextPage ?? throw new global::System.ArgumentNullException(nameof(getDevelNextPage));
+            _getGenreWithPaging = getGenreWithPaging ?? throw new global::System.ArgumentNullException(nameof(getGenreWithPaging));
+            _getGenreNextPage = getGenreNextPage ?? throw new global::System.ArgumentNullException(nameof(getGenreNextPage));
+            _getGenrePrevPage = getGenrePrevPage ?? throw new global::System.ArgumentNullException(nameof(getGenrePrevPage));
             _changeNameDev = changeNameDev ?? throw new global::System.ArgumentNullException(nameof(changeNameDev));
             _changeNameGenre = changeNameGenre ?? throw new global::System.ArgumentNullException(nameof(changeNameGenre));
             _changePrice = changePrice ?? throw new global::System.ArgumentNullException(nameof(changePrice));
@@ -5651,12 +11061,20 @@ namespace Prelast.GraphQL
             _getDevel = getDevel ?? throw new global::System.ArgumentNullException(nameof(getDevel));
             _getDevelWithFiltr = getDevelWithFiltr ?? throw new global::System.ArgumentNullException(nameof(getDevelWithFiltr));
             _getGames = getGames ?? throw new global::System.ArgumentNullException(nameof(getGames));
+            _getGamesNextPage = getGamesNextPage ?? throw new global::System.ArgumentNullException(nameof(getGamesNextPage));
+            _getGamesPrevPage = getGamesPrevPage ?? throw new global::System.ArgumentNullException(nameof(getGamesPrevPage));
             _getGamesWithFiltr = getGamesWithFiltr ?? throw new global::System.ArgumentNullException(nameof(getGamesWithFiltr));
             _getGenre = getGenre ?? throw new global::System.ArgumentNullException(nameof(getGenre));
             _getGenreWithFiltr = getGenreWithFiltr ?? throw new global::System.ArgumentNullException(nameof(getGenreWithFiltr));
         }
 
         public static global::System.String ClientName => "ConferenceClient";
+        public global::Prelast.GraphQL.IGetDevelWithPagingQuery GetDevelWithPaging => _getDevelWithPaging;
+        public global::Prelast.GraphQL.IGetDevelPrevPageQuery GetDevelPrevPage => _getDevelPrevPage;
+        public global::Prelast.GraphQL.IGetDevelNextPageQuery GetDevelNextPage => _getDevelNextPage;
+        public global::Prelast.GraphQL.IGetGenreWithPagingQuery GetGenreWithPaging => _getGenreWithPaging;
+        public global::Prelast.GraphQL.IGetGenreNextPageQuery GetGenreNextPage => _getGenreNextPage;
+        public global::Prelast.GraphQL.IGetGenrePrevPageQuery GetGenrePrevPage => _getGenrePrevPage;
         public global::Prelast.GraphQL.IChangeNameDevMutation ChangeNameDev => _changeNameDev;
         public global::Prelast.GraphQL.IChangeNameGenreMutation ChangeNameGenre => _changeNameGenre;
         public global::Prelast.GraphQL.IChangePriceMutation ChangePrice => _changePrice;
@@ -5669,6 +11087,8 @@ namespace Prelast.GraphQL
         public global::Prelast.GraphQL.IGetDevelQuery GetDevel => _getDevel;
         public global::Prelast.GraphQL.IGetDevelWithFiltrQuery GetDevelWithFiltr => _getDevelWithFiltr;
         public global::Prelast.GraphQL.IGetGamesQuery GetGames => _getGames;
+        public global::Prelast.GraphQL.IGetGamesNextPageQuery GetGamesNextPage => _getGamesNextPage;
+        public global::Prelast.GraphQL.IGetGamesPrevPageQuery GetGamesPrevPage => _getGamesPrevPage;
         public global::Prelast.GraphQL.IGetGamesWithFiltrQuery GetGamesWithFiltr => _getGamesWithFiltr;
         public global::Prelast.GraphQL.IGetGenreQuery GetGenre => _getGenre;
         public global::Prelast.GraphQL.IGetGenreWithFiltrQuery GetGenreWithFiltr => _getGenreWithFiltr;
@@ -5680,6 +11100,18 @@ namespace Prelast.GraphQL
     [global::System.CodeDom.Compiler.GeneratedCode("StrawberryShake", "12.4.1.0")]
     public interface IConferenceClient
     {
+        global::Prelast.GraphQL.IGetDevelWithPagingQuery GetDevelWithPaging { get; }
+
+        global::Prelast.GraphQL.IGetDevelPrevPageQuery GetDevelPrevPage { get; }
+
+        global::Prelast.GraphQL.IGetDevelNextPageQuery GetDevelNextPage { get; }
+
+        global::Prelast.GraphQL.IGetGenreWithPagingQuery GetGenreWithPaging { get; }
+
+        global::Prelast.GraphQL.IGetGenreNextPageQuery GetGenreNextPage { get; }
+
+        global::Prelast.GraphQL.IGetGenrePrevPageQuery GetGenrePrevPage { get; }
+
         global::Prelast.GraphQL.IChangeNameDevMutation ChangeNameDev { get; }
 
         global::Prelast.GraphQL.IChangeNameGenreMutation ChangeNameGenre { get; }
@@ -5704,6 +11136,10 @@ namespace Prelast.GraphQL
 
         global::Prelast.GraphQL.IGetGamesQuery GetGames { get; }
 
+        global::Prelast.GraphQL.IGetGamesNextPageQuery GetGamesNextPage { get; }
+
+        global::Prelast.GraphQL.IGetGamesPrevPageQuery GetGamesPrevPage { get; }
+
         global::Prelast.GraphQL.IGetGamesWithFiltrQuery GetGamesWithFiltr { get; }
 
         global::Prelast.GraphQL.IGetGenreQuery GetGenre { get; }
@@ -5714,6 +11150,750 @@ namespace Prelast.GraphQL
 
 namespace Prelast.GraphQL.State
 {
+    [global::System.CodeDom.Compiler.GeneratedCode("StrawberryShake", "12.4.1.0")]
+    public partial class GetDevelWithPagingResultFactory : global::StrawberryShake.IOperationResultDataFactory<global::Prelast.GraphQL.GetDevelWithPagingResult>
+    {
+        private readonly global::StrawberryShake.IEntityStore _entityStore;
+        public GetDevelWithPagingResultFactory(global::StrawberryShake.IEntityStore entityStore)
+        {
+            _entityStore = entityStore ?? throw new global::System.ArgumentNullException(nameof(entityStore));
+        }
+
+        global::System.Type global::StrawberryShake.IOperationResultDataFactory.ResultType => typeof(global::Prelast.GraphQL.IGetDevelWithPagingResult);
+        public GetDevelWithPagingResult Create(global::StrawberryShake.IOperationResultDataInfo dataInfo, global::StrawberryShake.IEntityStoreSnapshot? snapshot = null)
+        {
+            if (snapshot is null)
+            {
+                snapshot = _entityStore.CurrentSnapshot;
+            }
+
+            if (dataInfo is GetDevelWithPagingResultInfo info)
+            {
+                return new GetDevelWithPagingResult(MapIGetDevelWithPaging_AllDeveloper(info.AllDeveloper, snapshot));
+            }
+
+            throw new global::System.ArgumentException("GetDevelWithPagingResultInfo expected.");
+        }
+
+        private global::Prelast.GraphQL.IGetDevelWithPaging_AllDeveloper? MapIGetDevelWithPaging_AllDeveloper(global::Prelast.GraphQL.State.AllDeveloperConnectionData? data, global::StrawberryShake.IEntityStoreSnapshot snapshot)
+        {
+            if (data is null)
+            {
+                return null;
+            }
+
+            IGetDevelWithPaging_AllDeveloper returnValue = default !;
+            if (data?.__typename.Equals("AllDeveloperConnection", global::System.StringComparison.Ordinal) ?? false)
+            {
+                returnValue = new GetDevelWithPaging_AllDeveloper_AllDeveloperConnection(MapIGetDevelWithPaging_AllDeveloper_NodesArray(data.Nodes, snapshot), MapNonNullableIGetDevelWithPaging_AllDeveloper_PageInfo(data.PageInfo ?? throw new global::System.ArgumentNullException(), snapshot));
+            }
+            else
+            {
+                throw new global::System.NotSupportedException();
+            }
+
+            return returnValue;
+        }
+
+        private global::System.Collections.Generic.IReadOnlyList<global::Prelast.GraphQL.IGetDevelWithPaging_AllDeveloper_Nodes?>? MapIGetDevelWithPaging_AllDeveloper_NodesArray(global::System.Collections.Generic.IReadOnlyList<global::Prelast.GraphQL.State.DevelopersData?>? list, global::StrawberryShake.IEntityStoreSnapshot snapshot)
+        {
+            if (list is null)
+            {
+                return null;
+            }
+
+            var developerss = new global::System.Collections.Generic.List<global::Prelast.GraphQL.IGetDevelWithPaging_AllDeveloper_Nodes?>();
+            foreach (global::Prelast.GraphQL.State.DevelopersData? child in list)
+            {
+                developerss.Add(MapIGetDevelWithPaging_AllDeveloper_Nodes(child, snapshot));
+            }
+
+            return developerss;
+        }
+
+        private global::Prelast.GraphQL.IGetDevelWithPaging_AllDeveloper_Nodes? MapIGetDevelWithPaging_AllDeveloper_Nodes(global::Prelast.GraphQL.State.DevelopersData? data, global::StrawberryShake.IEntityStoreSnapshot snapshot)
+        {
+            if (data is null)
+            {
+                return null;
+            }
+
+            IGetDevelWithPaging_AllDeveloper_Nodes returnValue = default !;
+            if (data?.__typename.Equals("Developers", global::System.StringComparison.Ordinal) ?? false)
+            {
+                returnValue = new GetDevelWithPaging_AllDeveloper_Nodes_Developers(data.DeveloperId ?? throw new global::System.ArgumentNullException(), data.Name, data.Country);
+            }
+            else
+            {
+                throw new global::System.NotSupportedException();
+            }
+
+            return returnValue;
+        }
+
+        private global::Prelast.GraphQL.IGetDevelWithPaging_AllDeveloper_PageInfo MapNonNullableIGetDevelWithPaging_AllDeveloper_PageInfo(global::Prelast.GraphQL.State.PageInfoData data, global::StrawberryShake.IEntityStoreSnapshot snapshot)
+        {
+            IGetDevelWithPaging_AllDeveloper_PageInfo returnValue = default !;
+            if (data.__typename.Equals("PageInfo", global::System.StringComparison.Ordinal))
+            {
+                returnValue = new GetDevelWithPaging_AllDeveloper_PageInfo_PageInfo(data.HasNextPage ?? throw new global::System.ArgumentNullException(), data.EndCursor);
+            }
+            else
+            {
+                throw new global::System.NotSupportedException();
+            }
+
+            return returnValue;
+        }
+
+        global::System.Object global::StrawberryShake.IOperationResultDataFactory.Create(global::StrawberryShake.IOperationResultDataInfo dataInfo, global::StrawberryShake.IEntityStoreSnapshot? snapshot)
+        {
+            return Create(dataInfo, snapshot);
+        }
+    }
+
+    [global::System.CodeDom.Compiler.GeneratedCode("StrawberryShake", "12.4.1.0")]
+    public partial class GetDevelWithPagingResultInfo : global::StrawberryShake.IOperationResultDataInfo
+    {
+        private readonly global::System.Collections.Generic.IReadOnlyCollection<global::StrawberryShake.EntityId> _entityIds;
+        private readonly global::System.UInt64 _version;
+        public GetDevelWithPagingResultInfo(global::Prelast.GraphQL.State.AllDeveloperConnectionData? allDeveloper, global::System.Collections.Generic.IReadOnlyCollection<global::StrawberryShake.EntityId> entityIds, global::System.UInt64 version)
+        {
+            AllDeveloper = allDeveloper;
+            _entityIds = entityIds ?? throw new global::System.ArgumentNullException(nameof(entityIds));
+            _version = version;
+        }
+
+        public global::Prelast.GraphQL.State.AllDeveloperConnectionData? AllDeveloper { get; }
+
+        public global::System.Collections.Generic.IReadOnlyCollection<global::StrawberryShake.EntityId> EntityIds => _entityIds;
+        public global::System.UInt64 Version => _version;
+        public global::StrawberryShake.IOperationResultDataInfo WithVersion(global::System.UInt64 version)
+        {
+            return new GetDevelWithPagingResultInfo(AllDeveloper, _entityIds, version);
+        }
+    }
+
+    [global::System.CodeDom.Compiler.GeneratedCode("StrawberryShake", "12.4.1.0")]
+    public partial class GetDevelPrevPageResultFactory : global::StrawberryShake.IOperationResultDataFactory<global::Prelast.GraphQL.GetDevelPrevPageResult>
+    {
+        private readonly global::StrawberryShake.IEntityStore _entityStore;
+        public GetDevelPrevPageResultFactory(global::StrawberryShake.IEntityStore entityStore)
+        {
+            _entityStore = entityStore ?? throw new global::System.ArgumentNullException(nameof(entityStore));
+        }
+
+        global::System.Type global::StrawberryShake.IOperationResultDataFactory.ResultType => typeof(global::Prelast.GraphQL.IGetDevelPrevPageResult);
+        public GetDevelPrevPageResult Create(global::StrawberryShake.IOperationResultDataInfo dataInfo, global::StrawberryShake.IEntityStoreSnapshot? snapshot = null)
+        {
+            if (snapshot is null)
+            {
+                snapshot = _entityStore.CurrentSnapshot;
+            }
+
+            if (dataInfo is GetDevelPrevPageResultInfo info)
+            {
+                return new GetDevelPrevPageResult(MapIGetDevelPrevPage_AllDeveloper(info.AllDeveloper, snapshot));
+            }
+
+            throw new global::System.ArgumentException("GetDevelPrevPageResultInfo expected.");
+        }
+
+        private global::Prelast.GraphQL.IGetDevelPrevPage_AllDeveloper? MapIGetDevelPrevPage_AllDeveloper(global::Prelast.GraphQL.State.AllDeveloperConnectionData? data, global::StrawberryShake.IEntityStoreSnapshot snapshot)
+        {
+            if (data is null)
+            {
+                return null;
+            }
+
+            IGetDevelPrevPage_AllDeveloper returnValue = default !;
+            if (data?.__typename.Equals("AllDeveloperConnection", global::System.StringComparison.Ordinal) ?? false)
+            {
+                returnValue = new GetDevelPrevPage_AllDeveloper_AllDeveloperConnection(MapIGetDevelPrevPage_AllDeveloper_NodesArray(data.Nodes, snapshot), MapNonNullableIGetDevelPrevPage_AllDeveloper_PageInfo(data.PageInfo ?? throw new global::System.ArgumentNullException(), snapshot));
+            }
+            else
+            {
+                throw new global::System.NotSupportedException();
+            }
+
+            return returnValue;
+        }
+
+        private global::System.Collections.Generic.IReadOnlyList<global::Prelast.GraphQL.IGetDevelPrevPage_AllDeveloper_Nodes?>? MapIGetDevelPrevPage_AllDeveloper_NodesArray(global::System.Collections.Generic.IReadOnlyList<global::Prelast.GraphQL.State.DevelopersData?>? list, global::StrawberryShake.IEntityStoreSnapshot snapshot)
+        {
+            if (list is null)
+            {
+                return null;
+            }
+
+            var developerss = new global::System.Collections.Generic.List<global::Prelast.GraphQL.IGetDevelPrevPage_AllDeveloper_Nodes?>();
+            foreach (global::Prelast.GraphQL.State.DevelopersData? child in list)
+            {
+                developerss.Add(MapIGetDevelPrevPage_AllDeveloper_Nodes(child, snapshot));
+            }
+
+            return developerss;
+        }
+
+        private global::Prelast.GraphQL.IGetDevelPrevPage_AllDeveloper_Nodes? MapIGetDevelPrevPage_AllDeveloper_Nodes(global::Prelast.GraphQL.State.DevelopersData? data, global::StrawberryShake.IEntityStoreSnapshot snapshot)
+        {
+            if (data is null)
+            {
+                return null;
+            }
+
+            IGetDevelPrevPage_AllDeveloper_Nodes returnValue = default !;
+            if (data?.__typename.Equals("Developers", global::System.StringComparison.Ordinal) ?? false)
+            {
+                returnValue = new GetDevelPrevPage_AllDeveloper_Nodes_Developers(data.DeveloperId ?? throw new global::System.ArgumentNullException(), data.Name, data.Country);
+            }
+            else
+            {
+                throw new global::System.NotSupportedException();
+            }
+
+            return returnValue;
+        }
+
+        private global::Prelast.GraphQL.IGetDevelPrevPage_AllDeveloper_PageInfo MapNonNullableIGetDevelPrevPage_AllDeveloper_PageInfo(global::Prelast.GraphQL.State.PageInfoData data, global::StrawberryShake.IEntityStoreSnapshot snapshot)
+        {
+            IGetDevelPrevPage_AllDeveloper_PageInfo returnValue = default !;
+            if (data.__typename.Equals("PageInfo", global::System.StringComparison.Ordinal))
+            {
+                returnValue = new GetDevelPrevPage_AllDeveloper_PageInfo_PageInfo(data.HasNextPage ?? throw new global::System.ArgumentNullException(), data.EndCursor);
+            }
+            else
+            {
+                throw new global::System.NotSupportedException();
+            }
+
+            return returnValue;
+        }
+
+        global::System.Object global::StrawberryShake.IOperationResultDataFactory.Create(global::StrawberryShake.IOperationResultDataInfo dataInfo, global::StrawberryShake.IEntityStoreSnapshot? snapshot)
+        {
+            return Create(dataInfo, snapshot);
+        }
+    }
+
+    [global::System.CodeDom.Compiler.GeneratedCode("StrawberryShake", "12.4.1.0")]
+    public partial class GetDevelPrevPageResultInfo : global::StrawberryShake.IOperationResultDataInfo
+    {
+        private readonly global::System.Collections.Generic.IReadOnlyCollection<global::StrawberryShake.EntityId> _entityIds;
+        private readonly global::System.UInt64 _version;
+        public GetDevelPrevPageResultInfo(global::Prelast.GraphQL.State.AllDeveloperConnectionData? allDeveloper, global::System.Collections.Generic.IReadOnlyCollection<global::StrawberryShake.EntityId> entityIds, global::System.UInt64 version)
+        {
+            AllDeveloper = allDeveloper;
+            _entityIds = entityIds ?? throw new global::System.ArgumentNullException(nameof(entityIds));
+            _version = version;
+        }
+
+        public global::Prelast.GraphQL.State.AllDeveloperConnectionData? AllDeveloper { get; }
+
+        public global::System.Collections.Generic.IReadOnlyCollection<global::StrawberryShake.EntityId> EntityIds => _entityIds;
+        public global::System.UInt64 Version => _version;
+        public global::StrawberryShake.IOperationResultDataInfo WithVersion(global::System.UInt64 version)
+        {
+            return new GetDevelPrevPageResultInfo(AllDeveloper, _entityIds, version);
+        }
+    }
+
+    [global::System.CodeDom.Compiler.GeneratedCode("StrawberryShake", "12.4.1.0")]
+    public partial class GetDevelNextPageResultFactory : global::StrawberryShake.IOperationResultDataFactory<global::Prelast.GraphQL.GetDevelNextPageResult>
+    {
+        private readonly global::StrawberryShake.IEntityStore _entityStore;
+        public GetDevelNextPageResultFactory(global::StrawberryShake.IEntityStore entityStore)
+        {
+            _entityStore = entityStore ?? throw new global::System.ArgumentNullException(nameof(entityStore));
+        }
+
+        global::System.Type global::StrawberryShake.IOperationResultDataFactory.ResultType => typeof(global::Prelast.GraphQL.IGetDevelNextPageResult);
+        public GetDevelNextPageResult Create(global::StrawberryShake.IOperationResultDataInfo dataInfo, global::StrawberryShake.IEntityStoreSnapshot? snapshot = null)
+        {
+            if (snapshot is null)
+            {
+                snapshot = _entityStore.CurrentSnapshot;
+            }
+
+            if (dataInfo is GetDevelNextPageResultInfo info)
+            {
+                return new GetDevelNextPageResult(MapIGetDevelNextPage_AllDeveloper(info.AllDeveloper, snapshot));
+            }
+
+            throw new global::System.ArgumentException("GetDevelNextPageResultInfo expected.");
+        }
+
+        private global::Prelast.GraphQL.IGetDevelNextPage_AllDeveloper? MapIGetDevelNextPage_AllDeveloper(global::Prelast.GraphQL.State.AllDeveloperConnectionData? data, global::StrawberryShake.IEntityStoreSnapshot snapshot)
+        {
+            if (data is null)
+            {
+                return null;
+            }
+
+            IGetDevelNextPage_AllDeveloper returnValue = default !;
+            if (data?.__typename.Equals("AllDeveloperConnection", global::System.StringComparison.Ordinal) ?? false)
+            {
+                returnValue = new GetDevelNextPage_AllDeveloper_AllDeveloperConnection(MapIGetDevelNextPage_AllDeveloper_NodesArray(data.Nodes, snapshot), MapNonNullableIGetDevelNextPage_AllDeveloper_PageInfo(data.PageInfo ?? throw new global::System.ArgumentNullException(), snapshot));
+            }
+            else
+            {
+                throw new global::System.NotSupportedException();
+            }
+
+            return returnValue;
+        }
+
+        private global::System.Collections.Generic.IReadOnlyList<global::Prelast.GraphQL.IGetDevelNextPage_AllDeveloper_Nodes?>? MapIGetDevelNextPage_AllDeveloper_NodesArray(global::System.Collections.Generic.IReadOnlyList<global::Prelast.GraphQL.State.DevelopersData?>? list, global::StrawberryShake.IEntityStoreSnapshot snapshot)
+        {
+            if (list is null)
+            {
+                return null;
+            }
+
+            var developerss = new global::System.Collections.Generic.List<global::Prelast.GraphQL.IGetDevelNextPage_AllDeveloper_Nodes?>();
+            foreach (global::Prelast.GraphQL.State.DevelopersData? child in list)
+            {
+                developerss.Add(MapIGetDevelNextPage_AllDeveloper_Nodes(child, snapshot));
+            }
+
+            return developerss;
+        }
+
+        private global::Prelast.GraphQL.IGetDevelNextPage_AllDeveloper_Nodes? MapIGetDevelNextPage_AllDeveloper_Nodes(global::Prelast.GraphQL.State.DevelopersData? data, global::StrawberryShake.IEntityStoreSnapshot snapshot)
+        {
+            if (data is null)
+            {
+                return null;
+            }
+
+            IGetDevelNextPage_AllDeveloper_Nodes returnValue = default !;
+            if (data?.__typename.Equals("Developers", global::System.StringComparison.Ordinal) ?? false)
+            {
+                returnValue = new GetDevelNextPage_AllDeveloper_Nodes_Developers(data.DeveloperId ?? throw new global::System.ArgumentNullException(), data.Name, data.Country);
+            }
+            else
+            {
+                throw new global::System.NotSupportedException();
+            }
+
+            return returnValue;
+        }
+
+        private global::Prelast.GraphQL.IGetDevelNextPage_AllDeveloper_PageInfo MapNonNullableIGetDevelNextPage_AllDeveloper_PageInfo(global::Prelast.GraphQL.State.PageInfoData data, global::StrawberryShake.IEntityStoreSnapshot snapshot)
+        {
+            IGetDevelNextPage_AllDeveloper_PageInfo returnValue = default !;
+            if (data.__typename.Equals("PageInfo", global::System.StringComparison.Ordinal))
+            {
+                returnValue = new GetDevelNextPage_AllDeveloper_PageInfo_PageInfo(data.HasNextPage ?? throw new global::System.ArgumentNullException(), data.EndCursor);
+            }
+            else
+            {
+                throw new global::System.NotSupportedException();
+            }
+
+            return returnValue;
+        }
+
+        global::System.Object global::StrawberryShake.IOperationResultDataFactory.Create(global::StrawberryShake.IOperationResultDataInfo dataInfo, global::StrawberryShake.IEntityStoreSnapshot? snapshot)
+        {
+            return Create(dataInfo, snapshot);
+        }
+    }
+
+    [global::System.CodeDom.Compiler.GeneratedCode("StrawberryShake", "12.4.1.0")]
+    public partial class GetDevelNextPageResultInfo : global::StrawberryShake.IOperationResultDataInfo
+    {
+        private readonly global::System.Collections.Generic.IReadOnlyCollection<global::StrawberryShake.EntityId> _entityIds;
+        private readonly global::System.UInt64 _version;
+        public GetDevelNextPageResultInfo(global::Prelast.GraphQL.State.AllDeveloperConnectionData? allDeveloper, global::System.Collections.Generic.IReadOnlyCollection<global::StrawberryShake.EntityId> entityIds, global::System.UInt64 version)
+        {
+            AllDeveloper = allDeveloper;
+            _entityIds = entityIds ?? throw new global::System.ArgumentNullException(nameof(entityIds));
+            _version = version;
+        }
+
+        public global::Prelast.GraphQL.State.AllDeveloperConnectionData? AllDeveloper { get; }
+
+        public global::System.Collections.Generic.IReadOnlyCollection<global::StrawberryShake.EntityId> EntityIds => _entityIds;
+        public global::System.UInt64 Version => _version;
+        public global::StrawberryShake.IOperationResultDataInfo WithVersion(global::System.UInt64 version)
+        {
+            return new GetDevelNextPageResultInfo(AllDeveloper, _entityIds, version);
+        }
+    }
+
+    [global::System.CodeDom.Compiler.GeneratedCode("StrawberryShake", "12.4.1.0")]
+    public partial class GetGenreWithPagingResultFactory : global::StrawberryShake.IOperationResultDataFactory<global::Prelast.GraphQL.GetGenreWithPagingResult>
+    {
+        private readonly global::StrawberryShake.IEntityStore _entityStore;
+        public GetGenreWithPagingResultFactory(global::StrawberryShake.IEntityStore entityStore)
+        {
+            _entityStore = entityStore ?? throw new global::System.ArgumentNullException(nameof(entityStore));
+        }
+
+        global::System.Type global::StrawberryShake.IOperationResultDataFactory.ResultType => typeof(global::Prelast.GraphQL.IGetGenreWithPagingResult);
+        public GetGenreWithPagingResult Create(global::StrawberryShake.IOperationResultDataInfo dataInfo, global::StrawberryShake.IEntityStoreSnapshot? snapshot = null)
+        {
+            if (snapshot is null)
+            {
+                snapshot = _entityStore.CurrentSnapshot;
+            }
+
+            if (dataInfo is GetGenreWithPagingResultInfo info)
+            {
+                return new GetGenreWithPagingResult(MapIGetGenreWithPaging_AllGenre(info.AllGenre, snapshot));
+            }
+
+            throw new global::System.ArgumentException("GetGenreWithPagingResultInfo expected.");
+        }
+
+        private global::Prelast.GraphQL.IGetGenreWithPaging_AllGenre? MapIGetGenreWithPaging_AllGenre(global::Prelast.GraphQL.State.AllGenreConnectionData? data, global::StrawberryShake.IEntityStoreSnapshot snapshot)
+        {
+            if (data is null)
+            {
+                return null;
+            }
+
+            IGetGenreWithPaging_AllGenre returnValue = default !;
+            if (data?.__typename.Equals("AllGenreConnection", global::System.StringComparison.Ordinal) ?? false)
+            {
+                returnValue = new GetGenreWithPaging_AllGenre_AllGenreConnection(MapIGetGenreWithPaging_AllGenre_NodesArray(data.Nodes, snapshot), MapNonNullableIGetGenreWithPaging_AllGenre_PageInfo(data.PageInfo ?? throw new global::System.ArgumentNullException(), snapshot));
+            }
+            else
+            {
+                throw new global::System.NotSupportedException();
+            }
+
+            return returnValue;
+        }
+
+        private global::System.Collections.Generic.IReadOnlyList<global::Prelast.GraphQL.IGetGenreWithPaging_AllGenre_Nodes?>? MapIGetGenreWithPaging_AllGenre_NodesArray(global::System.Collections.Generic.IReadOnlyList<global::Prelast.GraphQL.State.GenreData?>? list, global::StrawberryShake.IEntityStoreSnapshot snapshot)
+        {
+            if (list is null)
+            {
+                return null;
+            }
+
+            var genres = new global::System.Collections.Generic.List<global::Prelast.GraphQL.IGetGenreWithPaging_AllGenre_Nodes?>();
+            foreach (global::Prelast.GraphQL.State.GenreData? child in list)
+            {
+                genres.Add(MapIGetGenreWithPaging_AllGenre_Nodes(child, snapshot));
+            }
+
+            return genres;
+        }
+
+        private global::Prelast.GraphQL.IGetGenreWithPaging_AllGenre_Nodes? MapIGetGenreWithPaging_AllGenre_Nodes(global::Prelast.GraphQL.State.GenreData? data, global::StrawberryShake.IEntityStoreSnapshot snapshot)
+        {
+            if (data is null)
+            {
+                return null;
+            }
+
+            IGetGenreWithPaging_AllGenre_Nodes returnValue = default !;
+            if (data?.__typename.Equals("Genre", global::System.StringComparison.Ordinal) ?? false)
+            {
+                returnValue = new GetGenreWithPaging_AllGenre_Nodes_Genre(data.GenreId ?? throw new global::System.ArgumentNullException(), data.Name);
+            }
+            else
+            {
+                throw new global::System.NotSupportedException();
+            }
+
+            return returnValue;
+        }
+
+        private global::Prelast.GraphQL.IGetGenreWithPaging_AllGenre_PageInfo MapNonNullableIGetGenreWithPaging_AllGenre_PageInfo(global::Prelast.GraphQL.State.PageInfoData data, global::StrawberryShake.IEntityStoreSnapshot snapshot)
+        {
+            IGetGenreWithPaging_AllGenre_PageInfo returnValue = default !;
+            if (data.__typename.Equals("PageInfo", global::System.StringComparison.Ordinal))
+            {
+                returnValue = new GetGenreWithPaging_AllGenre_PageInfo_PageInfo(data.HasNextPage ?? throw new global::System.ArgumentNullException(), data.EndCursor);
+            }
+            else
+            {
+                throw new global::System.NotSupportedException();
+            }
+
+            return returnValue;
+        }
+
+        global::System.Object global::StrawberryShake.IOperationResultDataFactory.Create(global::StrawberryShake.IOperationResultDataInfo dataInfo, global::StrawberryShake.IEntityStoreSnapshot? snapshot)
+        {
+            return Create(dataInfo, snapshot);
+        }
+    }
+
+    [global::System.CodeDom.Compiler.GeneratedCode("StrawberryShake", "12.4.1.0")]
+    public partial class GetGenreWithPagingResultInfo : global::StrawberryShake.IOperationResultDataInfo
+    {
+        private readonly global::System.Collections.Generic.IReadOnlyCollection<global::StrawberryShake.EntityId> _entityIds;
+        private readonly global::System.UInt64 _version;
+        public GetGenreWithPagingResultInfo(global::Prelast.GraphQL.State.AllGenreConnectionData? allGenre, global::System.Collections.Generic.IReadOnlyCollection<global::StrawberryShake.EntityId> entityIds, global::System.UInt64 version)
+        {
+            AllGenre = allGenre;
+            _entityIds = entityIds ?? throw new global::System.ArgumentNullException(nameof(entityIds));
+            _version = version;
+        }
+
+        public global::Prelast.GraphQL.State.AllGenreConnectionData? AllGenre { get; }
+
+        public global::System.Collections.Generic.IReadOnlyCollection<global::StrawberryShake.EntityId> EntityIds => _entityIds;
+        public global::System.UInt64 Version => _version;
+        public global::StrawberryShake.IOperationResultDataInfo WithVersion(global::System.UInt64 version)
+        {
+            return new GetGenreWithPagingResultInfo(AllGenre, _entityIds, version);
+        }
+    }
+
+    [global::System.CodeDom.Compiler.GeneratedCode("StrawberryShake", "12.4.1.0")]
+    public partial class GetGenreNextPageResultFactory : global::StrawberryShake.IOperationResultDataFactory<global::Prelast.GraphQL.GetGenreNextPageResult>
+    {
+        private readonly global::StrawberryShake.IEntityStore _entityStore;
+        public GetGenreNextPageResultFactory(global::StrawberryShake.IEntityStore entityStore)
+        {
+            _entityStore = entityStore ?? throw new global::System.ArgumentNullException(nameof(entityStore));
+        }
+
+        global::System.Type global::StrawberryShake.IOperationResultDataFactory.ResultType => typeof(global::Prelast.GraphQL.IGetGenreNextPageResult);
+        public GetGenreNextPageResult Create(global::StrawberryShake.IOperationResultDataInfo dataInfo, global::StrawberryShake.IEntityStoreSnapshot? snapshot = null)
+        {
+            if (snapshot is null)
+            {
+                snapshot = _entityStore.CurrentSnapshot;
+            }
+
+            if (dataInfo is GetGenreNextPageResultInfo info)
+            {
+                return new GetGenreNextPageResult(MapIGetGenreNextPage_AllGenre(info.AllGenre, snapshot));
+            }
+
+            throw new global::System.ArgumentException("GetGenreNextPageResultInfo expected.");
+        }
+
+        private global::Prelast.GraphQL.IGetGenreNextPage_AllGenre? MapIGetGenreNextPage_AllGenre(global::Prelast.GraphQL.State.AllGenreConnectionData? data, global::StrawberryShake.IEntityStoreSnapshot snapshot)
+        {
+            if (data is null)
+            {
+                return null;
+            }
+
+            IGetGenreNextPage_AllGenre returnValue = default !;
+            if (data?.__typename.Equals("AllGenreConnection", global::System.StringComparison.Ordinal) ?? false)
+            {
+                returnValue = new GetGenreNextPage_AllGenre_AllGenreConnection(MapIGetGenreNextPage_AllGenre_NodesArray(data.Nodes, snapshot), MapNonNullableIGetGenreNextPage_AllGenre_PageInfo(data.PageInfo ?? throw new global::System.ArgumentNullException(), snapshot));
+            }
+            else
+            {
+                throw new global::System.NotSupportedException();
+            }
+
+            return returnValue;
+        }
+
+        private global::System.Collections.Generic.IReadOnlyList<global::Prelast.GraphQL.IGetGenreNextPage_AllGenre_Nodes?>? MapIGetGenreNextPage_AllGenre_NodesArray(global::System.Collections.Generic.IReadOnlyList<global::Prelast.GraphQL.State.GenreData?>? list, global::StrawberryShake.IEntityStoreSnapshot snapshot)
+        {
+            if (list is null)
+            {
+                return null;
+            }
+
+            var genres = new global::System.Collections.Generic.List<global::Prelast.GraphQL.IGetGenreNextPage_AllGenre_Nodes?>();
+            foreach (global::Prelast.GraphQL.State.GenreData? child in list)
+            {
+                genres.Add(MapIGetGenreNextPage_AllGenre_Nodes(child, snapshot));
+            }
+
+            return genres;
+        }
+
+        private global::Prelast.GraphQL.IGetGenreNextPage_AllGenre_Nodes? MapIGetGenreNextPage_AllGenre_Nodes(global::Prelast.GraphQL.State.GenreData? data, global::StrawberryShake.IEntityStoreSnapshot snapshot)
+        {
+            if (data is null)
+            {
+                return null;
+            }
+
+            IGetGenreNextPage_AllGenre_Nodes returnValue = default !;
+            if (data?.__typename.Equals("Genre", global::System.StringComparison.Ordinal) ?? false)
+            {
+                returnValue = new GetGenreNextPage_AllGenre_Nodes_Genre(data.GenreId ?? throw new global::System.ArgumentNullException(), data.Name);
+            }
+            else
+            {
+                throw new global::System.NotSupportedException();
+            }
+
+            return returnValue;
+        }
+
+        private global::Prelast.GraphQL.IGetGenreNextPage_AllGenre_PageInfo MapNonNullableIGetGenreNextPage_AllGenre_PageInfo(global::Prelast.GraphQL.State.PageInfoData data, global::StrawberryShake.IEntityStoreSnapshot snapshot)
+        {
+            IGetGenreNextPage_AllGenre_PageInfo returnValue = default !;
+            if (data.__typename.Equals("PageInfo", global::System.StringComparison.Ordinal))
+            {
+                returnValue = new GetGenreNextPage_AllGenre_PageInfo_PageInfo(data.HasNextPage ?? throw new global::System.ArgumentNullException(), data.EndCursor);
+            }
+            else
+            {
+                throw new global::System.NotSupportedException();
+            }
+
+            return returnValue;
+        }
+
+        global::System.Object global::StrawberryShake.IOperationResultDataFactory.Create(global::StrawberryShake.IOperationResultDataInfo dataInfo, global::StrawberryShake.IEntityStoreSnapshot? snapshot)
+        {
+            return Create(dataInfo, snapshot);
+        }
+    }
+
+    [global::System.CodeDom.Compiler.GeneratedCode("StrawberryShake", "12.4.1.0")]
+    public partial class GetGenreNextPageResultInfo : global::StrawberryShake.IOperationResultDataInfo
+    {
+        private readonly global::System.Collections.Generic.IReadOnlyCollection<global::StrawberryShake.EntityId> _entityIds;
+        private readonly global::System.UInt64 _version;
+        public GetGenreNextPageResultInfo(global::Prelast.GraphQL.State.AllGenreConnectionData? allGenre, global::System.Collections.Generic.IReadOnlyCollection<global::StrawberryShake.EntityId> entityIds, global::System.UInt64 version)
+        {
+            AllGenre = allGenre;
+            _entityIds = entityIds ?? throw new global::System.ArgumentNullException(nameof(entityIds));
+            _version = version;
+        }
+
+        public global::Prelast.GraphQL.State.AllGenreConnectionData? AllGenre { get; }
+
+        public global::System.Collections.Generic.IReadOnlyCollection<global::StrawberryShake.EntityId> EntityIds => _entityIds;
+        public global::System.UInt64 Version => _version;
+        public global::StrawberryShake.IOperationResultDataInfo WithVersion(global::System.UInt64 version)
+        {
+            return new GetGenreNextPageResultInfo(AllGenre, _entityIds, version);
+        }
+    }
+
+    [global::System.CodeDom.Compiler.GeneratedCode("StrawberryShake", "12.4.1.0")]
+    public partial class GetGenrePrevPageResultFactory : global::StrawberryShake.IOperationResultDataFactory<global::Prelast.GraphQL.GetGenrePrevPageResult>
+    {
+        private readonly global::StrawberryShake.IEntityStore _entityStore;
+        public GetGenrePrevPageResultFactory(global::StrawberryShake.IEntityStore entityStore)
+        {
+            _entityStore = entityStore ?? throw new global::System.ArgumentNullException(nameof(entityStore));
+        }
+
+        global::System.Type global::StrawberryShake.IOperationResultDataFactory.ResultType => typeof(global::Prelast.GraphQL.IGetGenrePrevPageResult);
+        public GetGenrePrevPageResult Create(global::StrawberryShake.IOperationResultDataInfo dataInfo, global::StrawberryShake.IEntityStoreSnapshot? snapshot = null)
+        {
+            if (snapshot is null)
+            {
+                snapshot = _entityStore.CurrentSnapshot;
+            }
+
+            if (dataInfo is GetGenrePrevPageResultInfo info)
+            {
+                return new GetGenrePrevPageResult(MapIGetGenrePrevPage_AllGenre(info.AllGenre, snapshot));
+            }
+
+            throw new global::System.ArgumentException("GetGenrePrevPageResultInfo expected.");
+        }
+
+        private global::Prelast.GraphQL.IGetGenrePrevPage_AllGenre? MapIGetGenrePrevPage_AllGenre(global::Prelast.GraphQL.State.AllGenreConnectionData? data, global::StrawberryShake.IEntityStoreSnapshot snapshot)
+        {
+            if (data is null)
+            {
+                return null;
+            }
+
+            IGetGenrePrevPage_AllGenre returnValue = default !;
+            if (data?.__typename.Equals("AllGenreConnection", global::System.StringComparison.Ordinal) ?? false)
+            {
+                returnValue = new GetGenrePrevPage_AllGenre_AllGenreConnection(MapIGetGenrePrevPage_AllGenre_NodesArray(data.Nodes, snapshot), MapNonNullableIGetGenrePrevPage_AllGenre_PageInfo(data.PageInfo ?? throw new global::System.ArgumentNullException(), snapshot));
+            }
+            else
+            {
+                throw new global::System.NotSupportedException();
+            }
+
+            return returnValue;
+        }
+
+        private global::System.Collections.Generic.IReadOnlyList<global::Prelast.GraphQL.IGetGenrePrevPage_AllGenre_Nodes?>? MapIGetGenrePrevPage_AllGenre_NodesArray(global::System.Collections.Generic.IReadOnlyList<global::Prelast.GraphQL.State.GenreData?>? list, global::StrawberryShake.IEntityStoreSnapshot snapshot)
+        {
+            if (list is null)
+            {
+                return null;
+            }
+
+            var genres = new global::System.Collections.Generic.List<global::Prelast.GraphQL.IGetGenrePrevPage_AllGenre_Nodes?>();
+            foreach (global::Prelast.GraphQL.State.GenreData? child in list)
+            {
+                genres.Add(MapIGetGenrePrevPage_AllGenre_Nodes(child, snapshot));
+            }
+
+            return genres;
+        }
+
+        private global::Prelast.GraphQL.IGetGenrePrevPage_AllGenre_Nodes? MapIGetGenrePrevPage_AllGenre_Nodes(global::Prelast.GraphQL.State.GenreData? data, global::StrawberryShake.IEntityStoreSnapshot snapshot)
+        {
+            if (data is null)
+            {
+                return null;
+            }
+
+            IGetGenrePrevPage_AllGenre_Nodes returnValue = default !;
+            if (data?.__typename.Equals("Genre", global::System.StringComparison.Ordinal) ?? false)
+            {
+                returnValue = new GetGenrePrevPage_AllGenre_Nodes_Genre(data.GenreId ?? throw new global::System.ArgumentNullException(), data.Name);
+            }
+            else
+            {
+                throw new global::System.NotSupportedException();
+            }
+
+            return returnValue;
+        }
+
+        private global::Prelast.GraphQL.IGetGenrePrevPage_AllGenre_PageInfo MapNonNullableIGetGenrePrevPage_AllGenre_PageInfo(global::Prelast.GraphQL.State.PageInfoData data, global::StrawberryShake.IEntityStoreSnapshot snapshot)
+        {
+            IGetGenrePrevPage_AllGenre_PageInfo returnValue = default !;
+            if (data.__typename.Equals("PageInfo", global::System.StringComparison.Ordinal))
+            {
+                returnValue = new GetGenrePrevPage_AllGenre_PageInfo_PageInfo(data.HasNextPage ?? throw new global::System.ArgumentNullException(), data.EndCursor);
+            }
+            else
+            {
+                throw new global::System.NotSupportedException();
+            }
+
+            return returnValue;
+        }
+
+        global::System.Object global::StrawberryShake.IOperationResultDataFactory.Create(global::StrawberryShake.IOperationResultDataInfo dataInfo, global::StrawberryShake.IEntityStoreSnapshot? snapshot)
+        {
+            return Create(dataInfo, snapshot);
+        }
+    }
+
+    [global::System.CodeDom.Compiler.GeneratedCode("StrawberryShake", "12.4.1.0")]
+    public partial class GetGenrePrevPageResultInfo : global::StrawberryShake.IOperationResultDataInfo
+    {
+        private readonly global::System.Collections.Generic.IReadOnlyCollection<global::StrawberryShake.EntityId> _entityIds;
+        private readonly global::System.UInt64 _version;
+        public GetGenrePrevPageResultInfo(global::Prelast.GraphQL.State.AllGenreConnectionData? allGenre, global::System.Collections.Generic.IReadOnlyCollection<global::StrawberryShake.EntityId> entityIds, global::System.UInt64 version)
+        {
+            AllGenre = allGenre;
+            _entityIds = entityIds ?? throw new global::System.ArgumentNullException(nameof(entityIds));
+            _version = version;
+        }
+
+        public global::Prelast.GraphQL.State.AllGenreConnectionData? AllGenre { get; }
+
+        public global::System.Collections.Generic.IReadOnlyCollection<global::StrawberryShake.EntityId> EntityIds => _entityIds;
+        public global::System.UInt64 Version => _version;
+        public global::StrawberryShake.IOperationResultDataInfo WithVersion(global::System.UInt64 version)
+        {
+            return new GetGenrePrevPageResultInfo(AllGenre, _entityIds, version);
+        }
+    }
+
     [global::System.CodeDom.Compiler.GeneratedCode("StrawberryShake", "12.4.1.0")]
     public partial class ChangeNameDevResultFactory : global::StrawberryShake.IOperationResultDataFactory<global::Prelast.GraphQL.ChangeNameDevResult>
     {
@@ -5733,10 +11913,26 @@ namespace Prelast.GraphQL.State
 
             if (dataInfo is ChangeNameDevResultInfo info)
             {
-                return new ChangeNameDevResult(MapIChangeNameDev_ChangeDevNameById(info.ChangeDevNameById, snapshot));
+                return new ChangeNameDevResult(MapIChangeNameDev_ChangeDevNameByIdArray(info.ChangeDevNameById, snapshot));
             }
 
             throw new global::System.ArgumentException("ChangeNameDevResultInfo expected.");
+        }
+
+        private global::System.Collections.Generic.IReadOnlyList<global::Prelast.GraphQL.IChangeNameDev_ChangeDevNameById?>? MapIChangeNameDev_ChangeDevNameByIdArray(global::System.Collections.Generic.IReadOnlyList<global::Prelast.GraphQL.State.DevelopersData?>? list, global::StrawberryShake.IEntityStoreSnapshot snapshot)
+        {
+            if (list is null)
+            {
+                return null;
+            }
+
+            var developerss = new global::System.Collections.Generic.List<global::Prelast.GraphQL.IChangeNameDev_ChangeDevNameById?>();
+            foreach (global::Prelast.GraphQL.State.DevelopersData? child in list)
+            {
+                developerss.Add(MapIChangeNameDev_ChangeDevNameById(child, snapshot));
+            }
+
+            return developerss;
         }
 
         private global::Prelast.GraphQL.IChangeNameDev_ChangeDevNameById? MapIChangeNameDev_ChangeDevNameById(global::Prelast.GraphQL.State.DevelopersData? data, global::StrawberryShake.IEntityStoreSnapshot snapshot)
@@ -5770,14 +11966,14 @@ namespace Prelast.GraphQL.State
     {
         private readonly global::System.Collections.Generic.IReadOnlyCollection<global::StrawberryShake.EntityId> _entityIds;
         private readonly global::System.UInt64 _version;
-        public ChangeNameDevResultInfo(global::Prelast.GraphQL.State.DevelopersData? changeDevNameById, global::System.Collections.Generic.IReadOnlyCollection<global::StrawberryShake.EntityId> entityIds, global::System.UInt64 version)
+        public ChangeNameDevResultInfo(global::System.Collections.Generic.IReadOnlyList<global::Prelast.GraphQL.State.DevelopersData?>? changeDevNameById, global::System.Collections.Generic.IReadOnlyCollection<global::StrawberryShake.EntityId> entityIds, global::System.UInt64 version)
         {
             ChangeDevNameById = changeDevNameById;
             _entityIds = entityIds ?? throw new global::System.ArgumentNullException(nameof(entityIds));
             _version = version;
         }
 
-        public global::Prelast.GraphQL.State.DevelopersData? ChangeDevNameById { get; }
+        public global::System.Collections.Generic.IReadOnlyList<global::Prelast.GraphQL.State.DevelopersData?>? ChangeDevNameById { get; }
 
         public global::System.Collections.Generic.IReadOnlyCollection<global::StrawberryShake.EntityId> EntityIds => _entityIds;
         public global::System.UInt64 Version => _version;
@@ -5806,10 +12002,26 @@ namespace Prelast.GraphQL.State
 
             if (dataInfo is ChangeNameGenreResultInfo info)
             {
-                return new ChangeNameGenreResult(MapIChangeNameGenre_ChangeGenreNameById(info.ChangeGenreNameById, snapshot));
+                return new ChangeNameGenreResult(MapIChangeNameGenre_ChangeGenreNameByIdArray(info.ChangeGenreNameById, snapshot));
             }
 
             throw new global::System.ArgumentException("ChangeNameGenreResultInfo expected.");
+        }
+
+        private global::System.Collections.Generic.IReadOnlyList<global::Prelast.GraphQL.IChangeNameGenre_ChangeGenreNameById?>? MapIChangeNameGenre_ChangeGenreNameByIdArray(global::System.Collections.Generic.IReadOnlyList<global::Prelast.GraphQL.State.GenreData?>? list, global::StrawberryShake.IEntityStoreSnapshot snapshot)
+        {
+            if (list is null)
+            {
+                return null;
+            }
+
+            var genres = new global::System.Collections.Generic.List<global::Prelast.GraphQL.IChangeNameGenre_ChangeGenreNameById?>();
+            foreach (global::Prelast.GraphQL.State.GenreData? child in list)
+            {
+                genres.Add(MapIChangeNameGenre_ChangeGenreNameById(child, snapshot));
+            }
+
+            return genres;
         }
 
         private global::Prelast.GraphQL.IChangeNameGenre_ChangeGenreNameById? MapIChangeNameGenre_ChangeGenreNameById(global::Prelast.GraphQL.State.GenreData? data, global::StrawberryShake.IEntityStoreSnapshot snapshot)
@@ -5843,14 +12055,14 @@ namespace Prelast.GraphQL.State
     {
         private readonly global::System.Collections.Generic.IReadOnlyCollection<global::StrawberryShake.EntityId> _entityIds;
         private readonly global::System.UInt64 _version;
-        public ChangeNameGenreResultInfo(global::Prelast.GraphQL.State.GenreData? changeGenreNameById, global::System.Collections.Generic.IReadOnlyCollection<global::StrawberryShake.EntityId> entityIds, global::System.UInt64 version)
+        public ChangeNameGenreResultInfo(global::System.Collections.Generic.IReadOnlyList<global::Prelast.GraphQL.State.GenreData?>? changeGenreNameById, global::System.Collections.Generic.IReadOnlyCollection<global::StrawberryShake.EntityId> entityIds, global::System.UInt64 version)
         {
             ChangeGenreNameById = changeGenreNameById;
             _entityIds = entityIds ?? throw new global::System.ArgumentNullException(nameof(entityIds));
             _version = version;
         }
 
-        public global::Prelast.GraphQL.State.GenreData? ChangeGenreNameById { get; }
+        public global::System.Collections.Generic.IReadOnlyList<global::Prelast.GraphQL.State.GenreData?>? ChangeGenreNameById { get; }
 
         public global::System.Collections.Generic.IReadOnlyCollection<global::StrawberryShake.EntityId> EntityIds => _entityIds;
         public global::System.UInt64 Version => _version;
@@ -5879,10 +12091,26 @@ namespace Prelast.GraphQL.State
 
             if (dataInfo is ChangePriceResultInfo info)
             {
-                return new ChangePriceResult(MapIChangePrice_ChangeGamePriceById(info.ChangeGamePriceById, snapshot));
+                return new ChangePriceResult(MapIChangePrice_ChangeGamePriceByIdArray(info.ChangeGamePriceById, snapshot));
             }
 
             throw new global::System.ArgumentException("ChangePriceResultInfo expected.");
+        }
+
+        private global::System.Collections.Generic.IReadOnlyList<global::Prelast.GraphQL.IChangePrice_ChangeGamePriceById?>? MapIChangePrice_ChangeGamePriceByIdArray(global::System.Collections.Generic.IReadOnlyList<global::Prelast.GraphQL.State.GamesData?>? list, global::StrawberryShake.IEntityStoreSnapshot snapshot)
+        {
+            if (list is null)
+            {
+                return null;
+            }
+
+            var gamess = new global::System.Collections.Generic.List<global::Prelast.GraphQL.IChangePrice_ChangeGamePriceById?>();
+            foreach (global::Prelast.GraphQL.State.GamesData? child in list)
+            {
+                gamess.Add(MapIChangePrice_ChangeGamePriceById(child, snapshot));
+            }
+
+            return gamess;
         }
 
         private global::Prelast.GraphQL.IChangePrice_ChangeGamePriceById? MapIChangePrice_ChangeGamePriceById(global::Prelast.GraphQL.State.GamesData? data, global::StrawberryShake.IEntityStoreSnapshot snapshot)
@@ -5956,14 +12184,14 @@ namespace Prelast.GraphQL.State
     {
         private readonly global::System.Collections.Generic.IReadOnlyCollection<global::StrawberryShake.EntityId> _entityIds;
         private readonly global::System.UInt64 _version;
-        public ChangePriceResultInfo(global::Prelast.GraphQL.State.GamesData? changeGamePriceById, global::System.Collections.Generic.IReadOnlyCollection<global::StrawberryShake.EntityId> entityIds, global::System.UInt64 version)
+        public ChangePriceResultInfo(global::System.Collections.Generic.IReadOnlyList<global::Prelast.GraphQL.State.GamesData?>? changeGamePriceById, global::System.Collections.Generic.IReadOnlyCollection<global::StrawberryShake.EntityId> entityIds, global::System.UInt64 version)
         {
             ChangeGamePriceById = changeGamePriceById;
             _entityIds = entityIds ?? throw new global::System.ArgumentNullException(nameof(entityIds));
             _version = version;
         }
 
-        public global::Prelast.GraphQL.State.GamesData? ChangeGamePriceById { get; }
+        public global::System.Collections.Generic.IReadOnlyList<global::Prelast.GraphQL.State.GamesData?>? ChangeGamePriceById { get; }
 
         public global::System.Collections.Generic.IReadOnlyCollection<global::StrawberryShake.EntityId> EntityIds => _entityIds;
         public global::System.UInt64 Version => _version;
@@ -5992,10 +12220,26 @@ namespace Prelast.GraphQL.State
 
             if (dataInfo is CreateDevResultInfo info)
             {
-                return new CreateDevResult(MapICreateDev_CreateDeveloper(info.CreateDeveloper, snapshot));
+                return new CreateDevResult(MapICreateDev_CreateDeveloperArray(info.CreateDeveloper, snapshot));
             }
 
             throw new global::System.ArgumentException("CreateDevResultInfo expected.");
+        }
+
+        private global::System.Collections.Generic.IReadOnlyList<global::Prelast.GraphQL.ICreateDev_CreateDeveloper?>? MapICreateDev_CreateDeveloperArray(global::System.Collections.Generic.IReadOnlyList<global::Prelast.GraphQL.State.DevelopersData?>? list, global::StrawberryShake.IEntityStoreSnapshot snapshot)
+        {
+            if (list is null)
+            {
+                return null;
+            }
+
+            var developerss = new global::System.Collections.Generic.List<global::Prelast.GraphQL.ICreateDev_CreateDeveloper?>();
+            foreach (global::Prelast.GraphQL.State.DevelopersData? child in list)
+            {
+                developerss.Add(MapICreateDev_CreateDeveloper(child, snapshot));
+            }
+
+            return developerss;
         }
 
         private global::Prelast.GraphQL.ICreateDev_CreateDeveloper? MapICreateDev_CreateDeveloper(global::Prelast.GraphQL.State.DevelopersData? data, global::StrawberryShake.IEntityStoreSnapshot snapshot)
@@ -6029,14 +12273,14 @@ namespace Prelast.GraphQL.State
     {
         private readonly global::System.Collections.Generic.IReadOnlyCollection<global::StrawberryShake.EntityId> _entityIds;
         private readonly global::System.UInt64 _version;
-        public CreateDevResultInfo(global::Prelast.GraphQL.State.DevelopersData? createDeveloper, global::System.Collections.Generic.IReadOnlyCollection<global::StrawberryShake.EntityId> entityIds, global::System.UInt64 version)
+        public CreateDevResultInfo(global::System.Collections.Generic.IReadOnlyList<global::Prelast.GraphQL.State.DevelopersData?>? createDeveloper, global::System.Collections.Generic.IReadOnlyCollection<global::StrawberryShake.EntityId> entityIds, global::System.UInt64 version)
         {
             CreateDeveloper = createDeveloper;
             _entityIds = entityIds ?? throw new global::System.ArgumentNullException(nameof(entityIds));
             _version = version;
         }
 
-        public global::Prelast.GraphQL.State.DevelopersData? CreateDeveloper { get; }
+        public global::System.Collections.Generic.IReadOnlyList<global::Prelast.GraphQL.State.DevelopersData?>? CreateDeveloper { get; }
 
         public global::System.Collections.Generic.IReadOnlyCollection<global::StrawberryShake.EntityId> EntityIds => _entityIds;
         public global::System.UInt64 Version => _version;
@@ -6065,10 +12309,26 @@ namespace Prelast.GraphQL.State
 
             if (dataInfo is CreateGameResultInfo info)
             {
-                return new CreateGameResult(MapICreateGame_CreateGameWithDeveloperGenreId(info.CreateGameWithDeveloperGenreId, snapshot));
+                return new CreateGameResult(MapICreateGame_CreateGameWithDeveloperGenreIdArray(info.CreateGameWithDeveloperGenreId, snapshot));
             }
 
             throw new global::System.ArgumentException("CreateGameResultInfo expected.");
+        }
+
+        private global::System.Collections.Generic.IReadOnlyList<global::Prelast.GraphQL.ICreateGame_CreateGameWithDeveloperGenreId?>? MapICreateGame_CreateGameWithDeveloperGenreIdArray(global::System.Collections.Generic.IReadOnlyList<global::Prelast.GraphQL.State.GamesData?>? list, global::StrawberryShake.IEntityStoreSnapshot snapshot)
+        {
+            if (list is null)
+            {
+                return null;
+            }
+
+            var gamess = new global::System.Collections.Generic.List<global::Prelast.GraphQL.ICreateGame_CreateGameWithDeveloperGenreId?>();
+            foreach (global::Prelast.GraphQL.State.GamesData? child in list)
+            {
+                gamess.Add(MapICreateGame_CreateGameWithDeveloperGenreId(child, snapshot));
+            }
+
+            return gamess;
         }
 
         private global::Prelast.GraphQL.ICreateGame_CreateGameWithDeveloperGenreId? MapICreateGame_CreateGameWithDeveloperGenreId(global::Prelast.GraphQL.State.GamesData? data, global::StrawberryShake.IEntityStoreSnapshot snapshot)
@@ -6142,14 +12402,14 @@ namespace Prelast.GraphQL.State
     {
         private readonly global::System.Collections.Generic.IReadOnlyCollection<global::StrawberryShake.EntityId> _entityIds;
         private readonly global::System.UInt64 _version;
-        public CreateGameResultInfo(global::Prelast.GraphQL.State.GamesData? createGameWithDeveloperGenreId, global::System.Collections.Generic.IReadOnlyCollection<global::StrawberryShake.EntityId> entityIds, global::System.UInt64 version)
+        public CreateGameResultInfo(global::System.Collections.Generic.IReadOnlyList<global::Prelast.GraphQL.State.GamesData?>? createGameWithDeveloperGenreId, global::System.Collections.Generic.IReadOnlyCollection<global::StrawberryShake.EntityId> entityIds, global::System.UInt64 version)
         {
             CreateGameWithDeveloperGenreId = createGameWithDeveloperGenreId;
             _entityIds = entityIds ?? throw new global::System.ArgumentNullException(nameof(entityIds));
             _version = version;
         }
 
-        public global::Prelast.GraphQL.State.GamesData? CreateGameWithDeveloperGenreId { get; }
+        public global::System.Collections.Generic.IReadOnlyList<global::Prelast.GraphQL.State.GamesData?>? CreateGameWithDeveloperGenreId { get; }
 
         public global::System.Collections.Generic.IReadOnlyCollection<global::StrawberryShake.EntityId> EntityIds => _entityIds;
         public global::System.UInt64 Version => _version;
@@ -6178,10 +12438,26 @@ namespace Prelast.GraphQL.State
 
             if (dataInfo is CreateGenreResultInfo info)
             {
-                return new CreateGenreResult(MapICreateGenre_CreateGenre(info.CreateGenre, snapshot));
+                return new CreateGenreResult(MapICreateGenre_CreateGenreArray(info.CreateGenre, snapshot));
             }
 
             throw new global::System.ArgumentException("CreateGenreResultInfo expected.");
+        }
+
+        private global::System.Collections.Generic.IReadOnlyList<global::Prelast.GraphQL.ICreateGenre_CreateGenre?>? MapICreateGenre_CreateGenreArray(global::System.Collections.Generic.IReadOnlyList<global::Prelast.GraphQL.State.GenreData?>? list, global::StrawberryShake.IEntityStoreSnapshot snapshot)
+        {
+            if (list is null)
+            {
+                return null;
+            }
+
+            var genres = new global::System.Collections.Generic.List<global::Prelast.GraphQL.ICreateGenre_CreateGenre?>();
+            foreach (global::Prelast.GraphQL.State.GenreData? child in list)
+            {
+                genres.Add(MapICreateGenre_CreateGenre(child, snapshot));
+            }
+
+            return genres;
         }
 
         private global::Prelast.GraphQL.ICreateGenre_CreateGenre? MapICreateGenre_CreateGenre(global::Prelast.GraphQL.State.GenreData? data, global::StrawberryShake.IEntityStoreSnapshot snapshot)
@@ -6215,14 +12491,14 @@ namespace Prelast.GraphQL.State
     {
         private readonly global::System.Collections.Generic.IReadOnlyCollection<global::StrawberryShake.EntityId> _entityIds;
         private readonly global::System.UInt64 _version;
-        public CreateGenreResultInfo(global::Prelast.GraphQL.State.GenreData? createGenre, global::System.Collections.Generic.IReadOnlyCollection<global::StrawberryShake.EntityId> entityIds, global::System.UInt64 version)
+        public CreateGenreResultInfo(global::System.Collections.Generic.IReadOnlyList<global::Prelast.GraphQL.State.GenreData?>? createGenre, global::System.Collections.Generic.IReadOnlyCollection<global::StrawberryShake.EntityId> entityIds, global::System.UInt64 version)
         {
             CreateGenre = createGenre;
             _entityIds = entityIds ?? throw new global::System.ArgumentNullException(nameof(entityIds));
             _version = version;
         }
 
-        public global::Prelast.GraphQL.State.GenreData? CreateGenre { get; }
+        public global::System.Collections.Generic.IReadOnlyList<global::Prelast.GraphQL.State.GenreData?>? CreateGenre { get; }
 
         public global::System.Collections.Generic.IReadOnlyCollection<global::StrawberryShake.EntityId> EntityIds => _entityIds;
         public global::System.UInt64 Version => _version;
@@ -6251,10 +12527,46 @@ namespace Prelast.GraphQL.State
 
             if (dataInfo is DelDevelResultInfo info)
             {
-                return new DelDevelResult(info.DeleteDevById);
+                return new DelDevelResult(MapIDelDevel_DeleteDevByIdArray(info.DeleteDevById, snapshot));
             }
 
             throw new global::System.ArgumentException("DelDevelResultInfo expected.");
+        }
+
+        private global::System.Collections.Generic.IReadOnlyList<global::Prelast.GraphQL.IDelDevel_DeleteDevById?>? MapIDelDevel_DeleteDevByIdArray(global::System.Collections.Generic.IReadOnlyList<global::Prelast.GraphQL.State.DevelopersData?>? list, global::StrawberryShake.IEntityStoreSnapshot snapshot)
+        {
+            if (list is null)
+            {
+                return null;
+            }
+
+            var developerss = new global::System.Collections.Generic.List<global::Prelast.GraphQL.IDelDevel_DeleteDevById?>();
+            foreach (global::Prelast.GraphQL.State.DevelopersData? child in list)
+            {
+                developerss.Add(MapIDelDevel_DeleteDevById(child, snapshot));
+            }
+
+            return developerss;
+        }
+
+        private global::Prelast.GraphQL.IDelDevel_DeleteDevById? MapIDelDevel_DeleteDevById(global::Prelast.GraphQL.State.DevelopersData? data, global::StrawberryShake.IEntityStoreSnapshot snapshot)
+        {
+            if (data is null)
+            {
+                return null;
+            }
+
+            IDelDevel_DeleteDevById returnValue = default !;
+            if (data?.__typename.Equals("Developers", global::System.StringComparison.Ordinal) ?? false)
+            {
+                returnValue = new DelDevel_DeleteDevById_Developers(data.DeveloperId ?? throw new global::System.ArgumentNullException(), data.Name, data.Country);
+            }
+            else
+            {
+                throw new global::System.NotSupportedException();
+            }
+
+            return returnValue;
         }
 
         global::System.Object global::StrawberryShake.IOperationResultDataFactory.Create(global::StrawberryShake.IOperationResultDataInfo dataInfo, global::StrawberryShake.IEntityStoreSnapshot? snapshot)
@@ -6268,14 +12580,14 @@ namespace Prelast.GraphQL.State
     {
         private readonly global::System.Collections.Generic.IReadOnlyCollection<global::StrawberryShake.EntityId> _entityIds;
         private readonly global::System.UInt64 _version;
-        public DelDevelResultInfo(global::System.String? deleteDevById, global::System.Collections.Generic.IReadOnlyCollection<global::StrawberryShake.EntityId> entityIds, global::System.UInt64 version)
+        public DelDevelResultInfo(global::System.Collections.Generic.IReadOnlyList<global::Prelast.GraphQL.State.DevelopersData?>? deleteDevById, global::System.Collections.Generic.IReadOnlyCollection<global::StrawberryShake.EntityId> entityIds, global::System.UInt64 version)
         {
             DeleteDevById = deleteDevById;
             _entityIds = entityIds ?? throw new global::System.ArgumentNullException(nameof(entityIds));
             _version = version;
         }
 
-        public global::System.String? DeleteDevById { get; }
+        public global::System.Collections.Generic.IReadOnlyList<global::Prelast.GraphQL.State.DevelopersData?>? DeleteDevById { get; }
 
         public global::System.Collections.Generic.IReadOnlyCollection<global::StrawberryShake.EntityId> EntityIds => _entityIds;
         public global::System.UInt64 Version => _version;
@@ -6304,10 +12616,86 @@ namespace Prelast.GraphQL.State
 
             if (dataInfo is DelGameResultInfo info)
             {
-                return new DelGameResult(info.DeleteGameById);
+                return new DelGameResult(MapIDelGame_DeleteGameByIdArray(info.DeleteGameById, snapshot));
             }
 
             throw new global::System.ArgumentException("DelGameResultInfo expected.");
+        }
+
+        private global::System.Collections.Generic.IReadOnlyList<global::Prelast.GraphQL.IDelGame_DeleteGameById?>? MapIDelGame_DeleteGameByIdArray(global::System.Collections.Generic.IReadOnlyList<global::Prelast.GraphQL.State.GamesData?>? list, global::StrawberryShake.IEntityStoreSnapshot snapshot)
+        {
+            if (list is null)
+            {
+                return null;
+            }
+
+            var gamess = new global::System.Collections.Generic.List<global::Prelast.GraphQL.IDelGame_DeleteGameById?>();
+            foreach (global::Prelast.GraphQL.State.GamesData? child in list)
+            {
+                gamess.Add(MapIDelGame_DeleteGameById(child, snapshot));
+            }
+
+            return gamess;
+        }
+
+        private global::Prelast.GraphQL.IDelGame_DeleteGameById? MapIDelGame_DeleteGameById(global::Prelast.GraphQL.State.GamesData? data, global::StrawberryShake.IEntityStoreSnapshot snapshot)
+        {
+            if (data is null)
+            {
+                return null;
+            }
+
+            IDelGame_DeleteGameById returnValue = default !;
+            if (data?.__typename.Equals("Games", global::System.StringComparison.Ordinal) ?? false)
+            {
+                returnValue = new DelGame_DeleteGameById_Games(data.GamesId ?? throw new global::System.ArgumentNullException(), data.Name, data.Price ?? throw new global::System.ArgumentNullException(), MapIChangePrice_ChangeGamePriceById_Genre(data.Genre, snapshot), MapIChangePrice_ChangeGamePriceById_Developer(data.Developer, snapshot));
+            }
+            else
+            {
+                throw new global::System.NotSupportedException();
+            }
+
+            return returnValue;
+        }
+
+        private global::Prelast.GraphQL.IChangePrice_ChangeGamePriceById_Genre? MapIChangePrice_ChangeGamePriceById_Genre(global::Prelast.GraphQL.State.GenreData? data, global::StrawberryShake.IEntityStoreSnapshot snapshot)
+        {
+            if (data is null)
+            {
+                return null;
+            }
+
+            IChangePrice_ChangeGamePriceById_Genre returnValue = default !;
+            if (data?.__typename.Equals("Genre", global::System.StringComparison.Ordinal) ?? false)
+            {
+                returnValue = new ChangePrice_ChangeGamePriceById_Genre_Genre(data.Name);
+            }
+            else
+            {
+                throw new global::System.NotSupportedException();
+            }
+
+            return returnValue;
+        }
+
+        private global::Prelast.GraphQL.IChangePrice_ChangeGamePriceById_Developer? MapIChangePrice_ChangeGamePriceById_Developer(global::Prelast.GraphQL.State.DevelopersData? data, global::StrawberryShake.IEntityStoreSnapshot snapshot)
+        {
+            if (data is null)
+            {
+                return null;
+            }
+
+            IChangePrice_ChangeGamePriceById_Developer returnValue = default !;
+            if (data?.__typename.Equals("Developers", global::System.StringComparison.Ordinal) ?? false)
+            {
+                returnValue = new ChangePrice_ChangeGamePriceById_Developer_Developers(data.Name, data.Country);
+            }
+            else
+            {
+                throw new global::System.NotSupportedException();
+            }
+
+            return returnValue;
         }
 
         global::System.Object global::StrawberryShake.IOperationResultDataFactory.Create(global::StrawberryShake.IOperationResultDataInfo dataInfo, global::StrawberryShake.IEntityStoreSnapshot? snapshot)
@@ -6321,14 +12709,14 @@ namespace Prelast.GraphQL.State
     {
         private readonly global::System.Collections.Generic.IReadOnlyCollection<global::StrawberryShake.EntityId> _entityIds;
         private readonly global::System.UInt64 _version;
-        public DelGameResultInfo(global::System.String? deleteGameById, global::System.Collections.Generic.IReadOnlyCollection<global::StrawberryShake.EntityId> entityIds, global::System.UInt64 version)
+        public DelGameResultInfo(global::System.Collections.Generic.IReadOnlyList<global::Prelast.GraphQL.State.GamesData?>? deleteGameById, global::System.Collections.Generic.IReadOnlyCollection<global::StrawberryShake.EntityId> entityIds, global::System.UInt64 version)
         {
             DeleteGameById = deleteGameById;
             _entityIds = entityIds ?? throw new global::System.ArgumentNullException(nameof(entityIds));
             _version = version;
         }
 
-        public global::System.String? DeleteGameById { get; }
+        public global::System.Collections.Generic.IReadOnlyList<global::Prelast.GraphQL.State.GamesData?>? DeleteGameById { get; }
 
         public global::System.Collections.Generic.IReadOnlyCollection<global::StrawberryShake.EntityId> EntityIds => _entityIds;
         public global::System.UInt64 Version => _version;
@@ -6357,10 +12745,46 @@ namespace Prelast.GraphQL.State
 
             if (dataInfo is DelGenreResultInfo info)
             {
-                return new DelGenreResult(info.DeleteGenreById);
+                return new DelGenreResult(MapIDelGenre_DeleteGenreByIdArray(info.DeleteGenreById, snapshot));
             }
 
             throw new global::System.ArgumentException("DelGenreResultInfo expected.");
+        }
+
+        private global::System.Collections.Generic.IReadOnlyList<global::Prelast.GraphQL.IDelGenre_DeleteGenreById?>? MapIDelGenre_DeleteGenreByIdArray(global::System.Collections.Generic.IReadOnlyList<global::Prelast.GraphQL.State.GenreData?>? list, global::StrawberryShake.IEntityStoreSnapshot snapshot)
+        {
+            if (list is null)
+            {
+                return null;
+            }
+
+            var genres = new global::System.Collections.Generic.List<global::Prelast.GraphQL.IDelGenre_DeleteGenreById?>();
+            foreach (global::Prelast.GraphQL.State.GenreData? child in list)
+            {
+                genres.Add(MapIDelGenre_DeleteGenreById(child, snapshot));
+            }
+
+            return genres;
+        }
+
+        private global::Prelast.GraphQL.IDelGenre_DeleteGenreById? MapIDelGenre_DeleteGenreById(global::Prelast.GraphQL.State.GenreData? data, global::StrawberryShake.IEntityStoreSnapshot snapshot)
+        {
+            if (data is null)
+            {
+                return null;
+            }
+
+            IDelGenre_DeleteGenreById returnValue = default !;
+            if (data?.__typename.Equals("Genre", global::System.StringComparison.Ordinal) ?? false)
+            {
+                returnValue = new DelGenre_DeleteGenreById_Genre(data.GenreId ?? throw new global::System.ArgumentNullException(), data.Name);
+            }
+            else
+            {
+                throw new global::System.NotSupportedException();
+            }
+
+            return returnValue;
         }
 
         global::System.Object global::StrawberryShake.IOperationResultDataFactory.Create(global::StrawberryShake.IOperationResultDataInfo dataInfo, global::StrawberryShake.IEntityStoreSnapshot? snapshot)
@@ -6374,14 +12798,14 @@ namespace Prelast.GraphQL.State
     {
         private readonly global::System.Collections.Generic.IReadOnlyCollection<global::StrawberryShake.EntityId> _entityIds;
         private readonly global::System.UInt64 _version;
-        public DelGenreResultInfo(global::System.String? deleteGenreById, global::System.Collections.Generic.IReadOnlyCollection<global::StrawberryShake.EntityId> entityIds, global::System.UInt64 version)
+        public DelGenreResultInfo(global::System.Collections.Generic.IReadOnlyList<global::Prelast.GraphQL.State.GenreData?>? deleteGenreById, global::System.Collections.Generic.IReadOnlyCollection<global::StrawberryShake.EntityId> entityIds, global::System.UInt64 version)
         {
             DeleteGenreById = deleteGenreById;
             _entityIds = entityIds ?? throw new global::System.ArgumentNullException(nameof(entityIds));
             _version = version;
         }
 
-        public global::System.String? DeleteGenreById { get; }
+        public global::System.Collections.Generic.IReadOnlyList<global::Prelast.GraphQL.State.GenreData?>? DeleteGenreById { get; }
 
         public global::System.Collections.Generic.IReadOnlyCollection<global::StrawberryShake.EntityId> EntityIds => _entityIds;
         public global::System.UInt64 Version => _version;
@@ -6644,7 +13068,7 @@ namespace Prelast.GraphQL.State
             IGetGames_AllGameWithDevGerne returnValue = default !;
             if (data?.__typename.Equals("AllGameWithDevGerneConnection", global::System.StringComparison.Ordinal) ?? false)
             {
-                returnValue = new GetGames_AllGameWithDevGerne_AllGameWithDevGerneConnection(MapIGetGames_AllGameWithDevGerne_NodesArray(data.Nodes, snapshot));
+                returnValue = new GetGames_AllGameWithDevGerne_AllGameWithDevGerneConnection(MapIGetGames_AllGameWithDevGerne_NodesArray(data.Nodes, snapshot), MapNonNullableIGetGames_AllGameWithDevGerne_PageInfo(data.PageInfo ?? throw new global::System.ArgumentNullException(), snapshot));
             }
             else
             {
@@ -6730,6 +13154,21 @@ namespace Prelast.GraphQL.State
             return returnValue;
         }
 
+        private global::Prelast.GraphQL.IGetGames_AllGameWithDevGerne_PageInfo MapNonNullableIGetGames_AllGameWithDevGerne_PageInfo(global::Prelast.GraphQL.State.PageInfoData data, global::StrawberryShake.IEntityStoreSnapshot snapshot)
+        {
+            IGetGames_AllGameWithDevGerne_PageInfo returnValue = default !;
+            if (data.__typename.Equals("PageInfo", global::System.StringComparison.Ordinal))
+            {
+                returnValue = new GetGames_AllGameWithDevGerne_PageInfo_PageInfo(data.HasNextPage ?? throw new global::System.ArgumentNullException(), data.EndCursor);
+            }
+            else
+            {
+                throw new global::System.NotSupportedException();
+            }
+
+            return returnValue;
+        }
+
         global::System.Object global::StrawberryShake.IOperationResultDataFactory.Create(global::StrawberryShake.IOperationResultDataInfo dataInfo, global::StrawberryShake.IEntityStoreSnapshot? snapshot)
         {
             return Create(dataInfo, snapshot);
@@ -6755,6 +13194,334 @@ namespace Prelast.GraphQL.State
         public global::StrawberryShake.IOperationResultDataInfo WithVersion(global::System.UInt64 version)
         {
             return new GetGamesResultInfo(AllGameWithDevGerne, _entityIds, version);
+        }
+    }
+
+    [global::System.CodeDom.Compiler.GeneratedCode("StrawberryShake", "12.4.1.0")]
+    public partial class GetGamesNextPageResultFactory : global::StrawberryShake.IOperationResultDataFactory<global::Prelast.GraphQL.GetGamesNextPageResult>
+    {
+        private readonly global::StrawberryShake.IEntityStore _entityStore;
+        public GetGamesNextPageResultFactory(global::StrawberryShake.IEntityStore entityStore)
+        {
+            _entityStore = entityStore ?? throw new global::System.ArgumentNullException(nameof(entityStore));
+        }
+
+        global::System.Type global::StrawberryShake.IOperationResultDataFactory.ResultType => typeof(global::Prelast.GraphQL.IGetGamesNextPageResult);
+        public GetGamesNextPageResult Create(global::StrawberryShake.IOperationResultDataInfo dataInfo, global::StrawberryShake.IEntityStoreSnapshot? snapshot = null)
+        {
+            if (snapshot is null)
+            {
+                snapshot = _entityStore.CurrentSnapshot;
+            }
+
+            if (dataInfo is GetGamesNextPageResultInfo info)
+            {
+                return new GetGamesNextPageResult(MapIGetGamesNextPage_AllGameWithDevGerne(info.AllGameWithDevGerne, snapshot));
+            }
+
+            throw new global::System.ArgumentException("GetGamesNextPageResultInfo expected.");
+        }
+
+        private global::Prelast.GraphQL.IGetGamesNextPage_AllGameWithDevGerne? MapIGetGamesNextPage_AllGameWithDevGerne(global::Prelast.GraphQL.State.AllGameWithDevGerneConnectionData? data, global::StrawberryShake.IEntityStoreSnapshot snapshot)
+        {
+            if (data is null)
+            {
+                return null;
+            }
+
+            IGetGamesNextPage_AllGameWithDevGerne returnValue = default !;
+            if (data?.__typename.Equals("AllGameWithDevGerneConnection", global::System.StringComparison.Ordinal) ?? false)
+            {
+                returnValue = new GetGamesNextPage_AllGameWithDevGerne_AllGameWithDevGerneConnection(MapIGetGamesNextPage_AllGameWithDevGerne_NodesArray(data.Nodes, snapshot), MapNonNullableIGetGamesNextPage_AllGameWithDevGerne_PageInfo(data.PageInfo ?? throw new global::System.ArgumentNullException(), snapshot));
+            }
+            else
+            {
+                throw new global::System.NotSupportedException();
+            }
+
+            return returnValue;
+        }
+
+        private global::System.Collections.Generic.IReadOnlyList<global::Prelast.GraphQL.IGetGamesNextPage_AllGameWithDevGerne_Nodes?>? MapIGetGamesNextPage_AllGameWithDevGerne_NodesArray(global::System.Collections.Generic.IReadOnlyList<global::Prelast.GraphQL.State.GamesData?>? list, global::StrawberryShake.IEntityStoreSnapshot snapshot)
+        {
+            if (list is null)
+            {
+                return null;
+            }
+
+            var gamess = new global::System.Collections.Generic.List<global::Prelast.GraphQL.IGetGamesNextPage_AllGameWithDevGerne_Nodes?>();
+            foreach (global::Prelast.GraphQL.State.GamesData? child in list)
+            {
+                gamess.Add(MapIGetGamesNextPage_AllGameWithDevGerne_Nodes(child, snapshot));
+            }
+
+            return gamess;
+        }
+
+        private global::Prelast.GraphQL.IGetGamesNextPage_AllGameWithDevGerne_Nodes? MapIGetGamesNextPage_AllGameWithDevGerne_Nodes(global::Prelast.GraphQL.State.GamesData? data, global::StrawberryShake.IEntityStoreSnapshot snapshot)
+        {
+            if (data is null)
+            {
+                return null;
+            }
+
+            IGetGamesNextPage_AllGameWithDevGerne_Nodes returnValue = default !;
+            if (data?.__typename.Equals("Games", global::System.StringComparison.Ordinal) ?? false)
+            {
+                returnValue = new GetGamesNextPage_AllGameWithDevGerne_Nodes_Games(data.GamesId ?? throw new global::System.ArgumentNullException(), data.Name, data.Price ?? throw new global::System.ArgumentNullException(), MapIChangePrice_ChangeGamePriceById_Genre(data.Genre, snapshot), MapIChangePrice_ChangeGamePriceById_Developer(data.Developer, snapshot));
+            }
+            else
+            {
+                throw new global::System.NotSupportedException();
+            }
+
+            return returnValue;
+        }
+
+        private global::Prelast.GraphQL.IChangePrice_ChangeGamePriceById_Genre? MapIChangePrice_ChangeGamePriceById_Genre(global::Prelast.GraphQL.State.GenreData? data, global::StrawberryShake.IEntityStoreSnapshot snapshot)
+        {
+            if (data is null)
+            {
+                return null;
+            }
+
+            IChangePrice_ChangeGamePriceById_Genre returnValue = default !;
+            if (data?.__typename.Equals("Genre", global::System.StringComparison.Ordinal) ?? false)
+            {
+                returnValue = new ChangePrice_ChangeGamePriceById_Genre_Genre(data.Name);
+            }
+            else
+            {
+                throw new global::System.NotSupportedException();
+            }
+
+            return returnValue;
+        }
+
+        private global::Prelast.GraphQL.IChangePrice_ChangeGamePriceById_Developer? MapIChangePrice_ChangeGamePriceById_Developer(global::Prelast.GraphQL.State.DevelopersData? data, global::StrawberryShake.IEntityStoreSnapshot snapshot)
+        {
+            if (data is null)
+            {
+                return null;
+            }
+
+            IChangePrice_ChangeGamePriceById_Developer returnValue = default !;
+            if (data?.__typename.Equals("Developers", global::System.StringComparison.Ordinal) ?? false)
+            {
+                returnValue = new ChangePrice_ChangeGamePriceById_Developer_Developers(data.Name, data.Country);
+            }
+            else
+            {
+                throw new global::System.NotSupportedException();
+            }
+
+            return returnValue;
+        }
+
+        private global::Prelast.GraphQL.IGetGamesNextPage_AllGameWithDevGerne_PageInfo MapNonNullableIGetGamesNextPage_AllGameWithDevGerne_PageInfo(global::Prelast.GraphQL.State.PageInfoData data, global::StrawberryShake.IEntityStoreSnapshot snapshot)
+        {
+            IGetGamesNextPage_AllGameWithDevGerne_PageInfo returnValue = default !;
+            if (data.__typename.Equals("PageInfo", global::System.StringComparison.Ordinal))
+            {
+                returnValue = new GetGamesNextPage_AllGameWithDevGerne_PageInfo_PageInfo(data.HasNextPage ?? throw new global::System.ArgumentNullException(), data.EndCursor);
+            }
+            else
+            {
+                throw new global::System.NotSupportedException();
+            }
+
+            return returnValue;
+        }
+
+        global::System.Object global::StrawberryShake.IOperationResultDataFactory.Create(global::StrawberryShake.IOperationResultDataInfo dataInfo, global::StrawberryShake.IEntityStoreSnapshot? snapshot)
+        {
+            return Create(dataInfo, snapshot);
+        }
+    }
+
+    [global::System.CodeDom.Compiler.GeneratedCode("StrawberryShake", "12.4.1.0")]
+    public partial class GetGamesNextPageResultInfo : global::StrawberryShake.IOperationResultDataInfo
+    {
+        private readonly global::System.Collections.Generic.IReadOnlyCollection<global::StrawberryShake.EntityId> _entityIds;
+        private readonly global::System.UInt64 _version;
+        public GetGamesNextPageResultInfo(global::Prelast.GraphQL.State.AllGameWithDevGerneConnectionData? allGameWithDevGerne, global::System.Collections.Generic.IReadOnlyCollection<global::StrawberryShake.EntityId> entityIds, global::System.UInt64 version)
+        {
+            AllGameWithDevGerne = allGameWithDevGerne;
+            _entityIds = entityIds ?? throw new global::System.ArgumentNullException(nameof(entityIds));
+            _version = version;
+        }
+
+        public global::Prelast.GraphQL.State.AllGameWithDevGerneConnectionData? AllGameWithDevGerne { get; }
+
+        public global::System.Collections.Generic.IReadOnlyCollection<global::StrawberryShake.EntityId> EntityIds => _entityIds;
+        public global::System.UInt64 Version => _version;
+        public global::StrawberryShake.IOperationResultDataInfo WithVersion(global::System.UInt64 version)
+        {
+            return new GetGamesNextPageResultInfo(AllGameWithDevGerne, _entityIds, version);
+        }
+    }
+
+    [global::System.CodeDom.Compiler.GeneratedCode("StrawberryShake", "12.4.1.0")]
+    public partial class GetGamesPrevPageResultFactory : global::StrawberryShake.IOperationResultDataFactory<global::Prelast.GraphQL.GetGamesPrevPageResult>
+    {
+        private readonly global::StrawberryShake.IEntityStore _entityStore;
+        public GetGamesPrevPageResultFactory(global::StrawberryShake.IEntityStore entityStore)
+        {
+            _entityStore = entityStore ?? throw new global::System.ArgumentNullException(nameof(entityStore));
+        }
+
+        global::System.Type global::StrawberryShake.IOperationResultDataFactory.ResultType => typeof(global::Prelast.GraphQL.IGetGamesPrevPageResult);
+        public GetGamesPrevPageResult Create(global::StrawberryShake.IOperationResultDataInfo dataInfo, global::StrawberryShake.IEntityStoreSnapshot? snapshot = null)
+        {
+            if (snapshot is null)
+            {
+                snapshot = _entityStore.CurrentSnapshot;
+            }
+
+            if (dataInfo is GetGamesPrevPageResultInfo info)
+            {
+                return new GetGamesPrevPageResult(MapIGetGamesPrevPage_AllGameWithDevGerne(info.AllGameWithDevGerne, snapshot));
+            }
+
+            throw new global::System.ArgumentException("GetGamesPrevPageResultInfo expected.");
+        }
+
+        private global::Prelast.GraphQL.IGetGamesPrevPage_AllGameWithDevGerne? MapIGetGamesPrevPage_AllGameWithDevGerne(global::Prelast.GraphQL.State.AllGameWithDevGerneConnectionData? data, global::StrawberryShake.IEntityStoreSnapshot snapshot)
+        {
+            if (data is null)
+            {
+                return null;
+            }
+
+            IGetGamesPrevPage_AllGameWithDevGerne returnValue = default !;
+            if (data?.__typename.Equals("AllGameWithDevGerneConnection", global::System.StringComparison.Ordinal) ?? false)
+            {
+                returnValue = new GetGamesPrevPage_AllGameWithDevGerne_AllGameWithDevGerneConnection(MapIGetGamesPrevPage_AllGameWithDevGerne_NodesArray(data.Nodes, snapshot), MapNonNullableIGetGamesPrevPage_AllGameWithDevGerne_PageInfo(data.PageInfo ?? throw new global::System.ArgumentNullException(), snapshot));
+            }
+            else
+            {
+                throw new global::System.NotSupportedException();
+            }
+
+            return returnValue;
+        }
+
+        private global::System.Collections.Generic.IReadOnlyList<global::Prelast.GraphQL.IGetGamesPrevPage_AllGameWithDevGerne_Nodes?>? MapIGetGamesPrevPage_AllGameWithDevGerne_NodesArray(global::System.Collections.Generic.IReadOnlyList<global::Prelast.GraphQL.State.GamesData?>? list, global::StrawberryShake.IEntityStoreSnapshot snapshot)
+        {
+            if (list is null)
+            {
+                return null;
+            }
+
+            var gamess = new global::System.Collections.Generic.List<global::Prelast.GraphQL.IGetGamesPrevPage_AllGameWithDevGerne_Nodes?>();
+            foreach (global::Prelast.GraphQL.State.GamesData? child in list)
+            {
+                gamess.Add(MapIGetGamesPrevPage_AllGameWithDevGerne_Nodes(child, snapshot));
+            }
+
+            return gamess;
+        }
+
+        private global::Prelast.GraphQL.IGetGamesPrevPage_AllGameWithDevGerne_Nodes? MapIGetGamesPrevPage_AllGameWithDevGerne_Nodes(global::Prelast.GraphQL.State.GamesData? data, global::StrawberryShake.IEntityStoreSnapshot snapshot)
+        {
+            if (data is null)
+            {
+                return null;
+            }
+
+            IGetGamesPrevPage_AllGameWithDevGerne_Nodes returnValue = default !;
+            if (data?.__typename.Equals("Games", global::System.StringComparison.Ordinal) ?? false)
+            {
+                returnValue = new GetGamesPrevPage_AllGameWithDevGerne_Nodes_Games(data.GamesId ?? throw new global::System.ArgumentNullException(), data.Name, data.Price ?? throw new global::System.ArgumentNullException(), MapIChangePrice_ChangeGamePriceById_Genre(data.Genre, snapshot), MapIChangePrice_ChangeGamePriceById_Developer(data.Developer, snapshot));
+            }
+            else
+            {
+                throw new global::System.NotSupportedException();
+            }
+
+            return returnValue;
+        }
+
+        private global::Prelast.GraphQL.IChangePrice_ChangeGamePriceById_Genre? MapIChangePrice_ChangeGamePriceById_Genre(global::Prelast.GraphQL.State.GenreData? data, global::StrawberryShake.IEntityStoreSnapshot snapshot)
+        {
+            if (data is null)
+            {
+                return null;
+            }
+
+            IChangePrice_ChangeGamePriceById_Genre returnValue = default !;
+            if (data?.__typename.Equals("Genre", global::System.StringComparison.Ordinal) ?? false)
+            {
+                returnValue = new ChangePrice_ChangeGamePriceById_Genre_Genre(data.Name);
+            }
+            else
+            {
+                throw new global::System.NotSupportedException();
+            }
+
+            return returnValue;
+        }
+
+        private global::Prelast.GraphQL.IChangePrice_ChangeGamePriceById_Developer? MapIChangePrice_ChangeGamePriceById_Developer(global::Prelast.GraphQL.State.DevelopersData? data, global::StrawberryShake.IEntityStoreSnapshot snapshot)
+        {
+            if (data is null)
+            {
+                return null;
+            }
+
+            IChangePrice_ChangeGamePriceById_Developer returnValue = default !;
+            if (data?.__typename.Equals("Developers", global::System.StringComparison.Ordinal) ?? false)
+            {
+                returnValue = new ChangePrice_ChangeGamePriceById_Developer_Developers(data.Name, data.Country);
+            }
+            else
+            {
+                throw new global::System.NotSupportedException();
+            }
+
+            return returnValue;
+        }
+
+        private global::Prelast.GraphQL.IGetGamesPrevPage_AllGameWithDevGerne_PageInfo MapNonNullableIGetGamesPrevPage_AllGameWithDevGerne_PageInfo(global::Prelast.GraphQL.State.PageInfoData data, global::StrawberryShake.IEntityStoreSnapshot snapshot)
+        {
+            IGetGamesPrevPage_AllGameWithDevGerne_PageInfo returnValue = default !;
+            if (data.__typename.Equals("PageInfo", global::System.StringComparison.Ordinal))
+            {
+                returnValue = new GetGamesPrevPage_AllGameWithDevGerne_PageInfo_PageInfo(data.HasNextPage ?? throw new global::System.ArgumentNullException(), data.EndCursor);
+            }
+            else
+            {
+                throw new global::System.NotSupportedException();
+            }
+
+            return returnValue;
+        }
+
+        global::System.Object global::StrawberryShake.IOperationResultDataFactory.Create(global::StrawberryShake.IOperationResultDataInfo dataInfo, global::StrawberryShake.IEntityStoreSnapshot? snapshot)
+        {
+            return Create(dataInfo, snapshot);
+        }
+    }
+
+    [global::System.CodeDom.Compiler.GeneratedCode("StrawberryShake", "12.4.1.0")]
+    public partial class GetGamesPrevPageResultInfo : global::StrawberryShake.IOperationResultDataInfo
+    {
+        private readonly global::System.Collections.Generic.IReadOnlyCollection<global::StrawberryShake.EntityId> _entityIds;
+        private readonly global::System.UInt64 _version;
+        public GetGamesPrevPageResultInfo(global::Prelast.GraphQL.State.AllGameWithDevGerneConnectionData? allGameWithDevGerne, global::System.Collections.Generic.IReadOnlyCollection<global::StrawberryShake.EntityId> entityIds, global::System.UInt64 version)
+        {
+            AllGameWithDevGerne = allGameWithDevGerne;
+            _entityIds = entityIds ?? throw new global::System.ArgumentNullException(nameof(entityIds));
+            _version = version;
+        }
+
+        public global::Prelast.GraphQL.State.AllGameWithDevGerneConnectionData? AllGameWithDevGerne { get; }
+
+        public global::System.Collections.Generic.IReadOnlyCollection<global::StrawberryShake.EntityId> EntityIds => _entityIds;
+        public global::System.UInt64 Version => _version;
+        public global::StrawberryShake.IOperationResultDataInfo WithVersion(global::System.UInt64 version)
+        {
+            return new GetGamesPrevPageResultInfo(AllGameWithDevGerne, _entityIds, version);
         }
     }
 
@@ -7126,6 +13893,966 @@ namespace Prelast.GraphQL.State
     }
 
     [global::System.CodeDom.Compiler.GeneratedCode("StrawberryShake", "12.4.1.0")]
+    public partial class GetDevelWithPagingBuilder : global::StrawberryShake.IOperationResultBuilder<global::System.Text.Json.JsonDocument, global::Prelast.GraphQL.IGetDevelWithPagingResult>
+    {
+        private readonly global::StrawberryShake.IEntityStore _entityStore;
+        private readonly global::StrawberryShake.IEntityIdSerializer _idSerializer;
+        private readonly global::StrawberryShake.IOperationResultDataFactory<global::Prelast.GraphQL.IGetDevelWithPagingResult> _resultDataFactory;
+        private readonly global::StrawberryShake.Serialization.ILeafValueParser<global::System.Int32, global::System.Int32> _intParser;
+        private readonly global::StrawberryShake.Serialization.ILeafValueParser<global::System.String, global::System.String> _stringParser;
+        private readonly global::StrawberryShake.Serialization.ILeafValueParser<global::System.Boolean, global::System.Boolean> _booleanParser;
+        public GetDevelWithPagingBuilder(global::StrawberryShake.IEntityStore entityStore, global::StrawberryShake.IEntityIdSerializer idSerializer, global::StrawberryShake.IOperationResultDataFactory<global::Prelast.GraphQL.IGetDevelWithPagingResult> resultDataFactory, global::StrawberryShake.Serialization.ISerializerResolver serializerResolver)
+        {
+            _entityStore = entityStore ?? throw new global::System.ArgumentNullException(nameof(entityStore));
+            _idSerializer = idSerializer ?? throw new global::System.ArgumentNullException(nameof(idSerializer));
+            _resultDataFactory = resultDataFactory ?? throw new global::System.ArgumentNullException(nameof(resultDataFactory));
+            _intParser = serializerResolver.GetLeafValueParser<global::System.Int32, global::System.Int32>("Int") ?? throw new global::System.ArgumentException("No serializer for type `Int` found.");
+            _stringParser = serializerResolver.GetLeafValueParser<global::System.String, global::System.String>("String") ?? throw new global::System.ArgumentException("No serializer for type `String` found.");
+            _booleanParser = serializerResolver.GetLeafValueParser<global::System.Boolean, global::System.Boolean>("Boolean") ?? throw new global::System.ArgumentException("No serializer for type `Boolean` found.");
+        }
+
+        public global::StrawberryShake.IOperationResult<IGetDevelWithPagingResult> Build(global::StrawberryShake.Response<global::System.Text.Json.JsonDocument> response)
+        {
+            (IGetDevelWithPagingResult Result, GetDevelWithPagingResultInfo Info)? data = null;
+            global::System.Collections.Generic.IReadOnlyList<global::StrawberryShake.IClientError>? errors = null;
+            if (response.Exception is null)
+            {
+                try
+                {
+                    if (response.Body != null)
+                    {
+                        if (response.Body.RootElement.TryGetProperty("data", out global::System.Text.Json.JsonElement dataElement) && dataElement.ValueKind == global::System.Text.Json.JsonValueKind.Object)
+                        {
+                            data = BuildData(dataElement);
+                        }
+
+                        if (response.Body.RootElement.TryGetProperty("errors", out global::System.Text.Json.JsonElement errorsElement))
+                        {
+                            errors = global::StrawberryShake.Json.JsonErrorParser.ParseErrors(errorsElement);
+                        }
+                    }
+                }
+                catch (global::System.Exception ex)
+                {
+                    errors = new global::StrawberryShake.IClientError[]{new global::StrawberryShake.ClientError(ex.Message, exception: ex, extensions: new global::System.Collections.Generic.Dictionary<global::System.String, global::System.Object?>{{"body", response.Body?.RootElement.ToString()}})};
+                }
+            }
+            else
+            {
+                errors = new global::StrawberryShake.IClientError[]{new global::StrawberryShake.ClientError(response.Exception.Message, exception: response.Exception, extensions: new global::System.Collections.Generic.Dictionary<global::System.String, global::System.Object?>{{"body", response.Body?.RootElement.ToString()}})};
+            }
+
+            return new global::StrawberryShake.OperationResult<IGetDevelWithPagingResult>(data?.Result, data?.Info, _resultDataFactory, errors);
+        }
+
+        private (IGetDevelWithPagingResult, GetDevelWithPagingResultInfo) BuildData(global::System.Text.Json.JsonElement obj)
+        {
+            var entityIds = new global::System.Collections.Generic.HashSet<global::StrawberryShake.EntityId>();
+            global::StrawberryShake.IEntityStoreSnapshot snapshot = default !;
+            _entityStore.Update(session =>
+            {
+                snapshot = session.CurrentSnapshot;
+            });
+            var resultInfo = new GetDevelWithPagingResultInfo(DeserializeIGetDevelWithPaging_AllDeveloper(global::StrawberryShake.Json.JsonElementExtensions.GetPropertyOrNull(obj, "allDeveloper")), entityIds, snapshot.Version);
+            return (_resultDataFactory.Create(resultInfo), resultInfo);
+        }
+
+        private global::Prelast.GraphQL.State.AllDeveloperConnectionData? DeserializeIGetDevelWithPaging_AllDeveloper(global::System.Text.Json.JsonElement? obj)
+        {
+            if (!obj.HasValue)
+            {
+                return null;
+            }
+
+            var typename = obj.Value.GetProperty("__typename").GetString();
+            if (typename?.Equals("AllDeveloperConnection", global::System.StringComparison.Ordinal) ?? false)
+            {
+                return new global::Prelast.GraphQL.State.AllDeveloperConnectionData(typename, nodes: DeserializeIGetDevelWithPaging_AllDeveloper_NodesArray(global::StrawberryShake.Json.JsonElementExtensions.GetPropertyOrNull(obj, "nodes")), pageInfo: DeserializeNonNullableIGetDevelWithPaging_AllDeveloper_PageInfo(global::StrawberryShake.Json.JsonElementExtensions.GetPropertyOrNull(obj, "pageInfo")));
+            }
+
+            throw new global::System.NotSupportedException();
+        }
+
+        private global::System.Collections.Generic.IReadOnlyList<global::Prelast.GraphQL.State.DevelopersData?>? DeserializeIGetDevelWithPaging_AllDeveloper_NodesArray(global::System.Text.Json.JsonElement? obj)
+        {
+            if (!obj.HasValue)
+            {
+                return null;
+            }
+
+            var developerss = new global::System.Collections.Generic.List<global::Prelast.GraphQL.State.DevelopersData?>();
+            foreach (global::System.Text.Json.JsonElement child in obj.Value.EnumerateArray())
+            {
+                developerss.Add(DeserializeIGetDevelWithPaging_AllDeveloper_Nodes(child));
+            }
+
+            return developerss;
+        }
+
+        private global::Prelast.GraphQL.State.DevelopersData? DeserializeIGetDevelWithPaging_AllDeveloper_Nodes(global::System.Text.Json.JsonElement? obj)
+        {
+            if (!obj.HasValue)
+            {
+                return null;
+            }
+
+            var typename = obj.Value.GetProperty("__typename").GetString();
+            if (typename?.Equals("Developers", global::System.StringComparison.Ordinal) ?? false)
+            {
+                return new global::Prelast.GraphQL.State.DevelopersData(typename, developerId: DeserializeNonNullableInt32(global::StrawberryShake.Json.JsonElementExtensions.GetPropertyOrNull(obj, "developerId")), name: DeserializeString(global::StrawberryShake.Json.JsonElementExtensions.GetPropertyOrNull(obj, "name")), country: DeserializeString(global::StrawberryShake.Json.JsonElementExtensions.GetPropertyOrNull(obj, "country")));
+            }
+
+            throw new global::System.NotSupportedException();
+        }
+
+        private global::System.Int32 DeserializeNonNullableInt32(global::System.Text.Json.JsonElement? obj)
+        {
+            if (!obj.HasValue)
+            {
+                throw new global::System.ArgumentNullException();
+            }
+
+            return _intParser.Parse(obj.Value.GetInt32()!);
+        }
+
+        private global::System.String? DeserializeString(global::System.Text.Json.JsonElement? obj)
+        {
+            if (!obj.HasValue)
+            {
+                return null;
+            }
+
+            return _stringParser.Parse(obj.Value.GetString()!);
+        }
+
+        private global::Prelast.GraphQL.State.PageInfoData DeserializeNonNullableIGetDevelWithPaging_AllDeveloper_PageInfo(global::System.Text.Json.JsonElement? obj)
+        {
+            if (!obj.HasValue)
+            {
+                throw new global::System.ArgumentNullException();
+            }
+
+            var typename = obj.Value.GetProperty("__typename").GetString();
+            if (typename?.Equals("PageInfo", global::System.StringComparison.Ordinal) ?? false)
+            {
+                return new global::Prelast.GraphQL.State.PageInfoData(typename, hasNextPage: DeserializeNonNullableBoolean(global::StrawberryShake.Json.JsonElementExtensions.GetPropertyOrNull(obj, "hasNextPage")), endCursor: DeserializeString(global::StrawberryShake.Json.JsonElementExtensions.GetPropertyOrNull(obj, "endCursor")));
+            }
+
+            throw new global::System.NotSupportedException();
+        }
+
+        private global::System.Boolean DeserializeNonNullableBoolean(global::System.Text.Json.JsonElement? obj)
+        {
+            if (!obj.HasValue)
+            {
+                throw new global::System.ArgumentNullException();
+            }
+
+            return _booleanParser.Parse(obj.Value.GetBoolean()!);
+        }
+    }
+
+    [global::System.CodeDom.Compiler.GeneratedCode("StrawberryShake", "12.4.1.0")]
+    public partial class GetDevelPrevPageBuilder : global::StrawberryShake.IOperationResultBuilder<global::System.Text.Json.JsonDocument, global::Prelast.GraphQL.IGetDevelPrevPageResult>
+    {
+        private readonly global::StrawberryShake.IEntityStore _entityStore;
+        private readonly global::StrawberryShake.IEntityIdSerializer _idSerializer;
+        private readonly global::StrawberryShake.IOperationResultDataFactory<global::Prelast.GraphQL.IGetDevelPrevPageResult> _resultDataFactory;
+        private readonly global::StrawberryShake.Serialization.ILeafValueParser<global::System.Int32, global::System.Int32> _intParser;
+        private readonly global::StrawberryShake.Serialization.ILeafValueParser<global::System.String, global::System.String> _stringParser;
+        private readonly global::StrawberryShake.Serialization.ILeafValueParser<global::System.Boolean, global::System.Boolean> _booleanParser;
+        public GetDevelPrevPageBuilder(global::StrawberryShake.IEntityStore entityStore, global::StrawberryShake.IEntityIdSerializer idSerializer, global::StrawberryShake.IOperationResultDataFactory<global::Prelast.GraphQL.IGetDevelPrevPageResult> resultDataFactory, global::StrawberryShake.Serialization.ISerializerResolver serializerResolver)
+        {
+            _entityStore = entityStore ?? throw new global::System.ArgumentNullException(nameof(entityStore));
+            _idSerializer = idSerializer ?? throw new global::System.ArgumentNullException(nameof(idSerializer));
+            _resultDataFactory = resultDataFactory ?? throw new global::System.ArgumentNullException(nameof(resultDataFactory));
+            _intParser = serializerResolver.GetLeafValueParser<global::System.Int32, global::System.Int32>("Int") ?? throw new global::System.ArgumentException("No serializer for type `Int` found.");
+            _stringParser = serializerResolver.GetLeafValueParser<global::System.String, global::System.String>("String") ?? throw new global::System.ArgumentException("No serializer for type `String` found.");
+            _booleanParser = serializerResolver.GetLeafValueParser<global::System.Boolean, global::System.Boolean>("Boolean") ?? throw new global::System.ArgumentException("No serializer for type `Boolean` found.");
+        }
+
+        public global::StrawberryShake.IOperationResult<IGetDevelPrevPageResult> Build(global::StrawberryShake.Response<global::System.Text.Json.JsonDocument> response)
+        {
+            (IGetDevelPrevPageResult Result, GetDevelPrevPageResultInfo Info)? data = null;
+            global::System.Collections.Generic.IReadOnlyList<global::StrawberryShake.IClientError>? errors = null;
+            if (response.Exception is null)
+            {
+                try
+                {
+                    if (response.Body != null)
+                    {
+                        if (response.Body.RootElement.TryGetProperty("data", out global::System.Text.Json.JsonElement dataElement) && dataElement.ValueKind == global::System.Text.Json.JsonValueKind.Object)
+                        {
+                            data = BuildData(dataElement);
+                        }
+
+                        if (response.Body.RootElement.TryGetProperty("errors", out global::System.Text.Json.JsonElement errorsElement))
+                        {
+                            errors = global::StrawberryShake.Json.JsonErrorParser.ParseErrors(errorsElement);
+                        }
+                    }
+                }
+                catch (global::System.Exception ex)
+                {
+                    errors = new global::StrawberryShake.IClientError[]{new global::StrawberryShake.ClientError(ex.Message, exception: ex, extensions: new global::System.Collections.Generic.Dictionary<global::System.String, global::System.Object?>{{"body", response.Body?.RootElement.ToString()}})};
+                }
+            }
+            else
+            {
+                errors = new global::StrawberryShake.IClientError[]{new global::StrawberryShake.ClientError(response.Exception.Message, exception: response.Exception, extensions: new global::System.Collections.Generic.Dictionary<global::System.String, global::System.Object?>{{"body", response.Body?.RootElement.ToString()}})};
+            }
+
+            return new global::StrawberryShake.OperationResult<IGetDevelPrevPageResult>(data?.Result, data?.Info, _resultDataFactory, errors);
+        }
+
+        private (IGetDevelPrevPageResult, GetDevelPrevPageResultInfo) BuildData(global::System.Text.Json.JsonElement obj)
+        {
+            var entityIds = new global::System.Collections.Generic.HashSet<global::StrawberryShake.EntityId>();
+            global::StrawberryShake.IEntityStoreSnapshot snapshot = default !;
+            _entityStore.Update(session =>
+            {
+                snapshot = session.CurrentSnapshot;
+            });
+            var resultInfo = new GetDevelPrevPageResultInfo(DeserializeIGetDevelPrevPage_AllDeveloper(global::StrawberryShake.Json.JsonElementExtensions.GetPropertyOrNull(obj, "allDeveloper")), entityIds, snapshot.Version);
+            return (_resultDataFactory.Create(resultInfo), resultInfo);
+        }
+
+        private global::Prelast.GraphQL.State.AllDeveloperConnectionData? DeserializeIGetDevelPrevPage_AllDeveloper(global::System.Text.Json.JsonElement? obj)
+        {
+            if (!obj.HasValue)
+            {
+                return null;
+            }
+
+            var typename = obj.Value.GetProperty("__typename").GetString();
+            if (typename?.Equals("AllDeveloperConnection", global::System.StringComparison.Ordinal) ?? false)
+            {
+                return new global::Prelast.GraphQL.State.AllDeveloperConnectionData(typename, nodes: DeserializeIGetDevelPrevPage_AllDeveloper_NodesArray(global::StrawberryShake.Json.JsonElementExtensions.GetPropertyOrNull(obj, "nodes")), pageInfo: DeserializeNonNullableIGetDevelPrevPage_AllDeveloper_PageInfo(global::StrawberryShake.Json.JsonElementExtensions.GetPropertyOrNull(obj, "pageInfo")));
+            }
+
+            throw new global::System.NotSupportedException();
+        }
+
+        private global::System.Collections.Generic.IReadOnlyList<global::Prelast.GraphQL.State.DevelopersData?>? DeserializeIGetDevelPrevPage_AllDeveloper_NodesArray(global::System.Text.Json.JsonElement? obj)
+        {
+            if (!obj.HasValue)
+            {
+                return null;
+            }
+
+            var developerss = new global::System.Collections.Generic.List<global::Prelast.GraphQL.State.DevelopersData?>();
+            foreach (global::System.Text.Json.JsonElement child in obj.Value.EnumerateArray())
+            {
+                developerss.Add(DeserializeIGetDevelPrevPage_AllDeveloper_Nodes(child));
+            }
+
+            return developerss;
+        }
+
+        private global::Prelast.GraphQL.State.DevelopersData? DeserializeIGetDevelPrevPage_AllDeveloper_Nodes(global::System.Text.Json.JsonElement? obj)
+        {
+            if (!obj.HasValue)
+            {
+                return null;
+            }
+
+            var typename = obj.Value.GetProperty("__typename").GetString();
+            if (typename?.Equals("Developers", global::System.StringComparison.Ordinal) ?? false)
+            {
+                return new global::Prelast.GraphQL.State.DevelopersData(typename, developerId: DeserializeNonNullableInt32(global::StrawberryShake.Json.JsonElementExtensions.GetPropertyOrNull(obj, "developerId")), name: DeserializeString(global::StrawberryShake.Json.JsonElementExtensions.GetPropertyOrNull(obj, "name")), country: DeserializeString(global::StrawberryShake.Json.JsonElementExtensions.GetPropertyOrNull(obj, "country")));
+            }
+
+            throw new global::System.NotSupportedException();
+        }
+
+        private global::System.Int32 DeserializeNonNullableInt32(global::System.Text.Json.JsonElement? obj)
+        {
+            if (!obj.HasValue)
+            {
+                throw new global::System.ArgumentNullException();
+            }
+
+            return _intParser.Parse(obj.Value.GetInt32()!);
+        }
+
+        private global::System.String? DeserializeString(global::System.Text.Json.JsonElement? obj)
+        {
+            if (!obj.HasValue)
+            {
+                return null;
+            }
+
+            return _stringParser.Parse(obj.Value.GetString()!);
+        }
+
+        private global::Prelast.GraphQL.State.PageInfoData DeserializeNonNullableIGetDevelPrevPage_AllDeveloper_PageInfo(global::System.Text.Json.JsonElement? obj)
+        {
+            if (!obj.HasValue)
+            {
+                throw new global::System.ArgumentNullException();
+            }
+
+            var typename = obj.Value.GetProperty("__typename").GetString();
+            if (typename?.Equals("PageInfo", global::System.StringComparison.Ordinal) ?? false)
+            {
+                return new global::Prelast.GraphQL.State.PageInfoData(typename, hasNextPage: DeserializeNonNullableBoolean(global::StrawberryShake.Json.JsonElementExtensions.GetPropertyOrNull(obj, "hasNextPage")), endCursor: DeserializeString(global::StrawberryShake.Json.JsonElementExtensions.GetPropertyOrNull(obj, "endCursor")));
+            }
+
+            throw new global::System.NotSupportedException();
+        }
+
+        private global::System.Boolean DeserializeNonNullableBoolean(global::System.Text.Json.JsonElement? obj)
+        {
+            if (!obj.HasValue)
+            {
+                throw new global::System.ArgumentNullException();
+            }
+
+            return _booleanParser.Parse(obj.Value.GetBoolean()!);
+        }
+    }
+
+    [global::System.CodeDom.Compiler.GeneratedCode("StrawberryShake", "12.4.1.0")]
+    public partial class GetDevelNextPageBuilder : global::StrawberryShake.IOperationResultBuilder<global::System.Text.Json.JsonDocument, global::Prelast.GraphQL.IGetDevelNextPageResult>
+    {
+        private readonly global::StrawberryShake.IEntityStore _entityStore;
+        private readonly global::StrawberryShake.IEntityIdSerializer _idSerializer;
+        private readonly global::StrawberryShake.IOperationResultDataFactory<global::Prelast.GraphQL.IGetDevelNextPageResult> _resultDataFactory;
+        private readonly global::StrawberryShake.Serialization.ILeafValueParser<global::System.Int32, global::System.Int32> _intParser;
+        private readonly global::StrawberryShake.Serialization.ILeafValueParser<global::System.String, global::System.String> _stringParser;
+        private readonly global::StrawberryShake.Serialization.ILeafValueParser<global::System.Boolean, global::System.Boolean> _booleanParser;
+        public GetDevelNextPageBuilder(global::StrawberryShake.IEntityStore entityStore, global::StrawberryShake.IEntityIdSerializer idSerializer, global::StrawberryShake.IOperationResultDataFactory<global::Prelast.GraphQL.IGetDevelNextPageResult> resultDataFactory, global::StrawberryShake.Serialization.ISerializerResolver serializerResolver)
+        {
+            _entityStore = entityStore ?? throw new global::System.ArgumentNullException(nameof(entityStore));
+            _idSerializer = idSerializer ?? throw new global::System.ArgumentNullException(nameof(idSerializer));
+            _resultDataFactory = resultDataFactory ?? throw new global::System.ArgumentNullException(nameof(resultDataFactory));
+            _intParser = serializerResolver.GetLeafValueParser<global::System.Int32, global::System.Int32>("Int") ?? throw new global::System.ArgumentException("No serializer for type `Int` found.");
+            _stringParser = serializerResolver.GetLeafValueParser<global::System.String, global::System.String>("String") ?? throw new global::System.ArgumentException("No serializer for type `String` found.");
+            _booleanParser = serializerResolver.GetLeafValueParser<global::System.Boolean, global::System.Boolean>("Boolean") ?? throw new global::System.ArgumentException("No serializer for type `Boolean` found.");
+        }
+
+        public global::StrawberryShake.IOperationResult<IGetDevelNextPageResult> Build(global::StrawberryShake.Response<global::System.Text.Json.JsonDocument> response)
+        {
+            (IGetDevelNextPageResult Result, GetDevelNextPageResultInfo Info)? data = null;
+            global::System.Collections.Generic.IReadOnlyList<global::StrawberryShake.IClientError>? errors = null;
+            if (response.Exception is null)
+            {
+                try
+                {
+                    if (response.Body != null)
+                    {
+                        if (response.Body.RootElement.TryGetProperty("data", out global::System.Text.Json.JsonElement dataElement) && dataElement.ValueKind == global::System.Text.Json.JsonValueKind.Object)
+                        {
+                            data = BuildData(dataElement);
+                        }
+
+                        if (response.Body.RootElement.TryGetProperty("errors", out global::System.Text.Json.JsonElement errorsElement))
+                        {
+                            errors = global::StrawberryShake.Json.JsonErrorParser.ParseErrors(errorsElement);
+                        }
+                    }
+                }
+                catch (global::System.Exception ex)
+                {
+                    errors = new global::StrawberryShake.IClientError[]{new global::StrawberryShake.ClientError(ex.Message, exception: ex, extensions: new global::System.Collections.Generic.Dictionary<global::System.String, global::System.Object?>{{"body", response.Body?.RootElement.ToString()}})};
+                }
+            }
+            else
+            {
+                errors = new global::StrawberryShake.IClientError[]{new global::StrawberryShake.ClientError(response.Exception.Message, exception: response.Exception, extensions: new global::System.Collections.Generic.Dictionary<global::System.String, global::System.Object?>{{"body", response.Body?.RootElement.ToString()}})};
+            }
+
+            return new global::StrawberryShake.OperationResult<IGetDevelNextPageResult>(data?.Result, data?.Info, _resultDataFactory, errors);
+        }
+
+        private (IGetDevelNextPageResult, GetDevelNextPageResultInfo) BuildData(global::System.Text.Json.JsonElement obj)
+        {
+            var entityIds = new global::System.Collections.Generic.HashSet<global::StrawberryShake.EntityId>();
+            global::StrawberryShake.IEntityStoreSnapshot snapshot = default !;
+            _entityStore.Update(session =>
+            {
+                snapshot = session.CurrentSnapshot;
+            });
+            var resultInfo = new GetDevelNextPageResultInfo(DeserializeIGetDevelNextPage_AllDeveloper(global::StrawberryShake.Json.JsonElementExtensions.GetPropertyOrNull(obj, "allDeveloper")), entityIds, snapshot.Version);
+            return (_resultDataFactory.Create(resultInfo), resultInfo);
+        }
+
+        private global::Prelast.GraphQL.State.AllDeveloperConnectionData? DeserializeIGetDevelNextPage_AllDeveloper(global::System.Text.Json.JsonElement? obj)
+        {
+            if (!obj.HasValue)
+            {
+                return null;
+            }
+
+            var typename = obj.Value.GetProperty("__typename").GetString();
+            if (typename?.Equals("AllDeveloperConnection", global::System.StringComparison.Ordinal) ?? false)
+            {
+                return new global::Prelast.GraphQL.State.AllDeveloperConnectionData(typename, nodes: DeserializeIGetDevelNextPage_AllDeveloper_NodesArray(global::StrawberryShake.Json.JsonElementExtensions.GetPropertyOrNull(obj, "nodes")), pageInfo: DeserializeNonNullableIGetDevelNextPage_AllDeveloper_PageInfo(global::StrawberryShake.Json.JsonElementExtensions.GetPropertyOrNull(obj, "pageInfo")));
+            }
+
+            throw new global::System.NotSupportedException();
+        }
+
+        private global::System.Collections.Generic.IReadOnlyList<global::Prelast.GraphQL.State.DevelopersData?>? DeserializeIGetDevelNextPage_AllDeveloper_NodesArray(global::System.Text.Json.JsonElement? obj)
+        {
+            if (!obj.HasValue)
+            {
+                return null;
+            }
+
+            var developerss = new global::System.Collections.Generic.List<global::Prelast.GraphQL.State.DevelopersData?>();
+            foreach (global::System.Text.Json.JsonElement child in obj.Value.EnumerateArray())
+            {
+                developerss.Add(DeserializeIGetDevelNextPage_AllDeveloper_Nodes(child));
+            }
+
+            return developerss;
+        }
+
+        private global::Prelast.GraphQL.State.DevelopersData? DeserializeIGetDevelNextPage_AllDeveloper_Nodes(global::System.Text.Json.JsonElement? obj)
+        {
+            if (!obj.HasValue)
+            {
+                return null;
+            }
+
+            var typename = obj.Value.GetProperty("__typename").GetString();
+            if (typename?.Equals("Developers", global::System.StringComparison.Ordinal) ?? false)
+            {
+                return new global::Prelast.GraphQL.State.DevelopersData(typename, developerId: DeserializeNonNullableInt32(global::StrawberryShake.Json.JsonElementExtensions.GetPropertyOrNull(obj, "developerId")), name: DeserializeString(global::StrawberryShake.Json.JsonElementExtensions.GetPropertyOrNull(obj, "name")), country: DeserializeString(global::StrawberryShake.Json.JsonElementExtensions.GetPropertyOrNull(obj, "country")));
+            }
+
+            throw new global::System.NotSupportedException();
+        }
+
+        private global::System.Int32 DeserializeNonNullableInt32(global::System.Text.Json.JsonElement? obj)
+        {
+            if (!obj.HasValue)
+            {
+                throw new global::System.ArgumentNullException();
+            }
+
+            return _intParser.Parse(obj.Value.GetInt32()!);
+        }
+
+        private global::System.String? DeserializeString(global::System.Text.Json.JsonElement? obj)
+        {
+            if (!obj.HasValue)
+            {
+                return null;
+            }
+
+            return _stringParser.Parse(obj.Value.GetString()!);
+        }
+
+        private global::Prelast.GraphQL.State.PageInfoData DeserializeNonNullableIGetDevelNextPage_AllDeveloper_PageInfo(global::System.Text.Json.JsonElement? obj)
+        {
+            if (!obj.HasValue)
+            {
+                throw new global::System.ArgumentNullException();
+            }
+
+            var typename = obj.Value.GetProperty("__typename").GetString();
+            if (typename?.Equals("PageInfo", global::System.StringComparison.Ordinal) ?? false)
+            {
+                return new global::Prelast.GraphQL.State.PageInfoData(typename, hasNextPage: DeserializeNonNullableBoolean(global::StrawberryShake.Json.JsonElementExtensions.GetPropertyOrNull(obj, "hasNextPage")), endCursor: DeserializeString(global::StrawberryShake.Json.JsonElementExtensions.GetPropertyOrNull(obj, "endCursor")));
+            }
+
+            throw new global::System.NotSupportedException();
+        }
+
+        private global::System.Boolean DeserializeNonNullableBoolean(global::System.Text.Json.JsonElement? obj)
+        {
+            if (!obj.HasValue)
+            {
+                throw new global::System.ArgumentNullException();
+            }
+
+            return _booleanParser.Parse(obj.Value.GetBoolean()!);
+        }
+    }
+
+    [global::System.CodeDom.Compiler.GeneratedCode("StrawberryShake", "12.4.1.0")]
+    public partial class GetGenreWithPagingBuilder : global::StrawberryShake.IOperationResultBuilder<global::System.Text.Json.JsonDocument, global::Prelast.GraphQL.IGetGenreWithPagingResult>
+    {
+        private readonly global::StrawberryShake.IEntityStore _entityStore;
+        private readonly global::StrawberryShake.IEntityIdSerializer _idSerializer;
+        private readonly global::StrawberryShake.IOperationResultDataFactory<global::Prelast.GraphQL.IGetGenreWithPagingResult> _resultDataFactory;
+        private readonly global::StrawberryShake.Serialization.ILeafValueParser<global::System.Int32, global::System.Int32> _intParser;
+        private readonly global::StrawberryShake.Serialization.ILeafValueParser<global::System.String, global::System.String> _stringParser;
+        private readonly global::StrawberryShake.Serialization.ILeafValueParser<global::System.Boolean, global::System.Boolean> _booleanParser;
+        public GetGenreWithPagingBuilder(global::StrawberryShake.IEntityStore entityStore, global::StrawberryShake.IEntityIdSerializer idSerializer, global::StrawberryShake.IOperationResultDataFactory<global::Prelast.GraphQL.IGetGenreWithPagingResult> resultDataFactory, global::StrawberryShake.Serialization.ISerializerResolver serializerResolver)
+        {
+            _entityStore = entityStore ?? throw new global::System.ArgumentNullException(nameof(entityStore));
+            _idSerializer = idSerializer ?? throw new global::System.ArgumentNullException(nameof(idSerializer));
+            _resultDataFactory = resultDataFactory ?? throw new global::System.ArgumentNullException(nameof(resultDataFactory));
+            _intParser = serializerResolver.GetLeafValueParser<global::System.Int32, global::System.Int32>("Int") ?? throw new global::System.ArgumentException("No serializer for type `Int` found.");
+            _stringParser = serializerResolver.GetLeafValueParser<global::System.String, global::System.String>("String") ?? throw new global::System.ArgumentException("No serializer for type `String` found.");
+            _booleanParser = serializerResolver.GetLeafValueParser<global::System.Boolean, global::System.Boolean>("Boolean") ?? throw new global::System.ArgumentException("No serializer for type `Boolean` found.");
+        }
+
+        public global::StrawberryShake.IOperationResult<IGetGenreWithPagingResult> Build(global::StrawberryShake.Response<global::System.Text.Json.JsonDocument> response)
+        {
+            (IGetGenreWithPagingResult Result, GetGenreWithPagingResultInfo Info)? data = null;
+            global::System.Collections.Generic.IReadOnlyList<global::StrawberryShake.IClientError>? errors = null;
+            if (response.Exception is null)
+            {
+                try
+                {
+                    if (response.Body != null)
+                    {
+                        if (response.Body.RootElement.TryGetProperty("data", out global::System.Text.Json.JsonElement dataElement) && dataElement.ValueKind == global::System.Text.Json.JsonValueKind.Object)
+                        {
+                            data = BuildData(dataElement);
+                        }
+
+                        if (response.Body.RootElement.TryGetProperty("errors", out global::System.Text.Json.JsonElement errorsElement))
+                        {
+                            errors = global::StrawberryShake.Json.JsonErrorParser.ParseErrors(errorsElement);
+                        }
+                    }
+                }
+                catch (global::System.Exception ex)
+                {
+                    errors = new global::StrawberryShake.IClientError[]{new global::StrawberryShake.ClientError(ex.Message, exception: ex, extensions: new global::System.Collections.Generic.Dictionary<global::System.String, global::System.Object?>{{"body", response.Body?.RootElement.ToString()}})};
+                }
+            }
+            else
+            {
+                errors = new global::StrawberryShake.IClientError[]{new global::StrawberryShake.ClientError(response.Exception.Message, exception: response.Exception, extensions: new global::System.Collections.Generic.Dictionary<global::System.String, global::System.Object?>{{"body", response.Body?.RootElement.ToString()}})};
+            }
+
+            return new global::StrawberryShake.OperationResult<IGetGenreWithPagingResult>(data?.Result, data?.Info, _resultDataFactory, errors);
+        }
+
+        private (IGetGenreWithPagingResult, GetGenreWithPagingResultInfo) BuildData(global::System.Text.Json.JsonElement obj)
+        {
+            var entityIds = new global::System.Collections.Generic.HashSet<global::StrawberryShake.EntityId>();
+            global::StrawberryShake.IEntityStoreSnapshot snapshot = default !;
+            _entityStore.Update(session =>
+            {
+                snapshot = session.CurrentSnapshot;
+            });
+            var resultInfo = new GetGenreWithPagingResultInfo(DeserializeIGetGenreWithPaging_AllGenre(global::StrawberryShake.Json.JsonElementExtensions.GetPropertyOrNull(obj, "allGenre")), entityIds, snapshot.Version);
+            return (_resultDataFactory.Create(resultInfo), resultInfo);
+        }
+
+        private global::Prelast.GraphQL.State.AllGenreConnectionData? DeserializeIGetGenreWithPaging_AllGenre(global::System.Text.Json.JsonElement? obj)
+        {
+            if (!obj.HasValue)
+            {
+                return null;
+            }
+
+            var typename = obj.Value.GetProperty("__typename").GetString();
+            if (typename?.Equals("AllGenreConnection", global::System.StringComparison.Ordinal) ?? false)
+            {
+                return new global::Prelast.GraphQL.State.AllGenreConnectionData(typename, nodes: DeserializeIGetGenreWithPaging_AllGenre_NodesArray(global::StrawberryShake.Json.JsonElementExtensions.GetPropertyOrNull(obj, "nodes")), pageInfo: DeserializeNonNullableIGetGenreWithPaging_AllGenre_PageInfo(global::StrawberryShake.Json.JsonElementExtensions.GetPropertyOrNull(obj, "pageInfo")));
+            }
+
+            throw new global::System.NotSupportedException();
+        }
+
+        private global::System.Collections.Generic.IReadOnlyList<global::Prelast.GraphQL.State.GenreData?>? DeserializeIGetGenreWithPaging_AllGenre_NodesArray(global::System.Text.Json.JsonElement? obj)
+        {
+            if (!obj.HasValue)
+            {
+                return null;
+            }
+
+            var genres = new global::System.Collections.Generic.List<global::Prelast.GraphQL.State.GenreData?>();
+            foreach (global::System.Text.Json.JsonElement child in obj.Value.EnumerateArray())
+            {
+                genres.Add(DeserializeIGetGenreWithPaging_AllGenre_Nodes(child));
+            }
+
+            return genres;
+        }
+
+        private global::Prelast.GraphQL.State.GenreData? DeserializeIGetGenreWithPaging_AllGenre_Nodes(global::System.Text.Json.JsonElement? obj)
+        {
+            if (!obj.HasValue)
+            {
+                return null;
+            }
+
+            var typename = obj.Value.GetProperty("__typename").GetString();
+            if (typename?.Equals("Genre", global::System.StringComparison.Ordinal) ?? false)
+            {
+                return new global::Prelast.GraphQL.State.GenreData(typename, genreId: DeserializeNonNullableInt32(global::StrawberryShake.Json.JsonElementExtensions.GetPropertyOrNull(obj, "genreId")), name: DeserializeString(global::StrawberryShake.Json.JsonElementExtensions.GetPropertyOrNull(obj, "name")));
+            }
+
+            throw new global::System.NotSupportedException();
+        }
+
+        private global::System.Int32 DeserializeNonNullableInt32(global::System.Text.Json.JsonElement? obj)
+        {
+            if (!obj.HasValue)
+            {
+                throw new global::System.ArgumentNullException();
+            }
+
+            return _intParser.Parse(obj.Value.GetInt32()!);
+        }
+
+        private global::System.String? DeserializeString(global::System.Text.Json.JsonElement? obj)
+        {
+            if (!obj.HasValue)
+            {
+                return null;
+            }
+
+            return _stringParser.Parse(obj.Value.GetString()!);
+        }
+
+        private global::Prelast.GraphQL.State.PageInfoData DeserializeNonNullableIGetGenreWithPaging_AllGenre_PageInfo(global::System.Text.Json.JsonElement? obj)
+        {
+            if (!obj.HasValue)
+            {
+                throw new global::System.ArgumentNullException();
+            }
+
+            var typename = obj.Value.GetProperty("__typename").GetString();
+            if (typename?.Equals("PageInfo", global::System.StringComparison.Ordinal) ?? false)
+            {
+                return new global::Prelast.GraphQL.State.PageInfoData(typename, hasNextPage: DeserializeNonNullableBoolean(global::StrawberryShake.Json.JsonElementExtensions.GetPropertyOrNull(obj, "hasNextPage")), endCursor: DeserializeString(global::StrawberryShake.Json.JsonElementExtensions.GetPropertyOrNull(obj, "endCursor")));
+            }
+
+            throw new global::System.NotSupportedException();
+        }
+
+        private global::System.Boolean DeserializeNonNullableBoolean(global::System.Text.Json.JsonElement? obj)
+        {
+            if (!obj.HasValue)
+            {
+                throw new global::System.ArgumentNullException();
+            }
+
+            return _booleanParser.Parse(obj.Value.GetBoolean()!);
+        }
+    }
+
+    [global::System.CodeDom.Compiler.GeneratedCode("StrawberryShake", "12.4.1.0")]
+    public partial class GetGenreNextPageBuilder : global::StrawberryShake.IOperationResultBuilder<global::System.Text.Json.JsonDocument, global::Prelast.GraphQL.IGetGenreNextPageResult>
+    {
+        private readonly global::StrawberryShake.IEntityStore _entityStore;
+        private readonly global::StrawberryShake.IEntityIdSerializer _idSerializer;
+        private readonly global::StrawberryShake.IOperationResultDataFactory<global::Prelast.GraphQL.IGetGenreNextPageResult> _resultDataFactory;
+        private readonly global::StrawberryShake.Serialization.ILeafValueParser<global::System.Int32, global::System.Int32> _intParser;
+        private readonly global::StrawberryShake.Serialization.ILeafValueParser<global::System.String, global::System.String> _stringParser;
+        private readonly global::StrawberryShake.Serialization.ILeafValueParser<global::System.Boolean, global::System.Boolean> _booleanParser;
+        public GetGenreNextPageBuilder(global::StrawberryShake.IEntityStore entityStore, global::StrawberryShake.IEntityIdSerializer idSerializer, global::StrawberryShake.IOperationResultDataFactory<global::Prelast.GraphQL.IGetGenreNextPageResult> resultDataFactory, global::StrawberryShake.Serialization.ISerializerResolver serializerResolver)
+        {
+            _entityStore = entityStore ?? throw new global::System.ArgumentNullException(nameof(entityStore));
+            _idSerializer = idSerializer ?? throw new global::System.ArgumentNullException(nameof(idSerializer));
+            _resultDataFactory = resultDataFactory ?? throw new global::System.ArgumentNullException(nameof(resultDataFactory));
+            _intParser = serializerResolver.GetLeafValueParser<global::System.Int32, global::System.Int32>("Int") ?? throw new global::System.ArgumentException("No serializer for type `Int` found.");
+            _stringParser = serializerResolver.GetLeafValueParser<global::System.String, global::System.String>("String") ?? throw new global::System.ArgumentException("No serializer for type `String` found.");
+            _booleanParser = serializerResolver.GetLeafValueParser<global::System.Boolean, global::System.Boolean>("Boolean") ?? throw new global::System.ArgumentException("No serializer for type `Boolean` found.");
+        }
+
+        public global::StrawberryShake.IOperationResult<IGetGenreNextPageResult> Build(global::StrawberryShake.Response<global::System.Text.Json.JsonDocument> response)
+        {
+            (IGetGenreNextPageResult Result, GetGenreNextPageResultInfo Info)? data = null;
+            global::System.Collections.Generic.IReadOnlyList<global::StrawberryShake.IClientError>? errors = null;
+            if (response.Exception is null)
+            {
+                try
+                {
+                    if (response.Body != null)
+                    {
+                        if (response.Body.RootElement.TryGetProperty("data", out global::System.Text.Json.JsonElement dataElement) && dataElement.ValueKind == global::System.Text.Json.JsonValueKind.Object)
+                        {
+                            data = BuildData(dataElement);
+                        }
+
+                        if (response.Body.RootElement.TryGetProperty("errors", out global::System.Text.Json.JsonElement errorsElement))
+                        {
+                            errors = global::StrawberryShake.Json.JsonErrorParser.ParseErrors(errorsElement);
+                        }
+                    }
+                }
+                catch (global::System.Exception ex)
+                {
+                    errors = new global::StrawberryShake.IClientError[]{new global::StrawberryShake.ClientError(ex.Message, exception: ex, extensions: new global::System.Collections.Generic.Dictionary<global::System.String, global::System.Object?>{{"body", response.Body?.RootElement.ToString()}})};
+                }
+            }
+            else
+            {
+                errors = new global::StrawberryShake.IClientError[]{new global::StrawberryShake.ClientError(response.Exception.Message, exception: response.Exception, extensions: new global::System.Collections.Generic.Dictionary<global::System.String, global::System.Object?>{{"body", response.Body?.RootElement.ToString()}})};
+            }
+
+            return new global::StrawberryShake.OperationResult<IGetGenreNextPageResult>(data?.Result, data?.Info, _resultDataFactory, errors);
+        }
+
+        private (IGetGenreNextPageResult, GetGenreNextPageResultInfo) BuildData(global::System.Text.Json.JsonElement obj)
+        {
+            var entityIds = new global::System.Collections.Generic.HashSet<global::StrawberryShake.EntityId>();
+            global::StrawberryShake.IEntityStoreSnapshot snapshot = default !;
+            _entityStore.Update(session =>
+            {
+                snapshot = session.CurrentSnapshot;
+            });
+            var resultInfo = new GetGenreNextPageResultInfo(DeserializeIGetGenreNextPage_AllGenre(global::StrawberryShake.Json.JsonElementExtensions.GetPropertyOrNull(obj, "allGenre")), entityIds, snapshot.Version);
+            return (_resultDataFactory.Create(resultInfo), resultInfo);
+        }
+
+        private global::Prelast.GraphQL.State.AllGenreConnectionData? DeserializeIGetGenreNextPage_AllGenre(global::System.Text.Json.JsonElement? obj)
+        {
+            if (!obj.HasValue)
+            {
+                return null;
+            }
+
+            var typename = obj.Value.GetProperty("__typename").GetString();
+            if (typename?.Equals("AllGenreConnection", global::System.StringComparison.Ordinal) ?? false)
+            {
+                return new global::Prelast.GraphQL.State.AllGenreConnectionData(typename, nodes: DeserializeIGetGenreNextPage_AllGenre_NodesArray(global::StrawberryShake.Json.JsonElementExtensions.GetPropertyOrNull(obj, "nodes")), pageInfo: DeserializeNonNullableIGetGenreNextPage_AllGenre_PageInfo(global::StrawberryShake.Json.JsonElementExtensions.GetPropertyOrNull(obj, "pageInfo")));
+            }
+
+            throw new global::System.NotSupportedException();
+        }
+
+        private global::System.Collections.Generic.IReadOnlyList<global::Prelast.GraphQL.State.GenreData?>? DeserializeIGetGenreNextPage_AllGenre_NodesArray(global::System.Text.Json.JsonElement? obj)
+        {
+            if (!obj.HasValue)
+            {
+                return null;
+            }
+
+            var genres = new global::System.Collections.Generic.List<global::Prelast.GraphQL.State.GenreData?>();
+            foreach (global::System.Text.Json.JsonElement child in obj.Value.EnumerateArray())
+            {
+                genres.Add(DeserializeIGetGenreNextPage_AllGenre_Nodes(child));
+            }
+
+            return genres;
+        }
+
+        private global::Prelast.GraphQL.State.GenreData? DeserializeIGetGenreNextPage_AllGenre_Nodes(global::System.Text.Json.JsonElement? obj)
+        {
+            if (!obj.HasValue)
+            {
+                return null;
+            }
+
+            var typename = obj.Value.GetProperty("__typename").GetString();
+            if (typename?.Equals("Genre", global::System.StringComparison.Ordinal) ?? false)
+            {
+                return new global::Prelast.GraphQL.State.GenreData(typename, genreId: DeserializeNonNullableInt32(global::StrawberryShake.Json.JsonElementExtensions.GetPropertyOrNull(obj, "genreId")), name: DeserializeString(global::StrawberryShake.Json.JsonElementExtensions.GetPropertyOrNull(obj, "name")));
+            }
+
+            throw new global::System.NotSupportedException();
+        }
+
+        private global::System.Int32 DeserializeNonNullableInt32(global::System.Text.Json.JsonElement? obj)
+        {
+            if (!obj.HasValue)
+            {
+                throw new global::System.ArgumentNullException();
+            }
+
+            return _intParser.Parse(obj.Value.GetInt32()!);
+        }
+
+        private global::System.String? DeserializeString(global::System.Text.Json.JsonElement? obj)
+        {
+            if (!obj.HasValue)
+            {
+                return null;
+            }
+
+            return _stringParser.Parse(obj.Value.GetString()!);
+        }
+
+        private global::Prelast.GraphQL.State.PageInfoData DeserializeNonNullableIGetGenreNextPage_AllGenre_PageInfo(global::System.Text.Json.JsonElement? obj)
+        {
+            if (!obj.HasValue)
+            {
+                throw new global::System.ArgumentNullException();
+            }
+
+            var typename = obj.Value.GetProperty("__typename").GetString();
+            if (typename?.Equals("PageInfo", global::System.StringComparison.Ordinal) ?? false)
+            {
+                return new global::Prelast.GraphQL.State.PageInfoData(typename, hasNextPage: DeserializeNonNullableBoolean(global::StrawberryShake.Json.JsonElementExtensions.GetPropertyOrNull(obj, "hasNextPage")), endCursor: DeserializeString(global::StrawberryShake.Json.JsonElementExtensions.GetPropertyOrNull(obj, "endCursor")));
+            }
+
+            throw new global::System.NotSupportedException();
+        }
+
+        private global::System.Boolean DeserializeNonNullableBoolean(global::System.Text.Json.JsonElement? obj)
+        {
+            if (!obj.HasValue)
+            {
+                throw new global::System.ArgumentNullException();
+            }
+
+            return _booleanParser.Parse(obj.Value.GetBoolean()!);
+        }
+    }
+
+    [global::System.CodeDom.Compiler.GeneratedCode("StrawberryShake", "12.4.1.0")]
+    public partial class GetGenrePrevPageBuilder : global::StrawberryShake.IOperationResultBuilder<global::System.Text.Json.JsonDocument, global::Prelast.GraphQL.IGetGenrePrevPageResult>
+    {
+        private readonly global::StrawberryShake.IEntityStore _entityStore;
+        private readonly global::StrawberryShake.IEntityIdSerializer _idSerializer;
+        private readonly global::StrawberryShake.IOperationResultDataFactory<global::Prelast.GraphQL.IGetGenrePrevPageResult> _resultDataFactory;
+        private readonly global::StrawberryShake.Serialization.ILeafValueParser<global::System.Int32, global::System.Int32> _intParser;
+        private readonly global::StrawberryShake.Serialization.ILeafValueParser<global::System.String, global::System.String> _stringParser;
+        private readonly global::StrawberryShake.Serialization.ILeafValueParser<global::System.Boolean, global::System.Boolean> _booleanParser;
+        public GetGenrePrevPageBuilder(global::StrawberryShake.IEntityStore entityStore, global::StrawberryShake.IEntityIdSerializer idSerializer, global::StrawberryShake.IOperationResultDataFactory<global::Prelast.GraphQL.IGetGenrePrevPageResult> resultDataFactory, global::StrawberryShake.Serialization.ISerializerResolver serializerResolver)
+        {
+            _entityStore = entityStore ?? throw new global::System.ArgumentNullException(nameof(entityStore));
+            _idSerializer = idSerializer ?? throw new global::System.ArgumentNullException(nameof(idSerializer));
+            _resultDataFactory = resultDataFactory ?? throw new global::System.ArgumentNullException(nameof(resultDataFactory));
+            _intParser = serializerResolver.GetLeafValueParser<global::System.Int32, global::System.Int32>("Int") ?? throw new global::System.ArgumentException("No serializer for type `Int` found.");
+            _stringParser = serializerResolver.GetLeafValueParser<global::System.String, global::System.String>("String") ?? throw new global::System.ArgumentException("No serializer for type `String` found.");
+            _booleanParser = serializerResolver.GetLeafValueParser<global::System.Boolean, global::System.Boolean>("Boolean") ?? throw new global::System.ArgumentException("No serializer for type `Boolean` found.");
+        }
+
+        public global::StrawberryShake.IOperationResult<IGetGenrePrevPageResult> Build(global::StrawberryShake.Response<global::System.Text.Json.JsonDocument> response)
+        {
+            (IGetGenrePrevPageResult Result, GetGenrePrevPageResultInfo Info)? data = null;
+            global::System.Collections.Generic.IReadOnlyList<global::StrawberryShake.IClientError>? errors = null;
+            if (response.Exception is null)
+            {
+                try
+                {
+                    if (response.Body != null)
+                    {
+                        if (response.Body.RootElement.TryGetProperty("data", out global::System.Text.Json.JsonElement dataElement) && dataElement.ValueKind == global::System.Text.Json.JsonValueKind.Object)
+                        {
+                            data = BuildData(dataElement);
+                        }
+
+                        if (response.Body.RootElement.TryGetProperty("errors", out global::System.Text.Json.JsonElement errorsElement))
+                        {
+                            errors = global::StrawberryShake.Json.JsonErrorParser.ParseErrors(errorsElement);
+                        }
+                    }
+                }
+                catch (global::System.Exception ex)
+                {
+                    errors = new global::StrawberryShake.IClientError[]{new global::StrawberryShake.ClientError(ex.Message, exception: ex, extensions: new global::System.Collections.Generic.Dictionary<global::System.String, global::System.Object?>{{"body", response.Body?.RootElement.ToString()}})};
+                }
+            }
+            else
+            {
+                errors = new global::StrawberryShake.IClientError[]{new global::StrawberryShake.ClientError(response.Exception.Message, exception: response.Exception, extensions: new global::System.Collections.Generic.Dictionary<global::System.String, global::System.Object?>{{"body", response.Body?.RootElement.ToString()}})};
+            }
+
+            return new global::StrawberryShake.OperationResult<IGetGenrePrevPageResult>(data?.Result, data?.Info, _resultDataFactory, errors);
+        }
+
+        private (IGetGenrePrevPageResult, GetGenrePrevPageResultInfo) BuildData(global::System.Text.Json.JsonElement obj)
+        {
+            var entityIds = new global::System.Collections.Generic.HashSet<global::StrawberryShake.EntityId>();
+            global::StrawberryShake.IEntityStoreSnapshot snapshot = default !;
+            _entityStore.Update(session =>
+            {
+                snapshot = session.CurrentSnapshot;
+            });
+            var resultInfo = new GetGenrePrevPageResultInfo(DeserializeIGetGenrePrevPage_AllGenre(global::StrawberryShake.Json.JsonElementExtensions.GetPropertyOrNull(obj, "allGenre")), entityIds, snapshot.Version);
+            return (_resultDataFactory.Create(resultInfo), resultInfo);
+        }
+
+        private global::Prelast.GraphQL.State.AllGenreConnectionData? DeserializeIGetGenrePrevPage_AllGenre(global::System.Text.Json.JsonElement? obj)
+        {
+            if (!obj.HasValue)
+            {
+                return null;
+            }
+
+            var typename = obj.Value.GetProperty("__typename").GetString();
+            if (typename?.Equals("AllGenreConnection", global::System.StringComparison.Ordinal) ?? false)
+            {
+                return new global::Prelast.GraphQL.State.AllGenreConnectionData(typename, nodes: DeserializeIGetGenrePrevPage_AllGenre_NodesArray(global::StrawberryShake.Json.JsonElementExtensions.GetPropertyOrNull(obj, "nodes")), pageInfo: DeserializeNonNullableIGetGenrePrevPage_AllGenre_PageInfo(global::StrawberryShake.Json.JsonElementExtensions.GetPropertyOrNull(obj, "pageInfo")));
+            }
+
+            throw new global::System.NotSupportedException();
+        }
+
+        private global::System.Collections.Generic.IReadOnlyList<global::Prelast.GraphQL.State.GenreData?>? DeserializeIGetGenrePrevPage_AllGenre_NodesArray(global::System.Text.Json.JsonElement? obj)
+        {
+            if (!obj.HasValue)
+            {
+                return null;
+            }
+
+            var genres = new global::System.Collections.Generic.List<global::Prelast.GraphQL.State.GenreData?>();
+            foreach (global::System.Text.Json.JsonElement child in obj.Value.EnumerateArray())
+            {
+                genres.Add(DeserializeIGetGenrePrevPage_AllGenre_Nodes(child));
+            }
+
+            return genres;
+        }
+
+        private global::Prelast.GraphQL.State.GenreData? DeserializeIGetGenrePrevPage_AllGenre_Nodes(global::System.Text.Json.JsonElement? obj)
+        {
+            if (!obj.HasValue)
+            {
+                return null;
+            }
+
+            var typename = obj.Value.GetProperty("__typename").GetString();
+            if (typename?.Equals("Genre", global::System.StringComparison.Ordinal) ?? false)
+            {
+                return new global::Prelast.GraphQL.State.GenreData(typename, genreId: DeserializeNonNullableInt32(global::StrawberryShake.Json.JsonElementExtensions.GetPropertyOrNull(obj, "genreId")), name: DeserializeString(global::StrawberryShake.Json.JsonElementExtensions.GetPropertyOrNull(obj, "name")));
+            }
+
+            throw new global::System.NotSupportedException();
+        }
+
+        private global::System.Int32 DeserializeNonNullableInt32(global::System.Text.Json.JsonElement? obj)
+        {
+            if (!obj.HasValue)
+            {
+                throw new global::System.ArgumentNullException();
+            }
+
+            return _intParser.Parse(obj.Value.GetInt32()!);
+        }
+
+        private global::System.String? DeserializeString(global::System.Text.Json.JsonElement? obj)
+        {
+            if (!obj.HasValue)
+            {
+                return null;
+            }
+
+            return _stringParser.Parse(obj.Value.GetString()!);
+        }
+
+        private global::Prelast.GraphQL.State.PageInfoData DeserializeNonNullableIGetGenrePrevPage_AllGenre_PageInfo(global::System.Text.Json.JsonElement? obj)
+        {
+            if (!obj.HasValue)
+            {
+                throw new global::System.ArgumentNullException();
+            }
+
+            var typename = obj.Value.GetProperty("__typename").GetString();
+            if (typename?.Equals("PageInfo", global::System.StringComparison.Ordinal) ?? false)
+            {
+                return new global::Prelast.GraphQL.State.PageInfoData(typename, hasNextPage: DeserializeNonNullableBoolean(global::StrawberryShake.Json.JsonElementExtensions.GetPropertyOrNull(obj, "hasNextPage")), endCursor: DeserializeString(global::StrawberryShake.Json.JsonElementExtensions.GetPropertyOrNull(obj, "endCursor")));
+            }
+
+            throw new global::System.NotSupportedException();
+        }
+
+        private global::System.Boolean DeserializeNonNullableBoolean(global::System.Text.Json.JsonElement? obj)
+        {
+            if (!obj.HasValue)
+            {
+                throw new global::System.ArgumentNullException();
+            }
+
+            return _booleanParser.Parse(obj.Value.GetBoolean()!);
+        }
+    }
+
+    [global::System.CodeDom.Compiler.GeneratedCode("StrawberryShake", "12.4.1.0")]
     public partial class ChangeNameDevBuilder : global::StrawberryShake.IOperationResultBuilder<global::System.Text.Json.JsonDocument, global::Prelast.GraphQL.IChangeNameDevResult>
     {
         private readonly global::StrawberryShake.IEntityStore _entityStore;
@@ -7184,8 +14911,24 @@ namespace Prelast.GraphQL.State
             {
                 snapshot = session.CurrentSnapshot;
             });
-            var resultInfo = new ChangeNameDevResultInfo(DeserializeIChangeNameDev_ChangeDevNameById(global::StrawberryShake.Json.JsonElementExtensions.GetPropertyOrNull(obj, "changeDevNameById")), entityIds, snapshot.Version);
+            var resultInfo = new ChangeNameDevResultInfo(DeserializeIChangeNameDev_ChangeDevNameByIdArray(global::StrawberryShake.Json.JsonElementExtensions.GetPropertyOrNull(obj, "changeDevNameById")), entityIds, snapshot.Version);
             return (_resultDataFactory.Create(resultInfo), resultInfo);
+        }
+
+        private global::System.Collections.Generic.IReadOnlyList<global::Prelast.GraphQL.State.DevelopersData?>? DeserializeIChangeNameDev_ChangeDevNameByIdArray(global::System.Text.Json.JsonElement? obj)
+        {
+            if (!obj.HasValue)
+            {
+                return null;
+            }
+
+            var developerss = new global::System.Collections.Generic.List<global::Prelast.GraphQL.State.DevelopersData?>();
+            foreach (global::System.Text.Json.JsonElement child in obj.Value.EnumerateArray())
+            {
+                developerss.Add(DeserializeIChangeNameDev_ChangeDevNameById(child));
+            }
+
+            return developerss;
         }
 
         private global::Prelast.GraphQL.State.DevelopersData? DeserializeIChangeNameDev_ChangeDevNameById(global::System.Text.Json.JsonElement? obj)
@@ -7284,8 +15027,24 @@ namespace Prelast.GraphQL.State
             {
                 snapshot = session.CurrentSnapshot;
             });
-            var resultInfo = new ChangeNameGenreResultInfo(DeserializeIChangeNameGenre_ChangeGenreNameById(global::StrawberryShake.Json.JsonElementExtensions.GetPropertyOrNull(obj, "changeGenreNameById")), entityIds, snapshot.Version);
+            var resultInfo = new ChangeNameGenreResultInfo(DeserializeIChangeNameGenre_ChangeGenreNameByIdArray(global::StrawberryShake.Json.JsonElementExtensions.GetPropertyOrNull(obj, "changeGenreNameById")), entityIds, snapshot.Version);
             return (_resultDataFactory.Create(resultInfo), resultInfo);
+        }
+
+        private global::System.Collections.Generic.IReadOnlyList<global::Prelast.GraphQL.State.GenreData?>? DeserializeIChangeNameGenre_ChangeGenreNameByIdArray(global::System.Text.Json.JsonElement? obj)
+        {
+            if (!obj.HasValue)
+            {
+                return null;
+            }
+
+            var genres = new global::System.Collections.Generic.List<global::Prelast.GraphQL.State.GenreData?>();
+            foreach (global::System.Text.Json.JsonElement child in obj.Value.EnumerateArray())
+            {
+                genres.Add(DeserializeIChangeNameGenre_ChangeGenreNameById(child));
+            }
+
+            return genres;
         }
 
         private global::Prelast.GraphQL.State.GenreData? DeserializeIChangeNameGenre_ChangeGenreNameById(global::System.Text.Json.JsonElement? obj)
@@ -7386,8 +15145,24 @@ namespace Prelast.GraphQL.State
             {
                 snapshot = session.CurrentSnapshot;
             });
-            var resultInfo = new ChangePriceResultInfo(DeserializeIChangePrice_ChangeGamePriceById(global::StrawberryShake.Json.JsonElementExtensions.GetPropertyOrNull(obj, "changeGamePriceById")), entityIds, snapshot.Version);
+            var resultInfo = new ChangePriceResultInfo(DeserializeIChangePrice_ChangeGamePriceByIdArray(global::StrawberryShake.Json.JsonElementExtensions.GetPropertyOrNull(obj, "changeGamePriceById")), entityIds, snapshot.Version);
             return (_resultDataFactory.Create(resultInfo), resultInfo);
+        }
+
+        private global::System.Collections.Generic.IReadOnlyList<global::Prelast.GraphQL.State.GamesData?>? DeserializeIChangePrice_ChangeGamePriceByIdArray(global::System.Text.Json.JsonElement? obj)
+        {
+            if (!obj.HasValue)
+            {
+                return null;
+            }
+
+            var gamess = new global::System.Collections.Generic.List<global::Prelast.GraphQL.State.GamesData?>();
+            foreach (global::System.Text.Json.JsonElement child in obj.Value.EnumerateArray())
+            {
+                gamess.Add(DeserializeIChangePrice_ChangeGamePriceById(child));
+            }
+
+            return gamess;
         }
 
         private global::Prelast.GraphQL.State.GamesData? DeserializeIChangePrice_ChangeGamePriceById(global::System.Text.Json.JsonElement? obj)
@@ -7528,8 +15303,24 @@ namespace Prelast.GraphQL.State
             {
                 snapshot = session.CurrentSnapshot;
             });
-            var resultInfo = new CreateDevResultInfo(DeserializeICreateDev_CreateDeveloper(global::StrawberryShake.Json.JsonElementExtensions.GetPropertyOrNull(obj, "createDeveloper")), entityIds, snapshot.Version);
+            var resultInfo = new CreateDevResultInfo(DeserializeICreateDev_CreateDeveloperArray(global::StrawberryShake.Json.JsonElementExtensions.GetPropertyOrNull(obj, "createDeveloper")), entityIds, snapshot.Version);
             return (_resultDataFactory.Create(resultInfo), resultInfo);
+        }
+
+        private global::System.Collections.Generic.IReadOnlyList<global::Prelast.GraphQL.State.DevelopersData?>? DeserializeICreateDev_CreateDeveloperArray(global::System.Text.Json.JsonElement? obj)
+        {
+            if (!obj.HasValue)
+            {
+                return null;
+            }
+
+            var developerss = new global::System.Collections.Generic.List<global::Prelast.GraphQL.State.DevelopersData?>();
+            foreach (global::System.Text.Json.JsonElement child in obj.Value.EnumerateArray())
+            {
+                developerss.Add(DeserializeICreateDev_CreateDeveloper(child));
+            }
+
+            return developerss;
         }
 
         private global::Prelast.GraphQL.State.DevelopersData? DeserializeICreateDev_CreateDeveloper(global::System.Text.Json.JsonElement? obj)
@@ -7630,8 +15421,24 @@ namespace Prelast.GraphQL.State
             {
                 snapshot = session.CurrentSnapshot;
             });
-            var resultInfo = new CreateGameResultInfo(DeserializeICreateGame_CreateGameWithDeveloperGenreId(global::StrawberryShake.Json.JsonElementExtensions.GetPropertyOrNull(obj, "createGameWithDeveloperGenreId")), entityIds, snapshot.Version);
+            var resultInfo = new CreateGameResultInfo(DeserializeICreateGame_CreateGameWithDeveloperGenreIdArray(global::StrawberryShake.Json.JsonElementExtensions.GetPropertyOrNull(obj, "createGameWithDeveloperGenreId")), entityIds, snapshot.Version);
             return (_resultDataFactory.Create(resultInfo), resultInfo);
+        }
+
+        private global::System.Collections.Generic.IReadOnlyList<global::Prelast.GraphQL.State.GamesData?>? DeserializeICreateGame_CreateGameWithDeveloperGenreIdArray(global::System.Text.Json.JsonElement? obj)
+        {
+            if (!obj.HasValue)
+            {
+                return null;
+            }
+
+            var gamess = new global::System.Collections.Generic.List<global::Prelast.GraphQL.State.GamesData?>();
+            foreach (global::System.Text.Json.JsonElement child in obj.Value.EnumerateArray())
+            {
+                gamess.Add(DeserializeICreateGame_CreateGameWithDeveloperGenreId(child));
+            }
+
+            return gamess;
         }
 
         private global::Prelast.GraphQL.State.GamesData? DeserializeICreateGame_CreateGameWithDeveloperGenreId(global::System.Text.Json.JsonElement? obj)
@@ -7772,8 +15579,24 @@ namespace Prelast.GraphQL.State
             {
                 snapshot = session.CurrentSnapshot;
             });
-            var resultInfo = new CreateGenreResultInfo(DeserializeICreateGenre_CreateGenre(global::StrawberryShake.Json.JsonElementExtensions.GetPropertyOrNull(obj, "createGenre")), entityIds, snapshot.Version);
+            var resultInfo = new CreateGenreResultInfo(DeserializeICreateGenre_CreateGenreArray(global::StrawberryShake.Json.JsonElementExtensions.GetPropertyOrNull(obj, "createGenre")), entityIds, snapshot.Version);
             return (_resultDataFactory.Create(resultInfo), resultInfo);
+        }
+
+        private global::System.Collections.Generic.IReadOnlyList<global::Prelast.GraphQL.State.GenreData?>? DeserializeICreateGenre_CreateGenreArray(global::System.Text.Json.JsonElement? obj)
+        {
+            if (!obj.HasValue)
+            {
+                return null;
+            }
+
+            var genres = new global::System.Collections.Generic.List<global::Prelast.GraphQL.State.GenreData?>();
+            foreach (global::System.Text.Json.JsonElement child in obj.Value.EnumerateArray())
+            {
+                genres.Add(DeserializeICreateGenre_CreateGenre(child));
+            }
+
+            return genres;
         }
 
         private global::Prelast.GraphQL.State.GenreData? DeserializeICreateGenre_CreateGenre(global::System.Text.Json.JsonElement? obj)
@@ -7872,8 +15695,50 @@ namespace Prelast.GraphQL.State
             {
                 snapshot = session.CurrentSnapshot;
             });
-            var resultInfo = new DelDevelResultInfo(DeserializeString(global::StrawberryShake.Json.JsonElementExtensions.GetPropertyOrNull(obj, "deleteDevById")), entityIds, snapshot.Version);
+            var resultInfo = new DelDevelResultInfo(DeserializeIDelDevel_DeleteDevByIdArray(global::StrawberryShake.Json.JsonElementExtensions.GetPropertyOrNull(obj, "deleteDevById")), entityIds, snapshot.Version);
             return (_resultDataFactory.Create(resultInfo), resultInfo);
+        }
+
+        private global::System.Collections.Generic.IReadOnlyList<global::Prelast.GraphQL.State.DevelopersData?>? DeserializeIDelDevel_DeleteDevByIdArray(global::System.Text.Json.JsonElement? obj)
+        {
+            if (!obj.HasValue)
+            {
+                return null;
+            }
+
+            var developerss = new global::System.Collections.Generic.List<global::Prelast.GraphQL.State.DevelopersData?>();
+            foreach (global::System.Text.Json.JsonElement child in obj.Value.EnumerateArray())
+            {
+                developerss.Add(DeserializeIDelDevel_DeleteDevById(child));
+            }
+
+            return developerss;
+        }
+
+        private global::Prelast.GraphQL.State.DevelopersData? DeserializeIDelDevel_DeleteDevById(global::System.Text.Json.JsonElement? obj)
+        {
+            if (!obj.HasValue)
+            {
+                return null;
+            }
+
+            var typename = obj.Value.GetProperty("__typename").GetString();
+            if (typename?.Equals("Developers", global::System.StringComparison.Ordinal) ?? false)
+            {
+                return new global::Prelast.GraphQL.State.DevelopersData(typename, developerId: DeserializeNonNullableInt32(global::StrawberryShake.Json.JsonElementExtensions.GetPropertyOrNull(obj, "developerId")), name: DeserializeString(global::StrawberryShake.Json.JsonElementExtensions.GetPropertyOrNull(obj, "name")), country: DeserializeString(global::StrawberryShake.Json.JsonElementExtensions.GetPropertyOrNull(obj, "country")));
+            }
+
+            throw new global::System.NotSupportedException();
+        }
+
+        private global::System.Int32 DeserializeNonNullableInt32(global::System.Text.Json.JsonElement? obj)
+        {
+            if (!obj.HasValue)
+            {
+                throw new global::System.ArgumentNullException();
+            }
+
+            return _intParser.Parse(obj.Value.GetInt32()!);
         }
 
         private global::System.String? DeserializeString(global::System.Text.Json.JsonElement? obj)
@@ -7895,6 +15760,7 @@ namespace Prelast.GraphQL.State
         private readonly global::StrawberryShake.IOperationResultDataFactory<global::Prelast.GraphQL.IDelGameResult> _resultDataFactory;
         private readonly global::StrawberryShake.Serialization.ILeafValueParser<global::System.Int32, global::System.Int32> _intParser;
         private readonly global::StrawberryShake.Serialization.ILeafValueParser<global::System.String, global::System.String> _stringParser;
+        private readonly global::StrawberryShake.Serialization.ILeafValueParser<global::System.Double, global::System.Double> _floatParser;
         public DelGameBuilder(global::StrawberryShake.IEntityStore entityStore, global::StrawberryShake.IEntityIdSerializer idSerializer, global::StrawberryShake.IOperationResultDataFactory<global::Prelast.GraphQL.IDelGameResult> resultDataFactory, global::StrawberryShake.Serialization.ISerializerResolver serializerResolver)
         {
             _entityStore = entityStore ?? throw new global::System.ArgumentNullException(nameof(entityStore));
@@ -7902,6 +15768,7 @@ namespace Prelast.GraphQL.State
             _resultDataFactory = resultDataFactory ?? throw new global::System.ArgumentNullException(nameof(resultDataFactory));
             _intParser = serializerResolver.GetLeafValueParser<global::System.Int32, global::System.Int32>("Int") ?? throw new global::System.ArgumentException("No serializer for type `Int` found.");
             _stringParser = serializerResolver.GetLeafValueParser<global::System.String, global::System.String>("String") ?? throw new global::System.ArgumentException("No serializer for type `String` found.");
+            _floatParser = serializerResolver.GetLeafValueParser<global::System.Double, global::System.Double>("Float") ?? throw new global::System.ArgumentException("No serializer for type `Float` found.");
         }
 
         public global::StrawberryShake.IOperationResult<IDelGameResult> Build(global::StrawberryShake.Response<global::System.Text.Json.JsonDocument> response)
@@ -7946,8 +15813,50 @@ namespace Prelast.GraphQL.State
             {
                 snapshot = session.CurrentSnapshot;
             });
-            var resultInfo = new DelGameResultInfo(DeserializeString(global::StrawberryShake.Json.JsonElementExtensions.GetPropertyOrNull(obj, "deleteGameById")), entityIds, snapshot.Version);
+            var resultInfo = new DelGameResultInfo(DeserializeIDelGame_DeleteGameByIdArray(global::StrawberryShake.Json.JsonElementExtensions.GetPropertyOrNull(obj, "deleteGameById")), entityIds, snapshot.Version);
             return (_resultDataFactory.Create(resultInfo), resultInfo);
+        }
+
+        private global::System.Collections.Generic.IReadOnlyList<global::Prelast.GraphQL.State.GamesData?>? DeserializeIDelGame_DeleteGameByIdArray(global::System.Text.Json.JsonElement? obj)
+        {
+            if (!obj.HasValue)
+            {
+                return null;
+            }
+
+            var gamess = new global::System.Collections.Generic.List<global::Prelast.GraphQL.State.GamesData?>();
+            foreach (global::System.Text.Json.JsonElement child in obj.Value.EnumerateArray())
+            {
+                gamess.Add(DeserializeIDelGame_DeleteGameById(child));
+            }
+
+            return gamess;
+        }
+
+        private global::Prelast.GraphQL.State.GamesData? DeserializeIDelGame_DeleteGameById(global::System.Text.Json.JsonElement? obj)
+        {
+            if (!obj.HasValue)
+            {
+                return null;
+            }
+
+            var typename = obj.Value.GetProperty("__typename").GetString();
+            if (typename?.Equals("Games", global::System.StringComparison.Ordinal) ?? false)
+            {
+                return new global::Prelast.GraphQL.State.GamesData(typename, gamesId: DeserializeNonNullableInt32(global::StrawberryShake.Json.JsonElementExtensions.GetPropertyOrNull(obj, "gamesId")), name: DeserializeString(global::StrawberryShake.Json.JsonElementExtensions.GetPropertyOrNull(obj, "name")), price: DeserializeNonNullableDouble(global::StrawberryShake.Json.JsonElementExtensions.GetPropertyOrNull(obj, "price")), genre: DeserializeIChangePrice_ChangeGamePriceById_Genre(global::StrawberryShake.Json.JsonElementExtensions.GetPropertyOrNull(obj, "genre")), developer: DeserializeIChangePrice_ChangeGamePriceById_Developer(global::StrawberryShake.Json.JsonElementExtensions.GetPropertyOrNull(obj, "developer")));
+            }
+
+            throw new global::System.NotSupportedException();
+        }
+
+        private global::System.Int32 DeserializeNonNullableInt32(global::System.Text.Json.JsonElement? obj)
+        {
+            if (!obj.HasValue)
+            {
+                throw new global::System.ArgumentNullException();
+            }
+
+            return _intParser.Parse(obj.Value.GetInt32()!);
         }
 
         private global::System.String? DeserializeString(global::System.Text.Json.JsonElement? obj)
@@ -7958,6 +15867,48 @@ namespace Prelast.GraphQL.State
             }
 
             return _stringParser.Parse(obj.Value.GetString()!);
+        }
+
+        private global::System.Double DeserializeNonNullableDouble(global::System.Text.Json.JsonElement? obj)
+        {
+            if (!obj.HasValue)
+            {
+                throw new global::System.ArgumentNullException();
+            }
+
+            return _floatParser.Parse(obj.Value.GetDouble()!);
+        }
+
+        private global::Prelast.GraphQL.State.GenreData? DeserializeIChangePrice_ChangeGamePriceById_Genre(global::System.Text.Json.JsonElement? obj)
+        {
+            if (!obj.HasValue)
+            {
+                return null;
+            }
+
+            var typename = obj.Value.GetProperty("__typename").GetString();
+            if (typename?.Equals("Genre", global::System.StringComparison.Ordinal) ?? false)
+            {
+                return new global::Prelast.GraphQL.State.GenreData(typename, name: DeserializeString(global::StrawberryShake.Json.JsonElementExtensions.GetPropertyOrNull(obj, "name")));
+            }
+
+            throw new global::System.NotSupportedException();
+        }
+
+        private global::Prelast.GraphQL.State.DevelopersData? DeserializeIChangePrice_ChangeGamePriceById_Developer(global::System.Text.Json.JsonElement? obj)
+        {
+            if (!obj.HasValue)
+            {
+                return null;
+            }
+
+            var typename = obj.Value.GetProperty("__typename").GetString();
+            if (typename?.Equals("Developers", global::System.StringComparison.Ordinal) ?? false)
+            {
+                return new global::Prelast.GraphQL.State.DevelopersData(typename, name: DeserializeString(global::StrawberryShake.Json.JsonElementExtensions.GetPropertyOrNull(obj, "name")), country: DeserializeString(global::StrawberryShake.Json.JsonElementExtensions.GetPropertyOrNull(obj, "country")));
+            }
+
+            throw new global::System.NotSupportedException();
         }
     }
 
@@ -8020,8 +15971,50 @@ namespace Prelast.GraphQL.State
             {
                 snapshot = session.CurrentSnapshot;
             });
-            var resultInfo = new DelGenreResultInfo(DeserializeString(global::StrawberryShake.Json.JsonElementExtensions.GetPropertyOrNull(obj, "deleteGenreById")), entityIds, snapshot.Version);
+            var resultInfo = new DelGenreResultInfo(DeserializeIDelGenre_DeleteGenreByIdArray(global::StrawberryShake.Json.JsonElementExtensions.GetPropertyOrNull(obj, "deleteGenreById")), entityIds, snapshot.Version);
             return (_resultDataFactory.Create(resultInfo), resultInfo);
+        }
+
+        private global::System.Collections.Generic.IReadOnlyList<global::Prelast.GraphQL.State.GenreData?>? DeserializeIDelGenre_DeleteGenreByIdArray(global::System.Text.Json.JsonElement? obj)
+        {
+            if (!obj.HasValue)
+            {
+                return null;
+            }
+
+            var genres = new global::System.Collections.Generic.List<global::Prelast.GraphQL.State.GenreData?>();
+            foreach (global::System.Text.Json.JsonElement child in obj.Value.EnumerateArray())
+            {
+                genres.Add(DeserializeIDelGenre_DeleteGenreById(child));
+            }
+
+            return genres;
+        }
+
+        private global::Prelast.GraphQL.State.GenreData? DeserializeIDelGenre_DeleteGenreById(global::System.Text.Json.JsonElement? obj)
+        {
+            if (!obj.HasValue)
+            {
+                return null;
+            }
+
+            var typename = obj.Value.GetProperty("__typename").GetString();
+            if (typename?.Equals("Genre", global::System.StringComparison.Ordinal) ?? false)
+            {
+                return new global::Prelast.GraphQL.State.GenreData(typename, genreId: DeserializeNonNullableInt32(global::StrawberryShake.Json.JsonElementExtensions.GetPropertyOrNull(obj, "genreId")), name: DeserializeString(global::StrawberryShake.Json.JsonElementExtensions.GetPropertyOrNull(obj, "name")));
+            }
+
+            throw new global::System.NotSupportedException();
+        }
+
+        private global::System.Int32 DeserializeNonNullableInt32(global::System.Text.Json.JsonElement? obj)
+        {
+            if (!obj.HasValue)
+            {
+                throw new global::System.ArgumentNullException();
+            }
+
+            return _intParser.Parse(obj.Value.GetInt32()!);
         }
 
         private global::System.String? DeserializeString(global::System.Text.Json.JsonElement? obj)
@@ -8308,6 +16301,7 @@ namespace Prelast.GraphQL.State
         private readonly global::StrawberryShake.Serialization.ILeafValueParser<global::System.Int32, global::System.Int32> _intParser;
         private readonly global::StrawberryShake.Serialization.ILeafValueParser<global::System.String, global::System.String> _stringParser;
         private readonly global::StrawberryShake.Serialization.ILeafValueParser<global::System.Double, global::System.Double> _floatParser;
+        private readonly global::StrawberryShake.Serialization.ILeafValueParser<global::System.Boolean, global::System.Boolean> _booleanParser;
         public GetGamesBuilder(global::StrawberryShake.IEntityStore entityStore, global::StrawberryShake.IEntityIdSerializer idSerializer, global::StrawberryShake.IOperationResultDataFactory<global::Prelast.GraphQL.IGetGamesResult> resultDataFactory, global::StrawberryShake.Serialization.ISerializerResolver serializerResolver)
         {
             _entityStore = entityStore ?? throw new global::System.ArgumentNullException(nameof(entityStore));
@@ -8316,6 +16310,7 @@ namespace Prelast.GraphQL.State
             _intParser = serializerResolver.GetLeafValueParser<global::System.Int32, global::System.Int32>("Int") ?? throw new global::System.ArgumentException("No serializer for type `Int` found.");
             _stringParser = serializerResolver.GetLeafValueParser<global::System.String, global::System.String>("String") ?? throw new global::System.ArgumentException("No serializer for type `String` found.");
             _floatParser = serializerResolver.GetLeafValueParser<global::System.Double, global::System.Double>("Float") ?? throw new global::System.ArgumentException("No serializer for type `Float` found.");
+            _booleanParser = serializerResolver.GetLeafValueParser<global::System.Boolean, global::System.Boolean>("Boolean") ?? throw new global::System.ArgumentException("No serializer for type `Boolean` found.");
         }
 
         public global::StrawberryShake.IOperationResult<IGetGamesResult> Build(global::StrawberryShake.Response<global::System.Text.Json.JsonDocument> response)
@@ -8374,7 +16369,7 @@ namespace Prelast.GraphQL.State
             var typename = obj.Value.GetProperty("__typename").GetString();
             if (typename?.Equals("AllGameWithDevGerneConnection", global::System.StringComparison.Ordinal) ?? false)
             {
-                return new global::Prelast.GraphQL.State.AllGameWithDevGerneConnectionData(typename, nodes: DeserializeIGetGames_AllGameWithDevGerne_NodesArray(global::StrawberryShake.Json.JsonElementExtensions.GetPropertyOrNull(obj, "nodes")));
+                return new global::Prelast.GraphQL.State.AllGameWithDevGerneConnectionData(typename, nodes: DeserializeIGetGames_AllGameWithDevGerne_NodesArray(global::StrawberryShake.Json.JsonElementExtensions.GetPropertyOrNull(obj, "nodes")), pageInfo: DeserializeNonNullableIGetGames_AllGameWithDevGerne_PageInfo(global::StrawberryShake.Json.JsonElementExtensions.GetPropertyOrNull(obj, "pageInfo")));
             }
 
             throw new global::System.NotSupportedException();
@@ -8472,6 +16467,440 @@ namespace Prelast.GraphQL.State
             }
 
             throw new global::System.NotSupportedException();
+        }
+
+        private global::Prelast.GraphQL.State.PageInfoData DeserializeNonNullableIGetGames_AllGameWithDevGerne_PageInfo(global::System.Text.Json.JsonElement? obj)
+        {
+            if (!obj.HasValue)
+            {
+                throw new global::System.ArgumentNullException();
+            }
+
+            var typename = obj.Value.GetProperty("__typename").GetString();
+            if (typename?.Equals("PageInfo", global::System.StringComparison.Ordinal) ?? false)
+            {
+                return new global::Prelast.GraphQL.State.PageInfoData(typename, hasNextPage: DeserializeNonNullableBoolean(global::StrawberryShake.Json.JsonElementExtensions.GetPropertyOrNull(obj, "hasNextPage")), endCursor: DeserializeString(global::StrawberryShake.Json.JsonElementExtensions.GetPropertyOrNull(obj, "endCursor")));
+            }
+
+            throw new global::System.NotSupportedException();
+        }
+
+        private global::System.Boolean DeserializeNonNullableBoolean(global::System.Text.Json.JsonElement? obj)
+        {
+            if (!obj.HasValue)
+            {
+                throw new global::System.ArgumentNullException();
+            }
+
+            return _booleanParser.Parse(obj.Value.GetBoolean()!);
+        }
+    }
+
+    [global::System.CodeDom.Compiler.GeneratedCode("StrawberryShake", "12.4.1.0")]
+    public partial class GetGamesNextPageBuilder : global::StrawberryShake.IOperationResultBuilder<global::System.Text.Json.JsonDocument, global::Prelast.GraphQL.IGetGamesNextPageResult>
+    {
+        private readonly global::StrawberryShake.IEntityStore _entityStore;
+        private readonly global::StrawberryShake.IEntityIdSerializer _idSerializer;
+        private readonly global::StrawberryShake.IOperationResultDataFactory<global::Prelast.GraphQL.IGetGamesNextPageResult> _resultDataFactory;
+        private readonly global::StrawberryShake.Serialization.ILeafValueParser<global::System.Int32, global::System.Int32> _intParser;
+        private readonly global::StrawberryShake.Serialization.ILeafValueParser<global::System.String, global::System.String> _stringParser;
+        private readonly global::StrawberryShake.Serialization.ILeafValueParser<global::System.Double, global::System.Double> _floatParser;
+        private readonly global::StrawberryShake.Serialization.ILeafValueParser<global::System.Boolean, global::System.Boolean> _booleanParser;
+        public GetGamesNextPageBuilder(global::StrawberryShake.IEntityStore entityStore, global::StrawberryShake.IEntityIdSerializer idSerializer, global::StrawberryShake.IOperationResultDataFactory<global::Prelast.GraphQL.IGetGamesNextPageResult> resultDataFactory, global::StrawberryShake.Serialization.ISerializerResolver serializerResolver)
+        {
+            _entityStore = entityStore ?? throw new global::System.ArgumentNullException(nameof(entityStore));
+            _idSerializer = idSerializer ?? throw new global::System.ArgumentNullException(nameof(idSerializer));
+            _resultDataFactory = resultDataFactory ?? throw new global::System.ArgumentNullException(nameof(resultDataFactory));
+            _intParser = serializerResolver.GetLeafValueParser<global::System.Int32, global::System.Int32>("Int") ?? throw new global::System.ArgumentException("No serializer for type `Int` found.");
+            _stringParser = serializerResolver.GetLeafValueParser<global::System.String, global::System.String>("String") ?? throw new global::System.ArgumentException("No serializer for type `String` found.");
+            _floatParser = serializerResolver.GetLeafValueParser<global::System.Double, global::System.Double>("Float") ?? throw new global::System.ArgumentException("No serializer for type `Float` found.");
+            _booleanParser = serializerResolver.GetLeafValueParser<global::System.Boolean, global::System.Boolean>("Boolean") ?? throw new global::System.ArgumentException("No serializer for type `Boolean` found.");
+        }
+
+        public global::StrawberryShake.IOperationResult<IGetGamesNextPageResult> Build(global::StrawberryShake.Response<global::System.Text.Json.JsonDocument> response)
+        {
+            (IGetGamesNextPageResult Result, GetGamesNextPageResultInfo Info)? data = null;
+            global::System.Collections.Generic.IReadOnlyList<global::StrawberryShake.IClientError>? errors = null;
+            if (response.Exception is null)
+            {
+                try
+                {
+                    if (response.Body != null)
+                    {
+                        if (response.Body.RootElement.TryGetProperty("data", out global::System.Text.Json.JsonElement dataElement) && dataElement.ValueKind == global::System.Text.Json.JsonValueKind.Object)
+                        {
+                            data = BuildData(dataElement);
+                        }
+
+                        if (response.Body.RootElement.TryGetProperty("errors", out global::System.Text.Json.JsonElement errorsElement))
+                        {
+                            errors = global::StrawberryShake.Json.JsonErrorParser.ParseErrors(errorsElement);
+                        }
+                    }
+                }
+                catch (global::System.Exception ex)
+                {
+                    errors = new global::StrawberryShake.IClientError[]{new global::StrawberryShake.ClientError(ex.Message, exception: ex, extensions: new global::System.Collections.Generic.Dictionary<global::System.String, global::System.Object?>{{"body", response.Body?.RootElement.ToString()}})};
+                }
+            }
+            else
+            {
+                errors = new global::StrawberryShake.IClientError[]{new global::StrawberryShake.ClientError(response.Exception.Message, exception: response.Exception, extensions: new global::System.Collections.Generic.Dictionary<global::System.String, global::System.Object?>{{"body", response.Body?.RootElement.ToString()}})};
+            }
+
+            return new global::StrawberryShake.OperationResult<IGetGamesNextPageResult>(data?.Result, data?.Info, _resultDataFactory, errors);
+        }
+
+        private (IGetGamesNextPageResult, GetGamesNextPageResultInfo) BuildData(global::System.Text.Json.JsonElement obj)
+        {
+            var entityIds = new global::System.Collections.Generic.HashSet<global::StrawberryShake.EntityId>();
+            global::StrawberryShake.IEntityStoreSnapshot snapshot = default !;
+            _entityStore.Update(session =>
+            {
+                snapshot = session.CurrentSnapshot;
+            });
+            var resultInfo = new GetGamesNextPageResultInfo(DeserializeIGetGamesNextPage_AllGameWithDevGerne(global::StrawberryShake.Json.JsonElementExtensions.GetPropertyOrNull(obj, "allGameWithDevGerne")), entityIds, snapshot.Version);
+            return (_resultDataFactory.Create(resultInfo), resultInfo);
+        }
+
+        private global::Prelast.GraphQL.State.AllGameWithDevGerneConnectionData? DeserializeIGetGamesNextPage_AllGameWithDevGerne(global::System.Text.Json.JsonElement? obj)
+        {
+            if (!obj.HasValue)
+            {
+                return null;
+            }
+
+            var typename = obj.Value.GetProperty("__typename").GetString();
+            if (typename?.Equals("AllGameWithDevGerneConnection", global::System.StringComparison.Ordinal) ?? false)
+            {
+                return new global::Prelast.GraphQL.State.AllGameWithDevGerneConnectionData(typename, nodes: DeserializeIGetGamesNextPage_AllGameWithDevGerne_NodesArray(global::StrawberryShake.Json.JsonElementExtensions.GetPropertyOrNull(obj, "nodes")), pageInfo: DeserializeNonNullableIGetGamesNextPage_AllGameWithDevGerne_PageInfo(global::StrawberryShake.Json.JsonElementExtensions.GetPropertyOrNull(obj, "pageInfo")));
+            }
+
+            throw new global::System.NotSupportedException();
+        }
+
+        private global::System.Collections.Generic.IReadOnlyList<global::Prelast.GraphQL.State.GamesData?>? DeserializeIGetGamesNextPage_AllGameWithDevGerne_NodesArray(global::System.Text.Json.JsonElement? obj)
+        {
+            if (!obj.HasValue)
+            {
+                return null;
+            }
+
+            var gamess = new global::System.Collections.Generic.List<global::Prelast.GraphQL.State.GamesData?>();
+            foreach (global::System.Text.Json.JsonElement child in obj.Value.EnumerateArray())
+            {
+                gamess.Add(DeserializeIGetGamesNextPage_AllGameWithDevGerne_Nodes(child));
+            }
+
+            return gamess;
+        }
+
+        private global::Prelast.GraphQL.State.GamesData? DeserializeIGetGamesNextPage_AllGameWithDevGerne_Nodes(global::System.Text.Json.JsonElement? obj)
+        {
+            if (!obj.HasValue)
+            {
+                return null;
+            }
+
+            var typename = obj.Value.GetProperty("__typename").GetString();
+            if (typename?.Equals("Games", global::System.StringComparison.Ordinal) ?? false)
+            {
+                return new global::Prelast.GraphQL.State.GamesData(typename, gamesId: DeserializeNonNullableInt32(global::StrawberryShake.Json.JsonElementExtensions.GetPropertyOrNull(obj, "gamesId")), name: DeserializeString(global::StrawberryShake.Json.JsonElementExtensions.GetPropertyOrNull(obj, "name")), price: DeserializeNonNullableDouble(global::StrawberryShake.Json.JsonElementExtensions.GetPropertyOrNull(obj, "price")), genre: DeserializeIChangePrice_ChangeGamePriceById_Genre(global::StrawberryShake.Json.JsonElementExtensions.GetPropertyOrNull(obj, "genre")), developer: DeserializeIChangePrice_ChangeGamePriceById_Developer(global::StrawberryShake.Json.JsonElementExtensions.GetPropertyOrNull(obj, "developer")));
+            }
+
+            throw new global::System.NotSupportedException();
+        }
+
+        private global::System.Int32 DeserializeNonNullableInt32(global::System.Text.Json.JsonElement? obj)
+        {
+            if (!obj.HasValue)
+            {
+                throw new global::System.ArgumentNullException();
+            }
+
+            return _intParser.Parse(obj.Value.GetInt32()!);
+        }
+
+        private global::System.String? DeserializeString(global::System.Text.Json.JsonElement? obj)
+        {
+            if (!obj.HasValue)
+            {
+                return null;
+            }
+
+            return _stringParser.Parse(obj.Value.GetString()!);
+        }
+
+        private global::System.Double DeserializeNonNullableDouble(global::System.Text.Json.JsonElement? obj)
+        {
+            if (!obj.HasValue)
+            {
+                throw new global::System.ArgumentNullException();
+            }
+
+            return _floatParser.Parse(obj.Value.GetDouble()!);
+        }
+
+        private global::Prelast.GraphQL.State.GenreData? DeserializeIChangePrice_ChangeGamePriceById_Genre(global::System.Text.Json.JsonElement? obj)
+        {
+            if (!obj.HasValue)
+            {
+                return null;
+            }
+
+            var typename = obj.Value.GetProperty("__typename").GetString();
+            if (typename?.Equals("Genre", global::System.StringComparison.Ordinal) ?? false)
+            {
+                return new global::Prelast.GraphQL.State.GenreData(typename, name: DeserializeString(global::StrawberryShake.Json.JsonElementExtensions.GetPropertyOrNull(obj, "name")));
+            }
+
+            throw new global::System.NotSupportedException();
+        }
+
+        private global::Prelast.GraphQL.State.DevelopersData? DeserializeIChangePrice_ChangeGamePriceById_Developer(global::System.Text.Json.JsonElement? obj)
+        {
+            if (!obj.HasValue)
+            {
+                return null;
+            }
+
+            var typename = obj.Value.GetProperty("__typename").GetString();
+            if (typename?.Equals("Developers", global::System.StringComparison.Ordinal) ?? false)
+            {
+                return new global::Prelast.GraphQL.State.DevelopersData(typename, name: DeserializeString(global::StrawberryShake.Json.JsonElementExtensions.GetPropertyOrNull(obj, "name")), country: DeserializeString(global::StrawberryShake.Json.JsonElementExtensions.GetPropertyOrNull(obj, "country")));
+            }
+
+            throw new global::System.NotSupportedException();
+        }
+
+        private global::Prelast.GraphQL.State.PageInfoData DeserializeNonNullableIGetGamesNextPage_AllGameWithDevGerne_PageInfo(global::System.Text.Json.JsonElement? obj)
+        {
+            if (!obj.HasValue)
+            {
+                throw new global::System.ArgumentNullException();
+            }
+
+            var typename = obj.Value.GetProperty("__typename").GetString();
+            if (typename?.Equals("PageInfo", global::System.StringComparison.Ordinal) ?? false)
+            {
+                return new global::Prelast.GraphQL.State.PageInfoData(typename, hasNextPage: DeserializeNonNullableBoolean(global::StrawberryShake.Json.JsonElementExtensions.GetPropertyOrNull(obj, "hasNextPage")), endCursor: DeserializeString(global::StrawberryShake.Json.JsonElementExtensions.GetPropertyOrNull(obj, "endCursor")));
+            }
+
+            throw new global::System.NotSupportedException();
+        }
+
+        private global::System.Boolean DeserializeNonNullableBoolean(global::System.Text.Json.JsonElement? obj)
+        {
+            if (!obj.HasValue)
+            {
+                throw new global::System.ArgumentNullException();
+            }
+
+            return _booleanParser.Parse(obj.Value.GetBoolean()!);
+        }
+    }
+
+    [global::System.CodeDom.Compiler.GeneratedCode("StrawberryShake", "12.4.1.0")]
+    public partial class GetGamesPrevPageBuilder : global::StrawberryShake.IOperationResultBuilder<global::System.Text.Json.JsonDocument, global::Prelast.GraphQL.IGetGamesPrevPageResult>
+    {
+        private readonly global::StrawberryShake.IEntityStore _entityStore;
+        private readonly global::StrawberryShake.IEntityIdSerializer _idSerializer;
+        private readonly global::StrawberryShake.IOperationResultDataFactory<global::Prelast.GraphQL.IGetGamesPrevPageResult> _resultDataFactory;
+        private readonly global::StrawberryShake.Serialization.ILeafValueParser<global::System.Int32, global::System.Int32> _intParser;
+        private readonly global::StrawberryShake.Serialization.ILeafValueParser<global::System.String, global::System.String> _stringParser;
+        private readonly global::StrawberryShake.Serialization.ILeafValueParser<global::System.Double, global::System.Double> _floatParser;
+        private readonly global::StrawberryShake.Serialization.ILeafValueParser<global::System.Boolean, global::System.Boolean> _booleanParser;
+        public GetGamesPrevPageBuilder(global::StrawberryShake.IEntityStore entityStore, global::StrawberryShake.IEntityIdSerializer idSerializer, global::StrawberryShake.IOperationResultDataFactory<global::Prelast.GraphQL.IGetGamesPrevPageResult> resultDataFactory, global::StrawberryShake.Serialization.ISerializerResolver serializerResolver)
+        {
+            _entityStore = entityStore ?? throw new global::System.ArgumentNullException(nameof(entityStore));
+            _idSerializer = idSerializer ?? throw new global::System.ArgumentNullException(nameof(idSerializer));
+            _resultDataFactory = resultDataFactory ?? throw new global::System.ArgumentNullException(nameof(resultDataFactory));
+            _intParser = serializerResolver.GetLeafValueParser<global::System.Int32, global::System.Int32>("Int") ?? throw new global::System.ArgumentException("No serializer for type `Int` found.");
+            _stringParser = serializerResolver.GetLeafValueParser<global::System.String, global::System.String>("String") ?? throw new global::System.ArgumentException("No serializer for type `String` found.");
+            _floatParser = serializerResolver.GetLeafValueParser<global::System.Double, global::System.Double>("Float") ?? throw new global::System.ArgumentException("No serializer for type `Float` found.");
+            _booleanParser = serializerResolver.GetLeafValueParser<global::System.Boolean, global::System.Boolean>("Boolean") ?? throw new global::System.ArgumentException("No serializer for type `Boolean` found.");
+        }
+
+        public global::StrawberryShake.IOperationResult<IGetGamesPrevPageResult> Build(global::StrawberryShake.Response<global::System.Text.Json.JsonDocument> response)
+        {
+            (IGetGamesPrevPageResult Result, GetGamesPrevPageResultInfo Info)? data = null;
+            global::System.Collections.Generic.IReadOnlyList<global::StrawberryShake.IClientError>? errors = null;
+            if (response.Exception is null)
+            {
+                try
+                {
+                    if (response.Body != null)
+                    {
+                        if (response.Body.RootElement.TryGetProperty("data", out global::System.Text.Json.JsonElement dataElement) && dataElement.ValueKind == global::System.Text.Json.JsonValueKind.Object)
+                        {
+                            data = BuildData(dataElement);
+                        }
+
+                        if (response.Body.RootElement.TryGetProperty("errors", out global::System.Text.Json.JsonElement errorsElement))
+                        {
+                            errors = global::StrawberryShake.Json.JsonErrorParser.ParseErrors(errorsElement);
+                        }
+                    }
+                }
+                catch (global::System.Exception ex)
+                {
+                    errors = new global::StrawberryShake.IClientError[]{new global::StrawberryShake.ClientError(ex.Message, exception: ex, extensions: new global::System.Collections.Generic.Dictionary<global::System.String, global::System.Object?>{{"body", response.Body?.RootElement.ToString()}})};
+                }
+            }
+            else
+            {
+                errors = new global::StrawberryShake.IClientError[]{new global::StrawberryShake.ClientError(response.Exception.Message, exception: response.Exception, extensions: new global::System.Collections.Generic.Dictionary<global::System.String, global::System.Object?>{{"body", response.Body?.RootElement.ToString()}})};
+            }
+
+            return new global::StrawberryShake.OperationResult<IGetGamesPrevPageResult>(data?.Result, data?.Info, _resultDataFactory, errors);
+        }
+
+        private (IGetGamesPrevPageResult, GetGamesPrevPageResultInfo) BuildData(global::System.Text.Json.JsonElement obj)
+        {
+            var entityIds = new global::System.Collections.Generic.HashSet<global::StrawberryShake.EntityId>();
+            global::StrawberryShake.IEntityStoreSnapshot snapshot = default !;
+            _entityStore.Update(session =>
+            {
+                snapshot = session.CurrentSnapshot;
+            });
+            var resultInfo = new GetGamesPrevPageResultInfo(DeserializeIGetGamesPrevPage_AllGameWithDevGerne(global::StrawberryShake.Json.JsonElementExtensions.GetPropertyOrNull(obj, "allGameWithDevGerne")), entityIds, snapshot.Version);
+            return (_resultDataFactory.Create(resultInfo), resultInfo);
+        }
+
+        private global::Prelast.GraphQL.State.AllGameWithDevGerneConnectionData? DeserializeIGetGamesPrevPage_AllGameWithDevGerne(global::System.Text.Json.JsonElement? obj)
+        {
+            if (!obj.HasValue)
+            {
+                return null;
+            }
+
+            var typename = obj.Value.GetProperty("__typename").GetString();
+            if (typename?.Equals("AllGameWithDevGerneConnection", global::System.StringComparison.Ordinal) ?? false)
+            {
+                return new global::Prelast.GraphQL.State.AllGameWithDevGerneConnectionData(typename, nodes: DeserializeIGetGamesPrevPage_AllGameWithDevGerne_NodesArray(global::StrawberryShake.Json.JsonElementExtensions.GetPropertyOrNull(obj, "nodes")), pageInfo: DeserializeNonNullableIGetGamesPrevPage_AllGameWithDevGerne_PageInfo(global::StrawberryShake.Json.JsonElementExtensions.GetPropertyOrNull(obj, "pageInfo")));
+            }
+
+            throw new global::System.NotSupportedException();
+        }
+
+        private global::System.Collections.Generic.IReadOnlyList<global::Prelast.GraphQL.State.GamesData?>? DeserializeIGetGamesPrevPage_AllGameWithDevGerne_NodesArray(global::System.Text.Json.JsonElement? obj)
+        {
+            if (!obj.HasValue)
+            {
+                return null;
+            }
+
+            var gamess = new global::System.Collections.Generic.List<global::Prelast.GraphQL.State.GamesData?>();
+            foreach (global::System.Text.Json.JsonElement child in obj.Value.EnumerateArray())
+            {
+                gamess.Add(DeserializeIGetGamesPrevPage_AllGameWithDevGerne_Nodes(child));
+            }
+
+            return gamess;
+        }
+
+        private global::Prelast.GraphQL.State.GamesData? DeserializeIGetGamesPrevPage_AllGameWithDevGerne_Nodes(global::System.Text.Json.JsonElement? obj)
+        {
+            if (!obj.HasValue)
+            {
+                return null;
+            }
+
+            var typename = obj.Value.GetProperty("__typename").GetString();
+            if (typename?.Equals("Games", global::System.StringComparison.Ordinal) ?? false)
+            {
+                return new global::Prelast.GraphQL.State.GamesData(typename, gamesId: DeserializeNonNullableInt32(global::StrawberryShake.Json.JsonElementExtensions.GetPropertyOrNull(obj, "gamesId")), name: DeserializeString(global::StrawberryShake.Json.JsonElementExtensions.GetPropertyOrNull(obj, "name")), price: DeserializeNonNullableDouble(global::StrawberryShake.Json.JsonElementExtensions.GetPropertyOrNull(obj, "price")), genre: DeserializeIChangePrice_ChangeGamePriceById_Genre(global::StrawberryShake.Json.JsonElementExtensions.GetPropertyOrNull(obj, "genre")), developer: DeserializeIChangePrice_ChangeGamePriceById_Developer(global::StrawberryShake.Json.JsonElementExtensions.GetPropertyOrNull(obj, "developer")));
+            }
+
+            throw new global::System.NotSupportedException();
+        }
+
+        private global::System.Int32 DeserializeNonNullableInt32(global::System.Text.Json.JsonElement? obj)
+        {
+            if (!obj.HasValue)
+            {
+                throw new global::System.ArgumentNullException();
+            }
+
+            return _intParser.Parse(obj.Value.GetInt32()!);
+        }
+
+        private global::System.String? DeserializeString(global::System.Text.Json.JsonElement? obj)
+        {
+            if (!obj.HasValue)
+            {
+                return null;
+            }
+
+            return _stringParser.Parse(obj.Value.GetString()!);
+        }
+
+        private global::System.Double DeserializeNonNullableDouble(global::System.Text.Json.JsonElement? obj)
+        {
+            if (!obj.HasValue)
+            {
+                throw new global::System.ArgumentNullException();
+            }
+
+            return _floatParser.Parse(obj.Value.GetDouble()!);
+        }
+
+        private global::Prelast.GraphQL.State.GenreData? DeserializeIChangePrice_ChangeGamePriceById_Genre(global::System.Text.Json.JsonElement? obj)
+        {
+            if (!obj.HasValue)
+            {
+                return null;
+            }
+
+            var typename = obj.Value.GetProperty("__typename").GetString();
+            if (typename?.Equals("Genre", global::System.StringComparison.Ordinal) ?? false)
+            {
+                return new global::Prelast.GraphQL.State.GenreData(typename, name: DeserializeString(global::StrawberryShake.Json.JsonElementExtensions.GetPropertyOrNull(obj, "name")));
+            }
+
+            throw new global::System.NotSupportedException();
+        }
+
+        private global::Prelast.GraphQL.State.DevelopersData? DeserializeIChangePrice_ChangeGamePriceById_Developer(global::System.Text.Json.JsonElement? obj)
+        {
+            if (!obj.HasValue)
+            {
+                return null;
+            }
+
+            var typename = obj.Value.GetProperty("__typename").GetString();
+            if (typename?.Equals("Developers", global::System.StringComparison.Ordinal) ?? false)
+            {
+                return new global::Prelast.GraphQL.State.DevelopersData(typename, name: DeserializeString(global::StrawberryShake.Json.JsonElementExtensions.GetPropertyOrNull(obj, "name")), country: DeserializeString(global::StrawberryShake.Json.JsonElementExtensions.GetPropertyOrNull(obj, "country")));
+            }
+
+            throw new global::System.NotSupportedException();
+        }
+
+        private global::Prelast.GraphQL.State.PageInfoData DeserializeNonNullableIGetGamesPrevPage_AllGameWithDevGerne_PageInfo(global::System.Text.Json.JsonElement? obj)
+        {
+            if (!obj.HasValue)
+            {
+                throw new global::System.ArgumentNullException();
+            }
+
+            var typename = obj.Value.GetProperty("__typename").GetString();
+            if (typename?.Equals("PageInfo", global::System.StringComparison.Ordinal) ?? false)
+            {
+                return new global::Prelast.GraphQL.State.PageInfoData(typename, hasNextPage: DeserializeNonNullableBoolean(global::StrawberryShake.Json.JsonElementExtensions.GetPropertyOrNull(obj, "hasNextPage")), endCursor: DeserializeString(global::StrawberryShake.Json.JsonElementExtensions.GetPropertyOrNull(obj, "endCursor")));
+            }
+
+            throw new global::System.NotSupportedException();
+        }
+
+        private global::System.Boolean DeserializeNonNullableBoolean(global::System.Text.Json.JsonElement? obj)
+        {
+            if (!obj.HasValue)
+            {
+                throw new global::System.ArgumentNullException();
+            }
+
+            return _booleanParser.Parse(obj.Value.GetBoolean()!);
         }
     }
 
@@ -8915,6 +17344,26 @@ namespace Prelast.GraphQL.State
         }
     }
 
+    ///<summary>A connection to a list of items.</summary>
+    [global::System.CodeDom.Compiler.GeneratedCode("StrawberryShake", "12.4.1.0")]
+    public partial class AllDeveloperConnectionData
+    {
+        public AllDeveloperConnectionData(global::System.String __typename, global::System.Collections.Generic.IReadOnlyList<global::Prelast.GraphQL.State.DevelopersData?>? nodes = default !, global::Prelast.GraphQL.State.PageInfoData? pageInfo = default !)
+        {
+            this.__typename = __typename ?? throw new global::System.ArgumentNullException(nameof(__typename));
+            Nodes = nodes;
+            PageInfo = pageInfo;
+        }
+
+        public global::System.String __typename { get; }
+
+        ///<summary>A flattened list of the nodes.</summary>
+        public global::System.Collections.Generic.IReadOnlyList<global::Prelast.GraphQL.State.DevelopersData?>? Nodes { get; }
+
+        ///<summary>Information to aid in pagination.</summary>
+        public global::Prelast.GraphQL.State.PageInfoData? PageInfo { get; }
+    }
+
     [global::System.CodeDom.Compiler.GeneratedCode("StrawberryShake", "12.4.1.0")]
     public partial class DevelopersData
     {
@@ -8933,6 +17382,46 @@ namespace Prelast.GraphQL.State
         public global::System.String? Name { get; }
 
         public global::System.String? Country { get; }
+    }
+
+    ///<summary>Information about pagination in a connection.</summary>
+    [global::System.CodeDom.Compiler.GeneratedCode("StrawberryShake", "12.4.1.0")]
+    public partial class PageInfoData
+    {
+        public PageInfoData(global::System.String __typename, global::System.Boolean? hasNextPage = default !, global::System.String? endCursor = default !)
+        {
+            this.__typename = __typename ?? throw new global::System.ArgumentNullException(nameof(__typename));
+            HasNextPage = hasNextPage;
+            EndCursor = endCursor;
+        }
+
+        public global::System.String __typename { get; }
+
+        ///<summary>Indicates whether more edges exist following the set defined by the clients arguments.</summary>
+        public global::System.Boolean? HasNextPage { get; }
+
+        ///<summary>When paginating forwards, the cursor to continue.</summary>
+        public global::System.String? EndCursor { get; }
+    }
+
+    ///<summary>A connection to a list of items.</summary>
+    [global::System.CodeDom.Compiler.GeneratedCode("StrawberryShake", "12.4.1.0")]
+    public partial class AllGenreConnectionData
+    {
+        public AllGenreConnectionData(global::System.String __typename, global::System.Collections.Generic.IReadOnlyList<global::Prelast.GraphQL.State.GenreData?>? nodes = default !, global::Prelast.GraphQL.State.PageInfoData? pageInfo = default !)
+        {
+            this.__typename = __typename ?? throw new global::System.ArgumentNullException(nameof(__typename));
+            Nodes = nodes;
+            PageInfo = pageInfo;
+        }
+
+        public global::System.String __typename { get; }
+
+        ///<summary>A flattened list of the nodes.</summary>
+        public global::System.Collections.Generic.IReadOnlyList<global::Prelast.GraphQL.State.GenreData?>? Nodes { get; }
+
+        ///<summary>Information to aid in pagination.</summary>
+        public global::Prelast.GraphQL.State.PageInfoData? PageInfo { get; }
     }
 
     [global::System.CodeDom.Compiler.GeneratedCode("StrawberryShake", "12.4.1.0")]
@@ -8980,50 +17469,22 @@ namespace Prelast.GraphQL.State
 
     ///<summary>A connection to a list of items.</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("StrawberryShake", "12.4.1.0")]
-    public partial class AllDeveloperConnectionData
-    {
-        public AllDeveloperConnectionData(global::System.String __typename, global::System.Collections.Generic.IReadOnlyList<global::Prelast.GraphQL.State.DevelopersData?>? nodes = default !)
-        {
-            this.__typename = __typename ?? throw new global::System.ArgumentNullException(nameof(__typename));
-            Nodes = nodes;
-        }
-
-        public global::System.String __typename { get; }
-
-        ///<summary>A flattened list of the nodes.</summary>
-        public global::System.Collections.Generic.IReadOnlyList<global::Prelast.GraphQL.State.DevelopersData?>? Nodes { get; }
-    }
-
-    ///<summary>A connection to a list of items.</summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("StrawberryShake", "12.4.1.0")]
     public partial class AllGameWithDevGerneConnectionData
     {
-        public AllGameWithDevGerneConnectionData(global::System.String __typename, global::System.Collections.Generic.IReadOnlyList<global::Prelast.GraphQL.State.GamesData?>? nodes = default !)
+        public AllGameWithDevGerneConnectionData(global::System.String __typename, global::System.Collections.Generic.IReadOnlyList<global::Prelast.GraphQL.State.GamesData?>? nodes = default !, global::Prelast.GraphQL.State.PageInfoData? pageInfo = default !)
         {
             this.__typename = __typename ?? throw new global::System.ArgumentNullException(nameof(__typename));
             Nodes = nodes;
+            PageInfo = pageInfo;
         }
 
         public global::System.String __typename { get; }
 
         ///<summary>A flattened list of the nodes.</summary>
         public global::System.Collections.Generic.IReadOnlyList<global::Prelast.GraphQL.State.GamesData?>? Nodes { get; }
-    }
 
-    ///<summary>A connection to a list of items.</summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("StrawberryShake", "12.4.1.0")]
-    public partial class AllGenreConnectionData
-    {
-        public AllGenreConnectionData(global::System.String __typename, global::System.Collections.Generic.IReadOnlyList<global::Prelast.GraphQL.State.GenreData?>? nodes = default !)
-        {
-            this.__typename = __typename ?? throw new global::System.ArgumentNullException(nameof(__typename));
-            Nodes = nodes;
-        }
-
-        public global::System.String __typename { get; }
-
-        ///<summary>A flattened list of the nodes.</summary>
-        public global::System.Collections.Generic.IReadOnlyList<global::Prelast.GraphQL.State.GenreData?>? Nodes { get; }
+        ///<summary>Information to aid in pagination.</summary>
+        public global::Prelast.GraphQL.State.PageInfoData? PageInfo { get; }
     }
 
     [global::System.CodeDom.Compiler.GeneratedCode("StrawberryShake", "12.4.1.0")]

@@ -1,0 +1,11 @@
+query GetGamesPrevPage($countItem:Int!, $cursor: String!){
+  allGameWithDevGerne(last: $countItem, before:$cursor){
+    nodes{
+      ...GamesInfo
+    }
+    pageInfo{
+      hasNextPage
+      endCursor
+    }
+  }
+}

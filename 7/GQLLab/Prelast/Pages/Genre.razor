@@ -9,12 +9,27 @@
     <button @onclick="OnSearch">Поиск</button>
 </div>
 
+<div>
+    <div>Количество элементов на странице</div>
+    <input type="number" @bind-value="@itemInPage" />
+    <button @onclick="OnChangeCountItem">Изменить</button>
+</div>
+
 @if (genres.Count == 0)
 {
     <p><em>Загрузка...</em></p>
 }
 else
 {
+    @if(numberPage > 1)
+    {
+        <button @onclick="OnPrevPage">Предыдущая страница</button>
+    }
+    @if(hasNextPage)
+    {
+        <button @onclick="OnNextPage">Следующая страница</button>
+    }
+
     <table class="table">
         <thead>
             <tr>
@@ -56,21 +71,46 @@ else
 @code {
     private IReadOnlyList<IGenreInfo> genres = Array.Empty<IGenreInfo>();
 
+    private IDisposable storeSessionGenre;
+
     private IGenreInfo selectedGenre;
 
     private string name;
     private string filtr = "";
     private bool create = false;
+    private int itemInPage = 15;
+    private string coursor = null;
+    private bool hasNextPage;
+    private int numberPage = 1;
 
     protected override async Task OnInitializedAsync()
     {
-        var result = await ConferenceClient.GetGenre.ExecuteAsync();
-        genres = result.Data!.AllGenre.Nodes;
+        storeSessionGenre =
+            ConferenceClient
+            .GetGenreWithPaging
+            .Watch(itemInPage, ExecutionStrategy.CacheFirst)
+            .Where(t => !t.Errors.Any())
+            .Select(t => t.Data!.AllGenre!)
+            .Subscribe(result =>
+            {
+                genres = result.Nodes;
+                coursor = result.PageInfo.EndCursor;
+                hasNextPage = result.PageInfo.HasNextPage;
+                StateHasChanged();
+            });
+
+
+        //var result = await ConferenceClient.GetGenreWithPaging.ExecuteAsync(itemInPage);
+        //genres = result.Data!.AllGenre!.Nodes;
+        //coursor = result.Data!.AllGenre!.PageInfo.EndCursor;
+        //hasNextPage = result.Data!.AllGenre!.PageInfo.HasNextPage;
+        //StateHasChanged();
     }
 
     private async void OnDeleteGenre(IGenreInfo gen)
     {
-        await ConferenceClient.DelGenre.ExecuteAsync(gen.GenreId);
+        var res = await ConferenceClient.DelGenre.ExecuteAsync(gen.GenreId);
+        genres = res.Data!.DeleteGenreById!;
         StateHasChanged();
     }
 
@@ -83,7 +123,8 @@ else
 
     private async Task OnChangeName()
     {
-        await ConferenceClient.ChangeNameGenre.ExecuteAsync(selectedGenre.GenreId, name);
+        var res = await ConferenceClient.ChangeNameGenre.ExecuteAsync(selectedGenre.GenreId, name);
+        genres = res.Data!.ChangeGenreNameById!;
         selectedGenre = null;
         name = null;
         StateHasChanged();
@@ -96,7 +137,8 @@ else
 
     private async Task OnCreateGenre()
     {
-        await ConferenceClient.CreateGenre.ExecuteAsync(name);
+        var res = await ConferenceClient.CreateGenre.ExecuteAsync(name);
+        genres = res.Data!.CreateGenre!;
         name = null;
         create = false;
         StateHasChanged();
@@ -107,5 +149,34 @@ else
         var result = await ConferenceClient.GetGenreWithFiltr.ExecuteAsync(filtr);
         genres = result.Data!.AllGenre!.Nodes;
         StateHasChanged();
+    }
+
+    private async void OnPrevPage()
+    {
+        var result = await ConferenceClient.GetGenrePrevPage.ExecuteAsync(itemInPage, coursor);
+        genres = result.Data!.AllGenre!.Nodes;
+        coursor = result.Data!.AllGenre!.PageInfo.EndCursor;
+        hasNextPage = result.Data!.AllGenre!.PageInfo.HasNextPage;
+        numberPage--;
+        StateHasChanged();
+    }
+
+    private async void OnNextPage()
+    {
+        var result = await ConferenceClient.GetGenreNextPage.ExecuteAsync(itemInPage, coursor);
+        genres = result.Data!.AllGenre!.Nodes;
+        coursor = result.Data!.AllGenre!.PageInfo.EndCursor;
+        hasNextPage = result.Data!.AllGenre!.PageInfo.HasNextPage;
+        numberPage++;
+        StateHasChanged();
+    }
+
+    private async void OnChangeCountItem()
+    {
+        var result = await ConferenceClient.GetGenreWithPaging.ExecuteAsync(itemInPage);
+        genres = result.Data!.AllGenre!.Nodes;
+        coursor = result.Data!.AllGenre!.PageInfo.EndCursor;
+        hasNextPage = result.Data!.AllGenre!.PageInfo.HasNextPage;
+        numberPage = 1;
     }
 }

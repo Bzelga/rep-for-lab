@@ -1,6 +1,7 @@
 ﻿schema {
   query: Query
   mutation: Mutation
+  subscription: Subscription
 }
 
 type Query {
@@ -11,15 +12,27 @@ type Query {
 }
 
 type Mutation {
-  createGenre(gerneName: String): Genre
-  createDeveloper(nameDev: String countryDev: String): Developers
-  createGameWithDeveloperGenreId(name: String price: Float! idDev: Int! idGenre: Int!): Games
-  changeGamePriceById(id: Int! newPrice: Float!): Games
-  deleteGameById(id: Int!): String
-  changeGenreNameById(id: Int! newName: String): Genre
-  deleteGenreById(id: Int!): String
-  changeDevNameById(id: Int! newName: String): Developers
-  deleteDevById(id: Int!): String
+  createGenre(gerneName: String): [Genre]
+  createDeveloper(nameDev: String countryDev: String): [Developers]
+  createGameWithDeveloperGenreId(name: String price: Float! idDev: Int! idGenre: Int!): [Games]
+  changeGamePriceById(id: Int! newPrice: Float!): [Games]
+  deleteGameById(id: Int!): [Games]
+  changeGenreNameById(id: Int! newName: String): [Genre]
+  deleteGenreById(id: Int!): [Genre]
+  changeDevNameById(id: Int! newName: String): [Developers]
+  deleteDevById(id: Int!): [Developers]
+}
+
+type Subscription {
+  onGamesCreate: Games
+  onGenreCreate: Genre
+  onDevCreate: Developers
+  onGamesChange: Games
+  onGenreChange: Genre
+  onDevChange: Developers
+  onGamesDel: Games
+  onGenreDel: Genre
+  onDevDel: Developers
 }
 
 input GamesFilterInput {

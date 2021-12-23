@@ -10,12 +10,27 @@
     <button @onclick="OnSearch">Поиск</button>
 </div>
 
+<div>
+    <div>Количество элементов на странице</div>
+    <input type="number" @bind-value="@itemInPage" />
+    <button @onclick="OnChangeCountItem">Изменить</button>
+</div>
+
 @if (games.Count == 0)
 {
     <p><em>Loading...</em></p>
 }
 else
 {
+    @if(numberPage > 1)
+    {
+        <button @onclick="OnPrevPage">Предыдущая страница</button>
+    }
+    @if(hasNextPage)
+    {
+        <button @onclick="OnNextPage">Следующая страница</button>
+    }
+
     <table class="table">
         <thead>
             <tr>
@@ -86,18 +101,34 @@ else
     private IDisposable storeSessionDev;
 
     private IGamesInfo selectedGame;
-    private int selectedGenreId = 1;
-    private int selectedDevId = 1;
+    private int selectedGenreId;
+    private int selectedDevId;
 
     private string name;
     private double price;
     private string filtr = "";
     private bool create = false;
+    private int itemInPage = 15;
+    private string coursor = null;
+    private bool hasNextPage;
+    private int numberPage = 1;
 
     protected override async Task OnInitializedAsync()
     {
-        var result = await ConferenceClient.GetGames.ExecuteAsync();
-        games = result.Data!.AllGameWithDevGerne!.Nodes;
+        //добавить здесь, как в других закоменчинных страничках
+        storeSessionGames =
+            ConferenceClient
+                .GetGames
+                .Watch(itemInPage, StrawberryShake.ExecutionStrategy.CacheFirst)
+                .Where(t => !t.Errors.Any())
+                .Select(t => t.Data!.AllGameWithDevGerne!)
+                .Subscribe(result =>
+                {
+                    games = result.Nodes;
+                    coursor = result.PageInfo.EndCursor;
+                    hasNextPage = result.PageInfo.HasNextPage;
+                    StateHasChanged();
+                });
 
         storeSessionGenre =
             ConferenceClient
@@ -108,6 +139,7 @@ else
             .Subscribe(result =>
             {
                 genres = result;
+                selectedGenreId = result[0].GenreId;
                 StateHasChanged();
             });
 
@@ -120,6 +152,7 @@ else
             .Subscribe(result =>
             {
                 developers = result;
+                selectedDevId = result[0].DeveloperId;
                 StateHasChanged();
             });
     }
@@ -138,13 +171,15 @@ else
 
     private async void OnDeleteGame(IGamesInfo game)
     {
-        await ConferenceClient.DelGame.ExecuteAsync(game.GamesId );
+        var res = await ConferenceClient.DelGame.ExecuteAsync(game.GamesId);
+        games = res.Data!.DeleteGameById!;
         StateHasChanged();
     }
 
     private async Task OnChangePrice()
     {
-        await ConferenceClient.ChangePrice.ExecuteAsync(selectedGame.GamesId, price);
+        var res = await ConferenceClient.ChangePrice.ExecuteAsync(selectedGame.GamesId, price);
+        games = res.Data!.ChangeGamePriceById!;
         selectedGame = null;
         price = 0;
         StateHasChanged();
@@ -162,10 +197,11 @@ else
 
     private async Task OnCreateGame()
     {
-        await ConferenceClient.CreateGame.ExecuteAsync(name, price, selectedGenreId, selectedDevId);
+        var res = await ConferenceClient.CreateGame.ExecuteAsync(name, price, selectedGenreId, selectedDevId);
+        games = res.Data!.CreateGameWithDeveloperGenreId!;
         name = null;
-        selectedGenreId = 1;
-        selectedDevId = 1;
+        selectedGenreId = genres[0].GenreId;
+        selectedDevId = developers[0].DeveloperId;
         price = 0;
         create = false;
         StateHasChanged();
@@ -176,6 +212,35 @@ else
         var result = await ConferenceClient.GetGamesWithFiltr.ExecuteAsync(filtr);
         games = result.Data!.AllGameWithDevGerne!.Nodes;
         StateHasChanged();
+    }
+
+    private async void OnPrevPage()
+    {
+        var result = await ConferenceClient.GetGamesPrevPage.ExecuteAsync(itemInPage, coursor);
+        games = result.Data!.AllGameWithDevGerne!.Nodes;
+        coursor = result.Data!.AllGameWithDevGerne!.PageInfo.EndCursor;
+        hasNextPage = result.Data!.AllGameWithDevGerne!.PageInfo.HasNextPage;
+        numberPage--;
+        StateHasChanged();
+    }
+
+    private async void OnNextPage()
+    {
+        var result = await ConferenceClient.GetGamesNextPage.ExecuteAsync(itemInPage, coursor);
+        games = result.Data!.AllGameWithDevGerne!.Nodes;
+        coursor = result.Data!.AllGameWithDevGerne!.PageInfo.EndCursor;
+        hasNextPage = result.Data!.AllGameWithDevGerne!.PageInfo.HasNextPage;
+        numberPage++;
+        StateHasChanged();
+    }
+
+    private async void OnChangeCountItem()
+    {
+        var result = await ConferenceClient.GetGames.ExecuteAsync(itemInPage);
+        games = result.Data!.AllGameWithDevGerne!.Nodes;
+        coursor = result.Data!.AllGameWithDevGerne!.PageInfo.EndCursor;
+        hasNextPage = result.Data!.AllGameWithDevGerne!.PageInfo.HasNextPage;
+        numberPage = 1;
     }
 
     public void Dispose()
