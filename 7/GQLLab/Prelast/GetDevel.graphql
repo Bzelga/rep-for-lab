@@ -1,12 +1,12 @@
 ﻿query GetDevel{
-  allDeveloperOnly{
+  allDeveloper{
     nodes{
       ...DevelopersInfo
     }
   }
 }
 
-fragment DevelopersInfo on Developers {
+fragment DevelopersInfo on Developers{
     developerId
     name
     country

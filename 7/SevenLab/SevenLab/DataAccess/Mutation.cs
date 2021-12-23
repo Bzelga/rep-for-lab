@@ -50,21 +50,6 @@ namespace SevenLab
             return createdGame;
         }
 
-        public async Task<Games> CreateGameWithDeveloperGenre([Service] GameRepository gameRepository,
-            string name, double price, string gerneName, string nameDev, string countryDev)
-        {
-            Games newGame = new Games
-            {
-                Name = name,
-                Genre = new Genre { Name = gerneName },
-                Developer= new Developers { Name = nameDev, Country = countryDev },
-                Price = price
-            };
-
-            var createdGame = await gameRepository.CreateGame(newGame);
-            return createdGame;
-        }
-
         public async Task<Games> ChangeGamePriceById([Service] GameRepository gameRepository,
             int id, double newPrice)
         {
@@ -76,6 +61,34 @@ namespace SevenLab
            int id)
         {
             var resultDeleteGame = await gameRepository.DeleteGameById(id);
+            return resultDeleteGame;
+        }
+
+        public async Task<Genre> ChangeGenreNameById([Service] GenreRepository genreRepository,
+            int id, string newName)
+        {
+            var changedGame = await genreRepository.ChangeGenreNameById(id, newName);
+            return changedGame;
+        }
+
+        public async Task<string> DeleteGenreById([Service] GenreRepository genreRepository,
+           int id)
+        {
+            var resultDeleteGame = await genreRepository.DeleteGenreById(id);
+            return resultDeleteGame;
+        }
+
+        public async Task<Developers> ChangeDevNameById([Service] DeveloperRepository developerRepository,
+            int id, string newName)
+        {
+            var changedGame = await developerRepository.ChangeDevNameById(id, newName);
+            return changedGame;
+        }
+
+        public async Task<string> DeleteDevById([Service] DeveloperRepository developerRepository,
+           int id)
+        {
+            var resultDeleteGame = await developerRepository.DeleteDevById(id);
             return resultDeleteGame;
         }
     }

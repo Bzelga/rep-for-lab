@@ -14,24 +14,9 @@ namespace SevenLab
             _gameDBContext = gameDBContext;
         }
 
-        public List<Games> GetGame()
+        public List<Games> GetGames()
         {
             return _gameDBContext.Games.ToList();
-        }
-
-        public Games GetGameById(int id)
-        {
-            var Genre = _gameDBContext.Games
-                .Include(e => e.Genre)
-                .Where(e => e.GamesId == id)
-                .Include(e => e.Developer)
-                .Where(e => e.GamesId == id)
-                .FirstOrDefault();
-
-            if (Genre != null)
-                return Genre;
-
-            return null;
         }
 
         public List<Games> GetGameWithGerneDeveloper()
@@ -57,7 +42,7 @@ namespace SevenLab
                 result.Price = newPrice;
                 await _gameDBContext.SaveChangesAsync();
             }
-            return GetGameById(id);
+            return result;
         }
 
         public async Task<string> DeleteGameById(int id)

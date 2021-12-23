@@ -1,0 +1,117 @@
+﻿@page "/developers"
+@inject ConferenceClient ConferenceClient;
+
+<h1>Разработчики</h1>
+
+<div>
+    <div>Поиск по стране</div>
+    <input @bind-value="@filtr" />
+    <button @onclick="OnSearch">Поиск</button>
+</div>
+
+@if (developers.Count == 0)
+{
+    <p><em>Loading...</em></p>
+}
+else
+{
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Название</th>                
+                <th>Страна</th>                
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var dev in developers)
+            {
+                <tr>
+                    <td><button @onclick="() => OnChangeNameDev(dev)"><span class="oi oi-pencil mr-2" aria-hidden="true"></span></button> @dev.Name</td>                   
+                    <td>@dev.Country <button @onclick="() => OnDeleteDev(dev)">X</button></td>                   
+                </tr>
+            }
+        </tbody>
+    </table>
+
+    @if (selectedDev is not null)
+    {
+        <br />
+        <p>Введите новое название:</p>
+        <input @bind-value="@name" />
+        <button @onclick="OnChangeName">Save</button>
+    }
+}
+
+@if(!create)
+    {
+        <br />
+        <button @onclick="OnAddDev">Добавить разработчика</button>
+    }
+    else
+    {
+        <div>Введите название</div>
+        <input @bind-value="@name" />
+        <div>Введите страну</div>
+        <input @bind-value="@country" />
+        <button @onclick="OnCreateDev">Save</button>
+
+    }
+
+@code {
+    private IReadOnlyList<IDevelopersInfo> developers = Array.Empty<IDevelopersInfo>();
+
+    private IDevelopersInfo selectedDev;
+
+    private string name;
+    private string country;
+    private string filtr = "";
+    private bool create = false;
+
+    protected override async Task OnInitializedAsync()
+    {
+        var result = await ConferenceClient.GetDevel.ExecuteAsync();
+        developers = result.Data!.AllDeveloper!.Nodes;
+    }
+
+    private async void OnDeleteDev(IDevelopersInfo dev)
+    {
+        await ConferenceClient.DelDevel.ExecuteAsync(dev.DeveloperId);
+        StateHasChanged();
+    }
+
+    private void OnChangeNameDev(IDevelopersInfo dev)
+    {
+        selectedDev = dev;
+        name = dev.Name;
+        StateHasChanged();
+    }
+
+    private async Task OnChangeName()
+    {
+        await ConferenceClient.ChangeNameDev.ExecuteAsync(selectedDev.DeveloperId, name);
+        selectedDev = null;
+        name = null;
+        StateHasChanged();
+    }
+
+    private void OnAddDev()
+    {
+        create = true;
+    }
+
+    private async Task OnCreateDev()
+    {
+        await ConferenceClient.CreateDev.ExecuteAsync(name, country);
+        name = null;
+        country = null;
+        create = false;
+        StateHasChanged();
+    }
+
+    private async void OnSearch()
+    {
+        var result = await ConferenceClient.GetDevelWithFiltr.ExecuteAsync(filtr);
+        developers = result.Data!.AllDeveloper!.Nodes;
+        StateHasChanged();
+    }
+}

@@ -1,0 +1,111 @@
+﻿@page "/genre"
+@inject ConferenceClient ConferenceClient;
+
+<h1>Жанры</h1>
+
+<div>
+    <div>Поиск по названию</div>
+    <input @bind-value="@filtr" />
+    <button @onclick="OnSearch">Поиск</button>
+</div>
+
+@if (genres.Count == 0)
+{
+    <p><em>Загрузка...</em></p>
+}
+else
+{
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Название</th>                              
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var gen in genres)
+            {
+                <tr>
+                    <td><button @onclick="() => OnChangeNameGenre(gen)"><span class="oi oi-pencil mr-2" aria-hidden="true"></span></button> @gen.Name <button @onclick="() => OnDeleteGenre(gen)">X</button></td>                   
+                </tr>
+            }
+        </tbody>
+    </table>
+
+    @if (selectedGenre is not null)
+    {
+        <br />
+        <p>Введите новое название:</p>
+        <input @bind-value="@name" />
+        <button @onclick="OnChangeName">Сохранить</button>
+    }
+}
+
+@if(!create)
+    {
+        <br />
+        <button @onclick="OnAddGenre">Добавить жанр</button>
+    }
+    else
+    {
+        <div>Введите название</div>
+        <input @bind-value="@name" />
+        <button @onclick="OnCreateGenre">Сохранить</button>
+
+    }
+
+@code {
+    private IReadOnlyList<IGenreInfo> genres = Array.Empty<IGenreInfo>();
+
+    private IGenreInfo selectedGenre;
+
+    private string name;
+    private string filtr = "";
+    private bool create = false;
+
+    protected override async Task OnInitializedAsync()
+    {
+        var result = await ConferenceClient.GetGenre.ExecuteAsync();
+        genres = result.Data!.AllGenre.Nodes;
+    }
+
+    private async void OnDeleteGenre(IGenreInfo gen)
+    {
+        await ConferenceClient.DelGenre.ExecuteAsync(gen.GenreId);
+        StateHasChanged();
+    }
+
+    private void OnChangeNameGenre(IGenreInfo gen)
+    {
+        selectedGenre = gen;
+        name = gen.Name;
+        StateHasChanged();
+    }
+
+    private async Task OnChangeName()
+    {
+        await ConferenceClient.ChangeNameGenre.ExecuteAsync(selectedGenre.GenreId, name);
+        selectedGenre = null;
+        name = null;
+        StateHasChanged();
+    }
+
+    private void OnAddGenre()
+    {
+        create = true;
+    }
+
+    private async Task OnCreateGenre()
+    {
+        await ConferenceClient.CreateGenre.ExecuteAsync(name);
+        name = null;
+        create = false;
+        StateHasChanged();
+    }
+
+    private async void OnSearch()
+    {
+        var result = await ConferenceClient.GetGenreWithFiltr.ExecuteAsync(filtr);
+        genres = result.Data!.AllGenre!.Nodes;
+        StateHasChanged();
+    }
+}

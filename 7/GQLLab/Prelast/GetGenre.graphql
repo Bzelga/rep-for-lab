@@ -1,5 +1,5 @@
 ﻿query GetGenre{
-  allGenreOnly{
+  allGenre{
     nodes{
       ...GenreInfo
     }

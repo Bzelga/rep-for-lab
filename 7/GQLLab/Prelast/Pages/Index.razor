@@ -43,19 +43,22 @@ else
     @if (selectedGame is not null)
     {
         <br />
-        <p>Edit Session Title:</p>
+        <p>Введите новую цену:</p>
         <input @bind-value="@price" />
-        <button @onclick="OnChangePrice">Save</button>
+        <button @onclick="OnChangePrice">Сохранить</button>
     }
+}
 
-    @if(!create)
+@if(!create)
     {
         <br />
         <button @onclick="OnAddGame">Добавить игру</button>
     }
     else
     {
+        <div>Введите название</div>
         <input @bind-value="@name" />
+        <div>Введите цену</div>
         <input @bind-value="@price" />
         <select onchange=@ChangeGenre>
         @foreach (var genr in genres)
@@ -69,10 +72,9 @@ else
             <option value=@dev.DeveloperId>@dev.Name</option>
         }
         </select>
-        <button @onclick="OnCreateGame">Save</button>
+        <button @onclick="OnCreateGame">Сохранить</button>
 
     }
-}
 
 @code {
     private IReadOnlyList<IGamesInfo> games = Array.Empty<IGamesInfo>();
@@ -102,7 +104,7 @@ else
             .GetGenre
             .Watch(ExecutionStrategy.CacheFirst)
             .Where(t => !t.Errors.Any())
-            .Select(t => t.Data!.AllGenreOnly!.Nodes)
+            .Select(t => t.Data!.AllGenre!.Nodes)
             .Subscribe(result =>
             {
                 genres = result;
@@ -114,7 +116,7 @@ else
             .GetDevel
             .Watch(ExecutionStrategy.CacheFirst)
             .Where(t => !t.Errors.Any())
-            .Select(t => t.Data!.AllDeveloperOnly!.Nodes)
+            .Select(t => t.Data!.AllDeveloper!.Nodes)
             .Subscribe(result =>
             {
                 developers = result;
@@ -155,14 +157,15 @@ else
 
     private void ChangeDevel(ChangeEventArgs e)
     {
-        selectedDevId = (int)e.Value;
+        selectedDevId = Convert.ToInt32(e.Value);
     }
 
     private async Task OnCreateGame()
     {
         await ConferenceClient.CreateGame.ExecuteAsync(name, price, selectedGenreId, selectedDevId);
-        selectedGenreId = 0;
-        selectedDevId = 0;
+        name = null;
+        selectedGenreId = 1;
+        selectedDevId = 1;
         price = 0;
         create = false;
         StateHasChanged();
