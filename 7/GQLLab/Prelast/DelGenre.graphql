@@ -1,5 +1,0 @@
-﻿mutation DelGenre($id: Int!){
-  deleteGenreById(id:$id){
-  ...GenreInfo
-  }
-}

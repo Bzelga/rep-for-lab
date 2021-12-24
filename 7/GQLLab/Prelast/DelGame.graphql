@@ -1,5 +1,0 @@
-﻿mutation DelGame($gameId: Int!){
-  deleteGameById(id:$gameId){
-	...GamesInfo
-  }
-}

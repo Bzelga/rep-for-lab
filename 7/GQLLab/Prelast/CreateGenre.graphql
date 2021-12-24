@@ -1,5 +1,0 @@
-﻿mutation CreateGenre($name: String!){
-  createGenre(gerneName:$name){
-    ...GenreInfo
-  }
-}

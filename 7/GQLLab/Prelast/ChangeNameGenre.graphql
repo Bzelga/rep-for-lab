@@ -1,5 +1,0 @@
-﻿mutation ChangeNameGenre($id: Int!, $name:String!){
-  changeGenreNameById(id:$id newName:$name){
-    ...GenreInfo
-  }
-}

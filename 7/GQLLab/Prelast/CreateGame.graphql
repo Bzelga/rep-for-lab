@@ -1,5 +1,0 @@
-﻿mutation CreateGame($name: String! $price: Float! $idGenre: Int!, $idDev: Int!){
-    createGameWithDeveloperGenreId(name:$name price: $price, idGenre:$idGenre, idDev:$idDev){
-        ...GamesInfo
-    }
-}

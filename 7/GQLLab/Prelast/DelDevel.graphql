@@ -1,5 +1,0 @@
-﻿mutation DelDevel($devId: Int!){
-  deleteDevById(id:$devId){
-	...DevelopersInfo
-  }
-}
