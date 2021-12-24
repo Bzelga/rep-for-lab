@@ -1,0 +1,7 @@
+﻿query GetDevelWithFiltr($country:String!){
+  allDeveloper(where:{country:{eq:$country}} order:{ country:ASC}){
+    nodes{
+      ...DevelopersInfo
+    }
+  }
+}

@@ -1,0 +1,11 @@
+query GetGenreNextPage($countItem:Int!, $cursor: String!){
+  allGenre(first: $countItem, after:$cursor order:{ name:ASC}){
+    nodes{
+      ...GenreInfo
+    }
+    pageInfo{
+      hasNextPage
+      endCursor
+    }
+  }
+}

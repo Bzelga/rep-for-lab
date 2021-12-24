@@ -1,6 +1,5 @@
 ﻿@page "/"
 @inject ConferenceClient ConferenceClient;
-@implements IDisposable
 @inject ILogger<Index> logger;
 
 <h1>Игры</h1>
@@ -18,15 +17,15 @@
 
 @if (games.Count == 0)
 {
-    <p><em>Loading...</em></p>
+    <p><em>Загрузка...</em></p>
 }
 else
 {
-    @if(numberPage > 1)
+    @if (numberPage > 1)
     {
         <button @onclick="OnPrevPage">Предыдущая страница</button>
     }
-    @if(hasNextPage)
+    @if (hasNextPage)
     {
         <button @onclick="OnNextPage">Следующая страница</button>
     }
@@ -34,10 +33,10 @@ else
     <table class="table">
         <thead>
             <tr>
-                <th>Название игры</th>                
-                <th>Цена</th>                
-                <th>Жанр</th>                
-                <th>Название студии</th>    
+                <th>Название игры</th>
+                <th>Цена</th>
+                <th>Жанр</th>
+                <th>Название студии</th>
                 <th>Страна студии</th>
             </tr>
         </thead>
@@ -45,9 +44,9 @@ else
             @foreach (var game in games)
             {
                 <tr>
-                    <td><button @onclick="() => OnChangePriceGame(game)"><span class="oi oi-pencil mr-2" aria-hidden="true"></span></button> @game.Name</td>                   
-                    <td>@game.Price</td>                   
-                    <td>@game.Genre.Name</td>                   
+                    <td><button @onclick="() => OnChangePriceGame(game)"><span class="oi oi-pencil mr-2" aria-hidden="true"></span></button> @game.Name</td>
+                    <td>@game.Price</td>
+                    <td>@game.Genre.Name</td>
                     <td>@game.Developer.Name</td>
                     <td>@game.Developer.Country <button @onclick="() => OnDeleteGame(game)">X</button></td>
                 </tr>
@@ -64,41 +63,37 @@ else
     }
 }
 
-@if(!create)
-    {
-        <br />
-        <button @onclick="OnAddGame">Добавить игру</button>
-    }
-    else
-    {
-        <div>Введите название</div>
-        <input @bind-value="@name" />
-        <div>Введите цену</div>
-        <input @bind-value="@price" />
-        <select onchange=@ChangeGenre>
+@if (!create)
+{
+    <br />
+    <button @onclick="OnAddGame">Добавить игру</button>
+}
+else
+{
+    <div>Введите название</div>
+    <input @bind-value="@name" />
+    <div>Введите цену</div>
+    <input @bind-value="@price" />
+    <select onchange=@ChangeGenre>
         @foreach (var genr in genres)
         {
             <option value=@genr.GenreId>@genr.Name</option>
         }
-        </select>
-        <select onchange=@ChangeDevel>
+    </select>
+    <select onchange=@ChangeDevel>
         @foreach (var dev in developers)
         {
             <option value=@dev.DeveloperId>@dev.Name</option>
         }
-        </select>
-        <button @onclick="OnCreateGame">Сохранить</button>
+    </select>
+    <button @onclick="OnCreateGame">Сохранить</button>
 
-    }
+}
 
 @code {
     private IReadOnlyList<IGamesInfo> games = Array.Empty<IGamesInfo>();
     private IReadOnlyList<IGenreInfo> genres = Array.Empty<IGenreInfo>();
     private IReadOnlyList<IDevelopersInfo> developers = Array.Empty<IDevelopersInfo>();
-
-    private IDisposable storeSessionGames;
-    private IDisposable storeSessionGenre;
-    private IDisposable storeSessionDev;
 
     private IGamesInfo selectedGame;
     private int selectedGenreId;
@@ -115,46 +110,26 @@ else
 
     protected override async Task OnInitializedAsync()
     {
-        //добавить здесь, как в других закоменчинных страничках
-        storeSessionGames =
-            ConferenceClient
-                .GetGames
-                .Watch(itemInPage, StrawberryShake.ExecutionStrategy.CacheFirst)
-                .Where(t => !t.Errors.Any())
-                .Select(t => t.Data!.AllGameWithDevGerne!)
-                .Subscribe(result =>
-                {
-                    games = result.Nodes;
-                    coursor = result.PageInfo.EndCursor;
-                    hasNextPage = result.PageInfo.HasNextPage;
-                    StateHasChanged();
-                });
+        var resultGame = await ConferenceClient.GetGames.ExecuteAsync(itemInPage);
+        games = resultGame.Data!.AllGameWithDevGerne!.Nodes;
+        coursor = resultGame.Data!.AllGameWithDevGerne!.PageInfo.EndCursor;
+        hasNextPage = resultGame.Data!.AllGameWithDevGerne!.PageInfo.HasNextPage;
+        StateHasChanged();
 
-        storeSessionGenre =
-            ConferenceClient
-            .GetGenre
-            .Watch(ExecutionStrategy.CacheFirst)
-            .Where(t => !t.Errors.Any())
-            .Select(t => t.Data!.AllGenre!.Nodes)
-            .Subscribe(result =>
-            {
-                genres = result;
-                selectedGenreId = result[0].GenreId;
-                StateHasChanged();
-            });
+        var resultGenre = await ConferenceClient.GetGenre.ExecuteAsync();
+        genres = resultGenre.Data!.AllGenre!.Nodes;
+        if(genres.Count!=0)
+        {
+            selectedGenreId = genres[0].GenreId;
+        }
+        
+        var resultDevel = await ConferenceClient.GetDevel.ExecuteAsync();
+        developers = resultDevel.Data!.AllDeveloper!.Nodes;
+        if (developers.Count != 0)
+        {
+            selectedDevId = developers[0].DeveloperId;
+        }
 
-        storeSessionDev =
-            ConferenceClient
-            .GetDevel
-            .Watch(ExecutionStrategy.CacheFirst)
-            .Where(t => !t.Errors.Any())
-            .Select(t => t.Data!.AllDeveloper!.Nodes)
-            .Subscribe(result =>
-            {
-                developers = result;
-                selectedDevId = result[0].DeveloperId;
-                StateHasChanged();
-            });
     }
 
     private void OnChangePriceGame(IGamesInfo game)
@@ -241,13 +216,6 @@ else
         coursor = result.Data!.AllGameWithDevGerne!.PageInfo.EndCursor;
         hasNextPage = result.Data!.AllGameWithDevGerne!.PageInfo.HasNextPage;
         numberPage = 1;
-    }
-
-    public void Dispose()
-    {
-        storeSessionGames?.Dispose();
-        storeSessionGenre?.Dispose();
-        storeSessionDev?.Dispose();
     }
 }
 

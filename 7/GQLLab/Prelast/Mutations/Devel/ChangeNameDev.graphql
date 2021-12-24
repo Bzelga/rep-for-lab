@@ -1,0 +1,5 @@
+﻿mutation ChangeNameDev($id: Int! $name:String!){
+  changeDevNameById(id: $id newName:$name){
+    ...DevelopersInfo
+  }
+}

@@ -1,0 +1,11 @@
+query GetGamesNextPage($countItem:Int!, $cursot: String!){
+  allGameWithDevGerne(first: $countItem, after:$cursot order:{ price:ASC}){
+    nodes{
+      ...GamesInfo
+    }
+    pageInfo{
+      hasNextPage
+      endCursor
+    }
+  }
+}

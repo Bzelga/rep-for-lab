@@ -1,0 +1,11 @@
+query GetDevelPrevPage($countItem:Int!, $cursot: String!){
+  allDeveloper(last: $countItem, before:$cursot, order:{ country:ASC}){
+    nodes{
+      ...DevelopersInfo
+    }
+    pageInfo{
+      hasNextPage
+      endCursor
+    }
+  }
+}

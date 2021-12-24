@@ -71,8 +71,6 @@ else
 @code {
     private IReadOnlyList<IGenreInfo> genres = Array.Empty<IGenreInfo>();
 
-    private IDisposable storeSessionGenre;
-
     private IGenreInfo selectedGenre;
 
     private string name;
@@ -85,26 +83,11 @@ else
 
     protected override async Task OnInitializedAsync()
     {
-        storeSessionGenre =
-            ConferenceClient
-            .GetGenreWithPaging
-            .Watch(itemInPage, ExecutionStrategy.CacheFirst)
-            .Where(t => !t.Errors.Any())
-            .Select(t => t.Data!.AllGenre!)
-            .Subscribe(result =>
-            {
-                genres = result.Nodes;
-                coursor = result.PageInfo.EndCursor;
-                hasNextPage = result.PageInfo.HasNextPage;
-                StateHasChanged();
-            });
-
-
-        //var result = await ConferenceClient.GetGenreWithPaging.ExecuteAsync(itemInPage);
-        //genres = result.Data!.AllGenre!.Nodes;
-        //coursor = result.Data!.AllGenre!.PageInfo.EndCursor;
-        //hasNextPage = result.Data!.AllGenre!.PageInfo.HasNextPage;
-        //StateHasChanged();
+        var result = await ConferenceClient.GetGenreWithPaging.ExecuteAsync(itemInPage);
+        genres = result.Data!.AllGenre!.Nodes;
+        coursor = result.Data!.AllGenre!.PageInfo.EndCursor;
+        hasNextPage = result.Data!.AllGenre!.PageInfo.HasNextPage;
+        StateHasChanged();
     }
 
     private async void OnDeleteGenre(IGenreInfo gen)
@@ -118,7 +101,7 @@ else
     {
         selectedGenre = gen;
         name = gen.Name;
-        StateHasChanged();
+        //StateHasChanged();
     }
 
     private async Task OnChangeName()
