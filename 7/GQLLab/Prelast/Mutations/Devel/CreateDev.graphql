@@ -1,5 +1,0 @@
-﻿mutation CreateDev($devName: String! $countryName: String!){
-  createDeveloper(nameDev: $devName, countryDev: $countryName){
-    ...DevelopersInfo
-  }
-}

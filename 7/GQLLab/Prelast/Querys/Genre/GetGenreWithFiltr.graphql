@@ -1,7 +1,0 @@
-﻿query GetGenreWithFiltr ($filtr: String!){
-  allGenre(where:{name:{eq:$filtr}} order:{ name:ASC}){
-    nodes{
-      ...GenreInfo
-    }
-  }
-}
