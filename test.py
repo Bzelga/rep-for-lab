@@ -1,10 +1,16 @@
 from openpyxl import load_workbook
 from ftplib import FTP
+from io import BytesIO
 
 ftp = FTP('146.185.210.235')
 ftp.login('bzelga', 'qwer')
 
-wb = load_workbook(filename=ftp.open('testxlsx.xlsx', 'rb').read())
+file_content = BytesIO()
+ftp.retrbinary('RETR testxlsx.xlsx', file_content.write)
+
+ftp.quit()
+
+wb = load_workbook(filename=file_content.getvalue())
 
 ws = wb.get_sheet_by_name('Лист1')
 
