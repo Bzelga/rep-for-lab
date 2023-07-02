@@ -1,7 +1,10 @@
-import sys
 from openpyxl import load_workbook
+from ftplib import FTP
 
-wb = load_workbook(filename=sys.stdin.read())
+ftp = FTP('146.185.210.235')
+ftp.login('bzelga', 'qwer')
+
+wb = load_workbook(filename=ftp.open('testxlsx.xlsx', 'rb').read())
 
 ws = wb.get_sheet_by_name('Лист1')
 
