@@ -4,7 +4,7 @@ from org.apache.commons.io import IOUtils
 from java.nio.charset import StandardCharsets
 from org.apache.nifi.processor.io import StreamCallback
 
-wb = load_workbook(filename=sys.argv[1])
+wb = load_workbook(filename=sys.stdin.read())
 
 ws = wb.get_sheet_by_name('Лист1')
 
