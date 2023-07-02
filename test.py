@@ -1,8 +1,5 @@
 import sys
 from openpyxl import load_workbook
-from org.apache.commons.io import IOUtils
-from java.nio.charset import StandardCharsets
-from org.apache.nifi.processor.io import StreamCallback
 
 wb = load_workbook(filename=sys.stdin.read())
 
