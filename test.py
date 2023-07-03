@@ -1,5 +1,6 @@
 from openpyxl import load_workbook
 from ftplib import FTP
+import json
 
 ftp = FTP('146.185.210.235')
 ftp.login('bzelga', 'qwer')
@@ -32,4 +33,4 @@ for i in range(6, ws.max_row):
     result['sumsnds'].append(ws.cell(row = i, column = 13).value)
     result['numact'].append(ws.cell(row = i, column = 14).value)
 
-print(result)
+print(json.dumps(result))
