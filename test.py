@@ -32,6 +32,4 @@ for i in range(6, ws.max_row):
     result['sumsnds'].append(ws.cell(row = i, column = 13).value)
     result['numact'].append(ws.cell(row = i, column = 14).value)
 
-flowFile = session.create()
-flowFile.write(result.encode('utf-8'))
-session.transfer(flowFile, REL_SUCCESS)
+print(result)
