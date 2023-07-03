@@ -10,7 +10,7 @@ results = json.loads(input_data)
 
 valuesQuery = []
 
-for i in len(results['num_dog']):
+for i in range(0,len(results['num_dog'])):
     valueQuery = "(" + results["num_dog"] + ", " + results["date_usl"] + ", '" + results["gruz"] + \
         "', '" + results["stan_otpr"] + "', '" + results["stan_nazn"] + "', " + results["date_otpr"] + \
         ", '" + results["num_nakl"] + "', " + results["kol_vag"] + ", " + results["kol_ton"] + \
