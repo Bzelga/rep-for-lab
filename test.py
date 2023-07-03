@@ -32,6 +32,4 @@ for i in range(6, ws.max_row):
     result['sumsnds'].append(ws.cell(row = i, column = 13).value)
     result['numact'].append(ws.cell(row = i, column = 14).value)
 
-output_string = result
-output_string.replace("'", '"')
-print(output_string)
+print(result)
