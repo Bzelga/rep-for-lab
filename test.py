@@ -19,11 +19,11 @@ result = {'num_dog':[], 'date_usl':[],'gruz':[],'stan_otpr':[],'stan_nazn':[],'d
 
 for i in range(6, ws.max_row):
     result['num_dog'].append(ws.cell(row = i, column = 1).value)
-    result['date_usl'].append(ws.cell(row = i, column = 2).value.strftime('%d.%m.%Y'))
+    result['date_usl'].append(ws.cell(row = i, column = 2).value.strftime('%Y-%m-%d'))
     result['gruz'].append(ws.cell(row = i, column = 3).value)
     result['stan_otpr'].append(ws.cell(row = i, column = 4).value)
     result['stan_nazn'].append(ws.cell(row = i, column = 5).value)
-    result['date_otpr'].append(ws.cell(row = i, column = 6).value.strftime('%d.%m.%Y'))
+    result['date_otpr'].append(ws.cell(row = i, column = 6).value.strftime('%Y-%m-%d'))
     result['num_nakl'].append(ws.cell(row = i, column = 7).value)
     result['kol_vag'].append(ws.cell(row = i, column = 8).value)
     result['kol_ton'].append(ws.cell(row = i, column = 9).value)
