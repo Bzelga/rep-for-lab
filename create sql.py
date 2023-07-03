@@ -11,11 +11,11 @@ results = json.loads(input_data)
 valuesQuery = []
 
 for i in range(0,len(results['num_dog'])):
-    valueQuery = "(" + results["num_dog"] + ", " + results["date_usl"] + ", '" + results["gruz"] + \
-        "', '" + results["stan_otpr"] + "', '" + results["stan_nazn"] + "', " + results["date_otpr"] + \
-        ", '" + results["num_nakl"] + "', " + results["kol_vag"] + ", " + results["kol_ton"] + \
-        ", " + results["cen_ton"] + ", " + results["sumbeznds"] + ", " + results["sumnds"] + \
-        ", " + results["sumsnds"] + ", '" + results["numact"] + "')"
+    valueQuery = "(" + results["num_dog"][i] + ", " + results["date_usl"][i] + ", '" + results["gruz"][i] + \
+        "', '" + results["stan_otpr"][i] + "', '" + results["stan_nazn"][i] + "', " + results["date_otpr"][i] + \
+        ", '" + results["num_nakl"][i] + "', " + results["kol_vag"][i] + ", " + results["kol_ton"][i] + \
+        ", " + results["cen_ton"][i] + ", " + results["sumbeznds"][i] + ", " + results["sumnds"][i] + \
+        ", " + results["sumsnds"][i] + ", '" + results["numact"][i] + "')"
 
     valuesQuery.append(valueQuery)
 
