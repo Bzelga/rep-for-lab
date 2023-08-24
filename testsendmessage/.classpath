@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+  <classpathentry kind="src" path="src/test/java" output="target/test-classes" including="**/*.java"/>
+  <classpathentry kind="src" path="src/test/resources" output="target/test-classes" excluding="**/*.java"/>
+  <classpathentry kind="src" path="src/main/java" including="**/*.java"/>
+  <classpathentry kind="src" path="src/main/resources" excluding="**/*.java"/>
+  <classpathentry kind="output" path="target/classes"/>
+  <classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+  <classpathentry kind="var" path="M2_REPO/org/apache/camel/camel-core/4.0.0-RC2/camel-core-4.0.0-RC2.jar" sourcepath="M2_REPO/org/apache/camel/camel-core/4.0.0-RC2/camel-core-4.0.0-RC2-sources.jar"/>
+  <classpathentry kind="var" path="M2_REPO/org/apache/camel/camel-core-engine/4.0.0-RC2/camel-core-engine-4.0.0-RC2.jar" sourcepath="M2_REPO/org/apache/camel/camel-core-engine/4.0.0-RC2/camel-core-engine-4.0.0-RC2-sources.jar"/>
+  <classpathentry kind="var" path="M2_REPO/org/apache/camel/camel-api/4.0.0-RC2/camel-api-4.0.0-RC2.jar" sourcepath="M2_REPO/org/apache/camel/camel-api/4.0.0-RC2/camel-api-4.0.0-RC2-sources.jar"/>
+  <classpathentry kind="var" path="M2_REPO/org/apache/camel/camel-util/4.0.0-RC2/camel-util-4.0.0-RC2.jar" sourcepath="M2_REPO/org/apache/camel/camel-util/4.0.0-RC2/camel-util-4.0.0-RC2-sources.jar"/>
+  <classpathentry kind="var" path="M2_REPO/org/slf4j/slf4j-api/2.0.7/slf4j-api-2.0.7.jar" sourcepath="M2_REPO/org/slf4j/slf4j-api/2.0.7/slf4j-api-2.0.7-sources.jar"/>
+  <classpathentry kind="var" path="M2_REPO/jakarta/xml/bind/jakarta.xml.bind-api/4.0.0/jakarta.xml.bind-api-4.0.0.jar" sourcepath="M2_REPO/jakarta/xml/bind/jakarta.xml.bind-api/4.0.0/jakarta.xml.bind-api-4.0.0-sources.jar"/>
+  <classpathentry kind="var" path="M2_REPO/jakarta/activation/jakarta.activation-api/2.1.0/jakarta.activation-api-2.1.0.jar" sourcepath="M2_REPO/jakarta/activation/jakarta.activation-api/2.1.0/jakarta.activation-api-2.1.0-sources.jar"/>
+  <classpathentry kind="var" path="M2_REPO/org/apache/camel/camel-base-engine/4.0.0-RC2/camel-base-engine-4.0.0-RC2.jar" sourcepath="M2_REPO/org/apache/camel/camel-base-engine/4.0.0-RC2/camel-base-engine-4.0.0-RC2-sources.jar"/>
+  <classpathentry kind="var" path="M2_REPO/org/apache/camel/camel-base/4.0.0-RC2/camel-base-4.0.0-RC2.jar" sourcepath="M2_REPO/org/apache/camel/camel-base/4.0.0-RC2/camel-base-4.0.0-RC2-sources.jar"/>
+  <classpathentry kind="var" path="M2_REPO/org/apache/camel/camel-management-api/4.0.0-RC2/camel-management-api-4.0.0-RC2.jar" sourcepath="M2_REPO/org/apache/camel/camel-management-api/4.0.0-RC2/camel-management-api-4.0.0-RC2-sources.jar"/>
+  <classpathentry kind="var" path="M2_REPO/org/apache/camel/camel-support/4.0.0-RC2/camel-support-4.0.0-RC2.jar" sourcepath="M2_REPO/org/apache/camel/camel-support/4.0.0-RC2/camel-support-4.0.0-RC2-sources.jar"/>
+  <classpathentry kind="var" path="M2_REPO/org/apache/camel/camel-util-json/4.0.0-RC2/camel-util-json-4.0.0-RC2.jar" sourcepath="M2_REPO/org/apache/camel/camel-util-json/4.0.0-RC2/camel-util-json-4.0.0-RC2-sources.jar"/>
+  <classpathentry kind="var" path="M2_REPO/org/apache/camel/camel-xml-jaxp-util/4.0.0-RC2/camel-xml-jaxp-util-4.0.0-RC2.jar" sourcepath="M2_REPO/org/apache/camel/camel-xml-jaxp-util/4.0.0-RC2/camel-xml-jaxp-util-4.0.0-RC2-sources.jar"/>
+  <classpathentry kind="var" path="M2_REPO/org/apache/camel/camel-core-reifier/4.0.0-RC2/camel-core-reifier-4.0.0-RC2.jar" sourcepath="M2_REPO/org/apache/camel/camel-core-reifier/4.0.0-RC2/camel-core-reifier-4.0.0-RC2-sources.jar"/>
+  <classpathentry kind="var" path="M2_REPO/org/apache/camel/camel-core-model/4.0.0-RC2/camel-core-model-4.0.0-RC2.jar" sourcepath="M2_REPO/org/apache/camel/camel-core-model/4.0.0-RC2/camel-core-model-4.0.0-RC2-sources.jar"/>
+  <classpathentry kind="var" path="M2_REPO/org/apache/camel/camel-core-processor/4.0.0-RC2/camel-core-processor-4.0.0-RC2.jar" sourcepath="M2_REPO/org/apache/camel/camel-core-processor/4.0.0-RC2/camel-core-processor-4.0.0-RC2-sources.jar"/>
+  <classpathentry kind="var" path="M2_REPO/org/apache/camel/camel-core-languages/4.0.0-RC2/camel-core-languages-4.0.0-RC2.jar" sourcepath="M2_REPO/org/apache/camel/camel-core-languages/4.0.0-RC2/camel-core-languages-4.0.0-RC2-sources.jar"/>
+  <classpathentry kind="var" path="M2_REPO/org/apache/camel/camel-bean/4.0.0-RC2/camel-bean-4.0.0-RC2.jar" sourcepath="M2_REPO/org/apache/camel/camel-bean/4.0.0-RC2/camel-bean-4.0.0-RC2-sources.jar"/>
+  <classpathentry kind="var" path="M2_REPO/org/apache/camel/camel-browse/4.0.0-RC2/camel-browse-4.0.0-RC2.jar" sourcepath="M2_REPO/org/apache/camel/camel-browse/4.0.0-RC2/camel-browse-4.0.0-RC2-sources.jar"/>
+  <classpathentry kind="var" path="M2_REPO/org/apache/camel/camel-cluster/4.0.0-RC2/camel-cluster-4.0.0-RC2.jar" sourcepath="M2_REPO/org/apache/camel/camel-cluster/4.0.0-RC2/camel-cluster-4.0.0-RC2-sources.jar"/>
+  <classpathentry kind="var" path="M2_REPO/org/apache/camel/camel-controlbus/4.0.0-RC2/camel-controlbus-4.0.0-RC2.jar" sourcepath="M2_REPO/org/apache/camel/camel-controlbus/4.0.0-RC2/camel-controlbus-4.0.0-RC2-sources.jar"/>
+  <classpathentry kind="var" path="M2_REPO/org/apache/camel/camel-dataformat/4.0.0-RC2/camel-dataformat-4.0.0-RC2.jar" sourcepath="M2_REPO/org/apache/camel/camel-dataformat/4.0.0-RC2/camel-dataformat-4.0.0-RC2-sources.jar"/>
+  <classpathentry kind="var" path="M2_REPO/org/apache/camel/camel-dataset/4.0.0-RC2/camel-dataset-4.0.0-RC2.jar" sourcepath="M2_REPO/org/apache/camel/camel-dataset/4.0.0-RC2/camel-dataset-4.0.0-RC2-sources.jar"/>
+  <classpathentry kind="var" path="M2_REPO/org/apache/camel/camel-mock/4.0.0-RC2/camel-mock-4.0.0-RC2.jar" sourcepath="M2_REPO/org/apache/camel/camel-mock/4.0.0-RC2/camel-mock-4.0.0-RC2-sources.jar"/>
+  <classpathentry kind="var" path="M2_REPO/org/apache/camel/camel-direct/4.0.0-RC2/camel-direct-4.0.0-RC2.jar" sourcepath="M2_REPO/org/apache/camel/camel-direct/4.0.0-RC2/camel-direct-4.0.0-RC2-sources.jar"/>
+  <classpathentry kind="var" path="M2_REPO/org/apache/camel/camel-file/4.0.0-RC2/camel-file-4.0.0-RC2.jar" sourcepath="M2_REPO/org/apache/camel/camel-file/4.0.0-RC2/camel-file-4.0.0-RC2-sources.jar"/>
+  <classpathentry kind="var" path="M2_REPO/org/apache/camel/camel-health/4.0.0-RC2/camel-health-4.0.0-RC2.jar" sourcepath="M2_REPO/org/apache/camel/camel-health/4.0.0-RC2/camel-health-4.0.0-RC2-sources.jar"/>
+  <classpathentry kind="var" path="M2_REPO/org/apache/camel/camel-language/4.0.0-RC2/camel-language-4.0.0-RC2.jar" sourcepath="M2_REPO/org/apache/camel/camel-language/4.0.0-RC2/camel-language-4.0.0-RC2-sources.jar"/>
+  <classpathentry kind="var" path="M2_REPO/org/apache/camel/camel-log/4.0.0-RC2/camel-log-4.0.0-RC2.jar" sourcepath="M2_REPO/org/apache/camel/camel-log/4.0.0-RC2/camel-log-4.0.0-RC2-sources.jar"/>
+  <classpathentry kind="var" path="M2_REPO/org/apache/camel/camel-ref/4.0.0-RC2/camel-ref-4.0.0-RC2.jar" sourcepath="M2_REPO/org/apache/camel/camel-ref/4.0.0-RC2/camel-ref-4.0.0-RC2-sources.jar"/>
+  <classpathentry kind="var" path="M2_REPO/org/apache/camel/camel-rest/4.0.0-RC2/camel-rest-4.0.0-RC2.jar" sourcepath="M2_REPO/org/apache/camel/camel-rest/4.0.0-RC2/camel-rest-4.0.0-RC2-sources.jar"/>
+  <classpathentry kind="var" path="M2_REPO/org/apache/camel/camel-tooling-model/4.0.0-RC2/camel-tooling-model-4.0.0-RC2.jar" sourcepath="M2_REPO/org/apache/camel/camel-tooling-model/4.0.0-RC2/camel-tooling-model-4.0.0-RC2-sources.jar"/>
+  <classpathentry kind="var" path="M2_REPO/org/apache/camel/camel-saga/4.0.0-RC2/camel-saga-4.0.0-RC2.jar" sourcepath="M2_REPO/org/apache/camel/camel-saga/4.0.0-RC2/camel-saga-4.0.0-RC2-sources.jar"/>
+  <classpathentry kind="var" path="M2_REPO/org/apache/camel/camel-scheduler/4.0.0-RC2/camel-scheduler-4.0.0-RC2.jar" sourcepath="M2_REPO/org/apache/camel/camel-scheduler/4.0.0-RC2/camel-scheduler-4.0.0-RC2-sources.jar"/>
+  <classpathentry kind="var" path="M2_REPO/org/apache/camel/camel-seda/4.0.0-RC2/camel-seda-4.0.0-RC2.jar" sourcepath="M2_REPO/org/apache/camel/camel-seda/4.0.0-RC2/camel-seda-4.0.0-RC2-sources.jar"/>
+  <classpathentry kind="var" path="M2_REPO/org/apache/camel/camel-stub/4.0.0-RC2/camel-stub-4.0.0-RC2.jar" sourcepath="M2_REPO/org/apache/camel/camel-stub/4.0.0-RC2/camel-stub-4.0.0-RC2-sources.jar"/>
+  <classpathentry kind="var" path="M2_REPO/org/apache/camel/camel-timer/4.0.0-RC2/camel-timer-4.0.0-RC2.jar" sourcepath="M2_REPO/org/apache/camel/camel-timer/4.0.0-RC2/camel-timer-4.0.0-RC2-sources.jar"/>
+  <classpathentry kind="var" path="M2_REPO/org/apache/camel/camel-validator/4.0.0-RC2/camel-validator-4.0.0-RC2.jar" sourcepath="M2_REPO/org/apache/camel/camel-validator/4.0.0-RC2/camel-validator-4.0.0-RC2-sources.jar"/>
+  <classpathentry kind="var" path="M2_REPO/org/apache/camel/camel-xml-jaxp/4.0.0-RC2/camel-xml-jaxp-4.0.0-RC2.jar" sourcepath="M2_REPO/org/apache/camel/camel-xml-jaxp/4.0.0-RC2/camel-xml-jaxp-4.0.0-RC2-sources.jar"/>
+  <classpathentry kind="var" path="M2_REPO/org/apache/camel/camel-xml-io-util/4.0.0-RC2/camel-xml-io-util-4.0.0-RC2.jar" sourcepath="M2_REPO/org/apache/camel/camel-xml-io-util/4.0.0-RC2/camel-xml-io-util-4.0.0-RC2-sources.jar"/>
+  <classpathentry kind="var" path="M2_REPO/org/apache/camel/camel-xpath/4.0.0-RC2/camel-xpath-4.0.0-RC2.jar" sourcepath="M2_REPO/org/apache/camel/camel-xpath/4.0.0-RC2/camel-xpath-4.0.0-RC2-sources.jar"/>
+  <classpathentry kind="var" path="M2_REPO/org/apache/camel/camel-xslt/4.0.0-RC2/camel-xslt-4.0.0-RC2.jar" sourcepath="M2_REPO/org/apache/camel/camel-xslt/4.0.0-RC2/camel-xslt-4.0.0-RC2-sources.jar"/>
+  <classpathentry kind="var" path="M2_REPO/org/apache/camel/camel-xml-io/4.0.0-RC2/camel-xml-io-4.0.0-RC2.jar" sourcepath="M2_REPO/org/apache/camel/camel-xml-io/4.0.0-RC2/camel-xml-io-4.0.0-RC2-sources.jar"/>
+  <classpathentry kind="var" path="M2_REPO/org/apache/camel/camel-xml-jaxb/4.0.0-RC2/camel-xml-jaxb-4.0.0-RC2.jar" sourcepath="M2_REPO/org/apache/camel/camel-xml-jaxb/4.0.0-RC2/camel-xml-jaxb-4.0.0-RC2-sources.jar"/>
+  <classpathentry kind="var" path="M2_REPO/com/sun/xml/bind/jaxb-core/4.0.3/jaxb-core-4.0.3.jar" sourcepath="M2_REPO/com/sun/xml/bind/jaxb-core/4.0.3/jaxb-core-4.0.3-sources.jar"/>
+  <classpathentry kind="var" path="M2_REPO/org/eclipse/angus/angus-activation/2.0.1/angus-activation-2.0.1.jar" sourcepath="M2_REPO/org/eclipse/angus/angus-activation/2.0.1/angus-activation-2.0.1-sources.jar"/>
+  <classpathentry kind="var" path="M2_REPO/com/sun/xml/bind/jaxb-impl/4.0.3/jaxb-impl-4.0.3.jar" sourcepath="M2_REPO/com/sun/xml/bind/jaxb-impl/4.0.3/jaxb-impl-4.0.3-sources.jar"/>
+  <classpathentry kind="var" path="M2_REPO/org/apache/camel/camel-yaml-io/4.0.0-RC2/camel-yaml-io-4.0.0-RC2.jar" sourcepath="M2_REPO/org/apache/camel/camel-yaml-io/4.0.0-RC2/camel-yaml-io-4.0.0-RC2-sources.jar"/>
+  <classpathentry kind="var" path="M2_REPO/org/apache/camel/camel-core-catalog/4.0.0-RC2/camel-core-catalog-4.0.0-RC2.jar" sourcepath="M2_REPO/org/apache/camel/camel-core-catalog/4.0.0-RC2/camel-core-catalog-4.0.0-RC2-sources.jar"/>
+  <classpathentry kind="var" path="M2_REPO/com/fasterxml/jackson/dataformat/jackson-dataformat-yaml/2.15.2/jackson-dataformat-yaml-2.15.2.jar" sourcepath="M2_REPO/com/fasterxml/jackson/dataformat/jackson-dataformat-yaml/2.15.2/jackson-dataformat-yaml-2.15.2-sources.jar"/>
+  <classpathentry kind="var" path="M2_REPO/com/fasterxml/jackson/core/jackson-databind/2.15.2/jackson-databind-2.15.2.jar" sourcepath="M2_REPO/com/fasterxml/jackson/core/jackson-databind/2.15.2/jackson-databind-2.15.2-sources.jar"/>
+  <classpathentry kind="var" path="M2_REPO/com/fasterxml/jackson/core/jackson-annotations/2.15.2/jackson-annotations-2.15.2.jar" sourcepath="M2_REPO/com/fasterxml/jackson/core/jackson-annotations/2.15.2/jackson-annotations-2.15.2-sources.jar"/>
+  <classpathentry kind="var" path="M2_REPO/com/fasterxml/jackson/core/jackson-core/2.15.2/jackson-core-2.15.2.jar" sourcepath="M2_REPO/com/fasterxml/jackson/core/jackson-core/2.15.2/jackson-core-2.15.2-sources.jar"/>
+  <classpathentry kind="var" path="M2_REPO/org/yaml/snakeyaml/2.0/snakeyaml-2.0.jar" sourcepath="M2_REPO/org/yaml/snakeyaml/2.0/snakeyaml-2.0-sources.jar"/>
+  <classpathentry kind="var" path="M2_REPO/org/apache/camel/camel-main/4.0.0-RC2/camel-main-4.0.0-RC2.jar" sourcepath="M2_REPO/org/apache/camel/camel-main/4.0.0-RC2/camel-main-4.0.0-RC2-sources.jar"/>
+  <classpathentry kind="var" path="M2_REPO/org/apache/logging/log4j/log4j-slf4j2-impl/2.19.0/log4j-slf4j2-impl-2.19.0.jar" sourcepath="M2_REPO/org/apache/logging/log4j/log4j-slf4j2-impl/2.19.0/log4j-slf4j2-impl-2.19.0-sources.jar"/>
+  <classpathentry kind="var" path="M2_REPO/org/apache/logging/log4j/log4j-api/2.19.0/log4j-api-2.19.0.jar" sourcepath="M2_REPO/org/apache/logging/log4j/log4j-api/2.19.0/log4j-api-2.19.0-sources.jar"/>
+  <classpathentry kind="var" path="M2_REPO/org/apache/logging/log4j/log4j-core/2.19.0/log4j-core-2.19.0.jar" sourcepath="M2_REPO/org/apache/logging/log4j/log4j-core/2.19.0/log4j-core-2.19.0-sources.jar"/>
+  <classpathentry kind="var" path="M2_REPO/org/apache/camel/camel-test-main-junit5/4.0.0-RC2/camel-test-main-junit5-4.0.0-RC2.jar" sourcepath="M2_REPO/org/apache/camel/camel-test-main-junit5/4.0.0-RC2/camel-test-main-junit5-4.0.0-RC2-sources.jar"/>
+  <classpathentry kind="var" path="M2_REPO/org/apache/camel/camel-test-junit5/4.0.0-RC2/camel-test-junit5-4.0.0-RC2.jar" sourcepath="M2_REPO/org/apache/camel/camel-test-junit5/4.0.0-RC2/camel-test-junit5-4.0.0-RC2-sources.jar"/>
+  <classpathentry kind="var" path="M2_REPO/org/junit/jupiter/junit-jupiter-api/5.9.3/junit-jupiter-api-5.9.3.jar" sourcepath="M2_REPO/org/junit/jupiter/junit-jupiter-api/5.9.3/junit-jupiter-api-5.9.3-sources.jar"/>
+  <classpathentry kind="var" path="M2_REPO/org/opentest4j/opentest4j/1.2.0/opentest4j-1.2.0.jar" sourcepath="M2_REPO/org/opentest4j/opentest4j/1.2.0/opentest4j-1.2.0-sources.jar"/>
+  <classpathentry kind="var" path="M2_REPO/org/junit/platform/junit-platform-commons/1.9.3/junit-platform-commons-1.9.3.jar" sourcepath="M2_REPO/org/junit/platform/junit-platform-commons/1.9.3/junit-platform-commons-1.9.3-sources.jar"/>
+  <classpathentry kind="var" path="M2_REPO/org/apiguardian/apiguardian-api/1.1.2/apiguardian-api-1.1.2.jar" sourcepath="M2_REPO/org/apiguardian/apiguardian-api/1.1.2/apiguardian-api-1.1.2-sources.jar"/>
+  <classpathentry kind="var" path="M2_REPO/org/junit/jupiter/junit-jupiter-engine/5.9.3/junit-jupiter-engine-5.9.3.jar" sourcepath="M2_REPO/org/junit/jupiter/junit-jupiter-engine/5.9.3/junit-jupiter-engine-5.9.3-sources.jar"/>
+  <classpathentry kind="var" path="M2_REPO/org/junit/platform/junit-platform-engine/1.9.3/junit-platform-engine-1.9.3.jar" sourcepath="M2_REPO/org/junit/platform/junit-platform-engine/1.9.3/junit-platform-engine-1.9.3-sources.jar"/>
+  <classpathentry kind="var" path="M2_REPO/org/junit/jupiter/junit-jupiter-params/5.9.3/junit-jupiter-params-5.9.3.jar" sourcepath="M2_REPO/org/junit/jupiter/junit-jupiter-params/5.9.3/junit-jupiter-params-5.9.3-sources.jar"/>
+</classpath>
