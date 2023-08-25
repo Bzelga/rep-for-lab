@@ -9,6 +9,7 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
+import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -19,19 +20,8 @@ public class MyRouteBuilder extends RouteBuilder {
         ManagerHandlers managerHandlers = new ManagerHandlers();
         ConfigFileModel configFileModel = new ConfigFileModel();
         
-        try(BufferedReader br = new BufferedReader(new FileReader("config.json"))) {
-        	StringBuilder sb = new StringBuilder();
-        	String line = br.readLine();
-        	
-        	while(line != null) {
-        		sb.append(line);
-        		sb.append(System.lineSeparator());
-        		line = br.readLine();
-        	}
-        	
-        	configFileModel = mapper.readValue(sb.toString(), ConfigFileModel.class);
-        }
-        
+        InputStream is = ConfigFileModel.class.getResourceAsStream("/config.json");
+        configFileModel = mapper.readValue(is, ConfigFileModel.class);
 //          Заккоментированный следующий код - это что бы использовать https для сервиса, для этого нужно сделать
 //        Сертефикат и хранилище ключей
 //
