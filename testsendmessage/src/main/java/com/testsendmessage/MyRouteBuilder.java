@@ -18,10 +18,8 @@ public class MyRouteBuilder extends RouteBuilder {
         List<ReturnModel> returnModels = new ArrayList<>();
         ObjectMapper mapper = new ObjectMapper();
         ManagerHandlers managerHandlers = new ManagerHandlers();
-        ConfigFileModel configFileModel = new ConfigFileModel();
-        
-        InputStream is = ConfigFileModel.class.getResourceAsStream("/config.json");
-        configFileModel = mapper.readValue(is, ConfigFileModel.class);
+        ConfigFileModel configFileModel = mapper.readValue(new File("config.json"), ConfigFileModel.class);
+
 //          Заккоментированный следующий код - это что бы использовать https для сервиса, для этого нужно сделать
 //        Сертефикат и хранилище ключей
 //
