@@ -118,24 +118,28 @@ public class MyRouteBuilder extends RouteBuilder {
                                                 returnModels.add(new ReturnModel(wordsResult[0].split(" ")[1],
                                                         wordsResult[wordsResult.length-1]));
                                                 exchange.getIn().setBody(mapper.writeValueAsString(returnModels));
+                                                returnModels.clear();
                                             })
                                     .otherwise()
                                         .process(exchange -> {
                                             exchange.getIn().setBody(mapper.writeValueAsString(returnModels));
 
                                             managerHandlers.DeleteHeaders(exchange);
+                                            returnModels.clear();
                                     }).endChoice()
                             .otherwise()
                                 .process(exchange -> {
                                     exchange.getIn().setBody(mapper.writeValueAsString(returnModels));
 
                                     managerHandlers.DeleteHeaders(exchange);
+                                    returnModels.clear();
                                 }).endChoice()
                     .otherwise()
                         .process(exchange -> {
                             exchange.getIn().setBody(mapper.writeValueAsString(returnModels));
 
                             managerHandlers.DeleteHeaders(exchange);
+                            returnModels.clear();
                         }).endChoice();
     }
 }
