@@ -6,8 +6,9 @@ public class PostModels {
     @JsonProperty("auth")
     private String Auth;
     @JsonProperty("jsonDate")
-//    private String JsonDate;
     private JsonDateModel jsonDateModel;
+    @JsonProperty("fileBase64")
+    private String fileBase64;
 
     public PostModels(){
     }
@@ -27,4 +28,8 @@ public class PostModels {
     public JsonDateModel getJsonDate() {
         return jsonDateModel;
     }
+
+    public String getFileBase64(){return fileBase64;}
+
+    public void setFileBase64(String fileBase64){this.fileBase64 = fileBase64;}
 }

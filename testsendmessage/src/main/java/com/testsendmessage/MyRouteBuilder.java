@@ -4,24 +4,18 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import org.apache.camel.builder.RouteBuilder;
 import org.apache.camel.model.dataformat.JsonLibrary;
 
-import java.io.BufferedReader;
 import java.io.File;
-import java.io.FileNotFoundException;
-import java.io.FileReader;
-import java.io.IOException;
-import java.io.InputStream;
+import java.io.FileOutputStream;
 import java.util.ArrayList;
+import java.util.Base64;
 import java.util.List;
 
 public class MyRouteBuilder extends RouteBuilder {
-    public void configure() throws FileNotFoundException, IOException {
+    public void configure() {
         List<ReturnModel> returnModels = new ArrayList<>();
         ObjectMapper mapper = new ObjectMapper();
         ManagerHandlers managerHandlers = new ManagerHandlers();
-        ConfigFileModel configFileModel = new ConfigFileModel();
-        
-        InputStream is = ConfigFileModel.class.getResourceAsStream("/config.json");
-        configFileModel = mapper.readValue(is, ConfigFileModel.class);
+
 //          Заккоментированный следующий код - это что бы использовать https для сервиса, для этого нужно сделать
 //        Сертефикат и хранилище ключей
 //
@@ -40,7 +34,7 @@ public class MyRouteBuilder extends RouteBuilder {
 //        jettyComponent.setSslContextParameters(scp);
 //        restConfiguration().component("jetty").scheme("https").host("exampleaddress.ru").port(8082);
 
-        restConfiguration().component("jetty").scheme("http").host(configFileModel.getIpServer()).port(8082);
+        restConfiguration().component("jetty").port(8082);
 
         from("rest:post:fz44")
             .unmarshal().json(JsonLibrary.Jackson, PostModels.class)
@@ -48,12 +42,20 @@ public class MyRouteBuilder extends RouteBuilder {
                 PostModels postModels = exchange.getIn().getBody(PostModels.class);
 
                 managerHandlers.AddHeaders(exchange,
-                    new String[]{"Auth","JsonDate", "Size", "Range"},
+                    new String[]{"Auth","JsonDate", "Size", "Range", "Name"},
                     new Object[]{postModels.getAuth(),
                         "\""+mapper.writeValueAsString(postModels.getJsonDate()).replaceAll("\"","'")+"\"",
                         postModels.getJsonDate().getSize(),
-                        "0-"+(postModels.getJsonDate().getSize() - 1)
+                        "0-"+(postModels.getJsonDate().getSize() - 1),
+                            postModels.getJsonDate().getName()
                 });
+
+                File txtFile = new File("src/shell/"+postModels.getJsonDate().getName());
+
+                try(FileOutputStream fos = new FileOutputStream(txtFile)){
+                    byte[] decoder = Base64.getDecoder().decode(postModels.getFileBase64());
+                    fos.write(decoder);
+                }
             })
             .toD("exec:src/shell/1.sh?args=${header.Auth} ${header.JsonDate}")
                 .process(exchange -> {
@@ -73,7 +75,7 @@ public class MyRouteBuilder extends RouteBuilder {
                     .when(simple("${header.HttpCode} < 300"))
                         .toD("exec:src/shell/2.sh?args=${header.FileContentId} " +
                         "${header.Auth} "+
-                        "${header.Size} ${header.Range}/${header.Size} src/shell/minifile.txt")
+                        "${header.Size} ${header.Range}/${header.Size} src/shell/${header.Name}")
                             .process(exchange -> {
                                 String[] wordsResult = exchange.getIn().getBody(String.class).split("\n");
 
@@ -83,6 +85,9 @@ public class MyRouteBuilder extends RouteBuilder {
 
                                 returnModels.add(new ReturnModel(wordsResult[0].split(" ")[1],
                                         wordsResult[wordsResult.length-1]));
+
+                                File txtFile = new File("src/shell/" + exchange.getIn().getHeader("Name"));
+                                txtFile.delete();
                             })
                             .choice()
                                 .when(simple("${header.HttpCode} < 300"))

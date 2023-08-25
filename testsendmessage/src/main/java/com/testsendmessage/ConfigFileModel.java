@@ -4,7 +4,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 public class ConfigFileModel {
 	
-	@JsonProperty("jsonDate")
+	@JsonProperty("IpServer")
 	private String ipServer;
 	
 	public String getIpServer() {
